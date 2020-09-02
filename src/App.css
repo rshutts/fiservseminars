@@ -1,216 +1,38 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.logo {
-  background: url('https://www.fiserv.com/content/dam/fiserv-com/fiserv-logo-white.svg');
-  width: 88px;
-  height: 45px;
-}
-.hero {
-  max-width:964px;
-}
-.next-steps .fa-link {
-  margin-right: 5px;
+.App {
+  text-align: center;
 }
 
-/* Fix for use only flexbox in content area */
-.next-steps .row {
-  margin-bottom: 0;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.next-steps .col-md-5 {
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 768px) {
-  .next-steps .col-md-5 {
-    margin-bottom: 0;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.spinner {
-  position: absolute;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.result-block-container .result-block {
-  opacity: 1;
-}
-.bg-light {
-  background-color:#ff6600 !important
-  ;
-}
-a {
-  columns: #2e8bca;
-  font-style: italic;
-  text-decoration: underline;
-}
-.btn-primary {
-  background: rgb(102,153,204);
-  border-color:rgb(102,153,204);
-}
-.btn-primary:hover {
-  background:rgb(230,230,230);
-  border-color:#000;
-  color:#000;
-}
-.btn-primary.disabled, .btn-primary:disabled {
-  background-color: #aaa;
-  border:none;
-}
-h1 {
-  font-size:32px;
-  color:#000;
-  font-weight:normal;
-}
-.hero h1 {
-  font-size:22px;
-  color:#ff6600;
-  font-weight:bold;
-}
-h2 {
-  color:#2e8bca;
-  font-size:22px;
-  font-weight: normal;
-}
-h2.section-header {
-  border-bottom: solid 1px #ccc;
-  margin-bottom:10px;
-}
-.seminar-container h2 {
-  margin-bottom:1rem;
-}
-h3 {
-  font-weight: bold;
-  font-size:14px;
-}
-h6 {
-  margin-bottom:0 !important;
-}
-.navbar .nav-link {
-  color:#fff;
-  text-decoration: none;
-  font-style:normal;
-  padding:10px;
-}
-.navbar .nav-link:hover, .navbar .nav-link:active {
-  border-bottom: 6px solid #ffffff;
-  padding-bottom:4px;
-}
-.mt-5, .my-5 {
-  margin-top:1.5rem !important;
-}
-.hero-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.hero-info {
-  width:80%;
-  order:1;
-  float:left;
-  padding-right:5px;
-}
-.hero-sidebar {
-  width:20%;
-  order:2;
-  float:right;
-  padding-left:5px;
-}
-h2.earlyreg-header {
-  background:#000;
-  color:#fff;
-  font-size:14px;
-  padding:10px;
-  font-weight:bold;
-  margin-bottom:0;
-}
-div.earlyreg-box{
-  border-left:1px solid #ccc;
-  border-right:1px solid #ccc;
-  border-bottom:1px solid #ccc;
-  min-height:192px;
-  font-size:14px;
-  padding:10px;
-}
-button#earlyreg-btn {
-  font-style:normal;
-  font-weight:bold;
-  font-size:16px;
-  color:#fff;
-}
-.hero-info {
-  text-align:left;
-}
-.hero .app-logo {
-  max-width:none;
-}
-.italic-important {
-  font-style: italic;
-  color:#ff6600;
-}
-.next-steps .row {
-  flex-direction: column;
-  min-width:300px;
-}
-.seminar-rows {
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.col-date, .col-location {
-  max-width:100%;
-  flex: 0 0 6%;
-  margin-bottom:0 !important;
-}
-.seminar-container {
-  margin:0 auto;
-  margin-top:1.5rem !important;
-  max-width:900px;
-  padding:0;
-}
-.MuiPaper-root.MuiAccordion-root.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded {
-  background-color: #eee;
-  border:1px solid #ccc;
-  transition:all 0.1s ease;
-  border-radius:5px;
-  margin-bottom:10px;
-  color:#aaa;
-}
-.MuiPaper-root.MuiAccordion-root.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded:hover {
-  background-color:#2d8bc8;
-  color:#fff;
-}
-.MuiCollapse-wrapper {
-  background-color:#fff;
-  color:#000;
-}
-.seminar-rows.faq h6 {
-  display: flex;
-  flex-direction: row;
-  width: 135px;
-}
-.seminar-rows.faq .d-flex.justify-content-between.col {
-  display:flex;
-  flex-direction: column;
-  margin-top:10px;
-}
-footer {
-  color:#fff;
-  font-size:13px;
-}
-footer a, footer a:hover {
-  color:#fff;
+.App-link {
+  color: #61dafb;
 }
 
-#external-api {
-  display:none;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

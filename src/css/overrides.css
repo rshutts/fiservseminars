@@ -1,0 +1,240 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background:url('https://fiservseminars-media.s3.amazonaws.com/bkgd.png') no-repeat center -20px;
+    padding:0;
+    margin:0;
+    color:#000;
+    font-size:14px;
+}
+a {
+    text-decoration:none;
+}
+.navbar-nav .btn {
+    min-width:100px;
+    width:100px;
+}
+.nav-btn {
+    min-width:100px;
+    font-size:1.14rem;
+    line-height: 1.5;
+    padding:6px 12px;
+    margin:12px;
+    border-radius: .1rem;
+    font-weight:normal;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.authentication-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+a.signin {
+    background: rgb(102,153,204);
+    border-color:rgb(102,153,204);
+    min-width:100px;
+    color:#fff;
+}
+a.signin:hover{
+    background:rgb(230,230,230);
+    border-color:#000;
+    color:#000;
+    min-width:100px;
+}
+a.signout {
+    background:#ff6600;
+    border-color:#000;
+    color:#fff;
+}
+a.signout:hover {
+    background:#000;
+    color:#fff;
+}
+.logo {
+    margin:10px;
+}
+h1 {
+    font-size:1.8rem;
+    color:#ff6600;
+}
+.hero h1 {
+    font-size:22px;
+    color:#ff6600;
+    font-weight:bold;
+}
+h2 {
+    color:#2e8bca;
+    font-size:22px;
+    font-weight: normal;
+}
+h2.section-header {
+    border-bottom: solid 1px #ccc;
+    margin-bottom:10px;
+}
+.seminar-container h2 {
+    margin-bottom:1rem;
+}
+h3 {
+    font-weight: bold;
+    font-size:14px;
+}
+h3.meetingTitle {
+    color:#fff;
+    font-size:1.1rem;
+}
+h6 {
+    margin-bottom:0 !important;
+}
+.navbar-wrapper {
+    width:100%;
+    background:#fff;
+    border-bottom:1px solid #ff6600;
+    height:203px;
+}
+nav.navbar.announcement {
+    background:#6699cc;
+    height:76px;
+    width:100%;
+    max-width: 100%;
+}
+nav.navbar.announcement p {
+    margin:0 auto;
+    max-width:1200px;
+    color:#fff;   
+    text-align:center;
+    padding:30px 0;
+    font-size:1.2rem;
+}
+nav.navbar.announcement a {
+    color:#333;
+    text-decoration:underline;
+}
+nav.navbar.announcement a:hover {
+    text-decoration:none;
+}
+nav.navbar {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper {
+    height:100%;
+    display:flex;
+    flex-direction: row;
+}
+div.navbar-wrapper + div {
+    display: table;
+}
+.navbar.sidebar {
+    width:128px;
+    background:#666666;
+    padding:40px 0;
+    /* height:100%; */
+    position: relative;
+    left:0;
+}
+.navbar.sidebar .dqmIQK {
+    top: 0;
+    width: 128px;
+    background: #666666;
+    padding: 40px 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidenav---sidenav-nav---3tvij {
+    background:#666666;
+    height:100%;
+}
+.MuiSvgIcon-root {
+    fill:#fff !important;
+}
+.sidenav-item-content {
+    padding:37px 0 20px 0;
+}   
+.sidebar .sidenav---sidenav---_2tBP {
+    position:sticky;
+}
+.sidenav---navtext---1AE_f {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.sidenav---navicon---3gCRo {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+    height: 75px!important;
+    display: flex !important;
+    justify-content: center;
+    margin-right:0 !important;
+    line-height: 30px !important;
+}
+.sidenav---navitem---9uL5T {
+    height: 75px!important;
+    display: flex !important;
+    justify-content: center; 
+    margin-right:0 !important;
+    line-height: 0 !important;
+    margin:10px 0;
+}
+.sidenav-item-icon {
+    color:#fff;
+}
+.navbar.sidebar a {
+    color:#fff;
+}
+.navbar.sidebar .sc-AxirZ {
+    height:75px;
+}
+
+.main-content {
+    width:80%;
+    margin:0 auto !important;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.left {
+    background:#fff;
+    width: 60%;
+    height:100%;
+    padding:1% 2%;
+    margin:3% 2% 0 2%;
+    display: inline-block;
+}
+.welcome-video {
+    text-align:Center;
+}
+.right {
+    background:transparent;
+    width:30%;
+    height:100%;
+}
+.meetingContent {
+    background:rgba(0,0,0,.75);
+    border-left:10px solid #ff6600;
+    padding:5px 20px;
+    margin:2% 0;
+}
+.meetingContent:first-child {
+    margin-top:0;
+}
+.meetingContent p {
+    color:#fff;
+}
+.footer {
+    background: #333;
+    padding: 1% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}

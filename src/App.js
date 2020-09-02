@@ -1,44 +1,31 @@
-import React from 'react';
-import { Router, Route, Switch } from "react-router-dom";
-import { Container } from "reactstrap";
-
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import SimpleAccordion from "./components/FAQ";
-import Contact from "./components/Contact";
-import DatesLocations from "./components/DatesLocations";
-import Home from "./views/Home";
-import Profile from "./views/Profile";
-import history from "./utils/history";
-
-// styles
-import "./Overrides.scss";
-import "./App.css";
-
-// fontawesome
-import initFontAwesome from "./utils/initFontAwesome";
-initFontAwesome();
+import React from 'react'
+import { Router } from '@reach/router'
+import {
+  Profile,
+  Home,
+  IndexPage,
+  Reset,
+  SignIn,
+  SignUp,
+} from './components/Pages'
+import PrivateRoute from './components/Routes/PrivateRoute'
+import PublicRoute from './components/Routes/PublicRoute'
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 
 const App = () => {
-
+  Amplify.configure(config)
   return (
-    <Router history={history}>
-      <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
-        <Container className="flex-grow-1 mt-5">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/dates-and-locations" component={DatesLocations} />
-            <Route path="http://virtualtrainer.fiservapps.com/TrainGuides/2020/2020_EducationSeminar_Precision_OverviewandAgenda.pdf" />
-            <Route path="/faqs" component={SimpleAccordion} />
-            <Route path="/contact-us" component={Contact} />
-          </Switch>
-        </Container>
-        <Footer />
-      </div>
+    <Router>
+      <PrivateRoute path="/home" component={Home} />
+      <PrivateRoute path="/profile" component={Profile} />
+      <PublicRoute path="/signin" component={SignIn} />
+      <PublicRoute path="/signup" component={SignUp} />
+      <PublicRoute path="/reset" component={Reset} />
+      <PublicRoute path="/" component={IndexPage} />
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
