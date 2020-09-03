@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router } from '@reach/router'
+import { Switch, BrowserRouter as Router } from 'react-router-dom'
 import {
   Profile,
   Home,
@@ -18,12 +18,14 @@ const App = () => {
   Amplify.configure(config)
   return (
     <Router>
-      <PrivateRoute path="/home" component={Home} />
-      <PrivateRoute path="/profile" component={Profile} />
-      <PublicRoute path="/signin" component={SignIn} />
-      <PublicRoute path="/signup" component={SignUp} />
-      <PublicRoute path="/reset" component={Reset} />
-      <PublicRoute path="/" component={IndexPage} />
+      <Switch>
+        <PrivateRoute path="/home" component={Home} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <PublicRoute path="/signin" component={SignIn} />
+        <PublicRoute path="/signup" component={SignUp} />
+        <PublicRoute path="/reset" component={Reset} />
+        <PublicRoute path="/" component={IndexPage} />
+      </Switch>      
     </Router>
   )
 }

@@ -3,12 +3,13 @@ import Nav from '../Nav/Nav'
 import UserNav from '../Nav/UserNav'
 import Footer from '../Utils/Footer'
 import '../../scss/styles.scss'
+import '../../App.css'
 
 export function Layout({ children, isUserNav }) {
   return (
     <div>
       {isUserNav ? <UserNav /> : <Nav />}
-      <div style={{ height: 'calc(100vh - 56px)' }}>{children}</div>
+      <div>{children}</div>
       <Footer/>
     </div>
   )

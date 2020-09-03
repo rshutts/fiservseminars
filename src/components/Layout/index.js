@@ -1,3 +1,3 @@
 import { Layout, AppContent } from './AppLayouts'
-import '../../css/overrides.css'
+import '../../App.css'
 export { Layout, AppContent }
