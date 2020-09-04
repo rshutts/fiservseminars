@@ -1,6 +1,6 @@
 import React from 'react'
-import SectionLeft from '../Utils/IndexSectionLeft'
-import SectionRight from '../Utils/IndexSectionRight'
+import SectionLeft from '../Utils/SectionLeft'
+import SectionRight from '../Utils/SectionRight'
 import Sidenav from '../Nav/Sidenav'
 
 const IndexPage = () => {
@@ -10,12 +10,8 @@ const IndexPage = () => {
         <Sidenav/>
       </div>
       <div className="main-content">
-        <section className="left">
           <SectionLeft/>
-        </section> 
-        <section className="right">
           <SectionRight/>
-        </section> 
       </div>
       
     </div>

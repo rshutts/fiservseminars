@@ -4,5 +4,6 @@ import IndexPage from './IndexPage'
 import Reset from './Reset'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import Meetings from './Meetings'
 
-export { Home, Profile, IndexPage, Reset, SignIn, SignUp }
+export { Home, Profile, IndexPage, Reset, SignIn, SignUp, Meetings }

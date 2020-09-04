@@ -1,5 +1,11 @@
 import React from 'react'
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function Sidenav() {
     return (
@@ -9,29 +15,29 @@ function Sidenav() {
             }}
         >
             <SideNav.Nav defaultSelected="home">
-                <NavItem eventKey="home">
+                <NavItem>
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />Home
+                        <Link className="sidebar-nav-link" to="/"><i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />Home</Link>
                     </NavIcon>
                 </NavItem>
-                <NavItem eventKey="/calendar">
+                <NavItem>
                     <NavIcon>
-                        <i className="fa fa-fw fa-calendar" style={{ fontSize: '1.75em' }} />Calendar
+                        <Link className="sidebar-nav-link" to="/calendar"><i className="fa fa-fw fa-calendar" style={{ fontSize: '1.75em' }} />Calendar</Link>
                     </NavIcon>
                 </NavItem>
-                <NavItem eventKey="/chat">
+                <NavItem>
                     <NavIcon>
-                        <i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat
+                        <Link className="sidebar-nav-link" to="/chat"><i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat</Link>
                     </NavIcon>
                 </NavItem>
-                <NavItem eventKey="/meetings">
+                <NavItem>
                     <NavIcon>
-                        <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />Meetings
+                        <Link className="sidebar-nav-link" to="/meetings"><i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />Meetings</Link>
                     </NavIcon>
                 </NavItem>
-                <NavItem eventKey="/profile">
+                <NavItem>
                     <NavIcon>
-                        <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />Profile
+                        <Link className="sidebar-nav-link" to="/profile"><i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />Profile</Link>
                     </NavIcon>
                 </NavItem>
                 <NavItem eventKey="/search">

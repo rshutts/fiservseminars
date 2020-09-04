@@ -2945,6 +2945,9 @@
     "boolbase": {
       "version": "1.0.0"
     },
+    "bootstrap": {
+      "version": "4.5.2"
+    },
     "brace-expansion": {
       "version": "1.1.11",
       "requires": {
@@ -8786,6 +8789,12 @@
     },
     "react-error-overlay": {
       "version": "6.0.7"
+    },
+    "react-iframe": {
+      "version": "1.8.0",
+      "requires": {
+        "object-assign": "^4.1.1"
+      }
     },
     "react-is": {
       "version": "16.13.1"

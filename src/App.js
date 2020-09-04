@@ -1,5 +1,10 @@
 import React from 'react'
-import { Switch, BrowserRouter as Router } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import {
   Profile,
   Home,
@@ -7,6 +12,7 @@ import {
   Reset,
   SignIn,
   SignUp,
+  Meetings,
 } from './components/Pages'
 import PrivateRoute from './components/Routes/PrivateRoute'
 import PublicRoute from './components/Routes/PublicRoute'
@@ -19,12 +25,12 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <PrivateRoute path="/home" component={Home} />
+        <PublicRoute exact path="/" component={IndexPage} />
         <PrivateRoute path="/profile" component={Profile} />
         <PublicRoute path="/signin" component={SignIn} />
         <PublicRoute path="/signup" component={SignUp} />
         <PublicRoute path="/reset" component={Reset} />
-        <PublicRoute path="/" component={IndexPage} />
+        <PublicRoute path="/meetings" component={Meetings} />
       </Switch>      
     </Router>
   )

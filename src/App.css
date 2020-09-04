@@ -13,7 +13,7 @@ a {
   min-width:100px;
   width:100px;
 }
-.nav-btn {
+.nav-btn, .note-save {
   min-width:100px;
   font-size:1.14rem;
   line-height: 1.5;
@@ -148,9 +148,6 @@ nav.navbar {
 .sidenav---selected---1EK3y + .sidenav---navitem---9uL5T {
   color:#666666;
 }
-div[class*="sidenav---navicon"] i {
-  color:red;
-}
 .MuiSvgIcon-root {
   fill:#fff !important;
 }
@@ -188,13 +185,23 @@ div[class*="sidenav---navicon"] i {
 .sidenav-item-icon {
   color:#fff;
 }
-.navbar.sidebar a {
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > .sidebar-nav-link, .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > .sidebar-nav-link {
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+  opacity: 1.0 !important;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > .sidebar-nav-link:hover, .sidenav-item-icon:hover {
+  opacity: .7;
   color:#fff;
 }
 .navbar.sidebar .sc-AxirZ {
   height:75px;
 }
-
 .main-content {
   width:80%;
   margin:0 auto !important;
@@ -335,4 +342,68 @@ div[class*="sidenav---navicon"] i {
   line-height: 22px;
   padding: 10px;
   position: relative;
+}
+
+/*Meetings*/
+.main-content.meetings {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.meetingNotes {
+  background:#fff;
+  height:50%;
+  min-height:400px;
+  width:98%;
+}
+
+.left.meetings {
+  background:#fff;
+  width: 40%;
+  height:100%;
+  padding:1% 2%;
+  margin:3% 2% 0 2%;
+  display: inline-block;
+}
+.right.meetings {
+  background:#666666;
+  width: 60%;
+  height:100%;
+  padding:1% 2%;
+  margin:3% 2% 0 2%;
+  display: inline-block;
+}
+.main-content.meetings h1 {
+  color:#fff;
+}
+.note-save {
+  background:#ff6600;
+  color:#fff;
+  float:right;
+  font-size:.8rem;
+  min-width:unset;
+}
+.top.video {
+  display: flex;
+  align-self:center;
+  margin-bottom:10px;
+}
+.bottom.meetings {
+  background:#666666;
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+}
+.chat {
+  width:60%;
+}
+.chat-window {
+  background:#fff;
+  height:50%;
+  width:75%;
+}
+.notes {
+  width:40%;
 }
