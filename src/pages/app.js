@@ -12,7 +12,7 @@ import {
 import PrivateRoute from '../components/Routes/PrivateRoute'
 import PublicRoute from '../components/Routes/PublicRoute'
 import Amplify from 'aws-amplify'
-import config from '../../aws-exports'
+import config from './aws-exports'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 
 const App = () => {
