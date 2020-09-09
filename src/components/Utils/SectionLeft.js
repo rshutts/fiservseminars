@@ -2,7 +2,7 @@ import React from 'react'
 import Iframe from 'react-iframe'
 
 const SectionLeft = () => {
-    if (window.location.href === "http://localhost:3000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
+    if (window.location.href === "http://localhost:8000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
         return (
             <section className="top video">
                 <div>

@@ -1,8 +1,7 @@
 import React from 'react'
-import Nav from '../Nav/Nav'
-import UserNav from '../Nav/UserNav'
+import 'modern-normalize/modern-normalize.css'
+import { Nav, UserNav } from '../Nav'
 import Footer from '../Utils/Footer'
-import '../../scss/styles.scss'
 import '../../App.css'
 
 export function Layout({ children, isUserNav }) {
@@ -19,7 +18,6 @@ export function AppContent({ children }) {
   return (
     <div className="app-content-100">
       <div className="container" style={{ marginTop: 40 }}>{children}</div>
-      <Footer/>
     </div>
   )
 }

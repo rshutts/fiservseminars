@@ -1,10 +1,10 @@
 import React from 'react'
 import { Row, Col } from "reactstrap"
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import Meetings from "../Utils/Meetings"
 
 const SectionRight = () => {
-    if (window.location.href === "http://localhost:3000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
+    if (window.location.href === "http://localhost:8000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
         return (
             <section className="right meetings">
                 <h1>

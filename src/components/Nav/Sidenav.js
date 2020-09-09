@@ -1,11 +1,6 @@
 import React from 'react'
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import { Link } from "gatsby";
 
 function Sidenav() {
     return (

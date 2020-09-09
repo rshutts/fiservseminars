@@ -1,19 +1,19 @@
-import { React, Link } from 'react'
-import { AppContent } from '../Layout'
+import React from 'react'
+import SectionLeft from '../Utils/SectionLeft'
+import SectionRight from '../Utils/SectionRight'
+import Sidenav from '../Nav/Sidenav'
 
 const Home = () => {
   return (
-    <div className="container-login100">
-      <AppContent>
-        <h1>Here's the App Home Page</h1>
-        <p>
-          Since you are now logged in, view your profile: <Link to="/profile">View profile</Link>
-        </p>
-        <p>
-          This starter was built using AWS Amplify. Try it out:{' '}
-          <a href="https://console.amplify.aws">AWS Amplify</a>
-        </p>
-      </AppContent>
+    <div className="wrapper">
+      <div className="navbar sidebar">
+        <Sidenav/>
+      </div>
+      <div className="main-content">
+          <SectionLeft/>
+          <SectionRight/>
+      </div>
+      
     </div>
   )
 }

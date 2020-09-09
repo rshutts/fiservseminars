@@ -1,7 +1,8 @@
-import { React, Link } from 'react'
+import React from 'react'
+import { Link } from 'gatsby'
 import { navigate } from '@reach/router'
 import { Auth } from 'aws-amplify'
-import { AppUser } from '../Forms/Auth'
+import { AppUser } from '../Auth'
 
 function UserNav() {
   const { logout } = AppUser
@@ -29,24 +30,16 @@ function UserNav() {
         </div>
         <div className="navbar-nav-scroll d-flex flex-grow-1" />
         <div className="navbar-nav-scroll">
-          <ul className="navbar-nav bd-navbar-nav flex-row">
-            <li className="nav-item">
-              <Link className="text-center" to="/profile">
-                <p style={{ margin: 0 }} className="nav-link">
-                  Profile
-                </p>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <p
-                onClick={e => logOut(e)}
-                style={{ margin: 0, cursor: 'pointer' }}
-                className="nav-link text-primary"
-              >
-                Logout
-              </p>
-            </li>
-          </ul>
+          <Link className="text-center" to="/profile">
+              Profile
+          </Link>
+          <Link className="text-center" 
+            onClick={e => logOut(e)}
+            style={{ margin: 0, cursor: 'pointer' }}
+            className="nav-link text-primary text-center nav-btn signout"
+          >
+            Logout
+          </Link>
         </div>
       </nav>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby'
 import { navigate } from '@reach/router'
 import { Auth } from 'aws-amplify'
 
-import { AppUser } from '../Forms/Auth'
+import { AppUser } from '../Auth'
 import { AuthForm, Email, Password } from '../Forms'
 
 class SignIn extends React.Component {
@@ -84,7 +84,6 @@ class SignIn extends React.Component {
         <p style={{ marginTop: 40 }} className="text-center">
           No account? <Link to="/signup">Create account</Link>
         </p>
-        <p className="privacy-policy">I agree to the Fiserv privacy policy.</p>
       </AuthForm>
     )
   }

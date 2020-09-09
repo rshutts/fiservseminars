@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect } from '@reach/router'
-import { AppUser } from '../Forms/Auth'
+import { AppUser } from '../Auth'
 import { Layout } from '../Layout'
 
 class PublicRoute extends React.Component {

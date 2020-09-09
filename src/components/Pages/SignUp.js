@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { navigate } from '@reach/router'
-
+import { Link } from 'gatsby'
 import { Auth } from 'aws-amplify'
 import NumberFormat from 'react-number-format'
 

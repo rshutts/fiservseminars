@@ -1,6 +1,7 @@
-import { React, Link } from 'react'
+import React from 'react'
+import { Link } from 'gatsby'
 
-import { getCurrentUser } from '../Forms/Auth/AppUser'
+import { getCurrentUser } from '../Auth/AppUser'
 import { AppContent } from '../Layout'
 
 const Profile = () => {
