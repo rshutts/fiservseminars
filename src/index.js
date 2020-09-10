@@ -6,7 +6,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 import config from './aws-exports'
 import Amplify from 'aws-amplify'
-Amplify.configure(config)
+Amplify.configure({
+    Auth: {
+      region: 'us-east-2',
+      userPoolId: 'us-east-2_XREtl0l2L',
+      userPoolWebClientId: '3bseicdt0snmhkgnuvhtmmic05',
+    },
+  });
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
