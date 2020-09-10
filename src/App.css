@@ -29,7 +29,7 @@ a {
   align-items: center;
   text-align: center;
 }
-a.signin {
+a.signin, a.profile {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
   min-width:100px;
@@ -155,7 +155,12 @@ nav.navbar {
   padding:37px 0 20px 0;
 }   
 .sidebar .sidenav---sidenav---_2tBP {
-  position:sticky;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1006;
+  min-width: 64px;
 }
 .sidenav---navtext---1AE_f {
   visibility: visible !important;
