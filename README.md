@@ -1,80 +1,82 @@
-### This is the React Starter
+# Gatsby Auth starter with AWS Amplify
 
-To view the Vue starter, click [here](https://github.com/aws-samples/aws-amplify-auth-starters/tree/vue).
-
-To view the React Native starter, click [here](https://github.com/aws-samples/aws-amplify-auth-starters/tree/react-native).
-
-# AWS Amplify React Authentication Starter
-
-![](hero.png)
-
-## This project includes:    
+This auth starter implements a basic authentication flow for signing up signing in users as well as protected client side routing using [AWS Amplify](https://amplify.aws). Auth features:
 - User sign up
 - User sign in
-- 2 factor authentication
-- Real world auth flow using React Router
-- Protected routes
-- Redirects for unauthorized users
-- Time-based one time password (TOTP)    
+- Multi-factor Authentication
+- User sign-out
 
-## Getting started    
+![Gatsby Amplify](src/images/gatby-auth.gif)
 
-#### Initial setup
+# Deploy to the Amplify console
 
-1. Make sure you are on a new version of the AWS Amplify CLI to be sure you have multiple environment support.
+Click the button to deploy a fullstack app in your AWS account:
+
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/dabit3/gatsby-auth-starter-aws-amplify)
+
+You can now continuously deploy changes to your frontend or backend and Amplify Console will automatically deploy those changes.
+
+<!-- <img src="https://github.com/swaminator/gatsby-auth-starter-aws-amplify/blob/master/src/images/amplify-console.gif" width="800"/> -->
+![Amplify Console](src/images/amplify-console.gif)
+
+
+# Run locally
+
+1. Create the project
 
 ```sh
-npm install -g @aws-amplify/cli
+gatsby new gatsby-amplify-auth https://github.com/dabit3/gatsby-auth-starter-aws-amplify
 ```
 
-2. clone the project    
+2. Change into the new directory
 
 ```sh
-git clone https://github.com/aws-samples/aws-amplify-auth-starters.git
+cd gatsby-amplify-auth
 ```
 
-3. Check out the React branch
+3. Change into the new directory
 
 ```sh
-git checkout react
-```
-
-4. install dependencies using npm or yarn    
-
-```sh
+yarn
+# or
 npm install
 ```
 
-5. Start project    
+4. Install & configure the AWS Amplify CLI.
 
 ```sh
-npm start
+npm install -g @aws-amplify/cli
+
+amplify configure
 ```
 
-#### Setting up back end AWS services
+> To see a video of how to configure the CLI, click [here](https://www.youtube.com/watch?v=fWbM5DLh25U)
 
-If you do not have your AWS services already created, follow these steps. If you already have your services set up, just configure your aws-exports.js file.    
+5. Create a new AWS Amplify Project
 
-1. From the root of the project, initialize the Amplify project    
-
-```sh
+```
 amplify init
 ```
 
-2. Create the resources in your account
+> Here, walk through the following steps:
+
+- Enter a name for the project __YOURPROJECTNAME__
+- Enter a name for the environment __master__
+- Choose your default editor: __Visual Studio Code__ (or your editor of choice)
+- Choose the type of app that you're building __javascript__
+- What javascript framework are you using __react__
+- Source Directory Path: __src__
+- Distribution Directory Path: __public__
+- Build Command: __npm run-script build__
+- Start Command: __npm run-script develop__
+
+6. Push the updated project configuration to AWS. It will deploy a CloudFormation template that has an Amazon Cognito resource that enables user authentication.
 
 ```sh
 amplify push
 ```
 
-#### Enabling MFA
-
-1. Visit the [Amazon Cognito User Pool Dashboard](https://console.aws.amazon.com/cognito/users) & click on your user pool.
-
+7. Then you can run it by:
 ```sh
-amplify console auth
+gatsby develop
 ```
-
-2. Click on MFA & verifications
-
-3. Do you want to enable Multi-Factor Authentication (MFA)? __Optional__

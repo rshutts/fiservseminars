@@ -1,6 +1,6 @@
 import React from 'react'
 import SideNav, { NavItem, NavIcon } from '@trendmicro/react-sidenav';
-import { Link } from "react-router-dom"
+import { Link } from "gatsby"
 
 function Sidenav() {
     return (
@@ -17,22 +17,17 @@ function Sidenav() {
                 </NavItem>
                 <NavItem>
                     <NavIcon>
-                        <Link className="sidebar-nav-link" to="/calendar"><i className="fa fa-fw fa-calendar" style={{ fontSize: '1.75em' }} />Calendar</Link>
+                        <Link className="sidebar-nav-link" to="/app/calendar"><i className="fa fa-fw fa-calendar" style={{ fontSize: '1.75em' }} />Calendar</Link>
                     </NavIcon>
                 </NavItem>
                 <NavItem>
                     <NavIcon>
-                        <Link className="sidebar-nav-link" to="/chat"><i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat</Link>
+                        <Link className="sidebar-nav-link" to="/app/chat"><i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat</Link>
                     </NavIcon>
                 </NavItem>
                 <NavItem>
                     <NavIcon>
-                        <Link className="sidebar-nav-link" to="/meetings"><i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />Meetings</Link>
-                    </NavIcon>
-                </NavItem>
-                <NavItem>
-                    <NavIcon>
-                        <Link className="sidebar-nav-link" to="/profile"><i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />Profile</Link>
+                        <Link className="sidebar-nav-link" to="/app/meetings"><i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />Meetings</Link>
                     </NavIcon>
                 </NavItem>
                 <NavItem eventKey="/search">

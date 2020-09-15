@@ -1,0 +1,17 @@
+type Note @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  note: String!
+}
+
+type User @model {
+  Created: String
+  address: String!
+  email: String!
+  given_name: String!
+  id: ID
+  locale: String!
+  middle_name: String!
+  name: String!
+  nickname: String!
+  username: String
+}

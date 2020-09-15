@@ -1,19 +1,14 @@
 import React from 'react'
 import { Row, Col } from "reactstrap"
-import { Link } from "react-router-dom"
-import Meetings from "../components/Meetings"
+import { Link } from "gatsby"
+import Meetings from "./meetings"
+import Notes from '../components/notes'
 
 const SectionRight = () => {
-    if (window.location.href === "http://localhost:3000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
+    if (window.location.href === "http://localhost:8000/app/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
         return (
             <section className="right meetings">
-                <h1>
-                    Notes
-                </h1>
-               <textarea className="meetingNotes">
-                    
-                </textarea>
-                <Link className="note-save">Save Notes</Link> 
+                <Notes/>
             </section>
         )
     } else {

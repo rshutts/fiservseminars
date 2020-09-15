@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "SeminarAppAPI",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito704b3e59",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-my-aws-project-master-225259-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/b807550886bf0919764aecda30ed6376263ab65e"
+}

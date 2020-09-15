@@ -2,12 +2,12 @@ import React from 'react'
 import Iframe from 'react-iframe'
 
 const SectionLeft = () => {
-    if (window.location.href === "http://localhost:3000/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
+    if (window.location.href === "http://localhost:8000/app/meetings" || window.location.href === "https://test.fiservseminars.com/meetings") {
         return (
-            <section className="top video">
+            <section className="left meetings">
                 <div>
                     <h1>
-                        Live Video Feed
+                        Video Feed
                     </h1>
                     <Iframe url="https://www.youtube.com/embed/28MfzZ1mtF4"
                         width="560px"
@@ -16,8 +16,16 @@ const SectionLeft = () => {
                         className="myClassname"
                         display="initial"
                         position="relative"/>
-                    </div>    
-            </section> 
+                    </div> 
+                <div className="chat">
+                    <h1>
+                        Live Chat
+                    </h1>
+                    <div className="chat-window">
+                </div>
+            </div>   
+            </section>
+            
         ) 
     } else {
         return (

@@ -1,19 +1,19 @@
 {
-    "test": {
+    "master": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-fullsite-test-152018-authRole",
-            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-fullsite-test-152018-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-fullsite-test-152018-authRole",
+            "AuthRoleName": "amplify-my-aws-project-master-225259-authRole",
+            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-my-aws-project-master-225259-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-my-aws-project-master-225259-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "amplify-fullsite-test-152018-deployment",
-            "UnauthRoleName": "amplify-fullsite-test-152018-unauthRole",
-            "StackName": "amplify-fullsite-test-152018",
-            "StackId": "arn:aws:cloudformation:us-east-2:076005434014:stack/amplify-fullsite-test-152018/b88508e0-ed59-11ea-a18a-0a9c3780d6ee",
-            "AmplifyAppId": "d2cz4tr2gwffkn"
+            "DeploymentBucketName": "amplify-my-aws-project-master-225259-deployment",
+            "UnauthRoleName": "amplify-my-aws-project-master-225259-unauthRole",
+            "StackName": "amplify-my-aws-project-master-225259",
+            "StackId": "arn:aws:cloudformation:us-east-2:076005434014:stack/amplify-my-aws-project-master-225259/746766e0-f4ab-11ea-9745-028066a75908",
+            "AmplifyAppId": "d21jzt4os2u7hx"
         },
         "categories": {
             "auth": {
-                "fullsitea07daf62": {}
+                "cognito704b3e59": {}
             }
         }
     }

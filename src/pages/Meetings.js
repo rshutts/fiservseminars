@@ -1,6 +1,6 @@
 import React from 'react'
 import SectionLeft from '../components/SectionLeft'
-import SectionBottom from '../components/SectionBottom'
+import SectionRight from '../components/SectionRight'
 import Sidenav from '../components/Sidenav'
 
 const Meetings = () => {
@@ -9,9 +9,9 @@ const Meetings = () => {
         <div className="navbar sidebar">
             <Sidenav/>
         </div>
-        <div className="main-content meetings">   
+        <div className="main-content">   
             <SectionLeft/>    
-            <SectionBottom/>
+            <SectionRight/>
         </div>
     </div>
   )

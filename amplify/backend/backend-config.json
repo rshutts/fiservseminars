@@ -1,10 +1,25 @@
 {
-	"auth": {
-		"fullsitea07daf62": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [],
-			"customAuth": false
-		}
-	}
+    "auth": {
+        "cognito704b3e59": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "api": {
+        "SeminarAppAPI": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authcognito704b3e59"
+                        }
+                    },
+                    "additionalAuthenticationProviders": []
+                }
+            }
+        }
+    }
 }
