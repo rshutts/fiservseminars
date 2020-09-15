@@ -28,4 +28,17 @@ const Profile = () => {
   )
 }
 
-export default Profile
+const rowStyle = {
+  display: 'flex',
+  alignItems: 'center',
+};
+const h1style = {
+  margin: '5px',
+};
+const h2style = {
+  paddingLeft: '5px',
+  color: 'white',
+  margin: '2px',
+};
+
+export default Profile;
