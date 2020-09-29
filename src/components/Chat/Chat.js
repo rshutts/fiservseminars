@@ -13,15 +13,21 @@ const ENDPOINT = 'https://fiserv-chat-server.herokuapp.com/';
 
 let socket;
 
-const Chat = ({ location }) => {
-  const { user } = useAuth0();
+const Chat = () => {
+  let { user } = useAuth0();
   console.log(user);
-  const name = `${user.nickname}`;
+  let name = `${user.nickname}`;
+  const bankName = `${user[`https://fiservseminars.com/bank_name`]}`;
   const room = 'Fiserv Seminar';
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-
+  console.log(bankName);
+  if (bankName === 'Fiserv') {
+    name = `${user.nickname} - Fiserv`;
+  } else {
+    name = `${user.nickname}`;
+  }
   useEffect(() => {
     socket = io(ENDPOINT);
 
@@ -49,11 +55,12 @@ const Chat = ({ location }) => {
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   };
-
+  console.log(messages);
   return (
     <div className='outerContainer'>
       <div className='container'>
         {/* <InfoBar room={room} /> */}
+
         <Messages messages={messages} name={name} />
         <Input
           message={message}
