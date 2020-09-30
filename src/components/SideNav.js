@@ -25,6 +25,7 @@ function Sidenav() {
             </Link>
           </NavIcon>
         </NavItem>
+        {isAuthenticated && (
         <NavItem id='sidenav-item'>
           <NavIcon>
             <a
@@ -40,6 +41,7 @@ function Sidenav() {
             </a>
           </NavIcon>
         </NavItem>
+        )}
         {/* <NavItem>
                     <NavIcon>
                         <Link className="sidebar-nav-link" to="/chat"><i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat</Link>
@@ -53,7 +55,7 @@ function Sidenav() {
                 to={`/meetings?name=${user.nickname}&room=Fiserv`}
               >
                 <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />
-                Meetings
+                Learning Sessions
               </Link>
             </NavIcon>
           </NavItem>
@@ -99,6 +101,7 @@ function Sidenav() {
             </NavIcon>
           </NavItem>
         )}
+        {isAuthenticated && (
         <NavItem id='sidenav-item'>
           <NavIcon>
             <Link className='sidebar-nav-link' to='/profile'>
@@ -107,6 +110,7 @@ function Sidenav() {
             </Link>
           </NavIcon>
         </NavItem>
+        )}
         {/* <NavItem id="sidenav-item" eventKey="/search">
                     <NavIcon>
                         <i className="fa fa-fw fa-search" style={{ fontSize: '1.75em' }} />Search

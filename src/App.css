@@ -96,6 +96,11 @@ h2.section-header {
   border-bottom: solid 1px #ccc;
   margin-bottom:10px;
 }
+h2.agenda-subheader {
+  font-size:14px;
+  font-weight:bold;
+  padding: 0px 20px;
+}
 .seminar-container h2 {
   margin-bottom:1em;
 }
@@ -125,6 +130,26 @@ h6 {
   padding:0;
 }
 
+.page-title {
+  color: #ff6600;
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  width: fit-content;
+  padding: 10px 20px 10px 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  font-weight:bold;
+}
+.page-title i {
+  margin-right: 10px;
+}
+.page-title.meetings {
+  position: relative;
+}
 .nav-container {
   width: 100%;
   background: #fff;
@@ -289,6 +314,14 @@ h6 {
     border-left: 10px solid #f60;
     margin: 2% 0;
 }
+.meetings-container {
+  background: rgba(255,255,255,.6);
+  width: 90%;
+}
+.meetings-sections {
+  display: flex;
+  flex-direction: row;
+}
 .left {
     background: #fff;
     width: 60%;
@@ -297,13 +330,11 @@ h6 {
     margin: 3% 2% 0;
     display: inline-block;
 }
-
 .right {
   background: transparent;
   width: 30%;
   height: 100%;
 }
-
 .right.meetings {
   margin: 3% 2% 0;
 }
@@ -394,10 +425,20 @@ h6 {
   border-color:rgb(102,153,204);
   color:#fff;
  }
+
+ /*Chat*/
+ .chat {
+   margin-top:10px;
+ }
+ .chat-row {
+  justify-content: flex-start;
+}
  .nav-item.dropdown .dropdown-menu {
    right:0;
    left:unset;
  }
+
+ /*UI Overrides*/
  .ui.padded.two.column.grid {
    background:rgba(255,255,255,.6);
    width: 90%;
@@ -406,9 +447,64 @@ h6 {
   margin-left:0;
   margin-right:0;
   justify-content: space-around;
+  padding-top:10px;
+}
+.ui.padded.four.column.grid {
+  background: rgba(255,255,255,.6);
+  width: 90%;
+}
+.ui.padded.four.column.grid .row {
+  display: flex;
+  justify-content: space-evenly;
 }
 .ui.padded.two.column.grid .row .column {
   padding:10px;
+}
+.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL {
+  color:#fff !important;
+  font-size:14px;
+  font-family:Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL:hover {
+  color:#fff;
+  opacity:0.7;
+  background:none;
+}
+.buttons---dropdown-toggle---vMtjL.buttons---btn---2jZHN {
+  padding-right:11px;
+}
+
+.ui.card {
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items:center;
+  border:none;
+  height:fit-content;
+}
+.ui.card .content {
+  width:100%;
+}
+.article-block {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width:90%;
+}
+.article-block .ui.card {
+  width: 25%;
+  padding: 10px;
+  margin: 10px;
+}
+.card-header {
+  color:#2e8bca;
+  font-size:22px;
+  font-weight: normal;
+}
+.card-description {
+  padding:5px;
 }
 .next-steps h2 {
   margin-bottom:0;
@@ -416,8 +512,14 @@ h6 {
 .video-description {
   width: 100%;
   max-width: 450px;
+  padding:10px;
 }
-
+.video-description .header {
+  padding:5px 10px;
+}
+.video-cards {
+  border-radius:0;
+}
 .resource-flyout {
   display:inline;
 }
@@ -462,47 +564,6 @@ span.dropdown---caret---3CkEt {
   border:none;
   margin-top:-10px;
 }
-.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL {
-  color:#fff !important;
-  font-size:14px;
-  font-family:Helvetica, Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL:hover {
-  color:#fff;
-  opacity:0.7;
-  background:none;
-}
-.buttons---dropdown-toggle---vMtjL.buttons---btn---2jZHN {
-  padding-right:11px;
-}
-
-.ui.card {
-  justify-content: space-evenly;
-  flex-direction: row;
-  align-items:center;
-  border:none;
-  height:fit-content;
-}
-.article-block {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-.article-block .ui.card {
-  width:40%;
-  padding:10px;
-}
-.card-header {
-  color:#2e8bca;
-  font-size:22px;
-  font-weight: normal;
-}
-.card-description {
-  padding:5px;
-}
 .meeting-video {
   padding-bottom: 10px;
   display: flex;
@@ -511,6 +572,5 @@ span.dropdown---caret---3CkEt {
   align-self: center;
 }
 .greetings img {
-  max-width:680px;
   width:100%;
 }

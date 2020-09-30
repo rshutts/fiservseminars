@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import Iframe from 'react-iframe';
-import Chat from '../components/Chat/Chat';
-import MeetingVideo from '../components/MeetingVideo/MeetingVideo';
+
 
 class Left extends Component {
   render() {
-    if (
-      window.location.href === 'http://localhost:3000/home' ||
-      window.location.href === 'http://localhost:3000/' ||
-      window.location.href === 'https://test.fiservseminars.com/home' ||
-      window.location.href === 'https://test.fiservseminars.com/' ||
-      window.location.href === 'https://master.dorsxmbom1bqx.amplifyapp.com/' ||
-      window.location.href ===
-        'https://master.dorsxmbom1bqx.amplifyapp.com/home'
-    ) {
       return (
         <section className='left'>
           <div>
@@ -49,21 +39,7 @@ class Left extends Component {
           </div>
         </section>
       );
-    } else {
-      return (
-        <section className='left meetings'>
-          <div className='meeting-video'>
-            <h1>Video</h1>
-             <MeetingVideo/>
-          </div>
-          <div className='chat'>
-            <h1>Chat</h1>
-            <Chat />
-          </div>
-        </section>
-      );
     }
-  }
 }
 
 export default Left;

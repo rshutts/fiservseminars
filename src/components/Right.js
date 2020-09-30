@@ -23,6 +23,7 @@ class Right extends Component{
         <h1>
             Agenda
         </h1>
+        <h2 className="agenda-subheader">All times are CST</h2>
     
       <Accordion fluid styled>
         <Accordion.Title
