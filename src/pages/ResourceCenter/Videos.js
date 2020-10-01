@@ -7,6 +7,8 @@ import IdeaPortal from "../../components/Videos/IdeaPortal";
 import Contactless from "../../components/Videos/Contactless";
 import Cloud from "../../components/Videos/Cloud";
 import AI from "../../components/Videos/AI";
+import ATM from "../../components/Videos/ATM";
+import ImpactSolutions from "../../components/Videos/ImpactSolutions";
 
 const Videos = () => (
     <Fragment>
@@ -86,7 +88,7 @@ const Videos = () => (
                         </Card>
                     </Grid.Column>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/ATM+Managed+Services+-+The+ATM+Channel+in+the+New+Normal.mp4' width='450px' height='300px' controls='true'/>
+                        <ATM/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
@@ -99,7 +101,7 @@ const Videos = () => (
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Impactful+Solutions+for+Today%E2%80%99s+Ecosystem.mp4' width='450px' height='300px' controls='true'/>
+                        <ImpactSolutions/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">

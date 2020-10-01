@@ -5,8 +5,7 @@ class IdeaPortal extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Idea+Portal.mp4",
-            poster: "http://www.example.com/path/to/video_poster.jpg"
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Idea+Portal.mp4"
         }
     }
  

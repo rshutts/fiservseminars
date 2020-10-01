@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VideoPlayer from 'react-video-js-player';
  
-class AI extends Component {
+class ATM extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Demystifying+AI+What+Is+It+and+How+Will+It+Impact+the+Future.mp4"
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/ATM+Managed+Services+-+The+ATM+Channel+in+the+New+Normal.mp4"
         }
     }
  
@@ -59,4 +59,4 @@ class AI extends Component {
         );
     }
 }
-export default AI;
+export default ATM;
