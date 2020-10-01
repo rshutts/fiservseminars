@@ -2,6 +2,11 @@ import React, { Fragment } from "react";
 import { Card, Grid, Header, Image  } from 'semantic-ui-react'
 import ReactPlayer from 'react-player'
 import CustomSidenav from '../../components/SideNav'
+import Abiliti from '../../components/Videos/Abiliti'
+import IdeaPortal from "../../components/Videos/IdeaPortal";
+import Contactless from "../../components/Videos/Contactless";
+import Cloud from "../../components/Videos/Cloud";
+import AI from "../../components/Videos/AI";
 
 const Videos = () => (
     <Fragment>
@@ -14,7 +19,7 @@ const Videos = () => (
                 </Header>
                 <Grid.Row>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/Idea+Portal.mp4' width='450px' height='300px' controls='true'/>
+                        <IdeaPortal/>
                             <Card className="video-cards">
                                 <Card.Content>
                                     <div className="video-description">
@@ -25,7 +30,7 @@ const Videos = () => (
                             </Card>
                     </Grid.Column>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/Abiliti.mp4' width='450px' height='300px' controls='true'/>
+                        <Abiliti/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
@@ -38,7 +43,7 @@ const Videos = () => (
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/Contactless+Payment+Cards.mp4' width='450px' height='300px' controls='true'/>
+                        <Contactless/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
@@ -49,7 +54,7 @@ const Videos = () => (
                         </Card>
                     </Grid.Column>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/Cloud.mp4' width='450px' height='300px'  controls='true'/>
+                        <Cloud/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
@@ -70,7 +75,7 @@ const Videos = () => (
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column width={8}>
-                        <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Videos/Demystifying+AI+What+Is+It+and+How+Will+It+Impact+the+Future.mp4' width='450px' height='300px' controls='true'/>
+                        <AI/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
@@ -111,7 +116,7 @@ const Videos = () => (
                             </Card.Content>
                         </Card>
                     </Grid.Column>
-                    <Grid.Column width={8}>
+                    {/* <Grid.Column width={8}>
                         <ReactPlayer url='https://fiservseminars-media.s3.amazonaws.com/Impactful+Solutions+for+Today%E2%80%99s+Ecosystem.mp4' width='450px' height='300px' controls='true'/>
                         <Card className="video-cards">
                             <Card.Content>
@@ -124,7 +129,7 @@ const Videos = () => (
                                 </div>
                             </Card.Content>
                         </Card>
-                    </Grid.Column>
+                    </Grid.Column> */}
                 </Grid.Row>
             </Grid>
         </div>

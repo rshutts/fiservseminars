@@ -337,6 +337,8 @@ h6 {
 }
 .right.meetings {
   margin: 3% 2% 0;
+  padding: 1% 2%;
+  background:#fff;
 }
 /*Footer*/
 .footer {
@@ -574,3 +576,23 @@ span.dropdown---caret---3CkEt {
 .greetings img {
   width:100%;
 }
+
+.article-block .ui.card.survey-card {
+  width:60%;
+}
+.ui.card.survey-card .header.card-header {
+  text-align:center;
+}
+.survey-descriptions {
+  display: flex;
+  flex-direction: row;
+  padding:5px;
+}
+.survey-descriptions .description {
+  width:50%;
+}
+/* .live-video-session .video-js {
+  width:100%;
+  max-width:860px;
+  height:420px;
+} */

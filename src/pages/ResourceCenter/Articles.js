@@ -14,6 +14,27 @@ const Articles = () => {
                 </Header>
                 <Grid.Row>
                     <Grid.Column className="article-block">
+                        <Card className="survey-card">
+                            <Card.Content>
+                                <Card.Header className="card-header">Surveys</Card.Header>
+                                <div className="survey-descriptions">
+                                    <Card.Description>
+                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u" target="_blank" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Survey</a>
+                                        <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u</p>
+                                        <p><b>Note: The survey is available now.</b></p>
+                                    </Card.Description>
+                                    <Card.Description>
+                                        <a href="https://s2.userzoom.com/f/finallinks.aspx?s=C513S365&t=q&p=2" target="_blank" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Usability Study</a>
+                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/m/MiBDNTEzUzM2NSAg</p>
+                                        <p><b>Note: The usability study will go live on Monday October 5, 2020 and close after the end of the day Friday October 16, 2020.</b></p>
+                                    </Card.Description> 
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column className="article-block">
                         <Card>
                             <Card.Content>
                             <Card.Header className="card-header">User Defined Options Tips & Tricks</Card.Header>
@@ -180,22 +201,6 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Deposit & Operations 2020.1 & 2020.2 PPT</Card.Header>
-                                <Card.Description>
-                                    <ul>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionLoans2020.2&2020.3.pdf" target="_blank">Precision Loans 2020.2 & 2020.3 PPT</a>
-                                        </li>
-                                    </ul>
-                                </Card.Description>
-                            </Card.Content>
-                        </Card>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column className="article-block">
-                        <Card>
-                            <Card.Content>
                                 <Card.Header className="card-header">Contactless Assets</Card.Header>
                                 <Card.Description>
                                     <ul>
@@ -212,6 +217,11 @@ const Articles = () => {
                                 </Card.Description>
                             </Card.Content>
                         </Card>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column className="article-block">
+                        
                         <Card>
                             <Card.Content>
                                 <Card.Header className="card-header">Source Advantage</Card.Header>
@@ -260,18 +270,20 @@ const Articles = () => {
                                 </Card.Description>
                             </Card.Content>
                         </Card>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column className="article-block">
                         <Card>
                             <Card.Content>
                                 <Card.Header className="card-header">Commercial Print and Direct Marketing Services</Card.Header>
-                                <Card.Description><a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/commercial-printing-and-production.html" target="_blank">Commercial Printing and Production Brochure</a></Card.Description>
+                                <Card.Description>
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/commercial-printing-and-production.html" target="_blank">Commercial Printing and Production Brochure</a>
+                                        </li>
+                                    </ul>    
+                                </Card.Description>
                             </Card.Content>
-                        </Card>  
+                        </Card> 
                     </Grid.Column>
-                </Grid.Row>  
+                </Grid.Row> 
             </Grid>
             </div>
         </div>

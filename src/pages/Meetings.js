@@ -23,12 +23,12 @@ const Meetings = () => (
                 <MeetingVideo/>
               </div>
               <div className='chat'>
-                <h1>Chat</h1>
-                <Chat />
+                <Notes />
               </div>
             </section>
             <section className="right meetings">
-                <Notes />
+            <h1>Chat</h1>
+                <Chat />
             </section>
           </div>
           

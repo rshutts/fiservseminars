@@ -35,8 +35,7 @@ const NavBar = () => {
       <Navbar color='light' light expand='md'>
         <nav className='navbar navbar-expand announcement'>
           <p>
-            UPCOMING MEETING: Deposit Parameters Review.{' '}
-            <a href='/meetings'>Grab a seat in the Virtual Classroom</a>
+            If you have any questions regarding the event, email us at <a href='mailto:eductationseminars@fiserv.com'>eductationseminars@fiserv.com</a>
           </p>
         </nav>
         <Container>
