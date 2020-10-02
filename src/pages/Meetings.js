@@ -21,7 +21,7 @@ const Meetings = () => (
             <section className='left meetings'>
               <div className='meeting-video'>
                 <h1>Video</h1>
-                  {/* <LiveVideo/> */}
+                  <LiveVideo/>
               </div>
               <div className='chat'>
                 <Notes />
