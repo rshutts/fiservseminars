@@ -40,6 +40,7 @@ function LiveVideo(options) {
                 ref={videoEl}
                 playsInline
                 autoPlay
+                onLoad
                 height={400}
                 width={700}
                 controls
