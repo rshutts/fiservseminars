@@ -591,6 +591,10 @@ span.dropdown---caret---3CkEt {
 .survey-descriptions .description {
   width:50%;
 }
+
+.vjs-big-play-button {
+  display: none !important;
+}
 /* .live-video-session .video-js {
   width:100%;
   max-width:860px;

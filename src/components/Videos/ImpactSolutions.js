@@ -5,7 +5,8 @@ class ImpactSolutions extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Impactful+Solutions+for+Today%E2%80%99s+Ecosystem.mp4"
+            src: "https://fiservseminars-media.s3.amazonaws.com/Impactful+Solutions+for+Today%E2%80%99s+Ecosystem.mp4",
+            poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
  

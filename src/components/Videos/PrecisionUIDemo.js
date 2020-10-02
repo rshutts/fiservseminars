@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VideoPlayer from 'react-video-js-player';
  
-class ATM extends Component {
+class PrecisionUIDemo extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/ATM+Managed+Services+-+The+ATM+Channel+in+the+New+Normal.mp4",
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Precision+UI+Demo+(2).mp4",
             poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
@@ -60,4 +60,4 @@ class ATM extends Component {
         );
     }
 }
-export default ATM;
+export default PrecisionUIDemo;

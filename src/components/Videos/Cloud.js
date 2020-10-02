@@ -5,7 +5,8 @@ class Cloud extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Cloud.mp4"
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Cloud.mp4",
+            poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
  

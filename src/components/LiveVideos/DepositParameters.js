@@ -6,7 +6,7 @@ class DepositParameters extends Component {
     state = {
         video: {
             src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Meetings/Deposit-Parameter-Review.mp4",
-            poster: "http://www.example.com/path/to/video_poster.jpg"
+            poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
  

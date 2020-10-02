@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VideoPlayer from 'react-video-js-player';
  
-class ATM extends Component {
+class Threats extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/ATM+Managed+Services+-+The+ATM+Channel+in+the+New+Normal.mp4",
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Threats+From+Beyond+Your+Four+Walls+An+Intelligence-Based+Approach+To+Reducing+Your+Third-Party+Cyber+Risk-20200812+1802-1+(1).mp4",
             poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
@@ -60,4 +60,4 @@ class ATM extends Component {
         );
     }
 }
-export default ATM;
+export default Threats;

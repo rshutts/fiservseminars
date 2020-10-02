@@ -9,6 +9,8 @@ import Cloud from "../../components/Videos/Cloud";
 import AI from "../../components/Videos/AI";
 import ATM from "../../components/Videos/ATM";
 import ImpactSolutions from "../../components/Videos/ImpactSolutions";
+import PrecisionUIDemo from "../../components/Videos/PrecisionUIDemo";
+import Threats from "../../components/Videos/Threats";
 
 const Videos = () => (
     <Fragment>
@@ -19,30 +21,32 @@ const Videos = () => (
                 <Header as='h2' className="header page-title">
                     <i className='fa fa-fw fa-video' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Resource Center: OnDemand
                 </Header>
+                {/* /*Row 1*/}
                 <Grid.Row>
                     <Grid.Column width={8}>
-                        <IdeaPortal/>
-                            <Card className="video-cards">
-                                <Card.Content>
-                                    <div className="video-description">
-                                        <Card.Header className="card-header">A New and Better Way to Submit Precision® Enhancement Ideas</Card.Header>
-                                        <Card.Meta className="card-description">Fiserv is dedicated to delivering solutions that enhance the client experience and enable your financial institution to achieve best-in-class results. Identifying improvements that enable our client community to take advantage of market opportunities and solve business challenges is an integral part of our market-focused approach. We regularly collect ideas for system enhancements from numerous sources and conduct extensive review processes to uncover prevailing or changing trends.</Card.Meta>
-                                    </div>
-                                </Card.Content>
-                            </Card>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Abiliti/>
+                        <PrecisionUIDemo/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
-                                    <Card.Header className="card-header">Abiliti</Card.Header>
-                                    <Card.Meta className="card-description">Fiserv is dedicated to delivering solutions that enhance the client experience and enable your financial institution to achieve best-in-class results. Identifying improvements that enable our client community to take advantage of market opportunities and solve business challenges is an integral part of our market-focused approach. We regularly collect ideas for system enhancements from numerous sources and conduct extensive review processes to uncover prevailing or changing trends.</Card.Meta>
+                                    <Card.Header className="card-header">Precision UI Demo</Card.Header>
+                                    <Card.Meta className="card-description">Fiserv is currently updating the aesthetics and user experience of the Precision software.  The primary component of this initiative is moving from the desktop application to a browser based product.  The first phase of this transition involves enhancing our search & customer profile views.  Please take a moment to review the Precision demo.</Card.Meta>
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <IdeaPortal/>
+                        <Card className="video-cards">
+                            <Card.Content>
+                                <div className="video-description">
+                                    <Card.Header className="card-header">A New and Better Way to Submit Precision® Enhancement Ideas</Card.Header>
+                                    <Card.Meta className="card-description">Fiserv is dedicated to delivering solutions that enhance the client experience and enable your financial institution to achieve best-in-class results. Identifying improvements that enable our client community to take advantage of market opportunities and solve business challenges is an integral part of our market-focused approach. We regularly collect ideas for system enhancements from numerous sources and conduct extensive review processes to uncover prevailing or changing trends.<p><a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IdeaPortal_UserGuide.pdf" target="_blank" rel="noopener noreferrer">Idea Portal User Guide</a></p></Card.Meta>
                                 </div>
                             </Card.Content>
                         </Card>
                     </Grid.Column>
                 </Grid.Row>
+                {/* /*Row 12*/}
                 <Grid.Row>
                     <Grid.Column width={8}>
                         <Contactless/>
@@ -55,6 +59,52 @@ const Videos = () => (
                             </Card.Content>
                         </Card>
                     </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Threats/>
+                        <Card className="video-cards">
+                            <Card.Content>
+                                <div className="video-description">
+                                <Card.Header className="card-header">Threats From Beyond Your Four Walls An Intelligence-Based Approach To Reducing Your Third-Party Cyber Risk</Card.Header>
+                                <Card.Meta className="card-description">Outsourcing critical business systems and services is one of the fastest-growing security risks to an organization's sensitive data. In fact, according to a <a href="https://www.businesswire.com/news/home/20181115005665/en/Opus-Ponemon-Institute-Announce-Results-of-2018-Third-Party-Data-Risk-Study-59-of-Companies-Experienced-a-Third-Party-Data-Breach-Yet-Only-16-Say-They-Effectively-Mitigate-Third-Party-Risks" target="_blank" rel="noopener noreferrer">Ponemon study</a>, 61% of all data breaches in 2019 involved third-party vendors. Surprisingly, most organizations are solely focused on internal cybersecurity controls without keeping an eye on risks from outside their four walls. During this webinar, our cybersecurity experts discuss:
+                                    <ul>
+                                        <li>A process for determining cyber risks for your entire third-party ecosystem</li>
+                                        <li>What an effective third-party cyber risk program looks like</li>
+                                        <li>Why a point-in-time cyber risk approach is no longer sufficient </li>
+                                        <li>How a robust third-party cyber risk solution will help your overall vendor risk program</li>
+                                    </ul>
+                                </Card.Meta> 
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                </Grid.Row>
+                {/* /*Row 3*/}
+                <Grid.Row>
+                    <Grid.Column width={8}>
+                        <Abiliti/>
+                        <Card className="video-cards">
+                            <Card.Content>
+                                <div className="video-description">
+                                    <Card.Header className="card-header">Abiliti</Card.Header>
+                                    <Card.Meta className="card-description">Fiserv is dedicated to delivering solutions that enhance the client experience and enable your financial institution to achieve best-in-class results. Identifying improvements that enable our client community to take advantage of market opportunities and solve business challenges is an integral part of our market-focused approach. We regularly collect ideas for system enhancements from numerous sources and conduct extensive review processes to uncover prevailing or changing trends.</Card.Meta>
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <AI/>
+                        <Card className="video-cards">
+                            <Card.Content>
+                                <div className="video-description">
+                                <Card.Header className="card-header">Demystifying AI: What Is It and How Will It Impact the Future?</Card.Header>
+                                <Card.Meta className="card-description">Do consumers need to be experts at math, money and data to manage their personal finances well? No, but it may sometimes seem that way to those overwhelmed by finances. Join us to explore how artificial intelligence (AI) technology can help your financial institution deliver a more intuitive consumer experience that helps people live more financially healthy lives</Card.Meta> 
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                </Grid.Row>
+                {/* /*Row 4*/}
+                <Grid.Row>
                     <Grid.Column width={8}>
                         <Cloud/>
                         <Card className="video-cards">
@@ -74,19 +124,6 @@ const Videos = () => (
                             </Card.Content>
                         </Card>
                     </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={8}>
-                        <AI/>
-                        <Card className="video-cards">
-                            <Card.Content>
-                                <div className="video-description">
-                                <Card.Header className="card-header">Demystifying AI: What Is It and How Will It Impact the Future?</Card.Header>
-                                <Card.Meta className="card-description">Do consumers need to be experts at math, money and data to manage their personal finances well? No, but it may sometimes seem that way to those overwhelmed by finances. Join us to explore how artificial intelligence (AI) technology can help your financial institution deliver a more intuitive consumer experience that helps people live more financially healthy lives</Card.Meta> 
-                                </div>
-                            </Card.Content>
-                        </Card>
-                    </Grid.Column>
                     <Grid.Column width={8}>
                         <ATM/>
                         <Card className="video-cards">
@@ -98,8 +135,6 @@ const Videos = () => (
                             </Card.Content>
                         </Card>
                     </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
                     <Grid.Column width={8}>
                         <ImpactSolutions/>
                         <Card className="video-cards">
@@ -126,7 +161,7 @@ const Videos = () => (
                                 <Card.Header className="card-header">Idea Portal</Card.Header>
                                 <Card.Meta className="card-description">In today’s environment, meeting customer needs has never been more important.  Fiserv is committed to helping our clients navigate a changing world. We’re all experiencing unprecedented disruption in the way we live and work. Servicing your accountholders in a time of crisis and having the right tools to do so is of utmost importance. 
                                 During this session we’ll discuss:
-                                <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IdeaPortal_UserGuide.pdf" target="_blank">Idea Portal User Guide</a>
+                                <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IdeaPortal_UserGuide.pdf" target="_blank" rel="noopener noreferrer">Idea Portal User Guide</a>
                                 </Card.Meta> 
                                 </div>
                             </Card.Content>

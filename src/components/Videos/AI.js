@@ -5,7 +5,8 @@ class AI extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Demystifying+AI+What+Is+It+and+How+Will+It+Impact+the+Future.mp4"
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Demystifying+AI+What+Is+It+and+How+Will+It+Impact+the+Future.mp4",
+            poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
  
