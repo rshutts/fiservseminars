@@ -27,7 +27,7 @@ class Right extends Component{
     
       <Accordion fluid styled>
         <Accordion.Title
-          active={activeIndex === 0}
+          active={activeIndex === 1}
           index={0}
           onClick={this.handleClick}
         >
@@ -35,7 +35,7 @@ class Right extends Component{
             Day 1 <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Deposit Parameters Review
             </h3>
@@ -43,7 +43,7 @@ class Right extends Component{
                 @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 User Defined Options: Tips and Tricks
             </h3>
@@ -51,7 +51,7 @@ class Right extends Component{
                 @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Online Posting Features
             </h3>
@@ -59,7 +59,7 @@ class Right extends Component{
                 @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Precision 2020.1 and 2020.2 Deposits & Other
             </h3>
@@ -68,7 +68,7 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 1}
+          active={activeIndex === 0}
           index={1}
           onClick={this.handleClick}
         >
@@ -76,7 +76,7 @@ class Right extends Component{
           Day 2 <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
         <h3 className="meetingTitle">
                                                 Loan Parameters
                                             </h3>
@@ -84,7 +84,7 @@ class Right extends Component{
                 @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
         <h3 className="meetingTitle">
                                                 Loan Credit
                                             </h3>
@@ -92,7 +92,7 @@ class Right extends Component{
                 @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
         <h3 className="meetingTitle">
                                                 Loans: Did You Know
                                             </h3>
@@ -100,7 +100,7 @@ class Right extends Component{
                 @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
         <h3 className="meetingTitle">
                                                 Precision 2020.2 and 2020.3 Loans
                                             </h3>
