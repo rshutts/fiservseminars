@@ -28,7 +28,7 @@ const Meetings = () => (
             </section>
             <section className="right meetings">
             <h1>Chat</h1>
-                <Chat />
+                <p>The Chat feature is currently unavailable. We are working hard to get this fixed and being able to provide you with this feature. In the meantime, please feel free to utilize the Notes section below to take any of your notes. If there are any questions or concerns regarding this issue, please email us at <a href="mailto:educationseminars@fiserv.com" target="_blank">educationseminars@fiserv.com. 
             </section>
           </div>
           
