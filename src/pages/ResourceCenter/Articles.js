@@ -253,6 +253,9 @@ const Articles = () => {
                                         <li>
                                             <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/LoanParametersPPT.pdf" target="_blank" rel="noopener noreferrer">Loan Parameters PPT</a>
                                         </li>
+                                        <li>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/LoanFeesandDeferredFeesInterestJobAid.pdf" target="_blank" rel="noopener noreferrer">Loan Fees and Deferred Fees Interest Job Aid</a>
+                                        </li>
                                     </ul>
                                 </Card.Description>
                             </Card.Content>
