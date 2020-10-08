@@ -30,13 +30,14 @@ class SignIn extends Component {
       <div>
         <div>
           <form>
+            <p className="welcome">Welcome</p>
             <fieldset>
               <input
                 name='name'
                 id='name'
                 ref={this.inputRef}
                 type='text'
-                className='rounded'
+                className='rounded name-input'
                 placeholder='Type here...'
                 autoComplete='off'
                 defaultValue={user.nickname}
@@ -44,10 +45,10 @@ class SignIn extends Component {
               />
               <button
                 onClick={this.handleStartChatting}
-                className='btn btn--primary rounded mg-t-1'
+                className='btn btn--primary rounded mg-t-1 join-chat'
                 disabled={!username}
               >
-                Start chatting
+                JOIN
               </button>
             </fieldset>
           </form>

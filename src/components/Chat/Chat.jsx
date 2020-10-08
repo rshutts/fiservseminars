@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as config from '../../config';
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
 // Components
 import VideoPlayer from '../videoPlayer/VideoPlayer';
@@ -19,9 +20,15 @@ class Chat extends Component {
     this.chatRef = React.createRef();
     this.messagesEndRef = React.createRef();
   }
-
+  
   componentDidMount() {
-    const connection = new WebSocket(config.CHAT_WEBSOCKET);
+    const options = {
+        minUptime: 50000,
+        connectionTimeout: 40000,
+        maxRetries: Infinity,
+        maxEnqueuedMessages: Infinity,
+    };
+    const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
     connection.onopen = (event) => {
       console.log('WebSocket is now open.');
     };
@@ -154,9 +161,9 @@ class Chat extends Component {
                     <fieldset>
                       <button
                         onClick={this.handleOnClick}
-                        className='add-note btn-primary btn btn--primary full-width rounded chat-signon'
+                        className='btn-primary btn btn--primary full-width rounded chat-signon'
                       >
-                        Click to send messages
+                        ENTER THE CHAT ROOM NOW
                       </button>
                     </fieldset>
                   )}
@@ -165,7 +172,7 @@ class Chat extends Component {
                     ref={this.chatRef}
                     className={`rounded ${!username ? 'hidden' : ''}`}
                     type='text'
-                    placeholder='Say something'
+                    placeholder='Enter your message'
                     value={message}
                     maxLength={510}
                     onChange={this.handleChange}

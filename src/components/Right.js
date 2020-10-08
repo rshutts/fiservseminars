@@ -100,7 +100,7 @@ class Right extends Component{
                 @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 2}>
         <h3 className="meetingTitle">
                                                 Precision 2020.2 and 2020.3 Loans
                                             </h3>
