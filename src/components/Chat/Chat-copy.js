@@ -9,7 +9,7 @@ import Input from '../Input/Input';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 // import './Chat.css';
 
-const ENDPOINT = 'wss://fiserv-chat-server.herokuapp.com/';
+const ENDPOINT = 'https://fiserv-chat-server.herokuapp.com/';
 
 let socket;
 
@@ -29,16 +29,14 @@ const Chat = () => {
     name = `${user.nickname}`;
   }
   useEffect(() => {
-    socket = io("wss://fiserv-chat-server.herokuapp.com/", {
-      transports: ['websocket'],
-    });
+    socket = io(ENDPOINT);
 
     socket.emit('join', { name, room }, (error) => {
       if (error) {
         alert(error);
       }
     });
-  }, ['https://fiserv-chat-server.herokuapp.com']);
+  }, [ENDPOINT]);
 
   useEffect(() => {
     socket.on('message', (message) => {
