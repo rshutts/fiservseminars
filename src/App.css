@@ -506,6 +506,10 @@ h6 {
   background: rgb(102,153,204);
   color: #fff;
 } */
+.networking {
+    width: 65%;
+    padding: 0 10px;
+}
  .placeholderImage {
    background:url("https://fiservseminars-media.s3.amazonaws.com/coming-soon.jpg");
    height:100%;
