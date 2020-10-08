@@ -25,13 +25,10 @@ const Meetings = () => (
                 <Notes />
               </div>
             </section>
-<<<<<<< HEAD
-=======
             <section className="right meetings">
             <h1>Chat</h1>
                 <p>The Chat feature is currently unavailable. We are working hard to get this fixed and being able to provide you with this feature. In the meantime, please feel free to utilize the Notes section below to take any of your notes. If there are any questions from the presentations, please email us at <a href="mailto:educationseminars@fiserv.com" target="_blank">educationseminars@fiserv.com</a>.</p> 
             </section>
->>>>>>> f8fa350412443c5a790c0527944769cfec586ee9
           </div>
           
         </div>
