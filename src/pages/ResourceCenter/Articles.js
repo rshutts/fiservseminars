@@ -24,8 +24,8 @@ const Articles = () => {
                                         <p><b>Note: The survey is available now.</b></p>
                                     </Card.Description>
                                     <Card.Description>
-                                        <a href="https://s2.userzoom.com/f/finallinks.aspx?s=C513S365&t=q&p=2" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Usability Study</a>
-                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/m/MiBDNTEzUzM2NSAg</p>
+                                        <a href="https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Usability Study</a>
+                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page</p>
                                         <p><b>Note: The usability study will go live on Monday October 5, 2020 and close after the end of the day Friday October 16, 2020.</b></p>
                                     </Card.Description> 
                                 </div>
