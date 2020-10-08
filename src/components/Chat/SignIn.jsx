@@ -15,7 +15,7 @@ class SignIn extends Component {
   }
 
   handleNameChange = (e) => {
-    this.setState({ username: e.target.value });
+    this.setState({ username: e.target.defaultValue });
   };
 
   handleStartChatting = (e) => {
@@ -39,8 +39,8 @@ class SignIn extends Component {
                 className='rounded'
                 placeholder='Type here...'
                 autoComplete='off'
-                value={user.nickname}
-                onChange={this.handleNameChange}
+                defaultValue={user.nickname}
+                onFocus={this.handleNameChange}
               />
               <button
                 onClick={this.handleStartChatting}

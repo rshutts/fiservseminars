@@ -114,9 +114,10 @@ class Chat extends Component {
       let formattedMessage = this.parseUrls(message.message);
       return (
         <div className='chat-line' key={message.timestamp}>
-          <p>
-            <span className='username'>{message.username}</span>
-            <span dangerouslySetInnerHTML={{ __html: formattedMessage }} />
+          <p className='username'>
+            {message.username}
+          </p>
+          <p className="message-bubble" dangerouslySetInnerHTML={{ __html: formattedMessage }}>
           </p>
         </div>
       );
@@ -131,23 +132,36 @@ class Chat extends Component {
     const { username, message, showSignIn } = this.state;
     return (
       <React.Fragment>
-        <header>
-          <h1>Simple Live Chat demo</h1>
-        </header>
-        <div className='main full-width full-height chat-container'>
+        <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
             <VideoPlayer
               setMetadataId={this.setMetadataId}
               videoStream={config.PLAYBACK_URL}
             />
-            <div className='col-wrapper'>
+            <header>
+              <h1>Chat</h1>
+            </header>
+            <div className="col-wrapper">
               <div className='chat-wrapper pos-absolute pd-t-1 top-0 bottom-0'>
+              
                 <div className='messages'>
                   {this.renderMessages()}
                   <div ref={this.messagesEndRef} />
-                </div>
+                </div>  
                 <div className='composer'>
-                  <input
+                {showSignIn && <SignIn updateUsername={this.updateUsername} />}
+                  {!username && (
+                    <fieldset>
+                      <button
+                        onClick={this.handleOnClick}
+                        className='add-note btn-primary btn btn--primary full-width rounded chat-signon'
+                      >
+                        Click to send messages
+                      </button>
+                    </fieldset>
+                  )}
+                  {username && (
+                    <input
                     ref={this.chatRef}
                     className={`rounded ${!username ? 'hidden' : ''}`}
                     type='text'
@@ -157,21 +171,11 @@ class Chat extends Component {
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeyDown}
                   />
-                  {!username && (
-                    <fieldset>
-                      <button
-                        onClick={this.handleOnClick}
-                        className='btn btn--primary full-width rounded'
-                      >
-                        Click to send messages
-                      </button>
-                    </fieldset>
-                  )}
+                  )}  
                 </div>
               </div>
             </div>
           </div>
-          {showSignIn && <SignIn updateUsername={this.updateUsername} />}
         </div>
       </React.Fragment>
     );
