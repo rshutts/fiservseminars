@@ -5,9 +5,6 @@ import * as config from '../../config';
 import VideoPlayer from '../videoPlayer/VideoPlayer';
 import SignIn from './SignIn';
 
-// Styles
-import './Chat.css';
-
 class Chat extends Component {
   constructor() {
     super();
