@@ -138,10 +138,10 @@ class Chat extends Component {
               setMetadataId={this.setMetadataId}
               videoStream={config.PLAYBACK_URL}
             />
-            <header>
-              <h1>Chat</h1>
-            </header>
             <div className="col-wrapper">
+              <header>
+                <h1>Chat</h1>
+              </header>
               <div className='chat-wrapper pos-absolute pd-t-1 top-0 bottom-0'>
               
                 <div className='messages'>
