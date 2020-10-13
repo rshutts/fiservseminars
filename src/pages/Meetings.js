@@ -29,7 +29,7 @@ const Meetings = () => {
                     <Chat />
                 </div>
                 <div className='chat'>
-                  <div>
+                  /*<div>
                     <p className="networking">Please join us at 11:15 a.m CST and/or 4:15 p.m. CST for a networking session. Connect with Fiserv experts and collaborate with your peers. Please click the link below to access the networking. Look forward to collaborating soon.</p>
                       <ul>
                         <li>
@@ -56,7 +56,7 @@ const Meetings = () => {
                           </ul>
                         </li>
                       </ul>
-                  </div>              
+                  </div>*/              
                 <Notes />
                 </div>
               </section>
