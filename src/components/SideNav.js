@@ -30,7 +30,7 @@ function Sidenav() {
           <NavIcon>
             <a
               className='sidebar-nav-link'
-              href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
+              href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Precision_Overview+and+Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >
