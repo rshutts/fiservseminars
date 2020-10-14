@@ -30,7 +30,7 @@ function Sidenav() {
           <NavIcon>
             <a
               className='sidebar-nav-link'
-              href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Precision_Overview+and+Agenda.pdf'
+              href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >
@@ -43,11 +43,6 @@ function Sidenav() {
           </NavIcon>
         </NavItem>
         )}
-        {/* <NavItem>
-                    <NavIcon>
-                        <Link className="sidebar-nav-link" to="/chat"><i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />Chat</Link>
-                    </NavIcon>
-                </NavItem> */}
         {isAuthenticated && (
           <NavItem id='sidenav-item'>
             <NavIcon>
@@ -105,6 +100,13 @@ function Sidenav() {
         {isAuthenticated && (
         <NavItem id='sidenav-item'>
           <NavIcon>
+              <Link className="sidebar-nav-link" to="/faq"><i className="fa fa-fw fa-question-circle" style={{ fontSize: '1.75em' }} />FAQ</Link>
+          </NavIcon>
+        </NavItem>
+        )}
+        {isAuthenticated && (
+        <NavItem id='sidenav-item'>
+          <NavIcon>
             <Link className='sidebar-nav-link' to='/profile'>
               <i className='fa fa-fw fa-user' style={{ fontSize: '1.75em' }} />
               Profile
@@ -112,11 +114,6 @@ function Sidenav() {
           </NavIcon>
         </NavItem>
         )}
-        {/* <NavItem id="sidenav-item" eventKey="/search">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-search" style={{ fontSize: '1.75em' }} />Search
-                    </NavIcon>
-                </NavItem> */}
       </SideNav.Nav>
     </SideNav>
   );

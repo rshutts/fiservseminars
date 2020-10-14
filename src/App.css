@@ -235,6 +235,51 @@ h6 {
     padding: 1% 2%;
     margin: 3% 2% 0;
 }
+.faq-container {
+  background: hsla(0,0%,100%,.6);
+  width: 90%;
+}
+.faq-sections {
+  background: #fff;
+  width: 90%;
+  height: 100%;
+  padding: 1% 2%;
+  margin: 3% 2% 0;
+  display: inline-block;
+}
+.faq-accordion .faq-title {
+  color: rgba(0,0,0,.95) !important;
+  border:1px solid rgba(34,36,38,.15);
+}
+.title.faq-title:hover, .title.faq-title:hover {
+  background:#6699cc !important;
+  color:#fff !important;
+}
+.active.title.faq-title {
+  background:#6699cc !important;
+  color:#fff !important;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius: 0;
+  margin-bottom:0 !important;
+}
+.title.faq-title:first-child, .title.faq-title:first-child {
+  border-top:1px solid rgba(34,36,38,.15) !important;
+}
+.title.faq-title {
+  background:#eee;
+  transition: all .1s ease;
+  border-radius: 5px;
+  margin-bottom: 10px !important;
+} 
+.content.active.faq-content {
+  margin-bottom:10px !important;
+  border: 2px solid #f60;
+  border-top:none;
+}
+.content.active.faq-content p {
+  margin-bottom:0;
+  padding:10px;
+}
 .custom-sidenav div[role*="menu"] {
   background: #666;
   height: auto;
@@ -609,13 +654,21 @@ h6 {
 
 .ui.card {
   justify-content: space-evenly;
-  flex-direction: row;
+  flex-direction: column;
   align-items:center;
   border:none;
   height:fit-content;
 }
 .ui.card .content {
   width:100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 100%;
 }
 .article-block {
   display: flex;
