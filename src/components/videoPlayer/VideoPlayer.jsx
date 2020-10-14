@@ -91,7 +91,7 @@ class VideoPlayer extends Component {
           <video id="video-player" className="video-elem pos-absolute full-width" playsInline controls></video>
         </div>
         <div style={{color: "red"}}>
-          <h3></h3>If the video does not start with sound, please hover over the video and make sure the player is not on mute
+          <h3>If the video does not start with sound, please hover over the video and make sure the player is not on mute</h3>
         </div>
       </div>
     )
