@@ -3,7 +3,7 @@ import * as config from '../../config';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
 // Components
-import VideoPlayer from '../videoPlayer/VideoPlayer';
+import LiveVideo from '../LiveVideos/livevideo';
 import SignIn from './SignIn';
 
 class Chat extends Component {
@@ -141,10 +141,7 @@ class Chat extends Component {
       <React.Fragment>
         <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
-            <VideoPlayer
-              setMetadataId={this.setMetadataId}
-              videoStream={config.PLAYBACK_URL}
-            />
+            <LiveVideo />
             <div className="col-wrapper">
               <header>
                 <h1>Chat</h1>
@@ -173,6 +170,7 @@ class Chat extends Component {
                     className={`rounded ${!username ? 'hidden' : ''}`}
                     type='text'
                     placeholder='Enter your message'
+                    id="message-input"
                     value={message}
                     maxLength={510}
                     onChange={this.handleChange}

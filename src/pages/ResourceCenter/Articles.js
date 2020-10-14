@@ -19,12 +19,12 @@ const Articles = () => {
                                 <Card.Header className="card-header">Surveys</Card.Header>
                                 <div className="survey-descriptions">
                                     <Card.Description>
-                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Survey</a>
+                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Survey</a>
                                         <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u</p>
                                         <p><b>Note: The survey is available now.</b></p>
                                     </Card.Description>
                                     <Card.Description>
-                                        <a href="https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Usability Study</a>
+                                        <a href="https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Usability Study</a>
                                         <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page</p>
                                         <p><b>Note: The usability study will go live on Monday October 5, 2020 and close after the end of the day Friday October 16, 2020.</b></p>
                                     </Card.Description> 
@@ -189,11 +189,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Deposit & Operations 2020.1 & 2020.2</Card.Header>
+                                <Card.Header className="card-header">Premier Deposit & Operations 2020.1 & 2020.2</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionRelease2020.1_2020.2DepositandOperations.pdf" target="_blank" rel="noopener noreferrer">Precision Deposit & Operations 2020.1 & 2020.2 PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierRelease2020.1_2020.2DepositandOperations.pdf" target="_blank" rel="noopener noreferrer">Premier Deposit & Operations 2020.1 & 2020.2 PPT</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -201,11 +201,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Loans 2020.2 & 2020.3</Card.Header>
+                                <Card.Header className="card-header">Premier Loans 2020.2 & 2020.3</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Precision Loans 2020.2 & 2020.3 PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Premier Loans 2020.2 & 2020.3 PPT</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -232,11 +232,11 @@ const Articles = () => {
                     <Grid.Column className="article-block">
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Roadmap</Card.Header>
+                                <Card.Header className="card-header">Premier Roadmap</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionRoadmap.pdf" target="_blank" rel="noopener noreferrer">Precision Roadmap PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierRoadmap.pdf" target="_blank" rel="noopener noreferrer">Premier Roadmap PPT</a>
                                         </li>
                                     </ul>
                                 </Card.Description>

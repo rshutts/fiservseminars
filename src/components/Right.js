@@ -61,7 +61,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Precision 2020.1 and 2020.2 Deposits & Other
+                Premier 2020.1 and 2020.2 Deposits & Other
             </h3>
             <p>
                 @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
@@ -102,7 +102,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
         <h3 className="meetingTitle">
-                                                Precision 2020.2 and 2020.3 Loans
+                                                Premier 2020.2 and 2020.3 Loans
                                             </h3>
                                             <p>
                 @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
@@ -136,7 +136,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Precision Roadmap
+            Premier Roadmap
             </h3>
             <p>
                 @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.

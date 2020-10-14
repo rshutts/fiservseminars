@@ -90,6 +90,9 @@ class VideoPlayer extends Component {
         <div className="aspect-169 pos-relative full-width full-height">
           <video id="video-player" className="video-elem pos-absolute full-width" playsInline controls></video>
         </div>
+        <div style={{color: "red"}}>
+          <h3></h3>If the video does not start with sound, please hover over the video and make sure the player is not on mute
+        </div>
       </div>
     )
   }

@@ -9,7 +9,7 @@ import Cloud from "../../components/Videos/Cloud";
 import AI from "../../components/Videos/AI";
 import ATM from "../../components/Videos/ATM";
 import ImpactSolutions from "../../components/Videos/ImpactSolutions";
-import PrecisionUIDemo from "../../components/Videos/PrecisionUIDemo";
+import PremierUIDemo from "../../components/Videos/PremierUIDemo";
 import Threats from "../../components/Videos/Threats";
 
 const Videos = () => (
@@ -22,30 +22,19 @@ const Videos = () => (
                     <i className='fa fa-fw fa-video' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Resource Center: OnDemand
                 </Header>
                 {/* /*Row 1*/}
-                <Grid.Row>
-                    <Grid.Column width={8}>
-                        <PrecisionUIDemo/>
-                        <Card className="video-cards">
-                            <Card.Content>
-                                <div className="video-description">
-                                    <Card.Header className="card-header">Precision UI Demo</Card.Header>
-                                    <Card.Meta className="card-description">Fiserv is currently updating the aesthetics and user experience of the Precision software.  The primary component of this initiative is moving from the desktop application to a browser based product.  The first phase of this transition involves enhancing our search & customer profile views.  Please take a moment to review the Precision demo.</Card.Meta>
-                                </div>
-                            </Card.Content>
-                        </Card>
-                    </Grid.Column>
+                {/* <Grid.Row>
                     <Grid.Column width={8}>
                         <IdeaPortal/>
                         <Card className="video-cards">
                             <Card.Content>
                                 <div className="video-description">
-                                    <Card.Header className="card-header">A New and Better Way to Submit Precision® Enhancement Ideas</Card.Header>
+                                    <Card.Header className="card-header">A New and Better Way to Submit Premier® Enhancement Ideas</Card.Header>
                                     <Card.Meta className="card-description">Fiserv is dedicated to delivering solutions that enhance the client experience and enable your financial institution to achieve best-in-class results. Identifying improvements that enable our client community to take advantage of market opportunities and solve business challenges is an integral part of our market-focused approach. We regularly collect ideas for system enhancements from numerous sources and conduct extensive review processes to uncover prevailing or changing trends.<p><a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IdeaPortal_UserGuide.pdf" target="_blank" rel="noopener noreferrer">Idea Portal User Guide</a></p></Card.Meta>
                                 </div>
                             </Card.Content>
                         </Card>
                     </Grid.Column>
-                </Grid.Row>
+                </Grid.Row> */}
                 {/* /*Row 12*/}
                 <Grid.Row>
                     <Grid.Column width={8}>
@@ -135,6 +124,8 @@ const Videos = () => (
                             </Card.Content>
                         </Card>
                     </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
                     <Grid.Column width={8}>
                         <ImpactSolutions/>
                         <Card className="video-cards">

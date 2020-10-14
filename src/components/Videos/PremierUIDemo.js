@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VideoPlayer from 'react-video-js-player';
  
-class PrecisionUIDemo extends Component {
+class PremierUIDemo extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Precision+UI+Demo+(2).mp4",
+            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Premier+UI+Demo+(2).mp4",
             poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }
@@ -60,4 +60,4 @@ class PrecisionUIDemo extends Component {
         );
     }
 }
-export default PrecisionUIDemo;
+export default PremierUIDemo;

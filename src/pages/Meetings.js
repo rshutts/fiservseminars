@@ -1,18 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import Sidenav from "../components/SideNav";
 import Chat from '../components/Chat/Chat';
-import LiveVideo from '../components/LiveVideos/livevideo'
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 import Notes from '../components/Notes'
 import { Header  } from 'semantic-ui-react'
 
 const Meetings = () => {
-  const [password1, setPassword1] = useState({ shown: true });
-  const [password2, setPassword2] = useState({ shown: true });
-  const [password3, setPassword3] = useState({ shown: true });
-
-  const [session1] = useState({ shown: true });
   
   return (
     <Fragment>
@@ -26,7 +20,7 @@ const Meetings = () => {
             <div className="meetings-sections">
               <section className='left meetings'>
                 <div className='meeting-video'>
-                    <Chat />
+                  <Chat />
                 </div>
                 <div className='chat'>           
                 <Notes />

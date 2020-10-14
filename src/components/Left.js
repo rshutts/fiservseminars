@@ -11,7 +11,7 @@ class Left extends Component {
               <img
               class='mb-3 app-logo'
               src='https://fiservseminars-media.s3.amazonaws.com/header.png'
-              alt='2020 Precision Fall Conference'
+              alt='2020 Premier Fall Conference'
               width=''
             />
             </div>
@@ -26,7 +26,7 @@ class Left extends Component {
               network of professional relationships.
             </p>
             <p>
-              This fall, the Precision Education Seminars are three days of
+              This fall, the Premier Education Seminars are three days of
               interactive sessions that provide the ideal setting to gain new
               perspectives and make valuable connections with peers and Fiserv
               experts. During the three days you will experience a Simulive
@@ -36,7 +36,7 @@ class Left extends Component {
               surprises and access to the electronic version of the meeting
               material.
             </p>
-            <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUQ0xIS1IzMlhNVzg4N05MOVU5V0QyWldKQSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Precision Education Seminar Survey</a></h2>
+            <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUQ0xIS1IzMlhNVzg4N05MOVU5V0QyWldKQSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Premier Education Seminar Survey</a></h2>
             <p>We are committed to providing educational opportunities that support your success. <span style={{ color: "#ff6600"}}>Please tell us how we can strengthen your learning experience by completing a brief survey at any point during the seminar.</span></p>
           </div>
         </section>
