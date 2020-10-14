@@ -361,19 +361,13 @@ h6 {
     border-left: 10px solid #f60;
     margin: 2% 0;
 }
-.meetings-container, .faq-container {
+.meetings-container {
   background: rgba(255,255,255,.6);
   width: 90%;
 }
-.meetings-sections, .faq-sections {
+.meetings-sections {
   display: flex;
   flex-direction: row;
-}
-.faq-sections {
-  background: #fff;
-  height: 100%;
-  padding: 1% 2%;
-  margin: 3% 2% 0;
 }
 .left {
     background: #fff;
@@ -530,7 +524,7 @@ h6 {
   background: rgb(102,153,204, .8);
   color:#fff;
   border:none;
-  padding: 5px 10px;
+  padding: 5px;
   margin-left: 5px;
   margin-bottom: 4px;
  }
@@ -579,14 +573,6 @@ h6 {
   background: rgb(102,153,204);
   color: #fff;
 } */
-input#message-input {
-  width:100%;
-  border-radius:0px !important;
-  border-right:none;
-  border-left:none;
-  border-bottom:none;
-  padding:0 2px;
-}
 .networking {
     width: 65%;
     padding: 0 10px;
