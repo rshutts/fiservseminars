@@ -665,10 +665,13 @@ h6 {
   justify-content: center;
   flex-direction: column;
   align-self: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
   padding-top: 10px;
   width: 100%;
+}
+.main-content-profile .ui.card .content {
+  align-items: center;
 }
 .article-block {
   display: flex;
@@ -685,6 +688,8 @@ h6 {
   color:#2e8bca;
   font-size:22px;
   font-weight: normal;
+  width: 100%;
+  text-align: center;
 }
 .card-description {
   padding:5px;
@@ -763,6 +768,7 @@ span.dropdown---caret---3CkEt {
 }
 .ui.card.survey-card .header.card-header {
   text-align:center;
+  width: 100%;
 }
 .survey-descriptions {
   display: flex;

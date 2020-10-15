@@ -37,34 +37,34 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Deposit Parameters Review
+                Deposits: Did You Know
             </h3>
             <p>
-                @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
+                @ 8:15 - 9:00 a.m. &amp;<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                User Defined Options: Tips and Tricks
+                Address Management
             </h3>
             <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+                @ 9:15 - 10:00 a.m. &amp;<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Online Posting Features
+                Inactive and Dormant Account Processing
             </h3>
             <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
+                @ 10:15 - 11:00 a.m. &amp;<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Premier 2020.1 and 2020.2 Deposits & Other
+                Exception Item Manager (EIM): Making Decisions Easier
             </h3>
             <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
+                @ 11:15 - 12:00 p.m. &amp;<br/> 4:15 - 5:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -77,35 +77,35 @@ class Right extends Component{
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loan Parameters
-                                            </h3>
-                                            <p>
+            <h3 className="meetingTitle">
+                Loan Fees &amp; Charge 
+            </h3>
+            <p>
                 @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loan Credit
-                                            </h3>
-                                            <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+            <h3 className="meetingTitle">
+                Loan Payment &amp; Payoff Processing 
+            </h3>
+            <p>
+                @ 9:15 - 10:00 a.m. &amp;<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loans: Did You Know
-                                            </h3>
-                                            <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
+            <h3 className="meetingTitle">
+                Loan Payment Schedules &amp; Billing 
+            </h3>
+            <p>
+                @ 10:15 - 11:00 a.m. &amp;<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Premier 2020.2 and 2020.3 Loans
-                                            </h3>
-                                            <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
+            <h3 className="meetingTitle">
+                Streamlined Processing Using the Transaction Management System (TMS) 
+            </h3>
+            <p>
+                @ 11:15 - 12:00 p.m. &amp;<br/> 4:15 - 5:00 p.m.
             </p>
         </Accordion.Content>
 
@@ -120,34 +120,34 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Employ I-32 Forms Design to Set Your Institution Apart
+                Employ I-32 Forms Design to Set Your Institution Apart
             </h3>
             <p>
-                @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
+                @ 8:15 - 9:00 a.m. &amp;<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Increase CDD/BSA Compliance With BPM
+                BPM-Increase CDD-BSA Compliance With BPM
             </h3>
             <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+                @ 9:15 - 10:00 a.m. &amp;<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Premier Roadmap
+                Business Online End User
             </h3>
             <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
+                @ 10:15 - 11:00 a.m. &amp;<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Networking/Happy Hour
+                Networking/Happy Hour
             </h3>
             <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
+                @ 11:15 - 12:00 p.m. &amp;<br/> 4:15 - 5:00 p.m.
             </p>
         </Accordion.Content>
       </Accordion>
