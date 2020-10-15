@@ -145,7 +145,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/InactiveandDormantAccounts.pdf" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/InactiveandDormantAccounts.pdf" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts</a>
                                         </li>
                                         <li>
                                             <a href="" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts PPT</a>
@@ -175,10 +175,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/AddressManagement.pdf" target="_blank" rel="noopener noreferrer">Address Management Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="" target="_blank" rel="noopener noreferrer">Address Management PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/AddressManagement.pdf" target="_blank" rel="noopener noreferrer">Address Management</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -190,10 +187,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/EIMDecisionPlans.pdf" target="_blank" rel="noopener noreferrer">EIM Decision Plans Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="" target="_blank" rel="noopener noreferrer">EIM Decision Plans PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/EIMDecisionPlans.pdf" target="_blank" rel="noopener noreferrer">EIM Decision Plans</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -209,10 +203,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanFees&Charges.pdf" target="_blank" rel="noopener noreferrer">Loan Fees &amp; Charges Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="" target="_blank" rel="noopener noreferrer">Loan Fees &amp; Charges PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanFees&Charges.pdf" target="_blank" rel="noopener noreferrer">Loan Fees &amp; Charges</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -224,7 +215,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Loan Payment &amp; Payoff Processing Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Loan Payment &amp; Payoff Processing</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -236,7 +227,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanPaymentSchedulesandBilling.pdf" target="_blank" rel="noopener noreferrer">Loan Payment Schedules &amp; Billing Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanPaymentSchedulesandBilling.pdf" target="_blank" rel="noopener noreferrer">Loan Payment Schedules &amp; Billing</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -248,7 +239,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/StreamlinedProcessingusingTMS.pdf" target="_blank" rel="noopener noreferrer">Streamlined Processing Using TMS Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/StreamlinedProcessingusingTMS.pdf" target="_blank" rel="noopener noreferrer">Streamlined Processing Using TMS</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -264,10 +255,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/DepositsDidYouKnow.pdf" target="_blank" rel="noopener noreferrer">IDeposits Did You Know Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="" target="_blank" rel="noopener noreferrer">Deposits Did You Know PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/DepositsDidYouKnow.pdf" target="_blank" rel="noopener noreferrer">IDeposits Did You Know</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -294,7 +282,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/BOEndUser.pdf" target="_blank" rel="noopener noreferrer">BO End User Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/BOEndUser.pdf" target="_blank" rel="noopener noreferrer">BO End User</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
