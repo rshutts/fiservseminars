@@ -120,6 +120,9 @@ h6 {
   background:#ff6600;
   color:#fff;
 }
+.archive-toggle-buttons {
+  width:fit-content;
+}
 .logo {
   background: url('https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/logo.png');
   background-size:contain;
@@ -213,7 +216,6 @@ h6 {
   margin-top: 0 !important;
   margin-bottom:0 !important;
 }
-
 .custom-sidenav {
   width: 128px;
   background: #666;
@@ -227,13 +229,94 @@ h6 {
   z-index: 1006;
   min-width: 64px;
 }
-
 .main-content-profile {
     background: #fff;
     height: 100%;
     width:90%;
     padding: 1% 2%;
     margin: 3% 2% 0;
+}
+.archived-container {
+  background: hsla(0,0%,100%,.6);
+  width: 90%;
+}
+.archive-section {
+  background: #fff;
+  width: 95%;
+  height: 100%;
+  padding: 1% 2%;
+  margin: 3% 2% 0;
+  display: inline-block;
+}
+.archive-segment {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tabular.menu {
+  position: relative;
+  top: -21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5rem 0;
+  background: #fff;
+  font-weight: 400;
+  border: 1px solid rgba(34,36,38,.15);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  min-height: 2.85714286em;
+}
+.tabular.menu .active.item {
+  background: #f60;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.tabular.menu .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  min-width: 100px;
+  text-decoration: none;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: 0 0;
+  padding: .92857143em 1.14285714em;
+  text-transform: none;
+  color: rgba(0,0,0,.87);
+  font-weight: 400;
+  -webkit-transition: background .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
+  transition: background .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
+  transition: background .1s ease,box-shadow .1s ease,color .1s ease;
+  transition: background .1s ease,box-shadow .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
+}
+.tabular.menu .active.item:hover {
+  background: rgba(255,102,0,.8);
+  color:#fff;
+  border:none;
+}
+.tabular.menu .item:hover {
+  background: rgb(102,153,204);
+  border-color:rgb(102,153,204);
+  color:#fff;
 }
 .faq-container {
   background: hsla(0,0%,100%,.6);
@@ -355,6 +438,10 @@ h6 {
 }
 .left.meetings {
   width:100%;
+}
+.archive-switcher {
+  display:flex;
+  justify-content: space-evenly;
 }
 .meeting-content {
   background: rgba(0,0,0,.75);
@@ -700,8 +787,16 @@ h6 {
 .video-description .header {
   padding:5px 10px;
 }
+.content.video-content {
+  border-top:none !important;
+}
 .video-cards {
-  border-radius:0;
+  border-radius:0 !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+.ui.styled.accordion .accordion .content, .ui.styled.accordion .content.video-content {
+  border-bottom:none;
 }
 .resource-flyout {
   display:inline;

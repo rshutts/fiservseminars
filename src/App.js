@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 import Loading from './components/Loading';
@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Meetings from './pages/Meetings';
+import Archived from './pages/Archived';
 import Videos from './pages/ResourceCenter/Videos';
 import Articles from './pages/ResourceCenter/Articles';
 import FAQ from './pages/FAQ';
@@ -43,12 +43,12 @@ const App = () => {
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/profile' component={Profile} />
-            <Route path='/meetings' component={Meetings} />
-            {/* <Route path="/resource-center" component={ResourceCenter} /> */}
+            <Route path='/archived-sessions' component={Archived} />   
             <Route path='/resource-center/videos' component={Videos} />
             <Route path='/resource-center/articles' component={Articles} />
             <Route path='/faq' component={FAQ} />
             <Route path="/registration-complete" component={RegComplete} />
+            <Redirect from='/meetings' to='/archived-sessions' />
             {/* <Route path='/chat' component={Chat} />
             <Route path='/join' component={Join} /> */}
           </Switch>
