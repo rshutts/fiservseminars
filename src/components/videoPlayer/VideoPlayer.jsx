@@ -95,7 +95,7 @@ class VideoPlayer extends Component {
             **If the video does not start with sound, please hover over the video and make sure the player is not on mute.**
           </h3>
         </div>
-        <div>
+        {/* <div>
           <p>
             <a href="https://fiserventerprise.webex.com/mw3300/mywebex/default.do?service=7&main_url=%2Ftc3300%2Ftrainingcenter%2Fdefault.do%3Fsiteurl%3Dfiserventerprise%26main_url%3D%252Ftc3300%252Fe.do%253FAT%253DMI%2526%2526Host%253DQUhTSwAAAAQbxkPVmUX6Cad4NxJtiy7VM2t75OzSFPbz-AoFLzGfuVNYkI6GqsnVvoRkkUzgQpaUQrySWVax9dGu_LI31jG70%2526MTID%253Dt8bc9464659df8ec268e1a7e1b60e93a8%2526siteurl%253Dfiserventerprise%2526confID%253D175196850667701805%2526ticket%253D4832534b000000041b9ced8dd4f033a3585702ba74ef1a14e5c5c076491882bab457073adb049010&siteurl=fiserventerprise" target="_blank">Loan Networking</a><br/>
             Session number: <b>131 905 3379</b><br/> 
@@ -111,7 +111,7 @@ class VideoPlayer extends Component {
             Session number: <b>131 709 2026</b><br/>
             Session password: <b>PqJyefi7?69</b>
           </p>
-        </div>
+        </div> */}
       </div>
     )
   }
