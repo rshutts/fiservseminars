@@ -78,7 +78,7 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Loan Fees &amp; Charge 
+                Loan Fees &amp; Charges 
             </h3>
             <p>
                 @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
