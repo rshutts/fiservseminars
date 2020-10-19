@@ -19,14 +19,14 @@ const Articles = () => {
                                 <Card.Header className="card-header">Surveys</Card.Header>
                                 <div className="survey-descriptions">
                                     <Card.Description>
-                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Survey</a>
-                                        <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u</p>
+                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-Izp6GEQQqxCjeD-2NKW9VZUQTdRNlFTMVBCNExWRThMNkdMN1NUSEZPQy4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Survey</a>
+                                        <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-Izp6GEQQqxCjeD-2NKW9VZUQTdRNlFTMVBCNExWRThMNkdMN1NUSEZPQy4u</p>
                                         <p><b>Note: The survey is available now.</b></p>
                                     </Card.Description>
                                     <Card.Description>
-                                        <a href="https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Usability Study</a>
-                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/uz/install/C513S365_57?host=s2.userzoom.com#gdpr_welcome_page</p>
-                                        <p><b>Note: The usability study will go live on Monday October 5, 2020 and close after the end of the day Friday October 16, 2020.</b></p>
+                                        <a href="https://s2.userzoom.com/m/MiBDNTEzUzM3NSAg" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Usability Study</a>
+                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/m/MiBDNTEzUzM3NSAg</p>
+                                        <p><b>Note: The usability study will go live on Tuesday October 20, 2020 and close after the end of the day Wednesday October 28, 2020.</b></p>
                                     </Card.Description> 
                                 </div>
                             </Card.Content>

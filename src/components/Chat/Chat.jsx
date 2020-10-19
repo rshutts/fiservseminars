@@ -4,7 +4,7 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 
 // Components
 import VideoPlayer from '../videoPlayer/VideoPlayer';
-import Contactless from "../../components/Videos/Contactless";
+/* import Contactless from "../../components/Videos/Contactless"; */
 import SignIn from './SignIn';
 
 class Chat extends Component {
@@ -142,11 +142,11 @@ class Chat extends Component {
       <React.Fragment>
         <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
-            <Contactless/>
-            {/* <VideoPlayer
+            {/* <Contactless/> */}
+            <VideoPlayer
               setMetadataId={this.setMetadataId}
               videoStream={config.PLAYBACK_URL}
-            /> */}
+            />
             <div className="col-wrapper">
               <header>
                 <h1>Chat</h1>
