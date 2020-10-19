@@ -16,19 +16,20 @@ export default class FAQS extends Component {
         const { activeIndex } = this.state
         return (
             <div>
-                <Accordion fluid styled className="faq-accordion">
+                <Accordion fluid styled>
                     <Accordion.Title
                     active={activeIndex === 0}
                     index={0}
                     onClick={this.handleClick}
-                    className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    What browser should I use for optimal seminar experience?
+                    What is a dog?
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 0} className="faq-content">
+                    <Accordion.Content active={activeIndex === 0}>
                     <p>
-                        Google Chrome is the preferred browser. Firefox and Microsoft Edge are ideal.
+                        A dog is a type of domesticated animal. Known for its loyalty and
+                        faithfulness, it can be found as a welcome guest in many households
+                        across the world.
                     </p>
                     </Accordion.Content>
 
@@ -36,70 +37,37 @@ export default class FAQS extends Component {
                     active={activeIndex === 1}
                     index={1}
                     onClick={this.handleClick}
-                    className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    I am not seeing any video, what should I do?
+                    What kinds of dogs are there?
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 1} className="faq-content">
+                    <Accordion.Content active={activeIndex === 1}>
                     <p>
-                        Please ensure your bank has this website whitelisted; <b>https://player.live-video.net/1.0.0/amazon-ivs-videojs-tech.min.js</b>
+                        There are many breeds of dogs. Each breed varies in size and
+                        temperament. Owners often select a breed of dog that they find to be
+                        compatible with their own lifestyle and desires from a companion.
                     </p>
                     </Accordion.Content>
+
                     <Accordion.Title
                     active={activeIndex === 2}
                     index={2}
                     onClick={this.handleClick}
-                    className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    How do I ask a question?
+                    How do you acquire a dog?
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 2} className="faq-content">
+                    <Accordion.Content active={activeIndex === 2}>
                     <p>
-                        In the Learning Sessions tab- Please click on “Enter the Chat Room Now” button and click join. 
+                        Three common ways for a prospective owner to acquire a dog is from
+                        pet shops, private owners, or shelters.
                     </p>
-                    </Accordion.Content>
-                    <Accordion.Title
-                    active={activeIndex === 3}
-                    index={3}
-                    onClick={this.handleClick}
-                    className="faq-title"
-                    >
-                    <Icon name='dropdown' />
-                    How do I take part in the Network Session on day 3?
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 3} className="faq-content">
                     <p>
-                        The Networking Session will be a live Webex meeting. Login information will be sent the day before as well as displayed in the Learning Sessions tab. You will be able to talk and chat live with a Fiserv expert. 
-                    </p>
-                    </Accordion.Content>
-                    <Accordion.Title
-                    active={activeIndex === 4}
-                    index={4}
-                    onClick={this.handleClick}
-                    className="faq-title"
-                    >
-                    <Icon name='dropdown' />
-                    Will these sessions be recorded to watch at a later date?
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 4} className="faq-content">
-                    <p>
-                        Yes, if your bank registered 2 or more employees you will have access to this site until February 28<sup>th</sup>, 2021
-                    </p>
-                    </Accordion.Content>
-                    <Accordion.Title
-                    active={activeIndex === 5}
-                    index={5}
-                    onClick={this.handleClick}
-                    className="faq-title"
-                    >
-                    <Icon name='dropdown' />
-                    I have additional questions. Who should I reach out to?
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 5} className="faq-content">
-                    <p>
-                        Please reach out to <a href="mailto:educationseminars@fiserv.com">educationseminars@fiserv.com</a> 
+                        A pet shop may be the most convenient way to buy a dog. Buying a dog
+                        from a private owner allows you to assess the pedigree and
+                        upbringing of your dog before choosing to take it home. Lastly,
+                        finding your dog from a shelter, helps give a good home to a dog who
+                        may not find one so readily.
                     </p>
                     </Accordion.Content>
                 </Accordion>
