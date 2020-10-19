@@ -147,9 +147,6 @@ const Articles = () => {
                                         <li>
                                             <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/InactiveandDormantAccounts.pdf" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts</a>
                                         </li>
-                                        <li>
-                                            <a href="" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts PPT</a>
-                                        </li>
                                     </ul>
                                 </Card.Description>
                             </Card.Content>
@@ -215,7 +212,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PremierLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Loan Payment &amp; Payoff Processing</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanPaymentandPayoffProcessing.pdf" target="_blank" rel="noopener noreferrer">Loan Payment &amp; Payoff Processing</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -255,7 +252,7 @@ const Articles = () => {
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/DepositsDidYouKnow.pdf" target="_blank" rel="noopener noreferrer">IDeposits Did You Know</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/DepositsDidYouKnow.pdf" target="_blank" rel="noopener noreferrer">Deposits Did You Know</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
