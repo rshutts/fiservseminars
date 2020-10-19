@@ -85,7 +85,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 4} className="faq-content">
                     <p>
-                        Yes, if your bank registered 2 or more employees you will have access to this site until January 31st, 2021
+                        Yes, if your bank registered 2 or more employees you will have access to this site until February 28th, 2021
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
