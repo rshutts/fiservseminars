@@ -376,6 +376,14 @@ h6 {
   width: 30%;
   height: 100%;
 }
+.confirmation {
+  background: #fff;
+  width: 80%;
+  height: 100%;
+  padding: 1% 2%;
+  margin: 3% 2% 3%;
+  text-align:center;
+}
 .right.meetings {
   margin: 3% 2% 0;
   padding: 1% 2%;
@@ -814,6 +822,11 @@ span.dropdown---caret---3CkEt {
     display: flex!important;
     top: 91px;
     left: -185px;
+  }
+}
+@media (max-width: 1028px) {
+  .next-steps .col-md-5 {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 768px) {

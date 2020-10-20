@@ -11,6 +11,7 @@ import Meetings from './pages/Meetings';
 import Videos from './pages/ResourceCenter/Videos';
 import Articles from './pages/ResourceCenter/Articles';
 import FAQ from './pages/FAQ';
+import Confirmation from './pages/Confirmation';
 import RegComplete from "./components/RegComplete/RegComplete";
 import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
@@ -48,6 +49,7 @@ const App = () => {
             <Route path='/resource-center/videos' component={Videos} />
             <Route path='/resource-center/articles' component={Articles} />
             <Route path='/faq' component={FAQ} />
+            <Route path="/registration-confirmation" component={Confirmation} />
             <Route path="/registration-complete" component={RegComplete} />
             {/* <Route path='/chat' component={Chat} />
             <Route path='/join' component={Join} /> */}
