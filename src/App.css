@@ -497,7 +497,7 @@ h6 {
  }
  .chat-wrapper {
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 548px;
   border-radius: 0 0 2px 2px;
   border: 2px solid #d3d3d3;
  }
@@ -841,5 +841,15 @@ span.dropdown---caret---3CkEt {
 @media (max-width: 768px) {
   .next-steps .col-md-5 {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body {
+      background:#fff;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      text-align:center;
   }
 }
