@@ -94,6 +94,9 @@ class VideoPlayer extends Component {
           <h3 style={{fontWeight: "normal"}}>
             **If the video does not start with sound, please hover over the video and make sure the player is not on mute.**
           </h3>
+          <h3 style={{fontWeight: "normal"}}>
+            **If you are having any technical difficulties with the video, please visit the FAQ page on the left sidear to help answer your questions.**
+          </h3>
         </div>
         {/* <div>
           <p>
