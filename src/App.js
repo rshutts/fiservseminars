@@ -39,7 +39,7 @@ const App = () => {
 
   if (isIE) {
     return (
-      <div>
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <h1>Hi there. You’re using an outdated browser</h1>
         <p>For a safer and faster user experience use a modern browser like Chrome, Firefox, Safari, Opera, or Edge.</p>
       </div>
