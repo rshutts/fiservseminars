@@ -15,6 +15,7 @@ import Confirmation from './pages/Confirmation';
 import RegComplete from "./components/RegComplete/RegComplete";
 import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
+import { isIE } from 'react-device-detect'
 // import Join from './pages/Join';
 // import Chat from './pages/Chat';
 
@@ -36,29 +37,39 @@ const App = () => {
     return <Loading />;
   }
 
-  return (
-    <Router history={history}>
-      <div id='app' className='d-flex flex-column h-100'>
-        <NavBar />
-        <Container className='flex-grow-1 mt-5'>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/meetings' component={Meetings} />
-            {/* <Route path="/resource-center" component={ResourceCenter} /> */}
-            <Route path='/resource-center/videos' component={Videos} />
-            <Route path='/resource-center/articles' component={Articles} />
-            <Route path='/faq' component={FAQ} />
-            <Route path="/registration-confirmation" component={Confirmation} />
-            <Route path="/registration-complete" component={RegComplete} />
-            {/* <Route path='/chat' component={Chat} />
-            <Route path='/join' component={Join} /> */}
-          </Switch>
-        </Container>
-        <Footer />
+  if (isIE) {
+    return (
+      <div>
+        <h1>Hi there. You’re using an outdated browser</h1>
+        <p>For a safer and faster user experience use a modern browser like Chrome, Firefox, Safari, Opera, or Edge.</p>
       </div>
-    </Router>
-  );
+    )
+  } else {
+    return (
+      <Router history={history}>
+        <div id='app' className='d-flex flex-column h-100'>
+          <NavBar />
+          <Container className='flex-grow-1 mt-5'>
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/profile' component={Profile} />
+              <Route path='/meetings' component={Meetings} />
+              {/* <Route path="/resource-center" component={ResourceCenter} /> */}
+              <Route path='/resource-center/videos' component={Videos} />
+              <Route path='/resource-center/articles' component={Articles} />
+              <Route path='/faq' component={FAQ} />
+              <Route path="/registration-confirmation" component={Confirmation} />
+              <Route path="/registration-complete" component={RegComplete} />
+              {/* <Route path='/chat' component={Chat} />
+              <Route path='/join' component={Join} /> */}
+            </Switch>
+          </Container>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+  
 };
 
 export default App;

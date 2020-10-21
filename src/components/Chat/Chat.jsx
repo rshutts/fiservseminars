@@ -4,6 +4,7 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 
 // Components
 import VideoPlayer from '../videoPlayer/VideoPlayer';
+/* import Giphy from '../Chat/Giphy'; */
 /* import Contactless from "../../components/Videos/Contactless"; */
 import SignIn from './SignIn';
 
@@ -169,7 +170,7 @@ class Chat extends Component {
                       </button>
                     </fieldset>
                   )}
-                  {username && (
+                  {username && (<div className="enter-message">
                     <input
                     ref={this.chatRef}
                     className={`rounded ${!username ? 'hidden' : ''}`}
@@ -180,6 +181,9 @@ class Chat extends Component {
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeyDown}
                   />
+                  
+                    {/* <Giphy/> */}
+                  </div>
                   )}  
                 </div>
               </div>
