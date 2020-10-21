@@ -15,7 +15,7 @@ import Confirmation from './pages/Confirmation';
 import RegComplete from "./components/RegComplete/RegComplete";
 import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
-import { isIE } from 'react-device-detect'
+import { isIE, BrowserView } from 'react-device-detect'
 // import Join from './pages/Join';
 // import Chat from './pages/Chat';
 
@@ -38,11 +38,16 @@ const App = () => {
   }
 
   if (isIE) {
+    const styles = {
+      background: "red",
+      fontSize: "24px",
+      lineHeight: "2"
+    };
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <h1>Hi there. You’re using an outdated browser</h1>
-        <p>For a safer and faster user experience use a modern browser like Chrome, Firefox, Safari, Opera, or Edge.</p>
-      </div>
+      <BrowserView style={styles}>
+        <h1>Current browser is not supported.</h1>
+        <p>These are the ones we recommend:</p>
+      </BrowserView>
     )
   } else {
     return (
