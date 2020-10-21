@@ -15,15 +15,19 @@ import Confirmation from './pages/Confirmation';
 import RegComplete from "./components/RegComplete/RegComplete";
 import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
-import { isIE } from 'react-device-detect'
+import { isIE, BrowserView } from 'react-device-detect'
 // import Join from './pages/Join';
 // import Chat from './pages/Chat';
 
 // styles
 import './App.css';
+import chrome from './assets/chrome.png'
+import firefox from './assets/firefox.png'
+import edge from './assets/edge.jpg'
 
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
+import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
 initFontAwesome();
 
 const App = () => {
@@ -38,12 +42,26 @@ const App = () => {
   }
 
   if (isIE) {
+    const styles = {
+      background: "white",
+      fontSize: "24px",
+      lineHeight: "2"
+    };
     return (
-      <div>
-        <h1>Hi there. You’re using an outdated browser</h1>
-        <p>For a safer and faster user experience use a modern browser like Chrome, Firefox, Safari, Opera, or Edge.</p>
-      </div>
-    )
+      <Router history={history}>
+        <div id='app' className='d-flex flex-column h-100' style={styles}>
+          <BrowserView>
+            <h1 style={{color: "#ff6600"}}>Your browser is not supported.</h1>
+            <p>To view this content, please use one of the following browsers:</p>
+            <div>
+              <a href="https://www.google.com/chrome/" target="_blank"><img src={chrome} alt={"chrome"} width="100px"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src={firefox} alt={"firefox"} width="100px"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.microsoft.com/en-us/edge" target="_blank"><img src={edge} alt={"edge"} width="100px"/></a>
+            </div>
+          </BrowserView>
+        </div>
+      </Router>
+    );
   } else {
     return (
       <Router history={history}>
