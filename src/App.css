@@ -497,7 +497,7 @@ h6 {
  }
  .chat-wrapper {
   overflow-y: auto;
-  max-height: 548px;
+  max-height: 415px;
   border-radius: 0 0 2px 2px;
   border: 2px solid #d3d3d3;
  }
