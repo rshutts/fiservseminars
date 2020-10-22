@@ -27,15 +27,15 @@ class Right extends Component{
     
       <Accordion fluid styled>
         <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
+          active={activeIndex === 1}
+          index={1}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
             Day 1 <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Deposits: Did You Know
             </h3>
@@ -43,7 +43,7 @@ class Right extends Component{
                 @ 8:15 - 9:00 a.m. &amp;<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Address Management
             </h3>
@@ -51,7 +51,7 @@ class Right extends Component{
                 @ 9:15 - 10:00 a.m. &amp;<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Inactive and Dormant Account Processing
             </h3>
@@ -59,7 +59,7 @@ class Right extends Component{
                 @ 10:15 - 11:00 a.m. &amp;<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Exception Item Manager (EIM): Making Decisions Easier
             </h3>
@@ -68,15 +68,15 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 1}
-          index={1}
+          active={activeIndex === 0}
+          index={0}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
           Day 2 <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Loan Fees &amp; Charges 
             </h3>
@@ -84,7 +84,7 @@ class Right extends Component{
                 @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Loan Payment &amp; Payoff Processing 
             </h3>
@@ -92,7 +92,7 @@ class Right extends Component{
                 @ 9:15 - 10:00 a.m. &amp;<br/> 2:15 - 3:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Loan Payment Schedules &amp; Billing 
             </h3>
@@ -100,7 +100,7 @@ class Right extends Component{
                 @ 10:15 - 11:00 a.m. &amp;<br/> 3:15 - 4:00 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Streamlined Processing Using the Transaction Management System (TMS) 
             </h3>
