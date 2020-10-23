@@ -115,9 +115,9 @@ class VideoPlayer extends Component {
             Session password: <b>mVghir6B*82</b>
           </p>
           <p>
-            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt7cd5c4ae1a21f5c5a4921936f909cda9&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=cjYr1X5Q0rz5TdPHXhrLJMqIW1TDZd3V3IV7Zx0bago&s=iRacLIu7xPAtBLQ-KbV_-M4x6nNWbN1ejgRo50ev2VM&e=" target="_blank">Business Online Networking</a><br/>
-            Session number: <b>131 959 5773</b><br/>
-            Session password: <b>jdHpdJa@455</b>
+            <a href="https://emeraldconnect.webex.com/emeraldconnect/k2/j.php?MTID=tffd1fa4b56fa54081e3308546833012e" target="_blank">Business Online Networking</a><br/>
+            Session number: <b>126 630 6771</b><br/>
+            Session password: <b>QmPbQxRd635</b>
           </p>
         </div>
       </div>
