@@ -1,122 +1,83 @@
-import _ from "lodash";
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { useState } from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
+  Collapse,
   Container,
-  Icon,
-  Image,
-  Menu,
-  Sidebar,
-  Responsive
-} from "semantic-ui-react";
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  Button,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 
-const NavBarMobile = ({
-  children,
-  leftItems,
-  onPusherClick,
-  onToggle,
-  rightItems,
-  visible
-}) => (
-  <Sidebar.Pushable>
-    <Sidebar
-      as={Menu}
-      animation="overlay"
-      icon="labeled"
-      inverted
-      items={leftItems}
-      vertical
-      visible={visible}
-    />
-    <Sidebar.Pusher
-      dimmed={visible}
-      onClick={onPusherClick}
-      style={{ minHeight: "100vh" }}
-    >
-      <Menu fixed="top" inverted>
-        <Menu.Item>
-          <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
-        </Menu.Item>
-        <Menu.Item onClick={onToggle}>
-          <Icon name="sidebar" />
-        </Menu.Item>
-        <Menu.Menu position="right">
-          {_.map(rightItems, item => <Menu.Item {...item} />)}
-        </Menu.Menu>
-      </Menu>
-      {children}
-    </Sidebar.Pusher>
-  </Sidebar.Pushable>
-);
+import { useAuth0 } from '@auth0/auth0-react';
 
-const NavBarDesktop = ({ leftItems, rightItems }) => (
-  <Menu fixed="top" inverted>
-    <Menu.Item>
-      <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
-    </Menu.Item>
-    {_.map(leftItems, item => <Menu.Item {...item} />)}
-    <Menu.Menu position="right">
-      {_.map(rightItems, item => <Menu.Item {...item} />)}
-    </Menu.Menu>
-  </Menu>
-);
+const MobileNav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const toggle = () => setIsOpen(!isOpen);
 
-const NavBarChildren = ({ children }) => (
-  <Container style={{ marginTop: "5em" }}>{children}</Container>
-);
+  const logoutWithRedirect = () =>
+    logout({
+      returnTo: window.location.origin,
+    });
 
-class NavBar extends Component {
-  state = {
-    visible: false
-  };
+  return (
+    <div className='mobile-nav'>
+      <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar></Collapse>
+          <Nav className='d-none d-md-block' navbar></Nav>
+            {isAuthenticated && (
+              <>
+                <NavItem>
+                  <i className='fa fa-fw fa-home' style={{ fontSize: '1.75em' }} />
+                <RouterNavLink
+                    to='/'
+                    activeClassName='router-link-exact-active'
+                  >
+                    Home
+                  </RouterNavLink>
+                </NavItem>
+                <NavItem>
+                <i className='fa fa-fw fa-calendar' style={{ fontSize: '1.75em' }} />
+                  <a
+                    className='router-link'
+                    href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
+                    target='_blank'
+                    rel="noopener noreferrer"
+                  >
+                    Agenda
+                  </a>
+                </NavItem>
+                <NavItem>
+                  <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />
+                  <RouterNavLink
+                      className='router-link'
+                      to={`/meetings?name=${user.nickname}&room=Fiserv`}
+                    >
+                      Learning Sessions
+                  </RouterNavLink>
+                  <RouterNavLink
+                    to='#'
+                    id='qsLogoutBtn'
+                    onClick={() => logoutWithRedirect()}
+                  >
+                    Log out
+                  </RouterNavLink>
+                </NavItem>
+              </>
+            )}  
+    </div>
+  
+  );
+};
 
-  handlePusher = () => {
-    const { visible } = this.state;
-
-    if (visible) this.setState({ visible: false });
-  };
-
-  handleToggle = () => this.setState({ visible: !this.state.visible });
-
-  render() {
-    const { children, leftItems, rightItems } = this.props;
-    const { visible } = this.state;
-
-    return (
-      <div>
-        <Responsive {...Responsive.onlyMobile}>
-          <NavBarMobile
-            leftItems={leftItems}
-            onPusherClick={this.handlePusher}
-            onToggle={this.handleToggle}
-            rightItems={rightItems}
-            visible={visible}
-          >
-            <NavBarChildren>{children}</NavBarChildren>
-          </NavBarMobile>
-        </Responsive>
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-          <NavBarDesktop leftItems={leftItems} rightItems={rightItems} />
-          <NavBarChildren>{children}</NavBarChildren>
-        </Responsive>
-      </div>
-    );
-  }
-}
-
-const leftItems = [
-  { as: "a", content: "Home", key: "home" },
-  { as: "a", content: "Users", key: "users" }
-];
-const rightItems = [
-  { as: "a", content: "Login", key: "login" },
-  { as: "a", content: "Register", key: "register" }
-];
-
-const App = () => (
-  <NavBar leftItems={leftItems} rightItems={rightItems}>
-    <Image src="https://react.semantic-ui.com/assets/images/wireframe/paragraph.png" />
-  </NavBar>
-);
-
-render(<App />, document.getElementById("root"));
+export default MobileNav

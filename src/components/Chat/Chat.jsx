@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import * as config from '../../config';
 import ReconnectingWebSocket from 'reconnecting-websocket';
+import ChatTest from '../Chat/ChatTest'
+import { css } from 'emotion';
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 // Components
 import VideoPlayer from '../videoPlayer/VideoPlayer';
@@ -62,13 +65,13 @@ class Chat extends Component {
     this.setState({ connection });
   }
 
-  componentDidUpdate() {
+  /* componentDidUpdate() {
     this.scrollToBottom();
   }
 
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  }; */
 
   updateUsername = (username) => {
     this.setState({ username, showSignIn: false }, () =>
@@ -139,11 +142,14 @@ class Chat extends Component {
 
   render() {
     const { username, message, showSignIn } = this.state;
+    const ROOT_CSS = css({
+      height: 600,
+      width: 400
+    });
     return (
       <React.Fragment>
         <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
-            {/* <Contactless/> */}
             <VideoPlayer
               setMetadataId={this.setMetadataId}
               videoStream={config.PLAYBACK_URL}
@@ -152,41 +158,36 @@ class Chat extends Component {
               <header>
                 <h1>Chat</h1>
               </header>
-              <div className='chat-wrapper pos-absolute pd-t-1 top-0 bottom-0'>
-              
-                <div className='messages'>
+              <ScrollToBottom className='scrolling-chat' {...ROOT_CSS}>
                   {this.renderMessages()}
                   <div ref={this.messagesEndRef} />
-                </div>  
-                <div className='composer'>
-                {showSignIn && <SignIn updateUsername={this.updateUsername} />}
-                  {!username && (
-                    <fieldset>
-                      <button
-                        onClick={this.handleOnClick}
-                        className='btn-primary btn btn--primary full-width rounded chat-signon'
-                      >
-                        ENTER THE CHAT ROOM NOW
-                      </button>
-                    </fieldset>
-                  )}
-                  {username && (<div className="enter-message">
-                    <input
-                    ref={this.chatRef}
-                    className={`rounded ${!username ? 'hidden' : ''}`}
-                    type='text'
-                    placeholder='Enter your message'
-                    value={message}
-                    maxLength={510}
-                    onChange={this.handleChange}
-                    onKeyDown={this.handleKeyDown}
-                  />
-                  
-                    {/* <Giphy/> */}
-                  </div>
-                  )}  
-                </div>
-              </div>
+                  <div className='composer'>
+                  {showSignIn && <SignIn updateUsername={this.updateUsername} />}
+                    {!username && (
+                      <fieldset>
+                        <button
+                          onClick={this.handleOnClick}
+                          className='btn-primary btn btn--primary full-width rounded chat-signon'
+                        >
+                          ENTER THE CHAT ROOM NOW
+                        </button>
+                      </fieldset>
+                    )}
+                    {username && (
+                      <input
+                      ref={this.chatRef}
+                      className={`rounded ${!username ? 'hidden' : ''}`}
+                      type='text'
+                      placeholder='Enter your message'
+                      value={message}
+                      maxLength={510}
+                      onChange={this.handleChange}
+                      onKeyDown={this.handleKeyDown}
+                    />
+                    )}  
+                </div> 
+              </ScrollToBottom>
+              
             </div>
           </div>
         </div>

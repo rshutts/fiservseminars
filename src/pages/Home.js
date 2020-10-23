@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Sidenav from "../components/SideNav";
 import Left from "../components/Left";
 import Right from "../components/Right";
+import RightMobile from "../components/RightMobile";
 
 const Home = () => (
   <Fragment>
@@ -10,6 +11,7 @@ const Home = () => (
       <div className="main-content">
         <Left />
         <Right />
+        <RightMobile />
       </div>
     </div>
   </Fragment>
