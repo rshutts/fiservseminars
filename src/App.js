@@ -1,10 +1,17 @@
+// dependencies
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
+import { useAuth0 } from '@auth0/auth0-react';
+import { isIE, BrowserView } from 'react-device-detect'
 
+// components
 import Loading from './components/Loading';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import RegComplete from "./components/RegComplete/RegComplete";
+
+// pages
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Meetings from './pages/Meetings';
@@ -12,15 +19,12 @@ import Videos from './pages/ResourceCenter/Videos';
 import Articles from './pages/ResourceCenter/Articles';
 import FAQ from './pages/FAQ';
 import Confirmation from './pages/Confirmation';
-import RegComplete from "./components/RegComplete/RegComplete";
-import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
-import { isIE, BrowserView } from 'react-device-detect'
-// import Join from './pages/Join';
-// import Chat from './pages/Chat';
 
 // styles
 import './App.css';
+
+// images
 import chrome from './assets/chrome.png'
 import firefox from './assets/firefox.png'
 import edge from './assets/edge.jpg'

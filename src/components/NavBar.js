@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink as RouterNavLink } from 'react-router-dom';
+import MobileNav from '../components/MobileNav';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
@@ -103,40 +105,106 @@ const NavBar = () => {
             )}
             {isAuthenticated && (
               <Nav
-                className='d-md-none justify-content-between'
+                className='d-md-none justify-content-between mobile-nav'
                 navbar
                 style={{ minHeight: 170 }}
               >
-                <NavItem>
-                  <span className='user-info'>
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret id='profileDropDown'>
                     <img
                       src={user.picture}
                       alt='Profile'
-                      className='nav-user-profile d-inline-block rounded-circle mr-3'
+                      className='nav-user-profile rounded-circle'
                       width='50'
                     />
-                    <h6 className='d-inline-block'>{user.name}</h6>
-                  </span>
-                </NavItem>
-                <NavItem>
-                  <FontAwesomeIcon icon='user' className='mr-3' />
-                  <RouterNavLink
-                    to='/profile'
-                    activeClassName='router-link-exact-active'
-                  >
-                    Profile
-                  </RouterNavLink>
-                </NavItem>
-                <NavItem>
-                  <FontAwesomeIcon icon='power-off' className='mr-3' />
-                  <RouterNavLink
-                    to='#'
-                    id='qsLogoutBtn'
-                    onClick={() => logoutWithRedirect()}
-                  >
-                    Log out
-                  </RouterNavLink>
-                </NavItem>
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>{user.name}</DropdownItem>
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to='/profile'
+                      className='dropdown-profile'
+                      activeClassName='router-link-exact-active'
+                    >
+                    <i className='fa fa-fw fa-user' style={{ fontSize: '1.75em' }} /> Profile
+                    </DropdownItem>
+                    <DropdownItem>
+                      <i className='fa fa-fw fa-home' style={{ fontSize: '1.75em' }} />
+                      <RouterNavLink
+                        to='/'
+                        activeClassName='router-link-exact-active'
+                      >
+                        Home
+                      </RouterNavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <i className='fa fa-fw fa-calendar' style={{ fontSize: '1.75em' }} />
+                        <a
+                          className='router-link'
+                          href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
+                          target='_blank'
+                          rel="noopener noreferrer"
+                        >
+                          Agenda
+                        </a>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />
+                      <RouterNavLink
+                          className='router-link'
+                          to={`/meetings?name=${user.nickname}&room=Fiserv`}
+                        >
+                          Learning Sessions
+                      </RouterNavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <UncontrolledDropdown>
+                          <DropdownToggle>
+                            <i
+                              className='fa fa-fw fa-cogs'
+                              style={{ fontSize: '1.75em' }}
+                            />
+                            Resource Center
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <DropdownItem className='resource-flyout-menu-item'>
+                              <RouterNavLink
+                                  className='sidebar-nav-link'
+                                  to='/resource-center/articles'
+                                >
+                                  <i
+                                    className='fa fa-fw fa-newspaper'
+                                    style={{ fontSize: '1.5em', margin: '5px' }}
+                                  />
+                                  Session Collateral
+                              </RouterNavLink>
+                            </DropdownItem>
+                            <DropdownMenu>
+                              <DropdownItem>
+                                <RouterNavLink
+                                    className='sidebar-nav-link'
+                                    to='/resource-center/videos'
+                                  >
+                                    <i
+                                      className='fa fa-fw fa-video'
+                                      style={{ fontSize: '1.5em', margin: '5px' }}
+                                    />
+                                    OnDemand
+                                  </RouterNavLink>
+                                </DropdownItem>
+                            </DropdownMenu>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </DropdownItem>
+                      <DropdownItem
+                        id='qsLogoutBtn'
+                        onClick={() => logoutWithRedirect()}
+                      >
+                        <FontAwesomeIcon icon='power-off' className='mr-3' /> Log
+                        out
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
               </Nav>
             )}
           </Collapse>

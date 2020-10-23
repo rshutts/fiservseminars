@@ -23,7 +23,9 @@
   left: 0;
   right: 0;
 }
-
+.navbar-expand-md .navbar-toggler {
+  display: none;
+}
 .result-block-container .result-block {
   opacity: 1;
 }
@@ -114,6 +116,7 @@ h6 {
   background:#ff6600;
   color:#fff;
 }
+
 .logo {
   background: url('https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/logo.png');
   background-size:contain;
@@ -172,7 +175,7 @@ h6 {
 
 .announcement p {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1500px;
     color: #fff;
     text-align: center;
     padding: 30px 0;
@@ -185,7 +188,7 @@ h6 {
 }
 .navbar .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1500px;
     display: flex;
     justify-content: space-between;
 }
@@ -316,7 +319,6 @@ h6 {
   border-left:10px solid #ff6600;
   margin:2% 0 !important;
   width: 100%;
-  min-width:293px;
 }
 .meetingContent {
   margin-top:0;
@@ -423,17 +425,14 @@ h6 {
   margin: 2% 0;
   border-radius:0;
   box-shadow: none;
-  min-width: 293px;
  }
  .ui.styled.accordion .title, .ui.styled.accordion .active.title{
    color:#fff;
-   min-width: 293px;
  }
  .ui.styled.accordion .title:hover, .ui.styled.accordion .active.title:hover {
    color:#ff6600;
  }
  .ui.styled.accordion .accordion .title, .ui.styled.accordion .title {
-   min-width:293px;
    width:100%;
  }
  .ui.styled.accordion .accordion .content, .ui.styled.accordion .content {
@@ -799,13 +798,91 @@ span.dropdown---caret---3CkEt {
 }
 
 /*Media Queries*/
+@media (min-width: 1250px) {
+  .right-mobile {
+    display:none;
+  }
+}
 @media (max-width: 1250px) {
+  .navbar .container {
+    max-width:1100px;
+  }
   .container {
     max-width:1250px;
     width:100%;
   }
   .content-wrapper {
     flex-direction: column;
+  }
+  .main-content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .left {
+    width: auto;
+    margin-left: 10px;
+    order:2;
+  }
+  .right {
+    display: none;
+  }
+  .right-mobile {
+    width:100%;
+    order:1;
+  }
+  .meetingContent {
+    border-right:10px solid #ff6600;
+  }
+  .nav-item.dropdown .dropdown-menu {
+    z-index: 2001;
+  }
+  .tabular.menu .item {
+    background: #f60;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .tabular.menu .item:hover {
+    background:rgb(230,230,230);
+    border-color:#000;
+    color:#000;
+  }
+  .tabular.menu .item.active {
+    background:rgb(230,230,230);
+    border-color:#000;
+    color:#000;
+  }
+  .ui.attached.tabular.menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .mobile-agenda {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top:5px;
+  }
+  .mobile-agenda-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    text-align:center;
+    border-right: 2px solid #ff6600;
+    padding: 10px 2px;
   }
   .custom-sidenav {
       width:100%;
@@ -822,7 +899,7 @@ span.dropdown---caret---3CkEt {
     margin:0;
   }
   .sidebar-nav-link i, .fa-cogs {
-    font-size:2.75rem !important;
+    font-size:2.25rem !important;
   }
   .resource-flyout-menu.dropdown---dropdown-menu---1fkH0 {
     display: none !important;
@@ -838,9 +915,38 @@ span.dropdown---caret---3CkEt {
     margin-bottom: 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .next-steps .col-md-5 {
     margin-bottom: 0;
+  }
+  .navbar {
+    flex-direction: unset;
+  }
+  .navbar-nav:last-child {
+    background:none;
+    box-shadow:none;
+    position: relative;
+    top:-120px;
+  }
+  .custom-sidenav {
+    display: none;
+  }
+  .mobile-nav .nav-item i {
+    margin-right: 1rem;
+  }
+  .mobile-nav .router-link-exact-active {
+    border-bottom:2px solid #ff6600;
+  }
+  a#profileDropDown {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: flex-end;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
   }
 }
 
