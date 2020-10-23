@@ -1,7 +1,6 @@
 import React, { Component, useEffect } from 'react';
 import * as config from '../../config';
 import ReconnectingWebSocket from 'reconnecting-websocket';
-import ChatTest from '../Chat/ChatTest'
 import { css } from 'emotion';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
