@@ -502,6 +502,8 @@ h6 {
   border-radius: 0 0 2px 2px;
   border: 2px solid #d3d3d3;
   padding:10px;
+  height: 600;
+  width: 400;
  }
  .chat-wrapper .meetings {
    max-height:500px;

@@ -141,10 +141,6 @@ class Chat extends Component {
 
   render() {
     const { username, message, showSignIn } = this.state;
-    const ROOT_CSS = css({
-      height: 600,
-      width: 400
-    });
     return (
       <React.Fragment>
         <div className='main full-width full-height'>
@@ -157,7 +153,7 @@ class Chat extends Component {
               <header>
                 <h1>Chat</h1>
               </header>
-              <ScrollToBottom className='scrolling-chat' {...ROOT_CSS}>
+              <ScrollToBottom className='scrolling-chat'>
                   {this.renderMessages()}
                   <div ref={this.messagesEndRef} />
                   <div className='composer'>
