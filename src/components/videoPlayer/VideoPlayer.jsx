@@ -98,23 +98,28 @@ class VideoPlayer extends Component {
             **If you are having any technical difficulties with the video, please visit the FAQ page on the left sidebar to help answer your questions.**
           </h3>
         </div>
-        {/* <div>
+        <div>
           <p>
-            <a href="https://fiserventerprise.webex.com/mw3300/mywebex/default.do?service=7&main_url=%2Ftc3300%2Ftrainingcenter%2Fdefault.do%3Fsiteurl%3Dfiserventerprise%26main_url%3D%252Ftc3300%252Fe.do%253FAT%253DMI%2526%2526Host%253DQUhTSwAAAAQbxkPVmUX6Cad4NxJtiy7VM2t75OzSFPbz-AoFLzGfuVNYkI6GqsnVvoRkkUzgQpaUQrySWVax9dGu_LI31jG70%2526MTID%253Dt8bc9464659df8ec268e1a7e1b60e93a8%2526siteurl%253Dfiserventerprise%2526confID%253D175196850667701805%2526ticket%253D4832534b000000041b9ced8dd4f033a3585702ba74ef1a14e5c5c076491882bab457073adb049010&siteurl=fiserventerprise" target="_blank">Loan Networking</a><br/>
-            Session number: <b>131 905 3379</b><br/> 
-            Session password: <b>DpJP9xr4Z$4</b>
+            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt7fa8dea652004f624e1a2e50b81b1cf1&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=eL_OJA6ItHfgdTXuNYO04nDzrciyBkaShThVIkeVjTo&s=vXbER_VXbF9CEk6kTiaGZM4gaaO28hjFbujwcdZOx2U&e=" target="_blank">BPM Networking</a><br/>
+            Session number: <b>131 082 7617</b><br/> 
+            Session password: <b>cmUpXFd?855</b>
           </p>
           <p>
-            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt585692a0bd54f67cf444aa828f3c6fd0&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=fmpsenbnbwpVk92WgE9N9f_lzTN3jbWggZBNn8Z1pcc&s=Lnj1Tazi_WYM6UPKROAZUxLr1UrPTO88xMbhXJ81_y8&e=" target="_blank">Deposit Networking</a><br/>
-            Session number: <b>131 637 6333</b><br/>
-            Session password: <b>mMchNm5e8@7</b> 
+            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt3efaaa7f350754f687c4919bf5e49984&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=M-DqMWVdSHP4W2T3BHd-Xlv4IQ16tBfVb2wOepeHMD8&s=TZYhwlMIItf9crCiHfo2fA_w24hiNZreCPVlbfMyUAM&e=" target="_blank">Deposit Networking</a><br/>
+            Session number: <b>131 078 2233</b><br/>
+            Session password: <b>5v2KwEgJC@9</b> 
           </p>
           <p>
-            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt765233fbad9e7c2980879104e27774e7&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=D2orwhevfAOW3IfZo9eL8Y0CjQQEAT9FqSrA-n8uvtY&s=TWptvEoJRx-whs0-krb8g0Chk0KVlnbNcwIGYxhiUXo&e=" target="_blank">BPM Networking</a><br/>
-            Session number: <b>131 709 2026</b><br/>
-            Session password: <b>PqJyefi7?69</b>
+            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt0d19b04ae9021e6470d89555aab8ed84&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=h2b0TsUdPeTNVxH5Zs1rG9r_ArM47mS1ApFy9z8ODqU&s=RXre_uzBdOZszQarL7ZZ5hFsJGh-DHwBiqt9GzbXzn8&e=" target="_blank">Loan Networking</a><br/>
+            Session number: <b>131 570 2566</b><br/>
+            Session password: <b>mVghir6B*82</b>
           </p>
-        </div> */}
+          <p>
+            <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt7cd5c4ae1a21f5c5a4921936f909cda9&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=cjYr1X5Q0rz5TdPHXhrLJMqIW1TDZd3V3IV7Zx0bago&s=iRacLIu7xPAtBLQ-KbV_-M4x6nNWbN1ejgRo50ev2VM&e=" target="_blank">Business Online Networking</a><br/>
+            Session number: <b>131 959 5773</b><br/>
+            Session password: <b>jdHpdJa@455</b>
+          </p>
+        </div>
       </div>
     )
   }
