@@ -35,36 +35,6 @@ const Articles = () => {
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column className="article-block">
-                        {/* <Card>
-                            <Card.Content>
-                            <Card.Header className="card-header">User Defined Options Tips & Tricks</Card.Header>
-                            <Card.Description>
-                                <ul>
-                                    <li>
-                                        <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/UserDefinedOptionsTipsandTricksGuide.pdf" target="_blank" rel="noopener noreferrer">User Defined Options Tips & Tricks Guide</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/UserDefinedOptionsTipsandTricksPPT.pdf" target="_blank" rel="noopener noreferrer">User Defined Options Tips & Tricks PPT</a>
-                                    </li>
-                                </ul>
-                            </Card.Description>
-                        </Card.Content>
-                        </Card>
-                        <Card>
-                            <Card.Content>
-                                <Card.Header className="card-header">Employ I-32 Forms Design To Set Your Institution Apart</Card.Header>
-                                <Card.Description>
-                                    <ul>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignToSetyourInstitutionApartGuide.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design To Set Your Institution Apart Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignPPT.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design To Set Your Institution Apart PPT</a>
-                                        </li>
-                                    </ul>
-                                </Card.Description>
-                            </Card.Content>
-                        </Card> */}
                         <Card>
                             <Card.Content>
                                 <Card.Header className="card-header">Increase CDD-BSA Compliance With BPM</Card.Header>

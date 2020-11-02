@@ -38,7 +38,35 @@ class Left extends Component {
             </p>
             <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUQ0xIS1IzMlhNVzg4N05MOVU5V0QyWldKQSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Premier Education Seminar Survey</a></h2>
             <p>We are committed to providing educational opportunities that support your success. <span style={{ color: "#ff6600"}}>Please tell us how we can strengthen your learning experience by completing a brief survey at any point during the seminar.</span></p>
-          </div>
+            <p>
+              We are offering each Simulive session twice, once from 8 a.m. - 12 p.m. Central Time and a repeat session from 1 p.m. - 5 p.m. Central Time on the following days:
+              <br/>
+              <ul>
+                <li>
+                  October 21, 22 and 23, 2020
+                </li>
+                <li>
+                  November 17, 18 and 19, 2020
+                </li>
+              </ul>
+            </p>
+            <p>
+              Standard registration fee after September 18:
+              <br/>
+              <ul>
+                <li>
+                  $500 per connection
+                </li>
+                <li>
+                  $850 for <strong>2</strong> connections*
+                </li>
+                <li>
+                  $1,750 for <strong>3</strong> or more connections*
+                </li>
+              </ul>
+                <strong>*SimuLive and On-Demand Recordings available through February 28, 2021</strong>
+            </p>
+         </div>
         </section>
       );
     }

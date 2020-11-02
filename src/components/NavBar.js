@@ -157,54 +157,47 @@ const NavBar = () => {
                           Learning Sessions
                       </RouterNavLink>
                     </DropdownItem>
-                    <DropdownItem>
-                        <UncontrolledDropdown>
-                          <DropdownToggle>
+                    <UncontrolledDropdown className="mobile-subnav">
+                      <DropdownToggle className="mobile-subnav-toggle">
+                        <i className='fa fa-fw fa-cogs' style={{ fontSize: '1.75em' }}/>
+                        Resource Center
+                      </DropdownToggle>
+                      <DropdownMenu className="mobile-subnav-menu">
+                        <DropdownItem>
+                          <RouterNavLink
+                            className='sidebar-nav-link'
+                            to='/resource-center/articles'
+                          >
                             <i
-                              className='fa fa-fw fa-cogs'
-                              style={{ fontSize: '1.75em' }}
+                              className='fa fa-fw fa-newspaper'
+                              style={{ fontSize: '1.5em', margin: '5px' }}
                             />
-                            Resource Center
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <DropdownItem className='resource-flyout-menu-item'>
-                              <RouterNavLink
-                                  className='sidebar-nav-link'
-                                  to='/resource-center/articles'
-                                >
-                                  <i
-                                    className='fa fa-fw fa-newspaper'
-                                    style={{ fontSize: '1.5em', margin: '5px' }}
-                                  />
-                                  Session Collateral
-                              </RouterNavLink>
-                            </DropdownItem>
-                            <DropdownMenu>
-                              <DropdownItem>
-                                <RouterNavLink
-                                    className='sidebar-nav-link'
-                                    to='/resource-center/videos'
-                                  >
-                                    <i
-                                      className='fa fa-fw fa-video'
-                                      style={{ fontSize: '1.5em', margin: '5px' }}
-                                    />
-                                    OnDemand
-                                  </RouterNavLink>
-                                </DropdownItem>
-                            </DropdownMenu>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </DropdownItem>
-                      <DropdownItem
-                        id='qsLogoutBtn'
-                        onClick={() => logoutWithRedirect()}
-                      >
-                        <FontAwesomeIcon icon='power-off' className='mr-3' /> Log
-                        out
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                            Session Collateral
+                          </RouterNavLink>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <RouterNavLink
+                            className='sidebar-nav-link'
+                            to='/resource-center/videos'
+                          >
+                            <i
+                              className='fa fa-fw fa-video'
+                              style={{ fontSize: '1.5em', margin: '5px' }}
+                            />
+                            OnDemand
+                          </RouterNavLink>
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <DropdownItem
+                      id='qsLogoutBtn'
+                      onClick={() => logoutWithRedirect()}
+                    >
+                       <i className='fa fa-fw fa-sign-out-alt' style={{ fontSize: '1.75em' }} /> Log
+                      out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
               </Nav>
             )}
           </Collapse>

@@ -817,8 +817,10 @@ span.dropdown---caret---3CkEt {
 @media (max-width: 1250px) {
   .navbar .container {
     max-width:1100px;
+    padding: 0 10px;
+    height:200px;
   }
-  .container {
+  .container, .meetings-container {
     max-width:1250px;
     width:100%;
   }
@@ -840,12 +842,10 @@ span.dropdown---caret---3CkEt {
   .right-mobile {
     width:100%;
     order:1;
+    z-index: 1;
   }
   .meetingContent {
     border-right:10px solid #ff6600;
-  }
-  .nav-item.dropdown .dropdown-menu {
-    z-index: 2001;
   }
   .tabular.menu .item {
     background: #f60;
@@ -858,11 +858,13 @@ span.dropdown---caret---3CkEt {
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
-    padding: .375rem .75rem;
+    padding: .475rem 1.75rem;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    pointer-events: visible;
+    cursor: pointer;
   }
   .tabular.menu .item:hover {
     background:rgb(230,230,230);
@@ -884,6 +886,9 @@ span.dropdown---caret---3CkEt {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top:5px;
+  }
+  .mobile-agenda-item:first-child {
+    border-left:2px solid #ff6600;
   }
   .mobile-agenda-item {
     display: flex;
@@ -927,6 +932,9 @@ span.dropdown---caret---3CkEt {
   }
 }
 @media (max-width: 767px) {
+  body {
+    font-size:13px;
+  }
   .next-steps .col-md-5 {
     margin-bottom: 0;
   }
@@ -938,6 +946,7 @@ span.dropdown---caret---3CkEt {
     box-shadow:none;
     position: relative;
     top:-120px;
+    min-height:unset !important;
   }
   .custom-sidenav {
     display: none;
@@ -948,11 +957,54 @@ span.dropdown---caret---3CkEt {
   .mobile-nav .router-link-exact-active {
     border-bottom:2px solid #ff6600;
   }
+  button.mobile-subnav-toggle.btn.btn-secondary {
+    color: #212529;
+    min-width:unset;
+    width:100%;
+    background:none;
+    border-bottom: 1px solid #b3bac7;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    padding: .55rem 1.5rem;
+    display: block;
+    width: 100%;
+    clear: both;
+    font-weight: 400;
+    text-align: inherit;
+    white-space: nowrap;
+  }
+  button.mobile-subnav-toggle.btn.btn-secondary i.fa-cogs {
+    color: #212529 !important;
+  }
+  .mobile-subnav-menu.dropdown-menu.show {
+    right: 238px;
+    transform: none !important;
+    top: -2px !important;
+    left:unset !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .sidebar-nav-link i, .fa-cogs {
+    font-size: 1.75em !important;
+  }
+  .dropdown-menu.show {
+    z-index: 3;
+  }
+  .nav-item {
+   z-index: 3
+  }
   a#profileDropDown {
       display: flex;
       align-content: center;
       align-items: center;
       justify-content: flex-end;
+  }
+  .ui.padded.four.column.grid {
+    width:100%;
+  }
+  .article-block {
+    flex-direction: column;
   }
 }
 @media (min-width: 768px) {
@@ -960,7 +1012,9 @@ span.dropdown---caret---3CkEt {
     display: none;
   }
 }
+@media (max-width: 700px) {
 
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   body {
       background:#fff;
