@@ -126,36 +126,32 @@ const NavBar = () => {
                       className='dropdown-profile'
                       activeClassName='router-link-exact-active'
                     >
-                    <i className='fa fa-fw fa-user' style={{ fontSize: '1.75em' }} /> Profile
+                    <i className='fa fa-fw fa-user' style={{ fontSize: '1.75em' }} />Profile
                     </DropdownItem>
-                    <DropdownItem>
-                      <i className='fa fa-fw fa-home' style={{ fontSize: '1.75em' }} />
-                      <RouterNavLink
-                        to='/'
-                        activeClassName='router-link-exact-active'
-                      >
-                        Home
-                      </RouterNavLink>
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to='/'
+                      className='dropdown-profile'
+                      activeClassName='router-link-exact-active'
+                    >
+                    <i className='fa fa-fw fa-home' style={{ fontSize: '1.75em' }} />Home
                     </DropdownItem>
-                    <DropdownItem>
-                      <i className='fa fa-fw fa-calendar' style={{ fontSize: '1.75em' }} />
-                        <a
-                          className='router-link'
-                          href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
-                          target='_blank'
-                          rel="noopener noreferrer"
-                        >
-                          Agenda
-                        </a>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />
-                      <RouterNavLink
-                          className='router-link'
-                          to={`/meetings?name=${user.nickname}&room=Fiserv`}
-                        >
-                          Learning Sessions
-                      </RouterNavLink>
+                    <a
+                      className='dropdown-profile dropdown-item'
+                      activeClassName='router-link-exact-active'
+                      href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
+                      target='_blank'
+                      rel="noopener noreferrer"
+                    >
+                    <i className='fa fa-fw fa-calendar' style={{ fontSize: '1.75em' }} />Agenda
+                    </a>
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to={`/meetings?name=${user.nickname}&room=Fiserv`}
+                      className='dropdown-profile'
+                      activeClassName='router-link-exact-active'
+                    >
+                    <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />Learning Sessions
                     </DropdownItem>
                     <UncontrolledDropdown className="mobile-subnav">
                       <DropdownToggle className="mobile-subnav-toggle">
@@ -163,29 +159,21 @@ const NavBar = () => {
                         Resource Center
                       </DropdownToggle>
                       <DropdownMenu className="mobile-subnav-menu">
-                        <DropdownItem>
-                          <RouterNavLink
-                            className='sidebar-nav-link'
-                            to='/resource-center/articles'
-                          >
-                            <i
-                              className='fa fa-fw fa-newspaper'
-                              style={{ fontSize: '1.5em', margin: '5px' }}
-                            />
-                            Session Collateral
-                          </RouterNavLink>
+                        <DropdownItem
+                         tag={RouterNavLink}
+                         to='/resource-center/articles'
+                         className='dropdown-profile'
+                         activeClassName='router-link-exact-active'
+                        >
+                        <i className='fa fa-fw fa-newspaper' style={{ fontSize: '1.5em', margin: '5px' }}/>Session Collateral
                         </DropdownItem>
-                        <DropdownItem>
-                          <RouterNavLink
-                            className='sidebar-nav-link'
-                            to='/resource-center/videos'
+                        <DropdownItem
+                          tag={RouterNavLink}
+                          to='/resource-center/articles'
+                          className='dropdown-profile'
+                          activeClassName='router-link-exact-active'
                           >
-                            <i
-                              className='fa fa-fw fa-video'
-                              style={{ fontSize: '1.5em', margin: '5px' }}
-                            />
-                            OnDemand
-                          </RouterNavLink>
+                          <i className='fa fa-fw fa-video' style={{ fontSize: '1.5em', margin: '5px' }}/>OnDemand
                         </DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>

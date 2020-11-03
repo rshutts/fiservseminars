@@ -833,7 +833,6 @@ span.dropdown---caret---3CkEt {
   }
   .left {
     width: auto;
-    margin-left: 10px;
     order:2;
   }
   .right {
@@ -846,6 +845,7 @@ span.dropdown---caret---3CkEt {
   }
   .meetingContent {
     border-right:10px solid #ff6600;
+    text-align: center;
   }
   .tabular.menu .item {
     background: #f60;
@@ -879,6 +879,7 @@ span.dropdown---caret---3CkEt {
   .ui.attached.tabular.menu {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 20px;
   }
   .mobile-agenda {
     justify-content: center;
@@ -985,6 +986,11 @@ span.dropdown---caret---3CkEt {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+  .mobile-subnav-menu.dropdown-menu.show a.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .sidebar-nav-link i, .fa-cogs {
     font-size: 1.75em !important;
   }
@@ -993,6 +999,12 @@ span.dropdown---caret---3CkEt {
   }
   .nav-item {
    z-index: 3
+  }
+/*   .nav-item.dropdown .dropdown-item, button.mobile-subnav-toggle.btn.btn-secondary {
+    padding:0;
+  } */
+  .main-content-profile {
+    width:auto;
   }
   a#profileDropDown {
       display: flex;
@@ -1013,7 +1025,22 @@ span.dropdown---caret---3CkEt {
   }
 }
 @media (max-width: 700px) {
-
+  .mobile-agenda {
+    width:72%;
+    margin:0 auto;
+  }
+  .mobile-agenda-item { 
+    align-content: flex-start;
+    width: 100%;
+    text-align: left;
+    padding: 10px 2px;
+    margin: 0 auto;
+    display:block;
+    border-right:none;
+  }
+  .mobile-agenda-item:first-child {
+    border-left:none;
+  }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   body {
