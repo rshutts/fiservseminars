@@ -47,9 +47,6 @@ const App = () => {
   if (isLoading) {
     return <Loading />;
   }
-  if (window.location.pathname === ("/chat-popout")) {
-    require("./components/Chat/Popout.css")
-  }
   
   if (isIE) {
     const styles = {

@@ -175,7 +175,7 @@ class Chat extends Component {
               <ScrollToBottom className='scrolling-chat'>
                   {this.renderMessages()}
                   <div ref={this.messagesEndRef} />
-                  <div className='composer'>
+                  <div className='composer'>                 
                   {showSignIn && <SignIn updateUsername={this.updateUsername} />}
                     {!username && (
                       <fieldset>
@@ -201,10 +201,10 @@ class Chat extends Component {
                       />
                       {this.state.isPoppedOut
                         ? <Popout
-                            url={`/chat-popout?name=${username}&room=Fiserv`}
+                            url={`/chat-popout.html?name=${username}&room=Fiserv`}
                             title="Window title"
                             onClosing={this.popoutClosed}
-                          >
+                          > 
                             {this.renderMessages()}
                             <div ref={this.messagesEndRef} />
                             <div className='composer'>
@@ -219,6 +219,7 @@ class Chat extends Component {
                                 onKeyDown={this.handleKeyDown}
                               />
                             </div> 
+                           
                           </Popout> 
                         : 
                           <div className="popout-icon">
