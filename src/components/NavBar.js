@@ -169,7 +169,7 @@ const NavBar = () => {
                         </DropdownItem>
                         <DropdownItem
                           tag={RouterNavLink}
-                          to='/resource-center/articles'
+                          to='/resource-center/videos'
                           className='dropdown-profile'
                           activeClassName='router-link-exact-active'
                           >

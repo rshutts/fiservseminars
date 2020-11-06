@@ -529,10 +529,10 @@ h6 {
  .join-chat:hover {
   background: rgb(102,153,204, .8);
   color:#fff;
-  border:none;
-  padding: 5px;
+  padding: 5px 10px;
   margin-left: 5px;
   margin-bottom: 4px;
+  border: none;
  }
  .username {
   margin-bottom: 0;
@@ -546,13 +546,29 @@ h6 {
 .enter-message {
   width:100%;
 }
-.composer input {
+.chat-message-input {
+  width: 100%;
+  display: flex;
+}
+.chat-message-input input {
   width: 100%;
   border-radius: 5px;
   min-height: 42px;
   background: #f1f2f3;
   padding: 10px;
   border: 1px solid #dee2e6;
+}
+
+i.fa.fa-fw.fa-external-link-alt {
+  color:#6c757d;
+  pointer-events:pointer;
+  cursor: pointer;
+  padding-right: 10px;
+}
+.popout-icon {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
 }
  .messages {
   padding:10px;
@@ -831,6 +847,24 @@ span.dropdown---caret---3CkEt {
     width: 100%;
     flex-direction: column;
   }
+  .ui.padded.four.column.grid, .ui.padded.four.column.grid .row, .ui.padded.two.column.grid, .faq-container {
+    width:100%;
+    margin-right:0;
+    margin-left:0;
+  }
+  .faq-sections {
+    width:95%;
+  }
+  .article-block .ui.card.survey-card {
+    width:77%;
+  }
+  .article-block {
+    width:100%;
+    flex-wrap: wrap;
+  }
+  .article-block .ui.card {
+    width:32%;
+  }
   .left {
     width: auto;
     order:2;
@@ -931,6 +965,12 @@ span.dropdown---caret---3CkEt {
   .next-steps .col-md-5 {
     margin-bottom: 0;
   }
+  .article-block .ui.card.survey-card {
+    width:100%;
+  }
+  .article-block .ui.card {
+    width: 47%;
+  }
 }
 @media (max-width: 767px) {
   body {
@@ -1015,9 +1055,15 @@ span.dropdown---caret---3CkEt {
   .ui.padded.four.column.grid {
     width:100%;
   }
-  .article-block {
+  .survey-descriptions {
     flex-direction: column;
   }
+  .survey-descriptions .description {
+    width:100%;
+  }
+/*   .article-block {
+    flex-direction: column;
+  } */
 }
 @media (min-width: 768px) {
   .mobile-nav {
@@ -1040,6 +1086,9 @@ span.dropdown---caret---3CkEt {
   }
   .mobile-agenda-item:first-child {
     border-left:none;
+  }
+  .article-block .ui.card {
+    width:75%;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

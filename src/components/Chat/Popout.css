@@ -1,0 +1,21 @@
+div#root {
+    display: none;
+}
+div#popout-content-container {
+    border-radius: 0 0 2px 2px;
+    border: 2px solid #d3d3d3;
+    padding: 10px;
+    background: #fff;
+    /* margin: 0 10px; */
+}
+
+body {
+    background: #fff;
+}
+.composer input.rounded {
+    width: 100%;
+    min-height: 42px;
+    background: #f1f2f3;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}

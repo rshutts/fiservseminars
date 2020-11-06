@@ -3,6 +3,8 @@ import * as config from '../../config';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import { css } from 'emotion';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import Popout from "react-popout";
+import ReactDOM from "react-dom";
 
 // Components
 import VideoPlayer from '../videoPlayer/VideoPlayer';
@@ -11,8 +13,11 @@ import VideoPlayer from '../videoPlayer/VideoPlayer';
 import SignIn from './SignIn';
 
 class Chat extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.popout = this.popout.bind(this);
+    this.popoutClosed = this.popoutClosed.bind(this);
+    this.state = { isPoppedOut: false };
     this.state = {
       metadataId: null,
       showSignIn: false,
@@ -25,6 +30,14 @@ class Chat extends Component {
     this.messagesEndRef = React.createRef();
   }
   
+  popout() {
+    this.setState({ isPoppedOut: true });
+  }
+
+  popoutClosed() {
+    this.setState({ isPoppedOut: false });
+  }
+
   componentDidMount() {
     const options = {
         minUptime: 50000,
@@ -141,6 +154,12 @@ class Chat extends Component {
 
   render() {
     const { username, message, showSignIn } = this.state;
+    var popout = (
+      <i
+        onClick={this.popout}
+        className="fa fa-fw fa-external-link-alt" style={{ color:'#6c757d' }} alt="Pop out chat" title="Pop out chat"/>
+    );
+    
     return (
       <React.Fragment>
         <div className='main full-width full-height'>
@@ -169,16 +188,44 @@ class Chat extends Component {
                       </fieldset>
                     )}
                     {username && (
-                      <input
-                      ref={this.chatRef}
-                      className={`rounded ${!username ? 'hidden' : ''}`}
-                      type='text'
-                      placeholder='Enter your message'
-                      value={message}
-                      maxLength={510}
-                      onChange={this.handleChange}
-                      onKeyDown={this.handleKeyDown}
-                    />
+                      <div className="chat-message-input">
+                        <input
+                        ref={this.chatRef}
+                        className={`rounded ${!username ? 'hidden' : ''}`}
+                        type='text'
+                        placeholder='Enter your message'
+                        value={message}
+                        maxLength={510}
+                        onChange={this.handleChange}
+                        onKeyDown={this.handleKeyDown}
+                      />
+                      {this.state.isPoppedOut
+                        ? <Popout
+                            url={`/chat-popout?name=${username}&room=Fiserv`}
+                            title="Window title"
+                            onClosing={this.popoutClosed}
+                          >
+                            {this.renderMessages()}
+                            <div ref={this.messagesEndRef} />
+                            <div className='composer'>
+                              <input
+                                ref={this.chatRef}
+                                className={`rounded ${!username ? 'hidden' : ''}`}
+                                type='text'
+                                placeholder='Enter your message'
+                                value={message}
+                                maxLength={510}
+                                onChange={this.handleChange}
+                                onKeyDown={this.handleKeyDown}
+                              />
+                            </div> 
+                          </Popout> 
+                        : 
+                          <div className="popout-icon">
+                            {popout}
+                          </div>
+                      }
+                    </div>
                     )}  
                 </div> 
               </ScrollToBottom>

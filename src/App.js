@@ -10,6 +10,7 @@ import Loading from './components/Loading';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import RegComplete from "./components/RegComplete/RegComplete";
+/* import ChatPopout from "./components/Chat/Popout"; */
 
 // pages
 import Home from './pages/Home';
@@ -32,6 +33,8 @@ import edge from './assets/edge.jpg'
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
 import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
+import { Popout } from 'react-popout-component';
+
 initFontAwesome();
 
 const App = () => {
@@ -44,7 +47,10 @@ const App = () => {
   if (isLoading) {
     return <Loading />;
   }
-
+  if (window.location.pathname === ("/chat-popout")) {
+    require("./components/Chat/Popout.css")
+  }
+  console.log(window.location.pathname);
   if (isIE) {
     const styles = {
       background: "white",
@@ -82,6 +88,7 @@ const App = () => {
               <Route path='/faq' component={FAQ} />
               <Route path="/registration-confirmation" component={Confirmation} />
               <Route path="/registration-complete" component={RegComplete} />
+              {/* <Route path="/chat-popout" component={Popout}/> */}
               {/* <Route path='/chat' component={Chat} />
               <Route path='/join' component={Join} /> */}
             </Switch>
