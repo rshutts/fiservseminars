@@ -47,7 +47,7 @@ const App = () => {
   if (isLoading) {
     return <Loading />;
   }
-  if (window.location.pathname === ("/chat-popout")) {
+  if (window.location.pathname == ("/chat-popout")) {
     require("./components/Chat/Popout.css")
   }
   
