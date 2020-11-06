@@ -29,7 +29,7 @@ export default function Note({ note }) {
           Delete
         </button>
 
-        <button onClick={downloadTxtFile}>Download txt</button>
+        <button onClick={downloadTxtFile}>Download Note</button>
       </div>
     </div>
   );

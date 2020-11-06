@@ -50,7 +50,7 @@ const App = () => {
   if (window.location.pathname === ("/chat-popout")) {
     require("./components/Chat/Popout.css")
   }
-  console.log(window.location.pathname);
+  
   if (isIE) {
     const styles = {
       background: "white",

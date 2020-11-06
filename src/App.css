@@ -455,7 +455,7 @@ h6 {
    padding: 1% 2%;
  }
 
- .note-form input {
+ .note-form input, .edit-note {
   padding: 20px;
   margin-right:10px;
   border-radius: 0 0 2px 2px;
@@ -470,16 +470,26 @@ h6 {
    margin-top:5px;
  }
  
- button.add-note {
+ button.add-note, button.update-note, button.save-note:hover   {
    background:#ff6600;
+   color:#fff;
  }
 
- button.add-note:hover {
+ button.add-note:hover, button.update-note:hover, button.save-note {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
   color:#fff;
  }
 
+.edit-note-buttons {
+  display: flex;
+}
+.edit-note-buttons div {
+  padding:5px;
+}
+.note .btn-container button {
+  margin-right:5px;
+}
  /*Chat*/
  .chat {
    margin-top:10px;

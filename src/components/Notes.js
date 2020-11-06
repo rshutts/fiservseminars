@@ -22,7 +22,7 @@ function Notes() {
                 **If you are having any technical difficulties with the video, please visit the FAQ page on the left sidebar to help answer your questions.**
               </h3>
             </div>
-            <br/>
+            {/* <br/>
             <div>
               <p>
                 <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__fiserventerprise.webex.com_fiserventerprise_k2_j.php-3FMTID-3Dt7fa8dea652004f624e1a2e50b81b1cf1&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=eL_OJA6ItHfgdTXuNYO04nDzrciyBkaShThVIkeVjTo&s=vXbER_VXbF9CEk6kTiaGZM4gaaO28hjFbujwcdZOx2U&e=" target="_blank">BPM Networking</a><br/>
@@ -44,7 +44,7 @@ function Notes() {
                 Session number: <b>131 959 5773</b><br/>
                 Session password: <b>jdHpdJa@455</b>
               </p>
-            </div>
+            </div> */}
           </div>
           
         <AddNote />

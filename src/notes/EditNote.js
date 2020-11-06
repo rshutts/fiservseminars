@@ -27,7 +27,7 @@ export default function EditNote() {
 
   return (
     <div className='note-form'>
-      <form onSubmit={handleSubmit} action=''>
+      <form onSubmit={handleSubmit} action='' className="edit-note-form">
         <textarea
           ref={ref}
           onChange={handleChange}
@@ -35,14 +35,18 @@ export default function EditNote() {
           name=''
           id=''
           cols='30'
-          rows='10'
+          rows='1'
+          className="edit-note"
         />
-        <div style={{ textAlign: 'right' }}>
-          <button>Update note</button>
+        <div className="edit-note-buttons">
+          <div style={{ textAlign: 'right' }}>
+            <button className="update-note">Update note</button>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <button className="save-note">Save note</button>
+          </div>
         </div>
-        <div style={{ textAlign: 'right' }}>
-          <button>Save note</button>
-        </div>
+        
       </form>
     </div>
   );
