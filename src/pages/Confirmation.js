@@ -4,7 +4,7 @@ import Sidenav from "../components/SideNav";
 const Confirmation = () => (
   <Fragment>
     <div className="next-steps my-5 content-wrapper">
-      <Sidenav />
+      {/* <Sidenav /> */}
       <div className="main-content">
       <section className='confirmation'>
           <div>

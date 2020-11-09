@@ -10,7 +10,6 @@ import Loading from './components/Loading';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import RegComplete from "./components/RegComplete/RegComplete";
-/* import ChatPopout from "./components/Chat/Popout"; */
 
 // pages
 import Home from './pages/Home';
@@ -85,7 +84,6 @@ const App = () => {
               <Route path='/faq' component={FAQ} />
               <Route path="/registration-confirmation" component={Confirmation} />
               <Route path="/registration-complete" component={RegComplete} />
-              {/* <Route path="/chat-popout" component={Popout}/> */}
               {/* <Route path='/chat' component={Chat} />
               <Route path='/join' component={Join} /> */}
             </Switch>

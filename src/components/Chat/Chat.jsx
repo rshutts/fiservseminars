@@ -201,10 +201,16 @@ class Chat extends Component {
                       />
                       {this.state.isPoppedOut
                         ? <Popout
-                            url={`/chat-popout.html?name=${username}&room=Fiserv`}
+                            url={`/chat-popout?name=${username}&room=Fiserv`}
                             title="Window title"
                             onClosing={this.popoutClosed}
+                            containerId='chat-popout-window'
                           > 
+                          <h1>
+                            Chat
+                          </h1>
+                          <div className="popout-chat-message-container">
+                            
                             {this.renderMessages()}
                             <div ref={this.messagesEndRef} />
                             <div className='composer'>
@@ -218,8 +224,8 @@ class Chat extends Component {
                                 onChange={this.handleChange}
                                 onKeyDown={this.handleKeyDown}
                               />
-                            </div> 
-                           
+                            </div>
+                          </div>
                           </Popout> 
                         : 
                           <div className="popout-icon">

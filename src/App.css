@@ -568,7 +568,28 @@ h6 {
   padding: 10px;
   border: 1px solid #dee2e6;
 }
-
+#chat-popout-window {
+  position: absolute;
+  height:100%;
+  width: 100%;
+  top:0;
+  background:#fff;
+  z-index: 3;
+  padding: 10px;
+}
+.popout-chat-message-container {
+  border-radius: 0 0 2px 2px;
+  border: 2px solid #d3d3d3;
+  padding: 10px;
+}
+#chat-popout-window input {
+  width: 100%;
+  border-radius: 5px;
+  min-height: 42px;
+  background: #f1f2f3;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
 i.fa.fa-fw.fa-external-link-alt {
   color:#6c757d;
   pointer-events:pointer;
