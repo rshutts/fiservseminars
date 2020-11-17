@@ -7,7 +7,7 @@ import Popout from "react-popout";
 import ReactDOM from "react-dom";
 
 // Components
-import VideoPlayer from '../videoPlayer/VideoPlayer';
+import VideoJS from '../videoPlayer/VideoJS';
 /* import Giphy from '../Chat/Giphy'; */
 /* import Contactless from "../../components/Videos/Contactless"; */
 import SignIn from './SignIn';
@@ -164,10 +164,11 @@ class Chat extends Component {
       <React.Fragment>
         <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
-            <VideoPlayer
+            {/* <VideoPlayer
               setMetadataId={this.setMetadataId}
               videoStream={config.PLAYBACK_URL}
-            />
+            /> */}
+            <VideoJS />
             <div className="col-wrapper">
               <header>
                 <h1>Chat</h1>

@@ -650,17 +650,11 @@ i.fa.fa-fw.fa-external-link-alt {
     width: 65%;
     padding: 0 10px;
 }
- .placeholderImage {
-   background:url("https://fiservseminars-media.s3.amazonaws.com/coming-soon.jpg");
-   height:100%;
-   width:100%;
- }
- video#video-player {
-   width:100%;
- }
- .video-js.video-player.video-js.vjs-4-3 {
-   padding-top:60%;
- }
+.main-video-player {
+  width: 100%;
+  min-height: 560px;
+  height:auto;
+}
 
 .player-wrapper {
   width:100%;
@@ -1008,6 +1002,9 @@ span.dropdown---caret---3CkEt {
   .article-block .ui.card {
     width: 47%;
   }
+}
+@media (max-width: 790px) {
+  
 }
 @media (max-width: 767px) {
   body {
