@@ -172,9 +172,9 @@ class Chat extends Component {
               <header>
                 <h1>Chat</h1>
               </header>
-              <ScrollToBottom className='scrolling-chat'>
+              <ScrollToBottom>
                   {this.renderMessages()}
-                  <div ref={this.messagesEndRef} />
+                  <div ref={this.messagesEndRef} className='scrolling-chat'/>
                   <div className='composer'>                 
                   {showSignIn && <SignIn updateUsername={this.updateUsername} />}
                     {!username && (
