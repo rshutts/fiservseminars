@@ -512,8 +512,6 @@ h6 {
   border-radius: 0 0 2px 2px;
   border: 2px solid #d3d3d3;
   padding:10px;
-  height: 600px;
-  width: 400px;
  }
 .scrolling-chat div[class*="react-scroll-to-bottom"] {
     max-height: 550px;
