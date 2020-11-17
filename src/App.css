@@ -516,6 +516,9 @@ h6 {
 .scrolling-chat div[class*="react-scroll-to-bottom"] {
     max-height: 550px;
 }
+.popout-chat-message-container div[class*="react-scroll-to-bottom"] {
+  max-height: none;
+}
  .chat-wrapper .meetings {
    max-height:500px;
    padding:10px;
@@ -576,12 +579,14 @@ h6 {
   top:0;
   background:#fff;
   z-index: 3;
-  padding: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
 }
 .popout-chat-message-container {
   border-radius: 0 0 2px 2px;
   border: 2px solid #d3d3d3;
   padding: 10px;
+  background:#fff;
 }
 #chat-popout-window input {
   width: 100%;
@@ -1007,10 +1012,6 @@ span.dropdown---caret---3CkEt {
 @media (max-width: 767px) {
   body {
     font-size:13px;
-  }
-  .announcement p {
-    font-size:1rem;
-    margin-top: 15px;
   }
   .next-steps .col-md-5 {
     margin-bottom: 0;
