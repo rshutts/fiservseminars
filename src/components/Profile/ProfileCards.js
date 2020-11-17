@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Icon, Image, Button, Modal, Header, Checkbox, Form } from 'semantic-ui-react';
-import Loading from '../components/Loading';
+import { Card, Icon, Image, Button, Header, Checkbox } from 'semantic-ui-react';
+import Loading from '../Loading';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import UpdateForm from './UpdateForm'
 
 const ProfileCards = () => {
   const [open, setOpen] = React.useState(false)
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
-  console.log(user);
   const [userMetadata, setUserMetadata] = useState(null);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const ProfileCards = () => {
   }, []);
 
   return (
-    isAuthenticated && (
+    isAuthenticated && (<div>
       <Card>
         <Image
           src={user.picture}
@@ -68,48 +68,8 @@ const ProfileCards = () => {
             </h2>
           </Card.Description>
         </Card.Content>
-      <Modal
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      trigger={<Button>Show Modal</Button>}
-    >
-      <Modal.Header>Select a Photo</Modal.Header>
-      <Modal.Content image>
-        <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped />
-        <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <Form>
-            <Form.Field>
-              <label>First Name</label>
-              <input placeholder='First Name' />
-            </Form.Field>
-            <Form.Field>
-              <label>Last Name</label>
-              <input placeholder='Last Name' />
-            </Form.Field>
-            <Form.Field>
-              <Checkbox label='I agree to the Terms and Conditions' />
-            </Form.Field>
-            <Button type='submit'>Submit</Button>
-          </Form>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
-          Nope
-        </Button>
-        <Button
-          content="Yep, that's me"
-          labelPosition='right'
-          icon='checkmark'
-          onClick={() => setOpen(false)}
-          positive
-        />
-      </Modal.Actions>
-    </Modal>
     </Card>
-      
+    </div>
     )
   );
 };

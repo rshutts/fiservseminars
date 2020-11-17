@@ -4,13 +4,7 @@ import NotesContext from '../context';
 export default function AddNote() {
   const { state, dispatch } = useContext(NotesContext);
   const [value, setValue] = useState('');
-
-  let ref = useRef();
-
-  useEffect(() => {
-    ref.current.focus();
-  });
-
+  
   const handleChange = (event) => {
     setValue(event.target.value);
   };
@@ -29,7 +23,7 @@ export default function AddNote() {
     <div className='note-form'>
       <h1>Notes</h1>
       <form onSubmit={handleSubmit} action=''>
-        <input type='text' ref={ref} onChange={handleChange} value={value} />
+        <input type='text' onChange={handleChange} value={value} />
         <button className="add-note btn-primary">Add note</button>
       </form>
     </div>

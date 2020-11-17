@@ -1,6 +1,6 @@
 import React from "react";
 import Sidenav from "../components/SideNav";
-import ProfileCards from "../components/ProfileCards"
+import ProfileCards from "../components/Profile/ProfileCards"
 
 
 const ProfileComponent = () => {

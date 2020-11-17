@@ -2,7 +2,7 @@ import React from "react";
 import Loading from "../Loading";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Sidenav from "../SideNav";
-import ProfileCards from "../ProfileCards"
+import ProfileCards from "../Profile/ProfileCards"
 
 // import Cookies from 'universal-cookie';
 

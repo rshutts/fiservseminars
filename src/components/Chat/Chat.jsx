@@ -206,11 +206,10 @@ class Chat extends Component {
                             onClosing={this.popoutClosed}
                             containerId='chat-popout-window'
                           > 
-                          <h1>
-                            Chat
-                          </h1>
-                          <div className="popout-chat-message-container">
-                            
+                          <header>
+                            <h1>Chat</h1>
+                          </header>
+                          <ScrollToBottom className='popout-chat-message-container scrolling-chat'>
                             {this.renderMessages()}
                             <div ref={this.messagesEndRef} />
                             <div className='composer'>
@@ -225,7 +224,7 @@ class Chat extends Component {
                                 onKeyDown={this.handleKeyDown}
                               />
                             </div>
-                          </div>
+                          </ScrollToBottom>
                           </Popout> 
                         : 
                           <div className="popout-icon">
