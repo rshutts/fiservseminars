@@ -1,5 +1,5 @@
 {
-  "name": "simple-chat-test",
+  "name": "simple-chat",
   "version": "1.0.0",
   "description": "onConnect, sendMessage and onDisconnect example for WebSockets on API Gateway",
   "main": "src/app.js",
