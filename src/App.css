@@ -554,6 +554,12 @@ h6 {
   font-weight: bold;
   font-size: .9rem;
  }
+ .username-fiserv {
+  color:#ff6600;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: .9rem;
+ }
  .chat-line {
    margin-bottom:10px;
  }
@@ -652,7 +658,7 @@ i.fa.fa-fw.fa-external-link-alt {
 }
 .main-video-player {
   width: 100%;
-  min-height: 560px;
+  min-height: 480px;
   height:auto;
 }
 

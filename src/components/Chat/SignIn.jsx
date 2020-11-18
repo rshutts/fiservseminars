@@ -24,7 +24,6 @@ class SignIn extends Component {
 
   render() {
     const { user } = this.props.auth0;
-    console.log(user);
     const { username } = this.state;
     return (
       <div>

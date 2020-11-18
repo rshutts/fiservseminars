@@ -5,6 +5,7 @@ import { css } from 'emotion';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Popout from "react-popout";
 import ReactDOM from "react-dom";
+import { withAuth0 } from '@auth0/auth0-react';
 
 // Components
 import VideoJS from '../videoPlayer/VideoJS';
@@ -21,6 +22,7 @@ class Chat extends Component {
     this.state = {
       metadataId: null,
       showSignIn: false,
+      name: '',
       username: '',
       message: '',
       messages: [],
@@ -63,14 +65,16 @@ class Chat extends Component {
       const messages = this.state.messages;
       const data = event.data.split('::');
       const username = data[0];
+      const name = data[0];
       const message = data.slice(1).join('::'); // in case the message contains the separator '::'
-
+      
       messages.push({
         timestamp: Date.now(),
         username,
+        name,
         message,
       });
-
+      
       this.setState({ messages });
     };
 
@@ -89,6 +93,7 @@ class Chat extends Component {
     this.setState({ username, showSignIn: false }, () =>
       this.chatRef.current.focus()
     );
+    console.log(username);
   };
 
   handleOnClick = () => {
@@ -133,14 +138,17 @@ class Chat extends Component {
   };
 
   renderMessages = () => {
+    const { user } = this.props.auth0;
+    console.log(user)
     const { messages } = this.state;
     return messages.map((message) => {
       let formattedMessage = this.parseUrls(message.message);
       return (
         <div className='chat-line' key={message.timestamp}>
-          <p className='username'>
-            {message.username}
-          </p>
+          {user.name.includes("fiserv")
+            ? <p className='username-fiserv'>{message.username}{ console.log(user.name) }</p>
+            : <p className='username'>{message.username}{ console.log(user.name) }</p>
+          }
           <p className="message-bubble" dangerouslySetInnerHTML={{ __html: formattedMessage }}>
           </p>
         </div>
@@ -164,10 +172,6 @@ class Chat extends Component {
       <React.Fragment>
         <div className='main full-width full-height'>
           <div className='content-wrapper mg-2'>
-            {/* <VideoPlayer
-              setMetadataId={this.setMetadataId}
-              videoStream={config.PLAYBACK_URL}
-            /> */}
             <VideoJS />
             <div className="col-wrapper">
               <header>
@@ -245,4 +249,4 @@ class Chat extends Component {
   }
 }
 
-export default Chat;
+export default withAuth0(Chat);
