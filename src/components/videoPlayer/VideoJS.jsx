@@ -27,9 +27,9 @@ class VideoJS extends Component {
                     hideControls={['playbackrates']}
                     src={this.state.video.src}
                     poster={this.state.video.poster}
-                    preload={auto};
-                    autoplay={true}
                     onReady={this.onPlayerReady.bind(this)}
+                    preload
+                    autoplay
                 />
             </div>
         );
