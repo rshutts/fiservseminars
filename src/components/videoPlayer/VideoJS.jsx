@@ -6,6 +6,7 @@ class VideoJS extends Component {
     state = {
         video: {
             src: "https://ca351d1575ab.us-east-1.playback.live-video.net/api/video/v1/us-east-1.076005434014.channel.9YfCW2PffJ0z.m3u8",
+            poster: "https://fiservseminars-media.s3.amazonaws.com/no-video.png"
         }
     }
     render() {
@@ -19,6 +20,8 @@ class VideoJS extends Component {
                     controls={true}
                     hideControls={['playbackrates']}
                     src={this.state.video.src}
+                    poster={this.state.video.poster}
+                    preload={auto};
                     autoplay={true}
                 />
             </div>

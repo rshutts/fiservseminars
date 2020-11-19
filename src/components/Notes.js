@@ -22,7 +22,7 @@ function Notes() {
                 **If you are having any technical difficulties with the video, please visit the FAQ page on the left sidebar to help answer your questions.**
               </h3>
             </div>
-            {/* <br/>
+            <br/>
             <div>
               <p>
                 <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__emeraldconnect.webex.com_emeraldconnect_k2_j.php-3FMTID-3Dt5c57190a7c0aaf5d4604c2a4c70fdd29&d=DwMGaQ&c=rE3mhBYFJfJGqQ7WI0-DPw&r=lD_m483ZNdrPoub1glQ0NI-p62b7YfEyJ2JEVPaf7E0&m=rmeJUmqTkE3lzc31hwcqO-Lrwvfcmsgqecw4pNg5hQ8&s=U1saRugs4rcD9bjUKB_sLoWj1voRtaK1WbThtLmLLrw&e=" target="_blank">Loans Networking</a><br/>
@@ -44,7 +44,7 @@ function Notes() {
                 Session number: <b>131 063 1507</b><br/>
                 Session password: <b>JnV8u2ENM$8</b>
               </p>
-            </div> */}
+            </div>
           </div>
           
         <AddNote />
