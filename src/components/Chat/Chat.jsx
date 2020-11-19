@@ -145,7 +145,7 @@ class Chat extends Component {
       let formattedMessage = this.parseUrls(message.message);
       return (
         <div className='chat-line' key={message.timestamp}>
-          {user.name.includes("fiserv")
+          {user.name.includes("@fiserv.com")
             ? <p className='username-fiserv'>{message.username}{ console.log(user.name) }</p>
             : <p className='username'>{message.username}{ console.log(user.name) }</p>
           }
