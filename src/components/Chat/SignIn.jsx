@@ -45,7 +45,7 @@ class SignIn extends Component {
               <button
                 onClick={this.handleStartChatting}
                 className='btn btn--primary rounded mg-t-1 join-chat'
-                disabled={!username}
+                /* disabled={!username} */
               >
                 JOIN
               </button>

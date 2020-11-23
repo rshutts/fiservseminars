@@ -14,7 +14,7 @@ import RegComplete from "./components/RegComplete/RegComplete";
 // pages
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Meetings from './pages/Meetings';
+import Archived from './pages/Archived';
 import Videos from './pages/ResourceCenter/Videos';
 import Articles from './pages/ResourceCenter/Articles';
 import FAQ from './pages/FAQ';
@@ -77,7 +77,7 @@ const App = () => {
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/profile' component={Profile} />
-              <Route path='/meetings' component={Meetings} />
+              <Route path='/archived-sessions' component={Archived} />   
               {/* <Route path="/resource-center" component={ResourceCenter} /> */}
               <Route path='/resource-center/videos' component={Videos} />
               <Route path='/resource-center/articles' component={Articles} />

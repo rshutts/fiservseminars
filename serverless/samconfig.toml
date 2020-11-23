@@ -2,10 +2,10 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "chat-app"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1w6l37bz19tfv"
-s3_prefix = "chat-app"
+stack_name = "simplechat-test"
+s3_bucket = "aws-sam-cli-managed-testchat-samclisourcebucket"
+s3_prefix = "testchat"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "TableName=\"simplechat_connections\""
+parameter_overrides = "TableName=\"simplechat_test\""

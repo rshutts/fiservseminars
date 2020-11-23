@@ -145,7 +145,7 @@ class Chat extends Component {
       let formattedMessage = this.parseUrls(message.message);
       return (
         <div className='chat-line' key={message.timestamp}>
-          {user.name.includes("@fiserv.com")
+          {user.name.includes("fiserv")
             ? <p className='username-fiserv'>{message.username}{ console.log(user.name) }</p>
             : <p className='username'>{message.username}{ console.log(user.name) }</p>
           }
@@ -181,16 +181,9 @@ class Chat extends Component {
                   {this.renderMessages()}
                   <div ref={this.messagesEndRef} />
                   <div className='composer'>                 
-                  {showSignIn && <SignIn updateUsername={this.updateUsername} />}
+                  
                     {!username && (
-                      <fieldset>
-                        <button
-                          onClick={this.handleOnClick}
-                          className='btn-primary btn btn--primary full-width rounded chat-signon'
-                        >
-                          ENTER THE CHAT ROOM NOW
-                        </button>
-                      </fieldset>
+                      <SignIn updateUsername={this.updateUsername}/>    
                     )}
                     {username && (
                       <div className="chat-message-input">
