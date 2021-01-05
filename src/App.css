@@ -173,19 +173,19 @@ h6 {
   border:none;
 }
 
-.announcement p {
+/* .announcement p {
     margin: 0 auto;
     max-width: 1500px;
     color: #fff;
     text-align: center;
     padding: 30px 0;
     font-size: 1.2rem;
-}
+} */
 
-.announcement a {
+/* .announcement a {
     color: #333;
     text-decoration: underline;
-}
+} */
 .navbar .container {
     margin: 0 auto;
     max-width: 1500px;
@@ -943,6 +943,24 @@ span.dropdown---caret---3CkEt {
   display: none !important;
 }
 
+
+/*Ticker*/
+.ticker-container,.ticker {
+  width:100%;
+}
+.ticker__element {
+  width:100%;
+}
+.ticker__element h1 {
+  color: #fff;
+  text-align: center;
+  padding: 26px 0;
+  font-size: 1.2rem;
+}
+.ticker__element a {
+  color:#fff;
+  text-decoration: underline;
+}
 /*Media Queries*/
 @media (min-width: 1250px) {
   .right-mobile {

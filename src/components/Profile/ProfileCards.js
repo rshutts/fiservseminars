@@ -58,6 +58,9 @@ const ProfileCards = () => {
           <Card.Meta>
             <p className='lead text-muted'>Email: {user.email}</p>
           </Card.Meta>
+          <Card.Meta>
+            <p className='lead text-muted'>User: {user[`https://fiservseminars.com/userType`]}{' '}</p>
+          </Card.Meta>
           <Card.Description>
             <h2>Bank Name: {user[`https://fiservseminars.com/bank_name`]}</h2>
             <h2>Bank Title: {user[`https://fiservseminars.com/bank_title`]}</h2>

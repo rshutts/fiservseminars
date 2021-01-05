@@ -10,15 +10,17 @@ import Loading from './components/Loading';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import RegComplete from "./components/RegComplete/RegComplete";
+import Speaker from './components/Polls/components/Speaker';
 
 // pages
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Archived from './pages/Archived';
+import Meetings from './pages/Meetings';
 import Videos from './pages/ResourceCenter/Videos';
 import Articles from './pages/ResourceCenter/Articles';
 import FAQ from './pages/FAQ';
-import Confirmation from './pages/Confirmation';
+import Signup from './pages/Signup';
 import history from './utils/history';
 
 // styles
@@ -76,16 +78,17 @@ const App = () => {
           <Container className='flex-grow-1 mt-5'>
             <Switch>
               <Route path='/' exact component={Home} />
+              <Route path='/profile/successful-signup' component={Signup} />
               <Route path='/profile' component={Profile} />
-              <Route path='/archived-sessions' component={Archived} />   
-              {/* <Route path="/resource-center" component={ResourceCenter} /> */}
+              {/* <Route path='/archived-sessions' component={Archived} />  */}  
+              <Route path='/meetings' component={Meetings} />  
               <Route path='/resource-center/videos' component={Videos} />
               <Route path='/resource-center/articles' component={Articles} />
               <Route path='/faq' component={FAQ} />
-              <Route path="/registration-confirmation" component={Confirmation} />
-              <Route path="/registration-complete" component={RegComplete} />
-              {/* <Route path='/chat' component={Chat} />
-              <Route path='/join' component={Join} /> */}
+              {/* <Route path="/registration-confirmation" component={Confirmation} />
+              <Route path="/registration-complete" component={RegComplete} /> */}
+              <Route path='/meetings/speaker' component={Speaker} />
+              <Route exact path="/signup" render={() => (window.location = "https://precision-signup.d2n0u0xfh07ev7.amplifyapp.com")} />
             </Switch>
           </Container>
           <Footer />

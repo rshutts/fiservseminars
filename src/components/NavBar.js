@@ -4,6 +4,8 @@ import MobileNav from '../components/MobileNav';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import ScrollingTicker from './Ticker'
+
 import {
   Collapse,
   Container,
@@ -35,9 +37,7 @@ const NavBar = () => {
     <div className='nav-container'>
       <Navbar color='light' light expand='md'>
         <nav className='navbar navbar-expand announcement'>
-          <p>
-            If you have any questions regarding the event, email us at <a href='mailto:educationseminars@fiserv.com'>educationseminars@fiserv.com</a>
-          </p>
+          <ScrollingTicker />
         </nav>
         <Container>
           <a href='/'>

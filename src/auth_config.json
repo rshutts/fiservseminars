@@ -1,5 +1,6 @@
 {
+  "name": "Premier Spring Education Seminar",
   "domain": "fiservseminars.us.auth0.com",
-  "clientId": "tdst2k7Xb7kSBsblAefNUZoaoRqc73jn",
+  "clientId": "EPMrOHV3go7infc1H6sPz41P5z9KAVDU",
   "audience": "https://fiservseminars.us.auth0.com/api/v2/"
 }

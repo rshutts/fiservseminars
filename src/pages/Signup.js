@@ -1,14 +1,18 @@
 import React, { Fragment } from "react";
 import Sidenav from "../components/SideNav";
+import ProfileCards from "../components/Profile/ProfileCards"
 
-const Confirmation = () => (
+const Signup = () => (
   <Fragment>
     <div className="next-steps my-5 content-wrapper">
-      {/* <Sidenav /> */}
+      <Sidenav />
       <div className="main-content">
+      <div className="main-content-profile">
+        <ProfileCards />
+      </div>
       <section className='confirmation'>
           <div>
-          <h1>Thank you for registering for the Premier Education Seminar!</h1>
+          <h1>Thank you for registering for the Premier Spring Education Seminar!</h1>
             <p class="italic-important">
                 We are thrilled you can join us for our three day virtual seminar.
             </p>
@@ -25,4 +29,4 @@ const Confirmation = () => (
   </Fragment>
 );
 
-export default Confirmation;
+export default Signup;

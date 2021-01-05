@@ -1,11 +1,12 @@
 import React, { Component, useEffect } from 'react';
 import * as config from '../../config';
 import ReconnectingWebSocket from 'reconnecting-websocket';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Popout from "react-popout";
 import ReactDOM from "react-dom";
 import { withAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
 
 // Components
 import VideoJS from '../videoPlayer/VideoJS';
@@ -19,11 +20,13 @@ class Chat extends Component {
     this.popout = this.popout.bind(this);
     this.popoutClosed = this.popoutClosed.bind(this);
     this.state = { isPoppedOut: false };
+    const { user } = this.props.auth0;
     this.state = {
       metadataId: null,
       showSignIn: false,
       name: '',
       username: '',
+      email: '',
       message: '',
       messages: [],
       connection: null,
@@ -39,7 +42,7 @@ class Chat extends Component {
   popoutClosed() {
     this.setState({ isPoppedOut: false });
   }
-
+  
   componentDidMount() {
     const options = {
         minUptime: 50000,
@@ -66,8 +69,8 @@ class Chat extends Component {
       const data = event.data.split('::');
       const username = data[0];
       const name = data[0];
+      /* const email =  */
       const message = data.slice(1).join('::'); // in case the message contains the separator '::'
-      
       messages.push({
         timestamp: Date.now(),
         username,
@@ -93,7 +96,6 @@ class Chat extends Component {
     this.setState({ username, showSignIn: false }, () =>
       this.chatRef.current.focus()
     );
-    console.log(username);
   };
 
   handleOnClick = () => {
@@ -119,7 +121,7 @@ class Chat extends Component {
           .replace(/"/g, '\\"')}"
         }`;
         connection.send(data);
-
+        
         this.setState({ message: '' });
       }
     }
@@ -138,16 +140,17 @@ class Chat extends Component {
   };
 
   renderMessages = () => {
-    const { user } = this.props.auth0;
-    console.log(user)
+    const { user } = this.props.auth0; 
     const { messages } = this.state;
+    /* console.log(messages); */
+        /* console.log(username); */
     return messages.map((message) => {
       let formattedMessage = this.parseUrls(message.message);
       return (
         <div className='chat-line' key={message.timestamp}>
           {user.name.includes("fiserv")
-            ? <p className='username-fiserv'>{message.username}{ console.log(user.name) }</p>
-            : <p className='username'>{message.username}{ console.log(user.name) }</p>
+            ? <p className='username-fiserv'>{message.username}</p>
+            : <p className='username'>{message.username}</p>
           }
           <p className="message-bubble" dangerouslySetInnerHTML={{ __html: formattedMessage }}>
           </p>
@@ -183,7 +186,9 @@ class Chat extends Component {
                   <div className='composer'>                 
                   
                     {!username && (
-                      <SignIn updateUsername={this.updateUsername}/>    
+                      <div>
+                        <SignIn updateUsername={this.updateUsername}/>
+                      </div>
                     )}
                     {username && (
                       <div className="chat-message-input">
@@ -231,7 +236,7 @@ class Chat extends Component {
                       }
                     </div>
                     )}  
-                </div> 
+                  </div> 
               </ScrollToBottom>
               
             </div>

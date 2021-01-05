@@ -5,7 +5,7 @@ class EIM extends Component {
     player = {}
     state = {
         video: {
-            src: "https://fiservseminars-media.s3.amazonaws.com/Videos/Meetings/Premier/EIM+Decision+Plans+Final+10012020.mp4",
+            src: "http://d1cuz6w3aa44cz.cloudfront.net/EIM+Decision+Plans+Final+10012020.mp4",
             poster: "https://fiservseminars-media.s3.amazonaws.com/VideoOverlay.png"
         }
     }

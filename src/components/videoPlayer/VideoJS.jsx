@@ -9,6 +9,9 @@ class VideoJS extends Component {
             poster: "https://fiservseminars-media.s3.amazonaws.com/no-video.png"
         }
     }
+    onPlayerReady(player){
+        this.player = player;
+    }
     render() {
         return (
             <div className="player-wrapper">

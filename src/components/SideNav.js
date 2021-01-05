@@ -48,8 +48,9 @@ function Sidenav() {
             <NavIcon>
               <Link
                 className='sidebar-nav-link'
-                to='/archived-sessions'
+                to={`/meetings?name=${user.nickname}&type=${user[`https://fiservseminars.com/userType`]}&room=Fiserv`}
               >
+                { console.log(user) }
                 <i className='fa fa-fw fa-users' style={{ fontSize: '1.75em' }} />
                 Learning Sessions
               </Link>

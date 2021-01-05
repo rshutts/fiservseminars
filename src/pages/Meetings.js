@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Sidenav from "../components/SideNav";
-import Archived from '../pages/Archived';
+/* import Archived from '../pages/Archived'; */
+import Chat from '../components/Chat/Chat';
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Loading from "../components/Loading";
 import Notes from '../components/Notes'
@@ -20,7 +21,8 @@ const Meetings = () => {
             <div className="meetings-sections">
               <section className='left meetings'>
                 <div className='meeting-video'>
-                  <Archived />
+                  {/* <Archived /> */}
+                  <Chat />
                 </div>
                 <div className='chat'>           
                 <Notes />
