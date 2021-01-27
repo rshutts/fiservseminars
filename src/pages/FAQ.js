@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Sidenav from "../components/SideNav";
-import FAQS from "../components/FAQS";
+import FAQs from "../components/FAQs";
 import { Header  } from 'semantic-ui-react'
 
 
@@ -14,7 +14,7 @@ const FAQ = () => (
               <i className='fa fa-fw fa-users' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>FAQs
             </Header>
           <div className="faq-sections">
-            <FAQS />  
+            <FAQs />  
           </div>
         </div>
       </div>

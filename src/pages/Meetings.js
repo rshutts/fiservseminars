@@ -1,16 +1,15 @@
 import React, { Fragment, useState } from 'react';
-import Sidenav from "../components/SideNav";
-/* import Archived from '../pages/Archived'; */
-import Chat from '../components/Chat/Chat';
-import { withAuthenticationRequired } from "@auth0/auth0-react";
-import Loading from "../components/Loading";
-import Notes from '../components/Notes'
+import Sidenav from "../containers/SideNav";
+import Chat from "../containers/Chat"
+/* import Chat from '../components/Chat/Chat'; */
+import { Auth } from "aws-amplify";
+/* import Loading from "../components/Loading"; */
+/* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 
 const Meetings = () => {
   
   return (
-    <Fragment>
       <div className="next-steps my-5 content-wrapper">
         <Sidenav />
         <div className="main-content">
@@ -21,11 +20,9 @@ const Meetings = () => {
             <div className="meetings-sections">
               <section className='left meetings'>
                 <div className='meeting-video'>
-                  {/* <Archived /> */}
-                  <Chat />
                 </div>
-                <div className='chat'>           
-                <Notes />
+                <div className='chat'>    
+                  <Chat/>   
                 </div>
               </section>
             </div>
@@ -34,11 +31,8 @@ const Meetings = () => {
             
         </div>
       </div>
-    </Fragment>
   )
   
 }
 
-export default withAuthenticationRequired(Meetings, {
-  onRedirecting: () => <Loading />,
-});
+export default Meetings

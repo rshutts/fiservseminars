@@ -1,102 +1,140 @@
-// dependencies
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container } from 'reactstrap';
-import { useAuth0 } from '@auth0/auth0-react';
-import { isIE, BrowserView } from 'react-device-detect'
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { Auth } from "aws-amplify";
 
-// components
-import Loading from './components/Loading';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import RegComplete from "./components/RegComplete/RegComplete";
-import Speaker from './components/Polls/components/Speaker';
+/*Bootstrap*/
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
+import { LinkContainer } from "react-router-bootstrap";
 
-// pages
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Archived from './pages/Archived';
-import Meetings from './pages/Meetings';
-import Videos from './pages/ResourceCenter/Videos';
-import Articles from './pages/ResourceCenter/Articles';
-import FAQ from './pages/FAQ';
-import Signup from './pages/Signup';
-import history from './utils/history';
+/*Libs*/
+import { AppContext } from "./libs/contextLib";
+import { onError } from "./libs/errorLib";
 
-// styles
-import './App.css';
+/*Component Items*/
+import Routes from "./Routes";
+import Footer from './containers/Footer'
+import ScrollingTicker from './components/Ticker'
+import ErrorBoundary from "./components/ErrorBoundary";
 
-// images
-import chrome from './assets/chrome.png'
-import firefox from './assets/firefox.png'
-import edge from './assets/edge.jpg'
+/*CSS*/
+import "./App.css";
 
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
-import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
-import { Popout } from 'react-popout-component';
 
 initFontAwesome();
 
-const App = () => {
-  const { isLoading, error } = useAuth0();
+function App() {
+  const history = useHistory();
+  const [isAuthenticating, setIsAuthenticating] = useState(true);
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
+  
+  useEffect(() => {
+    onLoad();
+  }, []);
 
-  if (error) {
-    return <div>Oops... {error.message}</div>;
+  async function onLoad() {
+    const user = await Auth.currentUserInfo()
+    .then(res => {
+    })
+    .catch(err => {
+      console.error(err);
+    });
+    try {
+      await Auth.currentSession();
+      userHasAuthenticated(true);
+    }
+    catch(e) {
+      if (e !== 'No current user') {
+        onError(e);
+      }
+    }
+    setIsAuthenticating(false);
   }
 
-  if (isLoading) {
-    return <Loading />;
+  async function handleLogout() {
+    await Auth.signOut();
+
+    userHasAuthenticated(false);
+
+    history.push("/login");
   }
   
-  if (isIE) {
-    const styles = {
-      background: "white",
-      fontSize: "24px",
-      lineHeight: "2"
-    };
-    return (
-      <Router history={history}>
-        <div id='app' className='d-flex flex-column h-100' style={styles}>
-          <BrowserView>
-            <h1 style={{color: "#ff6600"}}>Your browser is not supported.</h1>
-            <p>To view this content, please use one of the following browsers:</p>
-            <div>
-              <a href="https://www.google.com/chrome/" target="_blank"><img src={chrome} alt={"chrome"} width="100px"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src={firefox} alt={"firefox"} width="100px"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://www.microsoft.com/en-us/edge" target="_blank"><img src={edge} alt={"edge"} width="100px"/></a>
-            </div>
-          </BrowserView>
+  return (
+    !isAuthenticating && (
+      <div className="d-flex flex-column h-100" id="app">
+        <div className='nav-container'>
+          <Navbar color='light' light expand='md'>
+            <nav className='navbar navbar-expand announcement'>
+              <ScrollingTicker />
+            </nav>
+          <Container>
+            <LinkContainer to="/">
+              <Navbar.Brand className="logo" />
+            </LinkContainer>
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+              <Nav activeKey={window.location.pathname}>
+                {isAuthenticated ? (
+                  <>
+                    <LinkContainer to="/profile">
+                      <Button
+                        id='signupBtn'
+                        color='primary'
+                        className='btn-margin'
+                      >
+                        Profile
+                      </Button>
+                    </LinkContainer>
+                      <Nav.Link 
+                        onClick={handleLogout}
+                        id='loginBtn'
+                        color='primary'
+                        className='btn btn-primary'
+                      >
+                        Logout
+                      </Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <LinkContainer to="/signup">
+                      <Button
+                        id='signupBtn'
+                        color='primary'
+                        className='btn-margin'
+                      >
+                        Signup
+                      </Button>
+                    </LinkContainer>
+                    <LinkContainer to="/login">
+                      <Button
+                        id='loginBtn'
+                        color='primary'
+                        className='btn-margin'
+                      >
+                        Login
+                      </Button>
+                    </LinkContainer>
+                  </>
+                )}
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
         </div>
-      </Router>
-    );
-  } else {
-    return (
-      <Router history={history}>
-        <div id='app' className='d-flex flex-column h-100'>
-          <NavBar />
-          <Container className='flex-grow-1 mt-5'>
-            <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/profile/successful-signup' component={Signup} />
-              <Route path='/profile' component={Profile} />
-              {/* <Route path='/archived-sessions' component={Archived} />  */}  
-              <Route path='/meetings' component={Meetings} />  
-              <Route path='/resource-center/videos' component={Videos} />
-              <Route path='/resource-center/articles' component={Articles} />
-              <Route path='/faq' component={FAQ} />
-              {/* <Route path="/registration-confirmation" component={Confirmation} />
-              <Route path="/registration-complete" component={RegComplete} /> */}
-              <Route path='/meetings/speaker' component={Speaker} />
-              <Route exact path="/signup" render={() => (window.location = "https://precision-signup.d2n0u0xfh07ev7.amplifyapp.com")} />
-            </Switch>
-          </Container>
-          <Footer />
-        </div>
-      </Router>
-    );
-  }
-  
-};
+        <ErrorBoundary>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <Routes />
+            <Footer />
+          </AppContext.Provider>
+        </ErrorBoundary>
+        
+      </div>
+    )
+  );
+}
 
 export default App;

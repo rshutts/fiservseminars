@@ -1,0 +1,70 @@
+import React, { useState, useEffect } from 'react';
+import Amplify, { Auth, Storage } from 'aws-amplify';
+
+import config from '../../../aws-config';
+
+Amplify.configure({
+  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_region": "us-east-1",
+  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+  Auth: {
+    region: config.aws_cognito_region,
+    userPoolId: config.aws_user_pools_id,
+    identityPoolId: config.aws_cognito_identity_poll_id,
+    userPoolWebClientId: config.aws_user_pools_client_id
+  },    
+  Storage: {
+    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
+    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+  }
+});
+
+export default function PhotoUpload() {
+  const [file, setFile] = useState();
+  const [uploaded, setUploaded] = useState(false);
+
+  const [image, setImage] = useState();
+
+  useEffect(() => {
+    onPageRendered();
+  }, []);
+
+  const onPageRendered = async () => {
+    getProfilePicture();
+  };
+
+  const getProfilePicture = () => {
+    Storage.get("profile.png")
+      .then(url => {
+        var myRequest = new Request(url);
+        fetch(myRequest).then(function(response) {
+          if (response.status === 200) {
+            setImage(url);
+          }
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  return (
+    <div className="App">
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <button onClick={async () => {
+        const storageResult = await Storage.put('profile.png', file, {
+          level: 'private',
+          type: 'image/png'
+        })
+        // Insert predictions code here later
+        setUploaded(true)
+        console.log(storageResult);
+      }}>Upload your profile photo now</button>
+
+      <div>
+        {uploaded
+          ? <div>Your image is uploaded!</div>
+          : <div>Upload a photo to get started</div>}
+      </div>
+      <img src={image}/>
+    </div>
+    );
+}

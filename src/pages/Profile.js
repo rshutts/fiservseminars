@@ -1,19 +1,19 @@
 import React from "react";
-import Sidenav from "../components/SideNav";
-import ProfileCards from "../components/Profile/ProfileCards"
+import Sidenav from "../containers/SideNav";
+import ProfileCards from "../containers/Profile/ProfileCards"
 
 
-const ProfileComponent = () => {
+const Profile = () => {
   return (
     <div className="next-steps my-5 content-wrapper">
         <Sidenav />
       <div className="main-content-profile">
-        <ProfileCards />
-      </div>
-      
+        <ProfileCards /> 
+      </div>     
     </div>
     
   );
 };
 
-export default ProfileComponent
+export default Profile
+
