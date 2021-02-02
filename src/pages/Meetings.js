@@ -19,8 +19,6 @@ const Meetings = () => {
             </Header>
             <div className="meetings-sections">
               <section className='left meetings'>
-                <div className='meeting-video'>
-                </div>
                 <div className='chat'>    
                   <Chat/>   
                 </div>

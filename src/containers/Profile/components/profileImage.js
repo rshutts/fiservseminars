@@ -23,47 +23,11 @@ Amplify.configure({
 
 Storage.configure({ track: true, level: "private" });
 
-export default function PhotoUpload() {
-  const [uploaded, setUploaded] = useState(false);
+export default function ProfileImage() {
   const [image, setImage] = useState([]);
-  const [username, setUsername] = useState(null);
-  const [removeImage, setRemoveImage] = useState([]);
 
   let fileInput = React.createRef();
 
-
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
-    }
-    getUsername();
- }, [])
-
-  const onOpenFileDialog = () => {
-    fileInput.current.click();
-  };
-
-  const onProcessFile = e => {
-    e.preventDefault();
-    let reader = new FileReader();
-    let file = e.target.files[0];
-    try {
-      reader.readAsDataURL(file);
-    } catch (err) {
-      console.log(err);
-    }
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
-    Storage.put(`profile.png`, file, {
-      level: "private",
-      contentType: "image/png"
-    })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
-  };
   useEffect(() => {
     onPageRendered();
   }, []);
@@ -86,27 +50,9 @@ export default function PhotoUpload() {
       
   };
 
-  const onRemoveFile = e => {
-    Storage.remove('profile.png', {level: 'private'})
-    .then(
-      result => console.log(result),
-      removeImage()
-    )
-    .catch(err => console.log(err));
-      
-  };
-
   return (
     <div className="App">
-      <a href="#">
-        <input
-            type="file"
-            onChange={onProcessFile}
-            ref={fileInput}
-        />
-      </a>
-      <button onClick={onRemoveFile}>Remove Photo</button>
-      <img src={image} height="200px" style={{display: removeImage ? 'block' : 'none' }}/>
+        <img src={image} height="150px"/>
     </div>
   )
 }

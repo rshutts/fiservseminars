@@ -11,16 +11,19 @@ import reportWebVitals from './reportWebVitals';
 initSentry();
 
 Amplify.configure({
+  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_region": "us-east-1",
+  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
   Auth: {
-    mandatorySignIn: true,
-    region: config.cognito.REGION,
-    userPoolId: config.cognito.USER_POOL_ID,
-    identityPoolId: config.cognito.IDENTITY_POOL_ID,
-    userPoolWebClientId: config.cognito.APP_CLIENT_ID
-  },
-    aws_appsync_graphqlEndpoint: config.apiGateway.URL,
-    aws_appsync_region: config.apiGateway.REGION,
-    aws_appsync_authenticationType: "AMAZON_COGNITO_USER_POOLS",
+    region: config.aws_cognito_region,
+    userPoolId: config.aws_user_pools_id,
+    identityPoolId: config.aws_cognito_identity_poll_id,
+    userPoolWebClientId: config.aws_user_pools_client_id
+  },    
+  Storage: {
+    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
+    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+  }
 });
 
 ReactDOM.render(

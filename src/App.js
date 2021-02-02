@@ -44,7 +44,7 @@ function App() {
       console.error(err);
     });
     try {
-      await Auth.currentSession();
+      await Auth.currentAuthenticatedUser();
       userHasAuthenticated(true);
     }
     catch(e) {

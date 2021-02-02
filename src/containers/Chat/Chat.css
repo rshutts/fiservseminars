@@ -3,6 +3,8 @@
   .messages {
     flex: 1;
     position: relative;
+    border: 1px solid rgba(221, 221, 221, .5);
+    border-radius:5px;
   }
   
   .messages-scroller {
@@ -13,9 +15,14 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
-    overflow-y: scroll;
+    max-height: 500px;
   }
-  
+  .message-container {
+    max-height:500px;
+  }
+  .react-auto-scroll__scroll-container {
+    max-height:500px;
+  }
   .message {
     align-self: flex-start;
     margin-top: 4px;
@@ -24,6 +31,9 @@
     background: #f1f0f0;
     border-radius: 16px;
     font-size: 14px;
+    width: 48%;
+    flex-direction: row;
+    display: flex;
   }
   
   .message.me {
@@ -40,6 +50,7 @@
   .chat-bar form {
     height: 100%;
     padding: 16px;
+    width: 100%;
   }
   
   .chat-bar form input {
@@ -54,3 +65,5 @@
   .chat-bar form input:focus {
     border: 1px solid #f19e38;
   }
+
+  

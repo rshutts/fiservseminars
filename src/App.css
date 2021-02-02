@@ -85,6 +85,7 @@ a {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
   margin-right: 10px;
+  padding: .5rem 1rem;
 }
 .danger {
   color: #fff;
@@ -840,6 +841,7 @@ i.fa.fa-fw.fa-external-link-alt {
   flex-direction: column;
   align-self: flex-end;
   align-items: center;
+  width: 100%;
 }
 .composer form p {
   margin-bottom:0;
@@ -909,6 +911,11 @@ i.fa.fa-fw.fa-external-link-alt {
 }
 .main-content-profile .ui.card .content {
   align-items: center;
+}
+.card {
+  margin:0 auto;
+  justify-content: center;
+  align-items:center;
 }
 .article-block {
   display: flex;

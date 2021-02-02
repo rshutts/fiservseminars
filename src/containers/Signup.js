@@ -18,14 +18,13 @@ export default function Signup() {
     nickname: "",
     locale: "",
     address: "",
-    birthdate: "",
-    confirmPassword: "",
-    confirmationCode: "",
+    seminarDate: "",
   });
   const history = useHistory();
   const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
+  
 
   function validateForm() {
     return (
@@ -37,12 +36,8 @@ export default function Signup() {
       fields.nickname.length > 0 &&
       fields.locale.length > 0 &&
       fields.address.length > 0 &&
-      fields.birthdate.length > 0
+      fields.seminarDate.length > 0
     );
-  }
-
-  function validateConfirmationForm() {
-    return fields.email.length > 0;
   }
 
   async function handleSubmit(event) {
@@ -51,6 +46,7 @@ export default function Signup() {
     setIsLoading(true);
 
     try {
+
       const newUser = await Auth.signUp({
         username: fields.username,
         password: fields.password,
@@ -61,66 +57,21 @@ export default function Signup() {
           nickname: fields.nickname,
           locale: fields.locale,
           address: fields.address,
-          birthdate: fields.birthdate,
+          'custom:seminarDate': fields.seminarDate
         },    
       });
       setIsLoading(false);
       setNewUser(newUser);
-      userHasAuthenticated(true);
-    } catch (e) {
-      onError(e);
-      setIsLoading(false);
-    }
-  }
-
-  async function handleConfirmationSubmit(event) {
-    event.preventDefault();
-
-    setIsLoading(true);
-
-    try {
-      await Auth.confirmSignUp(fields.email);
-      await Auth.signIn(fields.email);
-
-      userHasAuthenticated(true);
       history.push("/profile");
     } catch (e) {
       onError(e);
       setIsLoading(false);
     }
   }
-
-  function renderConfirmationForm() {
+  
     return (
-      <Form onSubmit={handleConfirmationSubmit}>
-        <Form.Group controlId="confirmationCode" size="lg">
-        <Form.Label>Email Verification</Form.Label>
-          <Form.Control
-            autoFocus
-            type="tel"
-            onChange={handleFieldChange}
-            value={fields.email}
-            disabled
-          />
-          <Form.Text muted>Please check the email above and click "Verify" below.</Form.Text>
-        </Form.Group>
-        <LoaderButton
-          block
-          size="lg"
-          type="submit"
-          variant="success"
-          isLoading={isLoading}
-          disabled={!validateConfirmationForm()}
-        >
-          Verify
-        </LoaderButton>
-      </Form>
-    );
-  }
-
-  function renderForm() {
-    return (
-      <Form onSubmit={handleSubmit}>
+      <div className="Signup">
+        <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" size="lg">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -195,12 +146,20 @@ export default function Signup() {
             value={fields.address}
           />
         </Form.Group>
-        <Form.Group controlId="birthdate" size="lg">
+        <Form.Group controlId="seminarDate" size="lg">
           <Form.Label>Seminar Date</Form.Label>
+          <Form.Control 
+            onChange={handleFieldChange}
+            value={fields.seminardDate}
+            as="select"
+          >
+            <option>April 1-3</option>
+            <option>April 24-27</option>
+          </Form.Control>
           <Form.Control
             type="birthdate"
             onChange={handleFieldChange}
-            value={fields.birthdate}
+            value={fields.seminarDate}
           />
         </Form.Group>
         <LoaderButton
@@ -214,12 +173,7 @@ export default function Signup() {
           Signup
         </LoaderButton>
       </Form>
+      </div>
+      
     );
   }
-
-  return (
-    <div className="Signup">
-      {newUser === null ? renderForm() : renderConfirmationForm()}
-    </div>
-  );
-}

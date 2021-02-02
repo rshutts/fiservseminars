@@ -9,7 +9,7 @@ class Left extends Component {
             <div className="greetings">
               <img
               class='mb-3 app-logo'
-              src='https://fiservseminars-media.s3.amazonaws.com/header.png'
+              src='https://seminar-media.s3.amazonaws.com/spring-home-banner.png'
               alt='2020 Premier Fall Conference'
               width=''
             />

@@ -10,8 +10,8 @@ const dev = {
   }, 
   cognito: {
     REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_7DzzGN91J",
-    APP_CLIENT_ID: "27galunsed5ne6m240i5h82km3",
+    USER_POOL_ID: "us-east-1_ZoafPXhwk",
+    APP_CLIENT_ID: "7ju0uch5rffb8lf1rpntd0ne9j",
     IDENTITY_POOL_ID: "us-east-1:741520ef-3bc3-4907-af04-ffdedec2028d",
   },
 };
@@ -32,8 +32,8 @@ const prod = {
   }, 
   cognito: {
     REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_7DzzGN91J",
-    APP_CLIENT_ID: "27galunsed5ne6m240i5h82km3",
+    USER_POOL_ID: "us-east-1_ZoafPXhwk",
+    APP_CLIENT_ID: "7ju0uch5rffb8lf1rpntd0ne9j",
     IDENTITY_POOL_ID: "us-east-1:741520ef-3bc3-4907-af04-ffdedec2028d",
   },
 };

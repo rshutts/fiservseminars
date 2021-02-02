@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from 'react';
+import React, { useEffect, useState, Component, useRef } from 'react';
 
 import Amplify from '@aws-amplify/core';
 import API, { graphqlOperation } from '@aws-amplify/api';
@@ -7,6 +7,7 @@ import { Connect } from "aws-amplify-react";
 import { Auth } from "aws-amplify";
 
 import VideoPlayer from '../VideoPlayer';
+import ChatImage from '../Profile/components/profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
 import { createMessage } from '../../graphql/mutations';
@@ -27,12 +28,17 @@ Amplify.configure({
     identityPoolId: config.aws_cognito_identity_poll_id,
     userPoolWebClientId: config.aws_user_pools_client_id
   },    
+  Storage: {
+    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
+    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+  }
 });
 
 const Chat = props => {
   const [username, setState] = useState(null);
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     async function getUsername() {
@@ -93,6 +99,14 @@ const Chat = props => {
     }
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages]);
+
   useEffect(() => {
     const options = {
         minUptime: 50000,
@@ -122,31 +136,34 @@ return (
         <header>
           <h1>Chat</h1>
         </header>
-        <div className="container chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
-          <div className="messages">
-            <div className="messages-scroller">
+        {/* <div className="container chat-wrapper pos-absolute pd-t-1 top-0 bottom-0"> */}
+          <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
+            <div className="messages-scroller messages">
               {messages.map((message) => (
-              
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    <h1>{message.author}</h1>
-                    {message.body}
+                    <ChatImage/>
+                    <div>
+                      <h3>{message.author}</h3>
+                      {message.body}
+                    </div>
+                  <div ref={messagesEndRef} />
                 </div>
               ))}
+              <div className="chat-bar composer">
+                <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="message"
+                  placeholder="Type your message here..."
+                  onChange={handleChange}
+                  value={messageBody} />
+              </form>
             </div>
           </div>
-          <div className="chat-bar">
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="message"
-                placeholder="Type your message here..."
-                onChange={handleChange}
-                value={messageBody} />
-            </form>
-          </div>
         </div>
+        {/* </div> */}
       </div>
     </div>
   </div>
