@@ -7,6 +7,7 @@ import {
   FormGroup,
   FormControl,
   FormLabel,
+  Row
 } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
@@ -36,8 +37,8 @@ export default function UpdateProfile() {
   const history = useHistory();
   const [codeSent, setCodeSent] = useState(false);
   const [profile, setProfile] = useState({
-    name: "",
     email: "",
+    name: "",
   });
 
   const [isConfirming, setIsConfirming] = useState(false);
@@ -48,8 +49,8 @@ export default function UpdateProfile() {
       const user = await Auth.currentUserInfo();
       console.log(user)
       setProfile({
+        email: user.attributes.email,
         name: user.attributes.name,
-        email: user.attributes.name,
       });
     } catch(e) {
  
@@ -63,6 +64,7 @@ export default function UpdateProfile() {
     const onSubmit = async data => {
       const user = await Auth.currentAuthenticatedUser();
       await Auth.updateUserAttributes(user, { 
+        email: profile.email,
         name: profile.name,
       });
     };
@@ -72,8 +74,21 @@ return (
     <Sidenav />
   <div className="main-content-profile">
     <form onSubmit={onSubmit}>
-      <FormGroup bsSize="large" controlId="name">
+      <Row>
+        <FormGroup bsSize="large" controlId="email">
         <FormLabel>Email</FormLabel>
+        <FormControl
+          autoFocus
+          value={profile.email}
+          name="email"
+          type="text"
+          onChange={e => {
+            setProfile({ ...profile, email: e.target.value });
+          }}
+        />
+      </FormGroup>
+      <FormGroup bsSize="large" controlId="name">
+        <FormLabel>Name</FormLabel>
         <FormControl
           autoFocus
           value={profile.name}
@@ -84,6 +99,8 @@ return (
           }}
         />
       </FormGroup>
+      </Row>
+      
       <LoaderButton
         block
         type="submit"
