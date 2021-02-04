@@ -7,7 +7,7 @@ import { Connect } from "aws-amplify-react";
 import { Auth } from "aws-amplify";
 
 import VideoPlayer from '../VideoPlayer';
-import ChatImage from '../Profile/components/profileImage';
+import ProfileImage from './profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
 import { createMessage } from '../../graphql/mutations';
@@ -25,12 +25,13 @@ Amplify.configure({
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_poll_id,
+    identityPoolId: config.aws_cognito_identity_pool_id,
     userPoolWebClientId: config.aws_user_pools_client_id
   },    
   Storage: {
     bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
     region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+    identityPoolId: config.aws_cognito_identity_pool_id
   }
 });
 
@@ -143,7 +144,7 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    <ChatImage/>
+                    <ProfileImage/>
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}

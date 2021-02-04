@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
-import { useFormFields } from "../../../libs/hooksLib";
-import { onError } from "../../../libs/errorLib";
+import { useFormFields } from "../../libs/hooksLib";
+import { onError } from "../../libs/errorLib";
 
-import config from '../../../aws-config';
+import config from '../../aws-config';
 
 Amplify.configure({
   "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
@@ -22,8 +22,6 @@ Amplify.configure({
   }
 });
 
-Storage.configure({ track: true, level: "private" });
-
 export default function ProfileImage() {
   const [image, setImage] = useState([]);
 
@@ -38,7 +36,7 @@ export default function ProfileImage() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`profile.png`)
+    Storage.get(`profile.png`, {level: 'private'})
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
@@ -53,7 +51,7 @@ export default function ProfileImage() {
 
   return (
     <div className="App">
-        <img src={image} height="150px"/>
+        <img src={image} height="50px"/>
     </div>
   )
 }
