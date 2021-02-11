@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Meetings from "./pages/Meetings";
+import FAQ from './pages/FAQ';
 import Login from "./containers/Login";
 import ResetPassword from "./containers/ResetPassword";
 import ChangePassword from "./containers/Profile/ChangePassword";
@@ -39,6 +40,9 @@ export default function Routes() {
       </AuthenticatedRoute>
       <AuthenticatedRoute exact path="/profile/update">
         <UpdateProfile />
+      </AuthenticatedRoute>
+      <AuthenticatedRoute exact path="/faq">
+        <FAQ />
       </AuthenticatedRoute>
       {/* <AuthenticatedRoute exact path="/notes/new">
         <NewNote />

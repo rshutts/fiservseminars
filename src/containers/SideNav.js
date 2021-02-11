@@ -11,7 +11,7 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle } from 'react-icons/fa';
 /* import 'react-pro-sidebar/dist/css/styles.css'; */
 
 
@@ -88,6 +88,11 @@ function Sidenav() {
                     Agenda
                   </MenuItem>
                 </a>
+                <Link className="sidebar-nav-link" to="/faq">
+                  <MenuItem icon={<FaQuestionCircle/>}>
+                      FAQ
+                  </MenuItem>
+                </Link>
                 {/* <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}

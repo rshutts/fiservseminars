@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
-import FAQs from "../components/FAQs";
+import Sidenav from "../containers/SideNav";
+import FAQs from "../containers/FAQs";
 import { Header  } from 'semantic-ui-react'
 
 
 const FAQ = () => (
-    <Fragment>
       <div className="next-steps my-5 content-wrapper">
         <Sidenav />
         <div className="main-content faq-content">
@@ -19,7 +18,6 @@ const FAQ = () => (
         </div>
       </div>
     </div>
-    </Fragment>
   );
   
 export default FAQ;
