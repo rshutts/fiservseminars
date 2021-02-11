@@ -183,11 +183,7 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                      {userID === userID 
-                      ? <img src={image} height="50px"/>  
-                      : <h4>hi</h4>
-                      }
-                      {console.log(message.user)}
+                    <img src={image} height="50px"/>  
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}

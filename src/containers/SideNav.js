@@ -88,9 +88,9 @@ function Sidenav() {
                     Agenda
                   </MenuItem>
                 </a>
-                <Link
+                {/* <Link
                     className='sidebar-nav-link'
-                    /* to={'/meetings?room=Fiserv'} */
+                    to={'/meetings?room=Fiserv'}
                     to={`/meetings?name=${profile.username}&room=Fiserv`}
                   >
                   <MenuItem icon={<FaUsers/>}>
@@ -101,7 +101,7 @@ function Sidenav() {
                 >
                   <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
                   <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
-                </SubMenu>
+                </SubMenu> */}
               </Menu>
             </ProSidebar>
         ) : (

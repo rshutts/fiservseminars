@@ -10,7 +10,7 @@ class Left extends Component {
               <img
               class='mb-3 app-logo'
               src='https://seminar-media.s3.amazonaws.com/spring-home-banner.png'
-              alt='2020 Premier Fall Conference'
+              alt='2021 Precision Spring Conference'
               width=''
             />
             </div>
@@ -25,7 +25,7 @@ class Left extends Component {
               network of professional relationships.
             </p>
             <p>
-              This fall, the Premier Education Seminars are three days of
+              This spring, the Precision Education Seminars are three days of
               interactive sessions that provide the ideal setting to gain new
               perspectives and make valuable connections with peers and Fiserv
               experts. During the three days you will experience a Simulive
@@ -35,7 +35,7 @@ class Left extends Component {
               surprises and access to the electronic version of the meeting
               material.
             </p>
-            <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUNUJQTllLNjNaU1VHSjcyUjVXVVVWNVpNRSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Premier Education Seminar Survey</a></h2>
+            {/* <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUNUJQTllLNjNaU1VHSjcyUjVXVVVWNVpNRSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Premier Education Seminar Survey</a></h2>
             <p>We are committed to providing educational opportunities that support your success. <span style={{ color: "#ff6600"}}>Please tell us how we can strengthen your learning experience by completing a brief survey at any point during the seminar.</span></p>
             <p>
               We are offering each Simulive session twice, once from 8 a.m. - 12 p.m. Central Time and a repeat session from 1 p.m. - 5 p.m. Central Time on the following days:
@@ -64,7 +64,7 @@ class Left extends Component {
                 </li>
               </ul>
                 <strong>*SimuLive and On-Demand Recordings available through February 28, 2021</strong>
-            </p>
+            </p> */}
          </div>
         </section>
       );
