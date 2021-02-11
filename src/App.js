@@ -1,21 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Container, NavbarBrand, Button } from 'reactstrap';
 
-import Loading from './components/Loading';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Archived from './pages/Archived';
-import Videos from './pages/ResourceCenter/Videos';
-import Articles from './pages/ResourceCenter/Articles';
-import FAQ from './pages/FAQ';
-import RegComplete from "./components/RegComplete/RegComplete";
-import { useAuth0 } from '@auth0/auth0-react';
 import history from './utils/history';
-// import Join from './pages/Join';
-// import Chat from './pages/Chat';
 
 // styles
 import './App.css';
@@ -25,38 +12,27 @@ import initFontAwesome from './utils/initFontAwesome';
 initFontAwesome();
 
 const App = () => {
-  const { isLoading, error } = useAuth0();
 
-  if (error) {
-    return <div>Oops... {error.message}</div>;
-  }
-
-  if (isLoading) {
-    return <Loading />;
-  }
-
-  return (
-    <Router history={history}>
-      <div id='app' className='d-flex flex-column h-100'>
-        <NavBar />
-        <Container className='flex-grow-1 mt-5'>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/archived-sessions' component={Archived} />   
-            <Route path='/resource-center/videos' component={Videos} />
-            <Route path='/resource-center/articles' component={Articles} />
-            <Route path='/faq' component={FAQ} />
-            <Route path="/registration-complete" component={RegComplete} />
-            <Redirect from='/meetings' to='/archived-sessions' />
-            {/* <Route path='/chat' component={Chat} />
-            <Route path='/join' component={Join} /> */}
-          </Switch>
-        </Container>
-        <Footer />
-      </div>
-    </Router>
-  );
+    return (
+      <Router history={history}>
+        <div id='app' className='d-flex flex-column h-100'>
+          <Container className='flex-grow-1 mt-5 container'>
+            <div className="logo-container">
+              <NavbarBrand className='logo' />
+            </div>
+            <h1 style={{color: "#ff6600"}}>*This seminar is no longer available*</h1>
+            <p>We thank you for joining us at the Precision Fall Seminar. We hope you had a great learning experience and we hope to see you at the spring seminar as well.</p>
+            <p>Signup for the <span style={{ fontWeight:"bold" }}>Precision Spring Knowledge Exchange</span> will begin shortly. <br/>You will be receiving email correspondence soon on how to signup.</p>
+            {/* <Button
+              onClick="https://precision-signup.fiservseminars.com/"
+              disabled
+            >
+            Spring signup
+            </Button> */}
+          </Container>
+        </div>
+      </Router>
+    ); 
 };
 
 export default App;
