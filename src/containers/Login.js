@@ -37,7 +37,7 @@ export default function Login() {
   }
 
   return (
-    <div className="Login">
+    <div className="main-content-login">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>

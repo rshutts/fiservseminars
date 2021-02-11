@@ -76,7 +76,7 @@ a {
   background-color: #aaa;
   border:none;
 }
-#loginBtn {
+#loginBtn, .LoaderButton {
   background:#ff6600;
   border-color:#ff6600;
   color:#fff;
@@ -320,6 +320,23 @@ h6 {
   z-index: 1006;
   min-width: 64px;
 }
+.main-content-login {
+  background: #fff;
+  height: 100%;
+  width:30%;
+  padding: 1% 2%;
+  margin: 10px auto;
+}
+.main-content-update {
+  background: #fff;
+  height: 100%;
+  width:50%;
+  padding: 1% 2%;
+  margin: 10px auto;
+}
+.main-content-update form .row {
+  justify-content: space-evenly;
+}
 .Signup {
   background: #fff;
   height: 100%;
@@ -330,11 +347,11 @@ h6 {
   margin: 3% 2% 0;
 }
 .main-content-profile {
-    background: #fff;
-    height: 100%;
-    width:90%;
-    padding: 1% 2%;
-    margin: 3% 2% 0;
+  background: #fff;
+  height: 100%;
+  width: 70%;
+  padding: 1% 2%;
+  margin: 10px auto;
 }
 .archived-container {
   background: hsla(0,0%,100%,.6);
@@ -513,6 +530,7 @@ h6 {
 }
 .left.meetings {
   width:100%;
+  margin:0;
 }
 .meeting-content {
   background: rgba(0,0,0,.75);
@@ -526,6 +544,11 @@ h6 {
 .meetings-sections {
   display: flex;
   flex-direction: row;
+  background: #fff;
+  width: 95%;
+  height: 100%;
+  padding: 1% 2%;
+  margin: 3% 2% 0;
 }
 .left {
     background: #fff;
@@ -549,7 +572,6 @@ h6 {
   text-align:center;
 }
 .right.meetings {
-  margin: 3% 2% 0;
   padding: 1% 2%;
   background:#fff;
 }

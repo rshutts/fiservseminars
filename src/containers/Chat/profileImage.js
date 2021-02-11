@@ -16,16 +16,25 @@ Amplify.configure({
     userPoolWebClientId: config.aws_user_pools_client_id
   },    
   Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+    bucket: config.aws_s3_bucket,
+    region: config.aws_s3_bucket_region,
     identityPoolId: config.aws_cognito_identity_pool_id
   }
 });
 
 export default function ProfileImage() {
   const [image, setImage] = useState([]);
-
+  const [username, setUsername] = useState(null);
   let fileInput = React.createRef();
+
+  useEffect(() => {
+    async function getUsername() {
+        const user = await Auth.currentUserInfo();
+        const username = user.username
+        setUsername(username);
+    }
+    getUsername();
+ }, [])
 
   useEffect(() => {
     onPageRendered();
@@ -36,7 +45,7 @@ export default function ProfileImage() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`profile.png`, {level: 'private'})
+    Storage.get(`${username}/profile.png`, {level: 'private'})
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {

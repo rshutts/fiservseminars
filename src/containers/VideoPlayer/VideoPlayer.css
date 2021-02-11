@@ -8,6 +8,7 @@
   .video-elem {
     top: 0;
     background: #000;
+    width:100%;
   }
   
   @media (max-width: 480px) { /* Smaller Screens */

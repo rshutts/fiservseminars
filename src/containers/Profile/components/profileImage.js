@@ -26,9 +26,18 @@ Storage.configure({ track: true, level: "private" });
 
 export default function ProfileImage() {
   const [image, setImage] = useState([]);
+  const [username, setUsername] = useState(null);
 
   let fileInput = React.createRef();
 
+  useEffect(() => {
+    async function getUsername() {
+        const user = await Auth.currentUserInfo();
+        const username = user.username
+        setUsername(username);
+    }
+    getUsername();
+ }, [])
   useEffect(() => {
     onPageRendered();
   }, []);
@@ -38,7 +47,7 @@ export default function ProfileImage() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`profile.png`)
+    Storage.get(`${username}/profile.png`)
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {

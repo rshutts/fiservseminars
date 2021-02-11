@@ -31,10 +31,14 @@ function Sidenav() {
   const history = useHistory();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
+  const [profile, setProfile] = useState({
+    username: ""
+  });
 
   useEffect(() => {
     onLoad();
   }, []);
+
 
   async function onLoad() {
     const user = await Auth.currentUserInfo()
@@ -46,6 +50,10 @@ function Sidenav() {
     });
     try {
       await Auth.currentSession();
+      const user = await Auth.currentUserInfo()
+      setProfile({
+        username: user.username,
+      });
       userHasAuthenticated(true);
     }
     catch(e) {
@@ -82,8 +90,8 @@ function Sidenav() {
                 </a>
                 <Link
                     className='sidebar-nav-link'
-                    to={'/meetings?room=Fiserv'}
-                    /* to={`/meetings?name=${user.attributes.email}&room=Fiserv`} */
+                    /* to={'/meetings?room=Fiserv'} */
+                    to={`/meetings?name=${profile.username}&room=Fiserv`}
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
