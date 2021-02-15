@@ -47,7 +47,9 @@ html, body {
 }
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background-image:url('https://fiservseminars-media.s3.amazonaws.com/bkgd.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
+  background-image:url('https://fiservseminars-media.s3.amazonaws.com/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
+  background-size: cover;
+  background-position: center;
   background-repeat:no-repeat;
   padding:0;
   margin:0;
@@ -177,18 +179,24 @@ h6 {
 .nav-container {
   width: 100%;
   background: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f60;
 }
 
 .navbar {
-  flex-direction: column;
+  width:100%;
+  justify-content: space-between;
   margin-top:0;
   padding-top:0;
   padding-left:0;
   padding-right:0;
-  border-bottom: 1px solid #f60;
-  height: 203px;
+  margin: 0 auto;
+  max-width: 1500px;
+  height: 118px;
   box-shadow: none;
-  margin-bottom:0px !important;;
+  margin-bottom:0px !important;
+  background:none;;
 }
 
 .announcement {
@@ -221,6 +229,7 @@ h6 {
     max-width: 1500px;
     display: flex;
     justify-content: space-between;
+    background:#fff;
 }
 .collapse.navbar-collapse {
   display: flex;

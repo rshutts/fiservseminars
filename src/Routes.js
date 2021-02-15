@@ -13,10 +13,10 @@ import ResetPassword from "./containers/ResetPassword";
 import ChangePassword from "./containers/Profile/ChangePassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Signup";
-import Polls from './containers/Polls/components/index';
-import Audience from './containers/Polls/components/Audience';
+/* import Polls from './containers/Polls/components/index'; */
+/* import Audience from './containers/Polls/components/Audience'; */
 /* import Board from './containers/Polls/components/Board'; */
-import Speaker from './containers/Polls/components/Speaker';
+/* import Speaker from './containers/Polls/components/Speaker'; */
 /* import NewNote from "./containers/NewNote"; */
 /* import UpdateProfile from "./containers/Profile/UpdateProfile"; */
 /* import Notes from "./containers/Notes"; */
@@ -55,12 +55,12 @@ export default function Routes() {
 			{/* <AuthenticatedRoute exact path="/meetings/board">
         <Board/>
       </AuthenticatedRoute> */}
-      <AuthenticatedRoute exact path="/meetings/polling">
+      {/* <AuthenticatedRoute exact path="/meetings/polling">
         <Polls/>
       </AuthenticatedRoute> 
 			<AuthenticatedRoute exact path="/meetings/speaker">
         <Speaker/>
-      </AuthenticatedRoute> 
+      </AuthenticatedRoute>  */}
         
       {/* <AuthenticatedRoute exact path="/notes/new">
         <NewNote />

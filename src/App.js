@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Auth } from "aws-amplify";
+import Amplify, { Auth, Storage } from 'aws-amplify';
 
 /*Bootstrap*/
 import {
@@ -44,6 +44,8 @@ function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [image, setImage] = useState([]);
+  const [username, setUsername] = useState(null);
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
   useEffect(() => {
@@ -76,15 +78,47 @@ function App() {
 
     history.push("/login");
   }
+
+  let fileInput = React.createRef();
+
+  useEffect(() => {
+    async function getUsername() {
+        const user = await Auth.currentUserInfo();
+        const username = user.username
+        setUsername(username);
+    }
+    getUsername();
+ }, [])
+  useEffect(() => {
+    onPageRendered();
+  }, []);
+
+  const onPageRendered = async () => {
+    getProfilePicture();
+  };
+  
+  const getProfilePicture = () => {
+    Storage.get(`profile.png`)
+      .then(url => {
+        var myRequest = new Request(url);
+        fetch(myRequest).then(function(response) {
+          if (response.status === 200) {
+            setImage(url);
+          }
+        });
+      })
+      .catch(err => console.log(err));
+      
+  };
   
   return (
     !isAuthenticating && (
       <div className="d-flex flex-column h-100" id="app">
+        <nav className='navbar navbar-expand announcement'>
+          <ScrollingTicker />
+        </nav>
         <div className='nav-container'>
-          <Navbar color='light' light expand='md'>
-            <nav className='navbar navbar-expand announcement'>
-              <ScrollingTicker />
-            </nav>
+          <Navbar light expand='md'>
               <a href='/'>
                 <NavbarBrand className='logo' />
               </a>
@@ -96,14 +130,14 @@ function App() {
                       <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret id='profileDropDown'>
                         <img
-                          src='https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/favicon.ico'
+                          src={image}
                           alt='Profile'
                           className='nav-user-profile rounded-circle'
                           width='50'
                         />
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem header>User</DropdownItem>
+                        <DropdownItem header>{username}</DropdownItem>
                         <DropdownItem
                           to='/profile'
                           className='dropdown-profile'

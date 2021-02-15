@@ -93,16 +93,16 @@ function Sidenav() {
                       FAQ
                   </MenuItem>
                 </Link>
-                {/* <Link
+                <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}
-                    to={`/meetings?name=${profile.username}&room=Fiserv`}
+                    /* to={`/meetings?name=${profile.username}&room=Fiserv`} */
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
                   </MenuItem> 
                 </Link>
-                <SubMenu title="Resource Center" icon={<FaCogs/>}
+                {/* <SubMenu title="Resource Center" icon={<FaCogs/>}
                 >
                   <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
                   <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
