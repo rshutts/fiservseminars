@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import Amplify, { Auth, Storage } from 'aws-amplify';
+import { Auth, Storage } from 'aws-amplify';
 
 /*Bootstrap*/
 import {
@@ -36,6 +36,7 @@ import "./App.css";
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
 
+
 initFontAwesome();
 
 function App() {
@@ -45,7 +46,9 @@ function App() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState([]);
-  const [username, setUsername] = useState(null);
+  const [profile, setProfile] = useState({
+    username: ""
+  });
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
   useEffect(() => {
@@ -61,6 +64,10 @@ function App() {
     });
     try {
       await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentUserInfo()
+      setProfile({
+        username: user.username,
+      });
       userHasAuthenticated(true);
     }
     catch(e) {
@@ -81,14 +88,6 @@ function App() {
 
   let fileInput = React.createRef();
 
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
-    }
-    getUsername();
- }, [])
   useEffect(() => {
     onPageRendered();
   }, []);
@@ -133,13 +132,13 @@ function App() {
                           src={image}
                           alt='Profile'
                           className='nav-user-profile rounded-circle'
-                          width='50'
+                          width='75'
                         />
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem header>{username}</DropdownItem>
+                        <DropdownItem header>{profile.username}</DropdownItem>
                         <DropdownItem
-                          to='/profile'
+                          href='/profile'
                           className='dropdown-profile'
                           activeClassName='router-link-exact-active'
                         >
@@ -159,23 +158,24 @@ function App() {
                 ) : (
                   <>
                     <NavItem>
-                      <Button
+                    <NavLink
+                        href="/signup" 
                         id='signupBtn'
                         color='primary'
                         className='btn-margin'
                       >
                         Signup
-                      </Button>
+                      </NavLink>
                     </NavItem>
                     <NavItem>
-                      <Button
+                      <NavLink
+                        href="/login" 
                         id='loginBtn'
                         color='primary'
                         className='btn-margin'
-                        to="/login"
                       >
                         Login
-                      </Button>
+                      </NavLink>
                     </NavItem>
                   </>
                 )}
