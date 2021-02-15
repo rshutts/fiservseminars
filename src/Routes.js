@@ -1,19 +1,27 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+
+/*Pages*/
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Meetings from "./pages/Meetings";
 import FAQ from './pages/FAQ';
+
+/*Containers*/
 import Login from "./containers/Login";
 import ResetPassword from "./containers/ResetPassword";
 import ChangePassword from "./containers/Profile/ChangePassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
+import Signup from "./containers/Signup";
+import Polls from './containers/Polls/components/index';
+import Audience from './containers/Polls/components/Audience';
+/* import Board from './containers/Polls/components/Board'; */
+import Speaker from './containers/Polls/components/Speaker';
+/* import NewNote from "./containers/NewNote"; */
 /* import UpdateProfile from "./containers/Profile/UpdateProfile"; */
 /* import Notes from "./containers/Notes"; */
-import Signup from "./containers/Signup";
-/* import NewNote from "./containers/NewNote"; */
 
-/* import NotFound from "./containers/NotFound"; */
+/*Components*/
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
@@ -44,6 +52,16 @@ export default function Routes() {
       <AuthenticatedRoute exact path="/faq">
         <FAQ />
       </AuthenticatedRoute>
+			{/* <AuthenticatedRoute exact path="/meetings/board">
+        <Board/>
+      </AuthenticatedRoute> */}
+      <AuthenticatedRoute exact path="/meetings/polling">
+        <Polls/>
+      </AuthenticatedRoute> 
+			<AuthenticatedRoute exact path="/meetings/speaker">
+        <Speaker/>
+      </AuthenticatedRoute> 
+        
       {/* <AuthenticatedRoute exact path="/notes/new">
         <NewNote />
       </AuthenticatedRoute>

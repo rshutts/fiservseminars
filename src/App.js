@@ -3,11 +3,22 @@ import { useHistory } from "react-router-dom";
 import { Auth } from "aws-amplify";
 
 /*Bootstrap*/
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import { LinkContainer } from "react-router-bootstrap";
+import {
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Dropdown,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
 /*Libs*/
 import { AppContext } from "./libs/contextLib";
@@ -31,7 +42,10 @@ function App() {
   const history = useHistory();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-  
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen(!dropdownOpen);
   useEffect(() => {
     onLoad();
   }, []);
@@ -71,36 +85,46 @@ function App() {
             <nav className='navbar navbar-expand announcement'>
               <ScrollingTicker />
             </nav>
-          <Container>
-            <LinkContainer to="/">
-              <Navbar.Brand className="logo" />
-            </LinkContainer>
-            <Navbar.Toggle />
-            <Navbar.Collapse className="justify-content-end">
-              <Nav activeKey={window.location.pathname}>
-                {isAuthenticated ? (
-                  <>
-                    <LinkContainer to="/profile">
-                      <Button
-                        id='signupBtn'
-                        color='primary'
-                        className='btn-margin'
-                      >
+              <a href='/'>
+                <NavbarBrand className='logo' />
+              </a>
+              <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar className="justify-content-end">
+                  <Nav className='d-none d-md-block' navbar>
+                  {isAuthenticated ? (
+                    <>
+                      <UncontrolledDropdown nav inNavbar>
+                      <DropdownToggle nav caret id='profileDropDown'>
+                        <img
+                          src='https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/favicon.ico'
+                          alt='Profile'
+                          className='nav-user-profile rounded-circle'
+                          width='50'
+                        />
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>User</DropdownItem>
+                        <DropdownItem
+                          to='/profile'
+                          className='dropdown-profile'
+                          activeClassName='router-link-exact-active'
+                        >
                         Profile
-                      </Button>
-                    </LinkContainer>
-                      <Nav.Link 
-                        onClick={handleLogout}
-                        id='loginBtn'
-                        color='primary'
-                        className='btn btn-primary'
-                      >
-                        Logout
-                      </Nav.Link>
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleLogout}
+                          id='loginBtn'
+                          color='primary'
+                          className='btn btn-primary'
+                        >
+                          Log out
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
                   </>
                 ) : (
                   <>
-                    <LinkContainer to="/signup">
+                    <NavItem>
                       <Button
                         id='signupBtn'
                         color='primary'
@@ -108,22 +132,22 @@ function App() {
                       >
                         Signup
                       </Button>
-                    </LinkContainer>
-                    <LinkContainer to="/login">
+                    </NavItem>
+                    <NavItem>
                       <Button
                         id='loginBtn'
                         color='primary'
                         className='btn-margin'
+                        to="/login"
                       >
                         Login
                       </Button>
-                    </LinkContainer>
+                    </NavItem>
                   </>
                 )}
                 </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
+            </Collapse>
+        </Navbar>
         </div>
         <ErrorBoundary>
           <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>

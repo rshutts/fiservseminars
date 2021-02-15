@@ -47,7 +47,7 @@ export default function ProfileImage() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`${username}/profile.png`)
+    Storage.get(`profile.png`)
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
