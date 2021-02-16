@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Auth } from "aws-amplify";
+import { Auth, Storage } from 'aws-amplify';
 
 /*Bootstrap*/
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import { LinkContainer } from "react-router-bootstrap";
+import {
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Dropdown,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
 /*Libs*/
 import { AppContext } from "./libs/contextLib";
@@ -25,13 +36,21 @@ import "./App.css";
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
 
+
 initFontAwesome();
 
 function App() {
   const history = useHistory();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-  
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [image, setImage] = useState([]);
+  const [profile, setProfile] = useState({
+    username: ""
+  });
+
+  const toggle = () => setDropdownOpen(!dropdownOpen);
   useEffect(() => {
     onLoad();
   }, []);
@@ -45,6 +64,10 @@ function App() {
     });
     try {
       await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentUserInfo()
+      setProfile({
+        username: user.username,
+      });
       userHasAuthenticated(true);
     }
     catch(e) {
@@ -62,68 +85,103 @@ function App() {
 
     history.push("/login");
   }
+
+  let fileInput = React.createRef();
+
+  useEffect(() => {
+    onPageRendered();
+  }, []);
+
+  const onPageRendered = async () => {
+    getProfilePicture();
+  };
+  
+  const getProfilePicture = () => {
+    Storage.get(`profile.png`)
+      .then(url => {
+        var myRequest = new Request(url);
+        fetch(myRequest).then(function(response) {
+          if (response.status === 200) {
+            setImage(url);
+          }
+        });
+      })
+      .catch(err => console.log(err));
+      
+  };
   
   return (
     !isAuthenticating && (
       <div className="d-flex flex-column h-100" id="app">
+        <nav className='navbar navbar-expand announcement'>
+          <ScrollingTicker />
+        </nav>
         <div className='nav-container'>
-          <Navbar color='light' light expand='md'>
-            <nav className='navbar navbar-expand announcement'>
-              <ScrollingTicker />
-            </nav>
-          <Container>
-            <LinkContainer to="/">
-              <Navbar.Brand className="logo" />
-            </LinkContainer>
-            <Navbar.Toggle />
-            <Navbar.Collapse className="justify-content-end">
-              <Nav activeKey={window.location.pathname}>
-                {isAuthenticated ? (
-                  <>
-                    <LinkContainer to="/profile">
-                      <Button
-                        id='signupBtn'
-                        color='primary'
-                        className='btn-margin'
-                      >
+          <Navbar light expand='md'>
+              <a href='/'>
+                <NavbarBrand className='logo' />
+              </a>
+              <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar className="justify-content-end">
+                  <Nav className='d-none d-md-block' navbar>
+                  {isAuthenticated ? (
+                    <>
+                      <UncontrolledDropdown nav inNavbar>
+                      <DropdownToggle nav caret id='profileDropDown'>
+                        <img
+                          src={image}
+                          alt='Profile'
+                          className='nav-user-profile rounded-circle'
+                          width='75'
+                        />
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>{profile.username}</DropdownItem>
+                        <DropdownItem
+                          href='/profile'
+                          className='dropdown-profile'
+                          activeClassName='router-link-exact-active'
+                        >
                         Profile
-                      </Button>
-                    </LinkContainer>
-                      <Nav.Link 
-                        onClick={handleLogout}
-                        id='loginBtn'
-                        color='primary'
-                        className='btn btn-primary'
-                      >
-                        Logout
-                      </Nav.Link>
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={handleLogout}
+                          id='loginBtn'
+                          color='primary'
+                          className='btn btn-primary'
+                        >
+                          Log out
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
                   </>
                 ) : (
                   <>
-                    <LinkContainer to="/signup">
-                      <Button
+                    <NavItem>
+                    <NavLink
+                        href="/signup" 
                         id='signupBtn'
                         color='primary'
                         className='btn-margin'
                       >
                         Signup
-                      </Button>
-                    </LinkContainer>
-                    <LinkContainer to="/login">
-                      <Button
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        href="/login" 
                         id='loginBtn'
                         color='primary'
                         className='btn-margin'
                       >
                         Login
-                      </Button>
-                    </LinkContainer>
+                      </NavLink>
+                    </NavItem>
                   </>
                 )}
                 </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
+            </Collapse>
+        </Navbar>
         </div>
         <ErrorBoundary>
           <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>

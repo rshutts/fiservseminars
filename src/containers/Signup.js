@@ -123,7 +123,7 @@ export default function Signup() {
           />
         </Form.Group>
         <Form.Group controlId="nickname" size="lg">
-          <Form.Label>Bank Title</Form.Label>
+          <Form.Label>Title</Form.Label>
           <Form.Control
             type="nickname"
             onChange={handleFieldChange}

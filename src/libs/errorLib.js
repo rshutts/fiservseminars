@@ -26,7 +26,7 @@ export function onError(error) {
   let message = error.toString();
 
   // Auth errors
-  if (!(error instanceof Error) && error.message) {
+  /* if (!(error instanceof Error) && error.message) {
     errorInfo = error;
     message = error.message;
     error = new Error(message);
@@ -37,5 +37,5 @@ export function onError(error) {
 
   logError(error, errorInfo);
 
-  alert(message);
+  alert(message); */
 }

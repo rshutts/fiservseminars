@@ -4,7 +4,7 @@ import { Amplify } from 'aws-amplify';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import config from './config';
+import config from './aws-config';
 import { initSentry } from './libs/errorLib';
 import reportWebVitals from './reportWebVitals';
 
@@ -17,12 +17,20 @@ Amplify.configure({
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,
+<<<<<<< HEAD
     identityPoolId: config.aws_cognito_identity_poll_id,
+=======
+    identityPoolId: config.aws_cognito_identity_pool_id,
+>>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
     userPoolWebClientId: config.aws_user_pools_client_id
   },    
   Storage: {
     bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
     region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+<<<<<<< HEAD
+=======
+    identityPoolId: config.aws_cognito_identity_pool_id
+>>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
   }
 });
 

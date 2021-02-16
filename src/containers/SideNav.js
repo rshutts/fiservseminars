@@ -11,7 +11,7 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle } from 'react-icons/fa';
 /* import 'react-pro-sidebar/dist/css/styles.css'; */
 
 
@@ -31,10 +31,14 @@ function Sidenav() {
   const history = useHistory();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
+  const [profile, setProfile] = useState({
+    username: ""
+  });
 
   useEffect(() => {
     onLoad();
   }, []);
+
 
   async function onLoad() {
     const user = await Auth.currentUserInfo()
@@ -46,6 +50,10 @@ function Sidenav() {
     });
     try {
       await Auth.currentSession();
+      const user = await Auth.currentUserInfo()
+      setProfile({
+        username: user.username,
+      });
       userHasAuthenticated(true);
     }
     catch(e) {
@@ -80,20 +88,25 @@ function Sidenav() {
                     Agenda
                   </MenuItem>
                 </a>
+                <Link className="sidebar-nav-link" to="/faq">
+                  <MenuItem icon={<FaQuestionCircle/>}>
+                      FAQ
+                  </MenuItem>
+                </Link>
                 <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}
-                    /* to={`/meetings?name=${user.attributes.email}&room=Fiserv`} */
+                    /* to={`/meetings?name=${profile.username}&room=Fiserv`} */
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
                   </MenuItem> 
                 </Link>
-                <SubMenu title="Resource Center" icon={<FaCogs/>}
+                {/* <SubMenu title="Resource Center" icon={<FaCogs/>}
                 >
                   <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
                   <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
-                </SubMenu>
+                </SubMenu> */}
               </Menu>
             </ProSidebar>
         ) : (
