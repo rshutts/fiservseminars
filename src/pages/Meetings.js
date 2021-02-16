@@ -22,16 +22,12 @@ const Meetings = () => {
             </Header>
             <div className="meetings-sections">
               <section className='left meetings'>
-<<<<<<< HEAD
-                <div className='chat'>    
-=======
                 <div className='video-player'>
                   <VideoPlayer videoStream={config.PLAYBACK_URL}/>
                 </div>
               </section>
               <section className="right meetings">
                 <div className='chat'>
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
                   <Chat/>   
                 </div>
               </section>

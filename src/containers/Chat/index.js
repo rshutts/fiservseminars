@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Component, useRef } from 'react';
+import ReactDOM from 'react-dom'
 
 import API, { graphqlOperation } from '@aws-amplify/api';
 import '@aws-amplify/pubsub';
@@ -6,12 +7,9 @@ import { Connect } from "aws-amplify-react";
 import Amplify, { Auth, Storage } from 'aws-amplify';
 
 import VideoPlayer from '../VideoPlayer';
-<<<<<<< HEAD
-import ChatImage from '../Profile/components/profileImage';
-=======
 import ProfileImage from './profileImage';
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
 import ReconnectingWebSocket from 'reconnecting-websocket';
+import Popout from 'react-popout-v2'
 
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
@@ -23,41 +21,15 @@ import './Chat.css';
 
 import config from '../../aws-config';
 
-/* Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-  "aws_appsync_region": "us-east-1",
-  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-<<<<<<< HEAD
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-  }
-});
-=======
-    bucket: config.aws_s3_bucket,
-    region: config.aws_s3_bucket_region,
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-}); */
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
-
 const Chat = props => {
   const [username, setState] = useState(null);
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-<<<<<<< HEAD
-=======
   const [userID, setUser] = useState({
     id: "",
   });
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
+  const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
     async function getUsername() {
@@ -191,21 +163,13 @@ return (
         <header>
           <h1>Chat</h1>
         </header>
-<<<<<<< HEAD
-        {/* <div className="container chat-wrapper pos-absolute pd-t-1 top-0 bottom-0"> */}
-=======
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
           <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
             <div className="messages-scroller messages">
               {messages.map((message) => (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-<<<<<<< HEAD
-                    <ChatImage/>
-=======
                     <img src={image} height="50px"/>  
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
@@ -223,15 +187,27 @@ return (
                   value={messageBody} />
               </form>
             </div>
+            <>
+            {!isOpen && <button onClick={() => setOpen(true)}>Open Popout</button>}
+            {isOpen && (
+            <Popout
+              id={'ex2'}
+              url={'#/popout'}
+              reactDom={ReactDOM}
+              children={
+                <p>New popout</p>
+              }
+              closeOnParentUnload={true}
+              onClose={() => setOpen(false)}
+            />
+          
+            )}
+            </>
           </div>
         </div>
-<<<<<<< HEAD
-        {/* </div> */}
-=======
         {/* {username === 'strasserra04' &&
           <h1>Hi</h1>
         } */}
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
       </div>
     </div>
   </div>
