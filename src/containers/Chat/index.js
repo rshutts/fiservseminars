@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Component, useRef } from 'react';
+import ReactDOM from 'react-dom'
 
 import API, { graphqlOperation } from '@aws-amplify/api';
 import '@aws-amplify/pubsub';
@@ -8,6 +9,7 @@ import Amplify, { Auth, Storage } from 'aws-amplify';
 import VideoPlayer from '../VideoPlayer';
 import ProfileImage from './profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
+import Popout from 'react-popout-v2'
 
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
@@ -27,6 +29,7 @@ const Chat = props => {
   const [userID, setUser] = useState({
     id: "",
   });
+  const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
     async function getUsername() {
@@ -184,6 +187,22 @@ return (
                   value={messageBody} />
               </form>
             </div>
+            <>
+            {!isOpen && <button onClick={() => setOpen(true)}>Open Popout</button>}
+            {isOpen && (
+            <Popout
+              id={'ex2'}
+              url={'#/popout'}
+              reactDom={ReactDOM}
+              children={
+                <p>New popout</p>
+              }
+              closeOnParentUnload={true}
+              onClose={() => setOpen(false)}
+            />
+          
+            )}
+            </>
           </div>
         </div>
         {/* {username === 'strasserra04' &&

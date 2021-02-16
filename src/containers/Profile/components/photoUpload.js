@@ -15,20 +15,6 @@ export default function PhotoUpload() {
 
   let fileInput = React.createRef();
 
-
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
-    }
-    getUsername();
- }, [])
-
-  const onOpenFileDialog = () => {
-    fileInput.current.click();
-  };
-
   const onProcessFile = e => {
     e.preventDefault();
     let reader = new FileReader();
@@ -49,11 +35,16 @@ export default function PhotoUpload() {
       .catch(err => console.log(err));
   };
   useEffect(() => {
-    onPageRendered();
-  }, []);
+    async function getUsername() {
+        const user = await Auth.currentUserInfo();
+        const username = user.username
+        setUsername(username);
+    }
+    getUsername();
+ }, [])
 
-  const onPageRendered = async () => {
-    getProfilePicture();
+  const onOpenFileDialog = () => {
+    fileInput.current.click();
   };
   
   const getProfilePicture = () => {
