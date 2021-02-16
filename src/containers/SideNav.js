@@ -120,6 +120,11 @@ function Sidenav() {
                     Home 
                   </MenuItem>
                 </Link>
+                <Link className="sidebar-nav-link" to="/faq">
+                  <MenuItem icon={<FaQuestionCircle/>}>
+                      FAQ
+                  </MenuItem>
+                </Link>
               </Menu>
             </ProSidebar>
         )}

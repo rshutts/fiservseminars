@@ -19,23 +19,6 @@ import './Chat.css';
 
 import config from '../../aws-config';
 
-/* Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-  "aws_appsync_region": "us-east-1",
-  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket,
-    region: config.aws_s3_bucket_region,
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-}); */
-
 const Chat = props => {
   const [username, setState] = useState(null);
   const [messages, setMessages] = useState([]);

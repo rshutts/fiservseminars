@@ -123,7 +123,7 @@ function App() {
               </a>
               <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar className="justify-content-end">
-                  <Nav className='d-none d-md-block' navbar>
+                  <Nav className='d-none d-md-block navbar-buttons' navbar>
                   {isAuthenticated ? (
                     <>
                       <UncontrolledDropdown nav inNavbar>

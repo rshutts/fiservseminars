@@ -72,96 +72,106 @@ export default function Signup() {
     return (
       <div className="Signup">
         <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="email" size="lg">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={fields.email}
-            onChange={handleFieldChange}
-          />
-        </Form.Group>
-        <Form.Group controlId="username" size="lg">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            autoFocus
-            type="username"
-            value={fields.username}
-            onChange={handleFieldChange}
-          />
-        </Form.Group>
-        <Form.Group controlId="password" size="lg">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={fields.password}
-            onChange={handleFieldChange}
-          />
-        </Form.Group>
-        <Form.Group controlId="confirmPassword" size="lg">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            type="password"
-            onChange={handleFieldChange}
-            value={fields.confirmPassword}
-          />
-        </Form.Group>
-        <Form.Group controlId="name" size="lg">
-          <Form.Label>Full Name</Form.Label>
-          <Form.Control
-            type="name"
-            onChange={handleFieldChange}
-            value={fields.name}
-          />
-        </Form.Group>
-        <Form.Group controlId="given_name" size="lg">
-          <Form.Label>Bank Name</Form.Label>
-          <Form.Control
-            type="given_name"
-            onChange={handleFieldChange}
-            value={fields.given_name}
-          />
-        </Form.Group>
-        <Form.Group controlId="nickname" size="lg">
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            type="nickname"
-            onChange={handleFieldChange}
-            value={fields.nickname}
-          />
-        </Form.Group>
-        <Form.Group controlId="locale" size="lg">
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            type="locale"
-            onChange={handleFieldChange}
-            value={fields.locale}
-          />
-        </Form.Group>
-        <Form.Group controlId="address" size="lg">
-          <Form.Label>State</Form.Label>
-          <Form.Control
-            type="address"
-            onChange={handleFieldChange}
-            value={fields.address}
-          />
-        </Form.Group>
-        <Form.Group controlId="seminarDate" size="lg">
-          <Form.Label>Seminar Date</Form.Label>
-          <Form.Control 
-            onChange={handleFieldChange}
-            value={fields.seminardDate}
-            as="select"
-          >
-            <option>April 1-3</option>
-            <option>April 24-27</option>
-          </Form.Control>
-          <Form.Control
-            type="birthdate"
-            onChange={handleFieldChange}
-            value={fields.seminarDate}
-          />
-        </Form.Group>
+          <Form.Row>
+            <Form.Group controlId="email" size="lg">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                value={fields.email}
+                onChange={handleFieldChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="username" size="lg">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                autoFocus
+                type="username"
+                value={fields.username}
+                onChange={handleFieldChange}
+              />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="password" size="lg">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                value={fields.password}
+                onChange={handleFieldChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="confirmPassword" size="lg">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                onChange={handleFieldChange}
+                value={fields.confirmPassword}
+              />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="name" size="lg">
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                type="name"
+                onChange={handleFieldChange}
+                value={fields.name}
+              />
+            </Form.Group>
+            <Form.Group controlId="given_name" size="lg">
+              <Form.Label>Bank Name</Form.Label>
+              <Form.Control
+                type="given_name"
+                onChange={handleFieldChange}
+                value={fields.given_name}
+              />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="nickname" size="lg">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                type="nickname"
+                onChange={handleFieldChange}
+                value={fields.nickname}
+              />
+            </Form.Group>
+            <Form.Group controlId="locale" size="lg">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="locale"
+                onChange={handleFieldChange}
+                value={fields.locale}
+              />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row> 
+            <Form.Group controlId="address" size="lg">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                type="address"
+                onChange={handleFieldChange}
+                value={fields.address}
+              />
+            </Form.Group>
+            <Form.Group controlId="seminarDate" size="lg">
+              <Form.Label>Seminar Date</Form.Label>
+              <Form.Control 
+                onChange={handleFieldChange}
+                value={fields.seminardDate}
+                as="select"
+              >
+                <option>April 1-3</option>
+                <option>April 24-27</option>
+              </Form.Control>
+              <Form.Control
+                type="birthdate"
+                onChange={handleFieldChange}
+                value={fields.seminarDate}
+              />
+            </Form.Group>
+          </Form.Row>
         <LoaderButton
           block
           size="lg"

@@ -213,7 +213,7 @@ h6 {
   margin-bottom:0px !important;
   background:none;;
 }
-ul.d-none.d-md-block.nav-buttons.navbar-nav {
+ul.navbar-buttons {
   display: flex !important;
   flex-direction: row;
 }
@@ -372,6 +372,14 @@ ul.d-none.d-md-block.nav-buttons.navbar-nav {
   align-self: center;
   padding: 1% 2%;
   margin: 3% 2% 0;
+}
+.Signup form {
+  display: flex;
+  max-width:75%;
+  flex-direction: column;
+}
+.Signup form .form-row {
+  justify-content: space-between;
 }
 .main-content-profile {
   background: #fff;

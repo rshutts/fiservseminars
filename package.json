@@ -28,7 +28,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-scroll": "^1.8.1",
-    "react-stripe-elements": "^6.1.2",
     "reactstrap": "^8.9.0",
     "reconnecting-websocket": "^4.4.0",
     "semantic-ui-react": "^2.0.1",
