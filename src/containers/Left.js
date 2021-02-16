@@ -9,13 +9,8 @@ class Left extends Component {
             <div className="greetings">
               <img
               class='mb-3 app-logo'
-<<<<<<< HEAD
-              src='https://seminar-media.s3.amazonaws.com/spring-home-banner.png'
-              alt='2020 Premier Fall Conference'
-=======
               src='https://fiservseminars-media.s3.amazonaws.com/home-banner.png'
               alt='2021 Precision Spring Conference'
->>>>>>> 8518b6db930583cbab7b2be04b672d2a92dc03fe
               width=''
             />
             </div>
