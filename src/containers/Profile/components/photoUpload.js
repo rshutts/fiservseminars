@@ -5,7 +5,7 @@ import { onError } from "../../../libs/errorLib";
 
 import config from '../../../aws-config';
 
-Storage.configure({ track: true, level: "private" });
+Storage.configure({ track: true, level: "protected" });
 
 export default function PhotoUpload() {
   const [uploaded, setUploaded] = useState(false);
@@ -27,8 +27,8 @@ export default function PhotoUpload() {
     reader.onloadend = () => {
       setImage(reader.result);
     };
-    Storage.put(`profile.png`, file, {
-      level: "private",
+    Storage.put('profile.png', file, {
+      level: "protected",
       contentType: "image/png"
     })
       .then(result => console.log(result))
@@ -48,7 +48,7 @@ export default function PhotoUpload() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`profile.png`)
+    Storage.get('profile.png')
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
@@ -62,7 +62,7 @@ export default function PhotoUpload() {
   };
 
   const onRemoveFile = e => {
-    Storage.remove('profile.png', {level: 'private'})
+    Storage.remove('profile.png', {level: 'protected'})
     .then(
       result => console.log(result),
       removeImage()

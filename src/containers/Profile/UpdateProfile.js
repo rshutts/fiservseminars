@@ -158,7 +158,7 @@ return (
         type="submit"
         bsSize="large"
         isLoading={isSendingCode}
-        /* onClick={onClickHandler} */
+        onClick={onClickHandler}
         /* disabled={!validateEmailForm()} */
       >
         Update Profile

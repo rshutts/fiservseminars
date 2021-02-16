@@ -90,6 +90,15 @@ a {
   text-align: center;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+#logoutBtn, .dropdown-profile {
+  background:none;
+  color:#000;
+}
+#logoutBtn:hover, .dropdown-profile:hover {
+  background:#666666;
+  border-color:#666666;
+  color:#fff;
+}
 #signupBtn {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
@@ -216,6 +225,11 @@ h6 {
 ul.navbar-buttons {
   display: flex !important;
   flex-direction: row;
+}
+.dropdown-header {
+  font-size:1rem;
+  font-weight:bold;
+  border-bottom: 1px solid rgba(0,0,0,.2)
 }
 .announcement {
   width:100%;

@@ -162,13 +162,15 @@ export default function Signup() {
                 value={fields.seminardDate}
                 as="select"
               >
-                <option>April 1-3</option>
-                <option>April 24-27</option>
+                <option></option>
+                <option>April 20-22</option>
+                <option>May 18-30</option>
               </Form.Control>
               <Form.Control
                 type="birthdate"
                 onChange={handleFieldChange}
                 value={fields.seminarDate}
+                style={{ visibility: 'hidden'}}
               />
             </Form.Group>
           </Form.Row>

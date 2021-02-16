@@ -35,7 +35,7 @@ import "./App.css";
 
 // fontawesome
 import initFontAwesome from './utils/initFontAwesome';
-
+import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 initFontAwesome();
 
@@ -141,15 +141,15 @@ function App() {
                           href='/profile'
                           className='dropdown-profile'
                           activeClassName='router-link-exact-active'
-                        >
+                        ><FaUser/>&nbsp;
                         Profile
                         </DropdownItem>
                         <DropdownItem
                           onClick={handleLogout}
-                          id='loginBtn'
+                          id='logoutBtn'
                           color='primary'
                           className='btn btn-primary'
-                        >
+                        ><FaSignOutAlt/>&nbsp;
                           Log out
                         </DropdownItem>
                       </DropdownMenu>

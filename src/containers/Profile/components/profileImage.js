@@ -5,7 +5,7 @@ import { onError } from "../../../libs/errorLib";
 
 import config from '../../../aws-config';
 
-Storage.configure({ track: true, level: "public" });
+Storage.configure({ track: true, level: "protected" });
 
 export default function ProfileImage() {
   const [image, setImage] = useState([]);
