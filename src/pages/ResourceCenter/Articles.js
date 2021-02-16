@@ -19,14 +19,14 @@ const Articles = () => {
                                 <Card.Header className="card-header">Surveys</Card.Header>
                                 <div className="survey-descriptions">
                                     <Card.Description>
-                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Survey</a>
-                                        <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-GqWRC3FgYxBrytGu3gWNnRUMFdYWk4yVzE0MDM5Q1RTM0xXMFI0SUZZRS4u</p>
+                                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-Izp6GEQQqxCjeD-2NKW9VZUQTdRNlFTMVBCNExWRThMNkdMN1NUSEZPQy4u" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Survey</a>
+                                        <p style={{ width: "80%"}}><br/>Or copy and paste the following URL into your browser:&nbsp; https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-Izp6GEQQqxCjeD-2NKW9VZUQTdRNlFTMVBCNExWRThMNkdMN1NUSEZPQy4u</p>
                                         <p><b>Note: The survey is available now.</b></p>
                                     </Card.Description>
                                     <Card.Description>
-                                        <a href="https://s2.userzoom.com/f/finallinks.aspx?s=C513S365&t=q&p=2" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Precision Usability Study</a>
-                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/m/MiBDNTEzUzM2NSAg</p>
-                                        <p><b>Note: The usability study will go live on Monday October 5, 2020 and close after the end of the day Friday October 16, 2020.</b></p>
+                                        <a href="https://s2.userzoom.com/m/MiBDNTEzUzM3NSAg" target="_blank" rel="noopener noreferrer" style={{ fontWeight: "bold", fontSize: "16px"}}>Premier Usability Study</a>
+                                        <p><br/>Or copy and paste the following URL into your browser: https://s2.userzoom.com/m/MiBDNTEzUzM3NSAg</p>
+                                        <p><b>Note: The usability study will go live on Tuesday October 20, 2020 and close after the end of the day Wednesday October 28, 2020.</b></p>
                                     </Card.Description> 
                                 </div>
                             </Card.Content>
@@ -37,29 +37,33 @@ const Articles = () => {
                     <Grid.Column className="article-block">
                         <Card>
                             <Card.Content>
-                            <Card.Header className="card-header">User Defined Options Tips & Tricks</Card.Header>
-                            <Card.Description>
-                                <ul>
-                                    <li>
-                                        <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/UserDefinedOptionsTipsandTricksGuide.pdf" target="_blank" rel="noopener noreferrer">User Defined Options Tips & Tricks Guide</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/UserDefinedOptionsTipsandTricksPPT.pdf" target="_blank" rel="noopener noreferrer">User Defined Options Tips & Tricks PPT</a>
-                                    </li>
-                                </ul>
-                            </Card.Description>
-                        </Card.Content>
-                        </Card>
-                        <Card>
-                            <Card.Content>
-                                <Card.Header className="card-header">Employ I-32 Forms Design To Set Your Institution Apart</Card.Header>
+                                <Card.Header className="card-header">Increase CDD-BSA Compliance With BPM</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignToSetyourInstitutionApartGuide.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design To Set Your Institution Apart Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/IncreaseCDD-BSAComplianceWithBPM.pdf" target="_blank" rel="noopener noreferrer">Increase CDD-BSA Compliance With BPM Guide</a>
                                         </li>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignPPT.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design To Set Your Institution Apart PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IncreaseCDD-BSAComplianceWithBPMPPT.pdf" target="_blank" rel="noopener noreferrer">Increase CDD-BSA Compliance With BPM PPT</a>
+                                        </li>
+                                    </ul>
+                                </Card.Description>
+                            </Card.Content>
+                        </Card>
+                        
+                        <Card>
+                            <Card.Content>
+                                <Card.Header className="card-header">Contactless Assets</Card.Header>
+                                <Card.Description>
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/contactless-emvcards.html" target="_blank" rel="noopener noreferrer">Contactless Cards Fact Sheet</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.fiserv.com/en/about-fiserv/the-point/contactless-payments-rise-during-pandemic.html" target="_blank" rel="noopener noreferrer">Contactless Payments Rise During Pandemic</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/card-manufacturing.html" target="_blank" rel="noopener noreferrer">Card manufacturing Brochure</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -104,17 +108,29 @@ const Articles = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column className="article-block">     
+                    <Grid.Column className="article-block">    
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Increase CDD-BSA Compliance With BPM</Card.Header>
+                                <Card.Header className="card-header">Inactive &amp; Dormant Accounts</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IncreaseCDD-BSAComplianceWithBPMGuide.pdf" target="_blank" rel="noopener noreferrer">Increase CDD-BSA Compliance With BPM Guide</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/InactiveandDormantAccounts.pdf" target="_blank" rel="noopener noreferrer">Inactive &amp; Dormant Accounts</a>
+                                        </li>
+                                    </ul>
+                                </Card.Description>
+                            </Card.Content>
+                        </Card> 
+                        <Card>
+                            <Card.Content>
+                                <Card.Header className="card-header">Employ I-32 Forms Design To Set Your Institution Apart</Card.Header>
+                                <Card.Description>
+                                    <ul>
+                                        <li>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignToSetyourInstitutionApartGuide.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design To Set Your Institution Apart Guide</a>
                                         </li>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/IncreaseCDD-BSAComplianceWithBPMPPT.pdf" target="_blank" rel="noopener noreferrer">Increase CDD-BSA Compliance With BPM PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/EmployI-32FormsDesignPPT.pdf" target="_blank" rel="noopener noreferrer">Employ I-32 Forms Design PPT</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -122,17 +138,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Contactless Assets</Card.Header>
+                                <Card.Header className="card-header">Address Management</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/contactless-emvcards.html" target="_blank" rel="noopener noreferrer">Contactless Cards Fact Sheet</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.fiserv.com/en/about-fiserv/the-point/contactless-payments-rise-during-pandemic.html" target="_blank" rel="noopener noreferrer">Contactless Payments Rise During Pandemic</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.fiserv.com/en/about-fiserv/resource-center/brochures/card-manufacturing.html" target="_blank" rel="noopener noreferrer">Card manufacturing Brochure</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/AddressManagement.pdf" target="_blank" rel="noopener noreferrer">Address Management</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -140,29 +150,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Loans Did You Know</Card.Header>
+                                <Card.Header className="card-header">EIM Decision Plans</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/LoansDYKGuide.pdf" target="_blank" rel="noopener noreferrer">Loans Did You Know Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/LoansDYKPPT.pdf" target="_blank" rel="noopener noreferrer">Loans Did You Know PPT</a>
-                                        </li>
-                                    </ul>
-                                </Card.Description>
-                            </Card.Content>
-                        </Card>
-                        <Card>
-                            <Card.Content>
-                                <Card.Header className="card-header">Deposit Parameters</Card.Header>
-                                <Card.Description>
-                                    <ul>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/DepositsParameterReviewGuide.pdf" target="_blank" rel="noopener noreferrer">Deposit Parameters Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/DepositParametersReviewPPT.pdf" target="_blank" rel="noopener noreferrer">Deposit Parameters PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/EIMDecisionPlans.pdf" target="_blank" rel="noopener noreferrer">EIM Decision Plans</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -174,14 +166,11 @@ const Articles = () => {
                     <Grid.Column className="article-block">
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Online Posting Features</Card.Header>
+                                <Card.Header className="card-header">Loan Fees &amp; Charges</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/OnlinePostingFeaturesGuide.pdf" target="_blank" rel="noopener noreferrer">Online Posting Features Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/OnlinePostingFeaturesPPT.pdf" target="_blank" rel="noopener noreferrer">Online Posting Features PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanFees&Charges.pdf" target="_blank" rel="noopener noreferrer">Loan Fees &amp; Charges</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -189,11 +178,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Deposit & Operations 2020.1 & 2020.2</Card.Header>
+                                <Card.Header className="card-header">Loan Payment &amp; Payoff Processing</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionRelease2020.1_2020.2DepositandOperations.pdf" target="_blank" rel="noopener noreferrer">Precision Deposit & Operations 2020.1 & 2020.2 PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanPaymentandPayoffProcessing.pdf" target="_blank" rel="noopener noreferrer">Loan Payment &amp; Payoff Processing</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -201,11 +190,11 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Loans 2020.2 & 2020.3</Card.Header>
+                                <Card.Header className="card-header">Loan Payment Schedules &amp; Billing</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionLoans2020.2&2020.3.pdf" target="_blank" rel="noopener noreferrer">Precision Loans 2020.2 & 2020.3 PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/LoanPaymentSchedulesandBilling.pdf" target="_blank" rel="noopener noreferrer">Loan Payment Schedules &amp; Billing</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
@@ -213,21 +202,32 @@ const Articles = () => {
                         </Card>
                         <Card>
                             <Card.Content>
-                                <Card.Header className="card-header">Precision Roadmap</Card.Header>
+                                <Card.Header className="card-header">Streamlined Processing Using TMS</Card.Header>
                                 <Card.Description>
                                     <ul>
                                         <li>
-                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/PrecisionRoadmap.pdf" target="_blank" rel="noopener noreferrer">Precision Roadmap PPT</a>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/StreamlinedProcessingusingTMS.pdf" target="_blank" rel="noopener noreferrer">Streamlined Processing Using TMS</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
                             </Card.Content>
                         </Card>
-                        
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column className="article-block">
+                        <Card>
+                            <Card.Content>
+                                <Card.Header className="card-header">Deposits Did You Know</Card.Header>
+                                <Card.Description>
+                                    <ul>
+                                        <li>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/DepositsDidYouKnow.pdf" target="_blank" rel="noopener noreferrer">Deposits Did You Know</a>
+                                        </li>
+                                    </ul>
+                                </Card.Description>
+                            </Card.Content>
+                        </Card>
                         <Card>
                             <Card.Content>
                                 <Card.Header className="card-header">Demystifying AI</Card.Header>
@@ -238,6 +238,18 @@ const Articles = () => {
                                         </li>
                                         <li>
                                             <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/Seminar/VirtualBankingAssistant-AI-drivenConversationalExperiencesOnePager.pdf" target="_blank" rel="noopener noreferrer">Virtual Banking Assistant One Pager</a>
+                                        </li>
+                                    </ul>
+                                </Card.Description>
+                            </Card.Content>
+                        </Card>
+                        <Card>
+                            <Card.Content>
+                                <Card.Header className="card-header">BO End User</Card.Header>
+                                <Card.Description>
+                                    <ul>
+                                        <li>
+                                            <a href="https://virtualtrainer.fiservapps.com/TrainGuides/2020/BOEndUser.pdf" target="_blank" rel="noopener noreferrer">BO End User</a>
                                         </li>
                                     </ul>
                                 </Card.Description>
