@@ -49,9 +49,9 @@ export default function Routes() {
       <AuthenticatedRoute exact path="/profile/update">
         <UpdateProfile />
       </AuthenticatedRoute>
-      <UnauthenticatedRoute exact path="/faq">
+      <Route exact path="/faq">
         <FAQ />
-      </UnauthenticatedRoute>
+      </Route>
 			{/* <AuthenticatedRoute exact path="/meetings/board">
         <Board/>
       </AuthenticatedRoute> */}

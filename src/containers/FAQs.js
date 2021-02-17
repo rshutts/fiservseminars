@@ -85,7 +85,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 4} className="faq-content">
                     <p>
-                        Yes, if your bank registered 2 or more employees you will have access to this site until February 28th, 2021
+                        Yes, you will have access to this site until July 31<sup>st</sup>. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -95,9 +95,23 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    I have additional questions. Who should I reach out to?
+                        How does my institution get unlimited connections?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 5} className="faq-content">
+                    <p>
+                        Please have each user register individually. 
+                    </p>
+                    </Accordion.Content>
+                    <Accordion.Title
+                    active={activeIndex === 6}
+                    index={6}
+                    onClick={this.handleClick}
+                    className="faq-title"
+                    >
+                    <Icon name='dropdown' />
+                    I have additional questions. Who should I reach out to?
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === 6} className="faq-content">
                     <p>
                         Please reach out to <a href="mailto:educationseminars@fiserv.com">educationseminars@fiserv.com</a> 
                     </p>
