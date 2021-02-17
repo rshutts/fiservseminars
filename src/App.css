@@ -26,6 +26,28 @@ ul {
   left: 0;
   right: 0;
 }
+.fade-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
 .navbar-expand-md .navbar-toggler {
   display: none;
 }
@@ -93,6 +115,7 @@ a {
 #logoutBtn, .dropdown-profile {
   background:none;
   color:#000;
+  padding: .25rem 1rem;
 }
 #logoutBtn:hover, .dropdown-profile:hover {
   background:#666666;
@@ -755,8 +778,10 @@ ul.navbar-buttons {
 .scrolling-chat div[class*="react-scroll-to-bottom"] {
     max-height: 550px;
 }
-.popout-chat-message-container div[class*="react-scroll-to-bottom"] {
-  max-height: none;
+.react-scroll-to-bottom--css-jftgz-1n7m0yu {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
 }
  .chat-wrapper .meetings {
    max-height:500px;
@@ -857,7 +882,7 @@ i.fa.fa-fw.fa-external-link-alt {
   padding: 10px;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  /* overflow-y: auto; */
  }
  .message-bubble {
   background: #f1f1f1;

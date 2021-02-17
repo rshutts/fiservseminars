@@ -29,15 +29,13 @@ import Routes from "./Routes";
 import Footer from './containers/Footer'
 import ScrollingTicker from './components/Ticker'
 import ErrorBoundary from "./components/ErrorBoundary";
+import Sidenav from "./containers/SideNav";
 
 /*CSS*/
 import "./App.css";
 
 // fontawesome
-import initFontAwesome from './utils/initFontAwesome';
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
-
-initFontAwesome();
 
 function App() {
   const history = useHistory();
@@ -185,7 +183,9 @@ function App() {
         </div>
         <ErrorBoundary>
           <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-            <Routes />
+            <div className="next-steps my-5 content-wrapper">
+              <Routes />
+            </div>
             <Footer />
           </AppContext.Provider>
         </ErrorBoundary>

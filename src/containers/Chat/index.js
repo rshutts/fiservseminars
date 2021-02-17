@@ -9,7 +9,8 @@ import Amplify, { Auth, Storage } from 'aws-amplify';
 import VideoPlayer from '../VideoPlayer';
 import ProfileImage from './profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
-import Popout from 'react-popout-v2'
+import Popout from 'react-popout-v2';
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
@@ -101,14 +102,6 @@ const Chat = props => {
     }
   };
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  useEffect(() => {
-    scrollToBottom()
-  }, [messages]);
-
   useEffect(() => {
     const options = {
         minUptime: 50000,
@@ -164,7 +157,8 @@ return (
           <h1>Chat</h1>
         </header>
           <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
-            <div className="messages-scroller messages">
+          <ScrollToBottom>
+          <div className="messages-scroller messages">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -174,7 +168,6 @@ return (
                       <h3>{message.author}</h3>
                       {message.body}
                     </div>
-                  <div ref={messagesEndRef} />
                 </div>
               ))}
               <div className="chat-bar composer">
@@ -187,27 +180,56 @@ return (
                   value={messageBody} />
               </form>
             </div>
-            <>
-            {!isOpen && <button onClick={() => setOpen(true)}>Open Popout</button>}
-            {isOpen && (
-            <Popout
-              id={'ex2'}
-              url={'#/popout'}
-              reactDom={ReactDOM}
-              children={
-                <p>New popout</p>
-              }
-              closeOnParentUnload={true}
-              onClose={() => setOpen(false)}
-            />
-          
-            )}
-            </>
           </div>
-        </div>
-        {/* {username === 'strasserra04' &&
-          <h1>Hi</h1>
-        } */}
+        </ScrollToBottom>
+        <>
+          {!isOpen && <button onClick={() => setOpen(true)}>Open Popout</button>}
+          {isOpen && (
+          <Popout
+            id={'ex2'}
+            url={'/chat-popout?room=Fiserv'}
+            reactDom={ReactDOM}
+            containerId="chat-popout-window"
+            children={
+              <div>
+              <header>
+                <h1>Chat</h1>
+              </header>
+              <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
+                <ScrollToBottom>
+                <div className="messages-scroller messages">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={message.author === username ? 'message me' : 'message'}>
+                      <img src={image} height="50px"/>  
+                      <div>
+                        <h3>{message.author}</h3>
+                        {message.body}
+                      </div>
+                  </div>
+                ))}
+                <div className="chat-bar composer">
+                  <form onSubmit={handleSubmit}>
+                    <input
+                      type="text"
+                      name="message"
+                      placeholder="Type your message here..."
+                      onChange={handleChange}
+                      value={messageBody} />
+                  </form>
+                </div>
+              </div>
+            </ScrollToBottom>
+          </div>
+          </div>
+          }
+            closeOnParentUnload={true}
+            onClose={() => setOpen(false)}
+          />
+          )}
+        </>
+      </div>
       </div>
     </div>
   </div>
