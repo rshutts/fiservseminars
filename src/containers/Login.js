@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
@@ -11,6 +11,7 @@ import "./Login.css";
 import ResetPassword from "../containers/ResetPassword";
 
 export default function Login() {
+  const history = useHistory();
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
@@ -30,6 +31,7 @@ export default function Login() {
     try {
       await Auth.signIn(fields.username, fields.password);
       userHasAuthenticated(true);
+      history.push("/");
     } catch (e) {
       onError(e);
       setIsLoading(false);

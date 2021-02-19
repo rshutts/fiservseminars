@@ -54,12 +54,6 @@ function App() {
   }, []);
 
   async function onLoad() {
-    const user = await Auth.currentUserInfo()
-    .then(res => {
-    })
-    .catch(err => {
-      console.error(err);
-    });
     try {
       await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo()
@@ -75,12 +69,12 @@ function App() {
     }
     setIsAuthenticating(false);
   }
-
+  
   async function handleLogout() {
     await Auth.signOut();
-
+  
     userHasAuthenticated(false);
-
+  
     history.push("/login");
   }
 

@@ -41,6 +41,7 @@ export default function ResetPassword() {
 
     try {
       await Auth.forgotPassword(fields.email);
+      console.log(fields.email)
       setCodeSent(true);
     } catch (error) {
       onError(error);
@@ -102,9 +103,6 @@ export default function ResetPassword() {
             value={fields.code}
             onChange={handleFieldChange}
           />
-          {/* <HelpBlock>
-            Please check your email ({fields.email}) for the confirmation code.
-          </HelpBlock> */}
         </FormGroup>
         <hr />
         <FormGroup bsSize="large" controlId="password">
@@ -139,7 +137,6 @@ export default function ResetPassword() {
   function renderSuccessMessage() {
     return (
       <div className="success">
-        
         <p>Your password has been reset.</p>
         <p>
           <Link to="/login">

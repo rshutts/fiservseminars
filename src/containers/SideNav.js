@@ -124,6 +124,16 @@ function Sidenav() {
                     Home 
                   </MenuItem>
                 </Link>
+                <a
+                  className='sidebar-nav-link'
+                  href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Precision-Overview-and-Agenda.pdf'
+                  target='_blank'
+                  rel="noopener noreferrer"
+                >
+                  <MenuItem icon={<FaCalendarAlt/>}>
+                    Agenda
+                  </MenuItem>
+                </a>
                 <Link className="sidebar-nav-link" to="/faq">
                   <MenuItem icon={<FaQuestionCircle/>}>
                       FAQ
