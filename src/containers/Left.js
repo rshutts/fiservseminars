@@ -9,7 +9,7 @@ class Left extends Component {
             <div className="greetings">
               <img
               class='mb-3 app-logo'
-              src='https://fiservseminars-media.s3.amazonaws.com/home-banner.png'
+              src='https://seminar-media.s3.amazonaws.com/Spring/2021/home-banner.png'
               alt='2021 Precision Spring Conference'
               width=''
             />
@@ -27,7 +27,9 @@ class Left extends Component {
            {/*  
               We are offering each Simulive session twice, once from 8 a.m. - 12 p.m. Central Time and a repeat session from 1 p.m. - 5 p.m. Central Time on the following days:
               <br/> */}
-            <p>
+            <h2>
+              Seminar Dates:
+            </h2>
               <ul>
                 <li>
                   April 20, 21, and 22, 2021
@@ -36,10 +38,9 @@ class Left extends Component {
                   May 18, 19, and 20, 2021
                 </li>
               </ul>
-            </p>
-            <p>
+            <h2>
               Standard registration fee:
-              <br/>
+            </h2>
               <ul>
                 <li>
                   $1,500 per financial institution
@@ -51,8 +52,7 @@ class Left extends Component {
                   $1,750 for <strong>3</strong> or more connections*
                 </li> */}
               </ul>
-                <strong>*Note: The $1,500 per institution cost includes all three days with unlimited connections. Each user will need to register individually.</strong>
-            </p>
+              <strong>*Note: The $1,500 per institution cost includes all three days with unlimited connections. Each user will need to register individually.</strong>
          </div>
         </section>
       );

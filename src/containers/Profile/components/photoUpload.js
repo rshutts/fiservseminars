@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import { useFormFields } from "../../../libs/hooksLib";
 import { onError } from "../../../libs/errorLib";
+import {
+  Form,
+  FormGroup,
+  FormFile
+} from "react-bootstrap";
 
 import config from '../../../aws-config';
 
@@ -47,8 +52,16 @@ export default function PhotoUpload() {
     fileInput.current.click();
   };
   
+  useEffect(() => {
+    onPageRendered();
+  }, []);
+
+  const onPageRendered = async () => {
+    getProfilePicture();
+  };
+  
   const getProfilePicture = () => {
-    Storage.get('profile.png')
+    Storage.get(`profile.png`)
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
@@ -63,24 +76,35 @@ export default function PhotoUpload() {
 
   const onRemoveFile = e => {
     Storage.remove('profile.png', {level: 'protected'})
-    .then(
-      result => console.log(result),
-      removeImage()
-    )
-    .catch(err => console.log(err));
-      
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
   };
 
   return (
-    <div className="App">
-      <a href="#">
-        <input
-            type="file"
-            onChange={onProcessFile}
-            ref={fileInput}
-        />
-      </a>
-      {/* <button onClick={onRemoveFile}>Remove Photo</button> */}
+    <div className="upload-profile">
+      {!image
+        ? <div>
+          <Form>
+            <Form.File 
+              id="change" 
+              label="Change photo" 
+              onChange={onProcessFile}
+              ref={fileInput}
+              custom
+            />
+          </Form>
+          <button onClick={onRemoveFile}>Remove Photo</button>
+          </div>
+        : <Form>
+            <Form.File 
+              id="upload" 
+              label="Upload photo" 
+              onChange={onProcessFile}
+              ref={fileInput}
+              custom
+            />
+          </Form>
+      } 
       <img src={image} height="200px" style={{display: removeImage ? 'block' : 'none' }}/>
     </div>
   )

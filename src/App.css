@@ -10,10 +10,10 @@
 .next-steps .col-md-5 {
   margin-bottom: 3rem;
 }
-ul {
+/* ul {
   margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
   padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
-}
+} */
 .spinner {
   position: absolute;
   display: flex;
@@ -69,7 +69,7 @@ html, body {
 }
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background-image:url('https://fiservseminars-media.s3.amazonaws.com/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
+  background-image:url('https://seminar-media.s3.amazonaws.com/Spring/2021/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -78,9 +78,9 @@ body {
   color:#000;
   font-size:14px;
 }
-li {
+/* li {
   list-style-type: none;
-}
+} */
 /*Fonts*/
 a {
   text-decoration:none;
@@ -161,7 +161,7 @@ h1 {
 }
 h2 {
   color:#2e8bca;
-  font-size:22px;
+  font-size:20px;
   font-weight: normal;
 }
 h2.section-header {
@@ -401,22 +401,65 @@ ul.navbar-buttons {
 .main-content-update form .row {
   justify-content: space-evenly;
 }
+.upload-profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  margin-bottom:50px;
+}
+.custom-file-input {
+  cursor: pointer;
+  pointer-events: visible;
+}
+label.custom-file-label {
+  border:none;
+  width:auto;
+  background:#ff6600;
+  border-color:#ff6600;
+  color:#fff;
+  padding: .5rem 1rem;
+  font-size:1rem;
+  font-weight:400;
+  text-align: center;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-top:10px;
+  cursor: pointer;
+  pointer-events: visible;
+}
+label.custom-file-label:after {
+  display:none;
+}
 .Signup {
   background: #fff;
   height: 100%;
   width: 50%;
   display: flex;
   align-self: center;
+  flex-direction: column;
   padding: 1% 2%;
-  margin: 3% 2% 0;
+  margin: 0 auto;
+  justify-content: center;
 }
 .Signup form {
   display: flex;
-  max-width:75%;
+  width:60%;
+  justify-content: center;
   flex-direction: column;
+  align-self: center;
 }
 .Signup form .form-row {
   justify-content: space-between;
+}
+.Signup form .form-group {
+  margin:10px;
+} 
+#passwordHelpBlock {
+  text-align:center;
+}
+.terms-check {
+  display: flex;
+  flex-direction: row;
+  margin-bottom:10px !important;
 }
 .main-content-profile {
   background: #fff;

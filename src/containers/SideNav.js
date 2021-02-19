@@ -11,7 +11,7 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle, FaUser } from 'react-icons/fa';
 /* import 'react-pro-sidebar/dist/css/styles.css'; */
 
 
@@ -80,7 +80,7 @@ function Sidenav() {
                 </Link>
                 <a
                   className='sidebar-nav-link'
-                  href='https://fiservseminars-media.s3.amazonaws.com/2020_Education+Seminar_Premier_Overview+and+Agenda.pdf'
+                  href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Precision-Overview-and-Agenda.pdf'
                   target='_blank'
                   rel="noopener noreferrer"
                 >
@@ -93,20 +93,24 @@ function Sidenav() {
                       FAQ
                   </MenuItem>
                 </Link>
-                <Link
+               {/*  <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}
-                    /* to={`/meetings?name=${profile.username}&room=Fiserv`} */
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
                   </MenuItem> 
-                </Link>
+                </Link> */}
                 {/* <SubMenu title="Resource Center" icon={<FaCogs/>}
                 >
                   <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
                   <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
                 </SubMenu> */}
+                <Link className="sidebar-nav-link" to="/profile">
+                  <MenuItem icon={<FaUser/>}>
+                      Profile
+                  </MenuItem>
+                </Link>
               </Menu>
             </ProSidebar>
         ) : (

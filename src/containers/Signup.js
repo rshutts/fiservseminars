@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
+import { Header  } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
-import "./Signup.css";
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
@@ -24,6 +24,8 @@ export default function Signup() {
   const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   
 
   function validateForm() {
@@ -41,12 +43,16 @@ export default function Signup() {
   }
 
   async function handleSubmit(event) {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
     event.preventDefault();
-
     setIsLoading(true);
-
     try {
-
       const newUser = await Auth.signUp({
         username: fields.username,
         password: fields.password,
@@ -71,7 +77,12 @@ export default function Signup() {
   
     return (
       <div className="Signup">
-        <Form onSubmit={handleSubmit}>
+        <h2 className="header page-title">Signup</h2>
+        <Form.Text id="passwordHelpBlock" muted>
+          Your password must be at least 8 characters long, contain letters and numbers, and
+          must contain a special characters.
+        </Form.Text>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group controlId="email" size="lg">
               <Form.Label>Email</Form.Label>
@@ -99,7 +110,16 @@ export default function Signup() {
                 type="password"
                 value={fields.password}
                 onChange={handleFieldChange}
+                pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9\s])([^\s]){8,16}$"
               />
+              <Form.Control.Feedback type="invalid">
+                <ul>
+                  <li>Require numbers</li>
+                  <li>Require special character</li>
+                  <li>Require uppercase letters</li>
+                  <li>Require lowercase letters</li>
+                </ul>
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="confirmPassword" size="lg">
               <Form.Label>Confirm Password</Form.Label>
@@ -174,6 +194,17 @@ export default function Signup() {
               />
             </Form.Group>
           </Form.Row>
+          <Form.Group className="terms-check">
+            <Form.Check
+              required
+              label=""
+              feedback="You must agree before submitting."
+              className="terms-and-conditons"
+              disabled={disabled}
+            />
+            <div>
+            I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank' onClick={() => {setDisabled(old => !old)}}>privacy policy</a></div>
+          </Form.Group>
         <LoaderButton
           block
           size="lg"

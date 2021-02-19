@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Amplify, { Auth, Storage } from "aws-amplify";
-import Sidenav from "../../containers/SideNav";
 import PhotoUpload from "./components/photoUpload"
 import { useHistory } from "react-router-dom";
 import {
@@ -70,8 +69,6 @@ export default function UpdateProfile() {
       history.push('/profile')
     }
 return (
-  <div className="next-steps my-5 content-wrapper">
-    <Sidenav />
   <div className="main-content-update">
     <form onSubmit={onSubmit}>
       <PhotoUpload/>
@@ -163,9 +160,7 @@ return (
       >
         Update Profile
       </LoaderButton>
-    </form>
-  </div>
-    
+    </form>  
   </div>     
   );
 };

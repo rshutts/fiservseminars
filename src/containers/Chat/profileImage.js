@@ -45,7 +45,7 @@ export default function ProfileImage() {
 
   return (
     <div className="App">
-        <img src={image} height="50px"/>
+        <img src={image ? image : 'https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/favicon.ico'} height="50px"/>
     </div>
   )
 }
