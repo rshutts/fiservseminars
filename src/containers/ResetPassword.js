@@ -41,7 +41,6 @@ export default function ResetPassword() {
 
     try {
       await Auth.forgotPassword(fields.email);
-      console.log(fields.email)
       setCodeSent(true);
     } catch (error) {
       onError(error);

@@ -26,7 +26,7 @@ export default function Signup() {
   const [isLoading, setIsLoading] = useState(false);
   const [validated, setValidated] = useState(false);
   const [disabled, setDisabled] = useState(true);
-  
+  const [checked, setChecked] = useState(false);
 
   function validateForm() {
     return (
@@ -74,7 +74,9 @@ export default function Signup() {
       setIsLoading(false);
     }
   }
-  
+  const onClickCheck = (e) => {
+    setChecked(!checked)
+  }
     return (
       <div className="Signup">
         <h2 className="header page-title">Signup</h2>
@@ -200,10 +202,11 @@ export default function Signup() {
               label=""
               feedback="You must agree before submitting."
               className="terms-and-conditons"
-              disabled={disabled}
+              onClick={onClickCheck}
+              /* disabled={disabled} */
             />
             <div>
-            I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank' onClick={() => {setDisabled(old => !old)}}>privacy policy</a></div>
+            I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank'>privacy policy</a></div>
           </Form.Group>
         <LoaderButton
           block
@@ -212,6 +215,11 @@ export default function Signup() {
           variant="success"
           isLoading={isLoading}
           disabled={!validateForm()}
+          style=
+            {!checked
+              ? {display:'none'}
+              : {display:'block'}
+            }
         >
           Signup
         </LoaderButton>
