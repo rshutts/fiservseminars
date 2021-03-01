@@ -22,11 +22,7 @@ const App = () => {
               <NavbarBrand className='logo' />
             </div>
             <h1 style={{color: "#ff6600"}}>*This seminar is no longer available*</h1>
-            <p>We thank you for joining us at the Premier Fall Seminar. We hope you had a great learning experience and we hope to see you again soon.</p>
-            {/* <p>Signup for the <span style={{ fontWeight:"bold" }}>Precision Spring Knowledge Exchange</span> can be done by clicking the below link.</p>
-            <a className="btn-secondary" href="https://precision-signup.fiservseminars.com/">
-              Spring signup
-            </a> */}
+            <p>We thank you for joining us at the Premier Fall Seminar. We hope you had a great learning experience and we hope to see you again in the fall.</p>
           </Container>
         </div>
       </Router>
