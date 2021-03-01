@@ -202,7 +202,6 @@ export default function Signup() {
             Please fill out all fields above and the privacy policy below before completing signup.
           </Form.Text>
           <Form.Group className="required" className="terms-check">
-            
             <Form.Check
               label=""
               feedback="You must agree before submitting."
