@@ -86,7 +86,7 @@ export default function Signup() {
         </Form.Text>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Row>
-            <Form.Group controlId="email" size="lg">
+            <Form.Group className="required" controlId="email" size="lg">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 autoFocus
@@ -95,10 +95,9 @@ export default function Signup() {
                 onChange={handleFieldChange}
               />
             </Form.Group>
-            <Form.Group controlId="username" size="lg">
+            <Form.Group className="required" controlId="username" size="lg">
               <Form.Label>Username</Form.Label>
               <Form.Control
-                autoFocus
                 type="username"
                 value={fields.username}
                 onChange={handleFieldChange}
@@ -106,7 +105,7 @@ export default function Signup() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="password" size="lg">
+            <Form.Group className="required" controlId="password" size="lg">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -123,7 +122,7 @@ export default function Signup() {
                 </ul>
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId="confirmPassword" size="lg">
+            <Form.Group className="required" controlId="confirmPassword" size="lg">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type="password"
@@ -133,7 +132,7 @@ export default function Signup() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="name" size="lg">
+            <Form.Group className="required" controlId="name" size="lg">
               <Form.Label>Full Name</Form.Label>
               <Form.Control
                 type="name"
@@ -141,7 +140,7 @@ export default function Signup() {
                 value={fields.name}
               />
             </Form.Group>
-            <Form.Group controlId="given_name" size="lg">
+            <Form.Group className="required" controlId="given_name" size="lg">
               <Form.Label>Bank Name</Form.Label>
               <Form.Control
                 type="given_name"
@@ -151,7 +150,7 @@ export default function Signup() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="nickname" size="lg">
+            <Form.Group className="required" controlId="nickname" size="lg">
               <Form.Label>Title</Form.Label>
               <Form.Control
                 type="nickname"
@@ -159,7 +158,7 @@ export default function Signup() {
                 value={fields.nickname}
               />
             </Form.Group>
-            <Form.Group controlId="locale" size="lg">
+            <Form.Group className="required" controlId="locale" size="lg">
               <Form.Label>City</Form.Label>
               <Form.Control
                 type="locale"
@@ -169,7 +168,7 @@ export default function Signup() {
             </Form.Group>
           </Form.Row>
           <Form.Row> 
-            <Form.Group controlId="address" size="lg">
+            <Form.Group className="required" controlId="address" size="lg">
               <Form.Label>State</Form.Label>
               <Form.Control
                 type="address"
@@ -177,7 +176,7 @@ export default function Signup() {
                 value={fields.address}
               />
             </Form.Group>
-            <Form.Group controlId="seminarDate" size="lg">
+            <Form.Group className="required" controlId="seminarDate" size="lg">
               <Form.Label>Seminar Date</Form.Label>
               <Form.Control 
                 onChange={handleFieldChange}
@@ -192,21 +191,28 @@ export default function Signup() {
                 type="birthdate"
                 onChange={handleFieldChange}
                 value={fields.seminarDate}
-                style={{ visibility: 'hidden'}}
+                style={{ display: 'none'}}
               />
             </Form.Group>
           </Form.Row>
-          <Form.Group className="terms-check">
+          <div>
+            <span className="reg-require"></span> Indicates required fields
+          </div>
+          <Form.Text id="passwordHelpBlock">
+            Please fill out all fields above and the privacy policy below before completing signup.
+          </Form.Text>
+          <Form.Group className="required" className="terms-check">
+            
             <Form.Check
-              required
               label=""
               feedback="You must agree before submitting."
               className="terms-and-conditons"
               onClick={onClickCheck}
               /* disabled={disabled} */
             />
-            <div>
-            I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank'>privacy policy</a></div>
+            <div className="privacy-policy">
+              I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank'>privacy policy</a>
+            </div>
           </Form.Group>
         <LoaderButton
           block

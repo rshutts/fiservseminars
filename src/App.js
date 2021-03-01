@@ -71,11 +71,13 @@ function App() {
   }
   
   async function handleLogout() {
-    await Auth.signOut();
-  
-    userHasAuthenticated(false);
-  
-    history.push("/login");
+    try {
+      await Auth.signOut();
+      userHasAuthenticated(false);
+      history.push("/login");
+    } catch (e) {
+      onError(e);
+    }
   }
 
   let fileInput = React.createRef();

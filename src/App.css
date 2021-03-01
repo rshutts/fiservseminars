@@ -442,7 +442,7 @@ label.custom-file-label:after {
 }
 .Signup form {
   display: flex;
-  width:60%;
+  width:70%;
   justify-content: center;
   flex-direction: column;
   align-self: center;
@@ -455,11 +455,27 @@ label.custom-file-label:after {
 } 
 #passwordHelpBlock {
   text-align:center;
+  font-size:100%;
+  margin-top:20px;
+}
+.required label:after, span.reg-require:after {
+  color: #e32;
+  content: ' *';
+  display: inline;
+  font-weight:bold;
+}
+select#seminarDate {
+  min-width: 203.37px;
 }
 .terms-check {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   margin-bottom:10px !important;
+  margin-top:20px !important;
+}
+.terms-check a {
+  color:#ff6600;
 }
 .main-content-profile {
   background: #fff;
