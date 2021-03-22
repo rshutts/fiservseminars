@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Provider } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { Auth, Storage } from 'aws-amplify';
 import Avatar from 'react-avatar';
-import decode from 'jwt-decode';
 
 /*Bootstrap*/
 import {
@@ -43,16 +41,6 @@ import "./App.css";
 
 // fontawesome
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
-
-if (localStorage.jwtToken) {
-  setToken(localStorage.jwtToken);
-  try {
-    store.dispatch(setCurrentUser(decode(localStorage.jwtToken)));
-  } catch (err) {
-    store.dispatch(setCurrentUser({}));
-    store.dispatch(addError(err));
-  }
-}
 
 function App() {
   const history = useHistory();
