@@ -25,10 +25,6 @@ import {
 import { AppContext } from "./libs/contextLib";
 import { onError } from "./libs/errorLib";
 
-/*Store*/
-import { store } from './store';
-import { setToken, setCurrentUser, addError } from './store/actions';
-
 /*Component Items*/
 import Routes from "./Routes";
 import Footer from './containers/Footer'
