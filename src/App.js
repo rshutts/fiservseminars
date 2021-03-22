@@ -35,7 +35,7 @@ import Sidenav from "./containers/SideNav";
 /*CSS*/
 import "./App.css";
 
-// fontawesome
+/*fontawesome*/
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 function App() {
