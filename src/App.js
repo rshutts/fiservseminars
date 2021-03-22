@@ -194,15 +194,12 @@ function App() {
         </Navbar>
         </div>
         <ErrorBoundary>
-          <Provider store={store}>
-              <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-              <div className="next-steps my-5 content-wrapper">
-                <Routes />
-              </div>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <div className="next-steps my-5 content-wrapper">
+              <Routes />
+            </div>
               <Footer />
-            </AppContext.Provider>
-          </Provider>
-          
+          </AppContext.Provider>
         </ErrorBoundary>
         
       </div>
