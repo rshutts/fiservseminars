@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Provider } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { Auth, Storage } from 'aws-amplify';
-import Avatar from 'react-avatar';
-import decode from 'jwt-decode';
 
 /*Bootstrap*/
 import {
@@ -27,10 +24,6 @@ import {
 import { AppContext } from "./libs/contextLib";
 import { onError } from "./libs/errorLib";
 
-/*Store*/
-import { store } from './store';
-import { setToken, setCurrentUser, addError } from './store/actions';
-
 /*Component Items*/
 import Routes from "./Routes";
 import Footer from './containers/Footer'
@@ -44,16 +37,6 @@ import "./App.css";
 // fontawesome
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
-if (localStorage.jwtToken) {
-  setToken(localStorage.jwtToken);
-  try {
-    store.dispatch(setCurrentUser(decode(localStorage.jwtToken)));
-  } catch (err) {
-    store.dispatch(setCurrentUser({}));
-    store.dispatch(addError(err));
-  }
-}
-
 function App() {
   const history = useHistory();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
@@ -62,19 +45,20 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState([]);
   const [profile, setProfile] = useState({
-    username: "",
-    name: "",
+    username: ""
   });
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
+  useEffect(() => {
+    onLoad();
+  }, []);
 
-  const onLoad = async () => {
+  async function onLoad() {
     try {
       await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo()
       setProfile({
         username: user.username,
-        name: user.attributes.name,
       });
       userHasAuthenticated(true);
     }
@@ -86,10 +70,6 @@ function App() {
     setIsAuthenticating(false);
   }
   
-  useEffect(() => {
-    onLoad();
-  }, []);
-
   async function handleLogout() {
     try {
       await Auth.signOut();
@@ -141,25 +121,12 @@ function App() {
                     <>
                       <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret id='profileDropDown'>
-                      {image 
-                      ? 
-                        <Avatar 
+                        <img
                           src={image}
                           alt='Profile'
                           className='nav-user-profile rounded-circle'
-                          size="75" 
-                          round
+                          width='75'
                         />
-                        
-                      : 
-                        <Avatar 
-                          name={profile.name} 
-                          alt='Profile'
-                          className='nav-user-profile rounded-circle'
-                          size="75"
-                          round
-                        /> 
-                      } { console.log(profile.name) }
                       </DropdownToggle>
                       <DropdownMenu>
                         <DropdownItem header>{profile.username}</DropdownItem>
@@ -210,15 +177,12 @@ function App() {
         </Navbar>
         </div>
         <ErrorBoundary>
-          <Provider store={store}>
-              <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-              <div className="next-steps my-5 content-wrapper">
-                <Routes />
-              </div>
-              <Footer />
-            </AppContext.Provider>
-          </Provider>
-          
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <div className="next-steps my-5 content-wrapper">
+              <Routes />
+            </div>
+            <Footer />
+          </AppContext.Provider>
         </ErrorBoundary>
         
       </div>

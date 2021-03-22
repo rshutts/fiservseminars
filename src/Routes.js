@@ -27,7 +27,6 @@ import Popout from "./containers/Chat/Popout";
 /*Components*/
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
-import CreatePoll from "./pages/CreatePoll";
 
 const Routes = () => (
   
@@ -65,9 +64,6 @@ const Routes = () => (
           </Route>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/poll/new">
-            <CreatePoll />
           </AuthenticatedRoute>
          {/*  <AuthenticatedRoute exact path="/meetings/speaker">
             <Speaker />

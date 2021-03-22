@@ -5,7 +5,6 @@ import { Auth } from "aws-amplify";
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
-import Poll from '../containers/Polls/components/Poll';
 
 import config from '../aws-config';
 
@@ -21,9 +20,6 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-            </div>
-            <div>
-              <Poll />
             </div>
           </section>
           <section className="right meetings">
