@@ -1,16 +1,16 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Chat from "../containers/Chat";
-/* import Chat from '../components/Chat/Chat'; */
 import { Auth } from "aws-amplify";
 /* import Loading from "../components/Loading"; */
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
+import Poll from '../containers/Polls/components/Poll';
 
 import config from '../aws-config';
 
 const Meetings = () => {
-  
+
   return (
     <div className="main-content">
       <div className="meetings-container">
@@ -21,6 +21,9 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
+            </div>
+            <div>
+              <Poll />
             </div>
           </section>
           <section className="right meetings">

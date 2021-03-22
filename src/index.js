@@ -7,6 +7,7 @@ import App from './App';
 import config from './aws-config';
 import { initSentry } from './libs/errorLib';
 import reportWebVitals from './reportWebVitals';
+import _ from 'lodash';
 
 initSentry();
 

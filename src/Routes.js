@@ -19,7 +19,7 @@ import Popout from "./containers/Chat/Popout";
 /* import Polls from './containers/Polls/components/index'; */
 /* import Audience from './containers/Polls/components/Audience'; */
 /* import Board from './containers/Polls/components/Board'; */
-/* import Speaker from './containers/Polls/components/Speaker'; */
+/* import Speaker from './containers/Polls/Speaker'; */
 /* import NewNote from "./containers/NewNote"; */
 /* import UpdateProfile from "./containers/Profile/UpdateProfile"; */
 /* import Notes from "./containers/Notes"; */
@@ -27,6 +27,7 @@ import Popout from "./containers/Chat/Popout";
 /*Components*/
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
+import CreatePoll from "./pages/CreatePoll";
 
 const Routes = () => (
   
@@ -65,6 +66,12 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/poll/new">
+            <CreatePoll />
+          </AuthenticatedRoute>
+         {/*  <AuthenticatedRoute exact path="/meetings/speaker">
+            <Speaker />
+          </AuthenticatedRoute> */}
           {/* <AuthenticatedRoute exact path="/meetings/board">
             <Board/>
           </AuthenticatedRoute> */}

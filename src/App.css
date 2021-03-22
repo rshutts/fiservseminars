@@ -469,7 +469,7 @@ label.custom-file-label:after {
   display: inline;
   font-weight:bold;
 }
-select#seminarDate {
+select#seminarDate, select#address {
   min-width: 203.37px;
 }
 .terms-check {

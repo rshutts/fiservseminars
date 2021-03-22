@@ -11,6 +11,7 @@ import ProfileImage from './profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import Avatar from 'react-avatar';
 
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
@@ -27,8 +28,9 @@ const Chat = props => {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  const [userID, setUser] = useState({
+  const [profile, setProfile] = useState({
     id: "",
+    name: "",
   });
   const [isOpen, setOpen] = useState(false)
 
@@ -39,16 +41,26 @@ const Chat = props => {
     }
     getUsername();
   }, [])
+
+  const onLoad = async () => {
+    try {
+      await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentUserInfo()  
+      setProfile({
+        id: user.id,
+        name: user.attributes.name,
+      });
+    }
+    catch(e) {
+      if (e !== 'No current user') {
+        onError(e);
+      }
+    }
+  }
   
   useEffect(() => {
-    async function getUser() {
-      const user = await Auth.currentUserInfo();
-      setUser({
-        userID: user.id,
-      });console.log(user.id)
-    }
-    getUser();
-  }, [])
+    onLoad();
+  }, []);
 
   useEffect(() => {
     API
@@ -90,7 +102,6 @@ const Chat = props => {
     const input = {
       channelID: '1',
       author: (username),
-      user: (userID),
       body: messageBody.trim()
     };
 
@@ -136,7 +147,7 @@ const Chat = props => {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`profile.png`, {level: 'private'})
+    Storage.get(`profile.png`, {level: 'protected'})
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
@@ -163,7 +174,25 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    <img src={image} height="50px"/>  
+                    {image 
+                      ? 
+                        <Avatar 
+                          src={image}
+                          alt='Profile'
+                          className='nav-user-profile rounded-circle'
+                          size="50" 
+                          round
+                        />
+                        
+                      : 
+                        <Avatar 
+                          name={profile.name} 
+                          alt='Profile'
+                          className='nav-user-profile rounded-circle'
+                          size="50"
+                          round
+                        /> 
+                      }
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
