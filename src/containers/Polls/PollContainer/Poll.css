@@ -1,0 +1,173 @@
+
+
+.poll-container{
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.card-container, .util-box{
+    padding: 16px;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+}
+
+.delet-btn{
+    padding: 4px;
+    background-color: #ff6161;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.delet-btn .icon{
+    color: white !important;
+    font-size: 18px !important;
+}
+
+.success-message{
+    color: rgb(0, 94, 31);
+    background-color: rgb(47, 255, 158);
+    padding: 4px 8px;
+    font-size: 12px;
+    width: fit-content;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+
+
+/*----Util Box----*/
+
+.util-box{
+    height: fit-content;
+}
+
+.util-box h2{
+    color: grey;
+    font-size: 22px;
+}
+
+.box-container{
+    margin-top: 14px;
+}
+
+@media(max-width: 560px){
+    .util-box{
+        margin-bottom: 10px;
+        padding: 4px;
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+    .flex a{
+        width: 50%;
+    }
+}
+
+
+.login-message{
+    color: rgb(255, 73, 73);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login-button{
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    text-align: center;
+}
+
+.actions{
+    background: linear-gradient(#21aeff, #0274c0);
+    min-height: 90px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+@media(max-width: 560px){
+    .box-container{
+        margin-top: 6px;
+    }
+    .actions{
+        min-height: 30px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}
+
+.second{
+    background: linear-gradient(#ff9036, #ff523b);
+}
+/*----Util Box----*/
+
+.detail-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createdBy, 
+.createdOn, 
+.votes, 
+.simple-message{
+    color: grey;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.simple-message{
+    color: rgb(255, 73, 73);
+}
+
+.card-container .icon{
+    color: grey;
+    font-size: 16px !important;
+    margin-right: 8px;
+}
+
+.question{
+    margin-top: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+.optionsContainer{
+    margin-top: 14px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 14px;
+    row-gap: 14px;
+}
+
+.option{
+    padding: 8px;
+    background-color: #3f51b5;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.option:hover{
+    background-color: rgb(0, 82, 150);
+}
+
+.option.voted{
+    background-color: rgb(0, 201, 90);
+}

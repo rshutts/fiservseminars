@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Provider } from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { Auth, Storage } from 'aws-amplify';
+import { store } from "./utils/redux/Store";
+
+import { setCurrentUser, setToken } from './utils/redux/Actions';
+import decode from 'jwt-decode'
 
 /*Bootstrap*/
 import {
@@ -102,6 +107,15 @@ function App() {
       })
       .catch(err => console.log(err));    
   };
+
+  if (localStorage.jwttoken) {
+    setToken(localStorage.jwttoken)
+    try {
+        store.dispatch(setCurrentUser(decode(localStorage.jwttoken)))
+    } catch (error) {
+        store.dispatch(setCurrentUser({}));
+    }
+}
   
   return (
     !isAuthenticating && (
@@ -177,12 +191,15 @@ function App() {
         </Navbar>
         </div>
         <ErrorBoundary>
-          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-            <div className="next-steps my-5 content-wrapper">
-              <Routes />
-            </div>
-            <Footer />
-          </AppContext.Provider>
+          <Provider store={store}>
+            <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+              <div className="next-steps my-5 content-wrapper">
+                <Routes />
+              </div>
+              <Footer />
+            </AppContext.Provider>
+          </Provider>
+          
         </ErrorBoundary>
         
       </div>

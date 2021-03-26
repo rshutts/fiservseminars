@@ -16,7 +16,10 @@ import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Signup";
 import Sidenav from "./containers/SideNav";
 import Popout from "./containers/Chat/Popout";
-/* import Polls from './containers/Polls/components/index'; */
+
+/*Polls*/
+import Polls from './containers/Polls';
+/* import GetPolls from './containers/GetPolls'; */
 /* import Audience from './containers/Polls/components/Audience'; */
 /* import Board from './containers/Polls/components/Board'; */
 /* import Speaker from './containers/Polls/Speaker'; */
@@ -71,10 +74,13 @@ const Routes = () => (
           {/* <AuthenticatedRoute exact path="/meetings/board">
             <Board/>
           </AuthenticatedRoute> */}
-          {/* <AuthenticatedRoute exact path="/meetings/polling">
+          <AuthenticatedRoute exact path="/profile/polls/create">
             <Polls/>
           </AuthenticatedRoute> 
-          <AuthenticatedRoute exact path="/meetings/speaker">
+          {/* <AuthenticatedRoute exact path="/profile/polls">
+            <GetPolls/>
+          </AuthenticatedRoute>  */}
+          {/* <AuthenticatedRoute exact path="/meetings/speaker">
             <Speaker/>
           </AuthenticatedRoute>  */}
             

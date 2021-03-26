@@ -51,6 +51,10 @@ function ProfileCards(props) {
       history.push('/profile/update')
     }
 
+    const onClickPoll = (e) => {
+      history.push('/profile/polls/create')
+    }
+
     return (
       <div>
         <header>
@@ -84,6 +88,14 @@ function ProfileCards(props) {
             </Button>
           </Card.Body>
         </Card>
+        <Button
+          id='signupBtn'
+          color='primary'
+          className='btn-margin'
+          onClick={onClickPoll}
+        >
+          Create Poll
+        </Button>
       </div>
     )
   }
