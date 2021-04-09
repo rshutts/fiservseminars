@@ -1,66 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getMessage = /* GraphQL */ `
-  query GetMessage($id: ID!) {
-    getMessage(id: $id) {
-      id
-      channelID
-      author
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listMessages = /* GraphQL */ `
-  query ListMessages(
-    $filter: ModelMessageFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        channelID
-        author
-        body
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const messagesByChannelID = /* GraphQL */ `
-  query MessagesByChannelID(
-    $channelID: ID
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelMessageFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    messagesByChannelID(
-      channelID: $channelID
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        channelID
-        author
-        body
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getPoll = /* GraphQL */ `
   query GetPoll($id: ID!) {
     getPoll(id: $id) {
@@ -68,11 +8,15 @@ export const getPoll = /* GraphQL */ `
       name
       type
       candidates {
-        nextToken
+        items {
+          id
+          image
+          name
+          upvotes
+        }
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -89,7 +33,14 @@ export const listPolls = /* GraphQL */ `
         type
         itemType
         createdAt
-        updatedAt
+        candidates {
+          items {
+            pollCandidatesId
+            image
+            name
+            upvotes
+          }
+        }
       }
       nextToken
     }
@@ -100,10 +51,9 @@ export const getCandidate = /* GraphQL */ `
     getCandidate(id: $id) {
       id
       pollCandidatesId
+      image
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -117,10 +67,9 @@ export const listCandidates = /* GraphQL */ `
       items {
         id
         pollCandidatesId
+        image
         name
         upvotes
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -149,7 +98,15 @@ export const itemsByType = /* GraphQL */ `
         type
         itemType
         createdAt
-        updatedAt
+        candidates {
+          items {
+            id
+            pollCandidatesId
+            image
+            name
+            upvotes
+          }
+        }
       }
       nextToken
     }

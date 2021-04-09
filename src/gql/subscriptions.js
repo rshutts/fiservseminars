@@ -1,44 +1,8 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateMessage = /* GraphQL */ `
-  subscription OnCreateMessage {
-    onCreateMessage {
-      id
-      channelID
-      author
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateMessage = /* GraphQL */ `
-  subscription OnUpdateMessage {
-    onUpdateMessage {
-      id
-      channelID
-      author
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteMessage = /* GraphQL */ `
-  subscription OnDeleteMessage {
-    onDeleteMessage {
-      id
-      channelID
-      author
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onUpdateByID = /* GraphQL */ `
-  subscription OnUpdateByID($id: ID!) {
+  subscription OnUpdateById($id: ID!) {
     onUpdateByID(id: $id) {
       id
       clientId
@@ -56,7 +20,6 @@ export const onCreatePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -71,7 +34,6 @@ export const onUpdatePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -86,7 +48,6 @@ export const onDeletePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -95,10 +56,9 @@ export const onCreateCandidate = /* GraphQL */ `
     onCreateCandidate {
       id
       pollCandidatesId
+      image
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -107,10 +67,9 @@ export const onUpdateCandidate = /* GraphQL */ `
     onUpdateCandidate {
       id
       pollCandidatesId
+      image
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -119,10 +78,9 @@ export const onDeleteCandidate = /* GraphQL */ `
     onDeleteCandidate {
       id
       pollCandidatesId
+      image
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;

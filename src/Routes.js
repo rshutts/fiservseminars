@@ -18,7 +18,7 @@ import Sidenav from "./containers/SideNav";
 import Popout from "./containers/Chat/Popout";
 
 /*Polls*/
-import Polls from './containers/Polls';
+import Polls from './containers/Polls/Polls';
 /* import GetPolls from './containers/GetPolls'; */
 /* import Audience from './containers/Polls/components/Audience'; */
 /* import Board from './containers/Polls/components/Board'; */

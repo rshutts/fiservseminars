@@ -17,7 +17,7 @@ import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
-import { messagesByChannelId } from '../../graphql/queries';
+import { messagesByChannelID } from '../../graphql/queries';
 
 import './Chat.css';
 
@@ -64,7 +64,7 @@ const Chat = props => {
 
   useEffect(() => {
     API
-      .graphql(graphqlOperation(messagesByChannelId, {
+      .graphql(graphqlOperation(messagesByChannelID, {
         channelID: '1',
         sortDirection: 'ASC'
       }))

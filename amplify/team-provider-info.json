@@ -1,15 +1,23 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-simplechat-dev-143413-authRole",
-      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-simplechat-dev-143413-deployment",
-      "UnauthRoleName": "amplify-simplechat-dev-143413-unauthRole",
-      "StackName": "amplify-simplechat-dev-143413",
-      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-simplechat-dev-143413/dda31cc0-5b5e-11eb-b8f1-1263ebc1f863",
-      "AmplifyAppId": "d1rilx1c9oq3sj"
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-springseminars-test-125412-authRole",
+            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-springseminars-test-125412-deployment",
+            "UnauthRoleName": "amplify-springseminars-test-125412-unauthRole",
+            "StackName": "amplify-springseminars-test-125412",
+            "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-springseminars-test-125412/6ecd12c0-9893-11eb-9fc7-0a23b021aa67",
+            "AmplifyAppId": "droh7ig6g4uy1"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "droh7ig6g4uy1",
+                    "type": "manual"
+                }
+            }
+        }
     }
-  }
 }

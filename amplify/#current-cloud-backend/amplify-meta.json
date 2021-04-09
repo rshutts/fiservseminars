@@ -1,42 +1,30 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-simplechat-dev-143413-authRole",
-      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-authRole",
+      "AuthRoleName": "amplify-springseminars-test-125412-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-simplechat-dev-143413-deployment",
-      "UnauthRoleName": "amplify-simplechat-dev-143413-unauthRole",
-      "StackName": "amplify-simplechat-dev-143413",
-      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-simplechat-dev-143413/dda31cc0-5b5e-11eb-b8f1-1263ebc1f863",
-      "AmplifyAppId": "d1rilx1c9oq3sj"
+      "DeploymentBucketName": "amplify-springseminars-test-125412-deployment",
+      "UnauthRoleName": "amplify-springseminars-test-125412-unauthRole",
+      "StackName": "amplify-springseminars-test-125412",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-springseminars-test-125412/6ecd12c0-9893-11eb-9fc7-0a23b021aa67",
+      "AmplifyAppId": "droh7ig6g4uy1"
     }
   },
   "api": {
-    "simplechat": {
+    "Seminars": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "simplechat"
-            }
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS"
           },
           "additionalAuthenticationProviders": []
         },
-        "GraphQLAPIIdOutput": "46or2spdunhohmn2kiytze6bki",
-        "GraphQLAPIEndpointOutput": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-iqwe4wuf7jhezprwwtrc7b4zua"
-      },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-simplechat-dev-143413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apisimplechat"
-      },
-      "lastPushTimeStamp": "2021-01-20T20:57:10.057Z",
-      "lastPushDirHash": "ItdjsOEpqUXbsMY9j3kBhWHsoIY="
+        "GraphQLAPIEndpointOutput": "https://rc7nh3xygffwldl63daurh2hpi.appsync-api.us-east-1.amazonaws.com/graphql"
+      }
     }
   }
 }
