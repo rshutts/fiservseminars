@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Provider } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { Auth, Storage } from 'aws-amplify';
 import Avatar from 'react-avatar';
-import decode from 'jwt-decode';
 
 /*Bootstrap*/
 import {
@@ -27,10 +25,6 @@ import {
 import { AppContext } from "./libs/contextLib";
 import { onError } from "./libs/errorLib";
 
-/*Store*/
-import { store } from './store';
-import { setToken, setCurrentUser, addError } from './store/actions';
-
 /*Component Items*/
 import Routes from "./Routes";
 import Footer from './containers/Footer'
@@ -41,18 +35,8 @@ import Sidenav from "./containers/SideNav";
 /*CSS*/
 import "./App.css";
 
-// fontawesome
+/*fontawesome*/
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
-
-if (localStorage.jwtToken) {
-  setToken(localStorage.jwtToken);
-  try {
-    store.dispatch(setCurrentUser(decode(localStorage.jwtToken)));
-  } catch (err) {
-    store.dispatch(setCurrentUser({}));
-    store.dispatch(addError(err));
-  }
-}
 
 function App() {
   const history = useHistory();
@@ -210,15 +194,12 @@ function App() {
         </Navbar>
         </div>
         <ErrorBoundary>
-          <Provider store={store}>
-              <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-              <div className="next-steps my-5 content-wrapper">
-                <Routes />
-              </div>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <div className="next-steps my-5 content-wrapper">
+              <Routes />
+            </div>
               <Footer />
-            </AppContext.Provider>
-          </Provider>
-          
+          </AppContext.Provider>
         </ErrorBoundary>
         
       </div>
