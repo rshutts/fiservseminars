@@ -31,13 +31,14 @@ class Left extends Component {
               Seminar Dates:
             </h2>
               <ul>
-                <li>
+                {/* <li>
                   April 20, 21, and 22, 2021
-                </li>
+                </li> */}
                 <li>
                   May 18, 19, and 20, 2021
                 </li>
               </ul>
+              <p><strong>* In an effort to increase virtual, client interaction and networking, Fiserv has decided to combine this year's Spring Executive Knowledge Exchange into one, amazing event!</strong></p>
             <h2>
               Standard registration fee:
             </h2>

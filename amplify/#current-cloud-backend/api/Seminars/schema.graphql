@@ -1,0 +1,334 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Candidate {
+  createdAt: AWSDateTime!
+  id: ID!
+  image: String
+  name: String
+  pollCandidatesId: ID
+  updatedAt: AWSDateTime!
+  upvotes: Int
+}
+
+type Message {
+  author: String!
+  body: String!
+  channelID: ID!
+  createdAt: AWSDateTime
+  id: ID!
+  updatedAt: AWSDateTime
+  user: String!
+}
+
+type ModelCandidateConnection {
+  items: [Candidate]
+  nextToken: String
+}
+
+type ModelMessageConnection {
+  items: [Message]
+  nextToken: String
+}
+
+type ModelPollConnection {
+  items: [Poll]
+  nextToken: String
+}
+
+type Mutation {
+  createCandidate(condition: ModelCandidateConditionInput, input: CreateCandidateInput!): Candidate
+  createMessage(condition: ModelMessageConditionInput, input: CreateMessageInput!): Message
+  createPoll(condition: ModelPollConditionInput, input: CreatePollInput!): Poll
+  deleteCandidate(condition: ModelCandidateConditionInput, input: DeleteCandidateInput!): Candidate
+  deleteMessage(condition: ModelMessageConditionInput, input: DeleteMessageInput!): Message
+  deletePoll(condition: ModelPollConditionInput, input: DeletePollInput!): Poll
+  upVote(clientId: ID, id: ID): VoteType
+  updateCandidate(condition: ModelCandidateConditionInput, input: UpdateCandidateInput!): Candidate
+  updateMessage(condition: ModelMessageConditionInput, input: UpdateMessageInput!): Message
+  updatePoll(condition: ModelPollConditionInput, input: UpdatePollInput!): Poll
+}
+
+type Poll {
+  candidates(filter: ModelCandidateFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelCandidateConnection
+  createdAt: String
+  id: ID!
+  itemType: String
+  name: String!
+  type: PollType!
+  updatedAt: AWSDateTime!
+}
+
+type Query {
+  getCandidate(id: ID!): Candidate
+  getMessage(id: ID!): Message
+  getPoll(id: ID!): Poll
+  itemsByType(createdAt: ModelStringKeyConditionInput, filter: ModelPollFilterInput, itemType: String, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPollConnection
+  listCandidates(filter: ModelCandidateFilterInput, limit: Int, nextToken: String): ModelCandidateConnection
+  listMessages(filter: ModelMessageFilterInput, limit: Int, nextToken: String): ModelMessageConnection
+  listPolls(filter: ModelPollFilterInput, limit: Int, nextToken: String): ModelPollConnection
+  messagesByChannelID(channelID: ID, createdAt: ModelStringKeyConditionInput, filter: ModelMessageFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelMessageConnection
+}
+
+type Subscription {
+  onCreateCandidate: Candidate @aws_subscribe(mutations : ["createCandidate"])
+  onCreateMessage: Message @aws_subscribe(mutations : ["createMessage"])
+  onCreatePoll: Poll @aws_subscribe(mutations : ["createPoll"])
+  onDeleteCandidate: Candidate @aws_subscribe(mutations : ["deleteCandidate"])
+  onDeleteMessage: Message @aws_subscribe(mutations : ["deleteMessage"])
+  onDeletePoll: Poll @aws_subscribe(mutations : ["deletePoll"])
+  onUpdateByID(id: ID!): VoteType @aws_subscribe(mutations : ["upVote"])
+  onUpdateCandidate: Candidate @aws_subscribe(mutations : ["updateCandidate"])
+  onUpdateMessage: Message @aws_subscribe(mutations : ["updateMessage"])
+  onUpdatePoll: Poll @aws_subscribe(mutations : ["updatePoll"])
+}
+
+type VoteType {
+  clientId: ID
+  id: ID
+}
+
+enum ModelAttributeTypes {
+  _null
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+enum PollType {
+  image
+  text
+}
+
+input CreateCandidateInput {
+  id: ID
+  image: String
+  name: String
+  pollCandidatesId: ID
+  upvotes: Int
+}
+
+input CreateMessageInput {
+  author: String!
+  body: String!
+  channelID: ID!
+  createdAt: AWSDateTime
+  id: ID
+  updatedAt: AWSDateTime
+  user: String!
+}
+
+input CreatePollInput {
+  createdAt: String
+  id: ID
+  itemType: String
+  name: String!
+  type: PollType!
+}
+
+input DeleteCandidateInput {
+  id: ID
+}
+
+input DeleteMessageInput {
+  id: ID
+}
+
+input DeletePollInput {
+  id: ID
+}
+
+input ModelBooleanInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  eq: Boolean
+  ne: Boolean
+}
+
+input ModelCandidateConditionInput {
+  and: [ModelCandidateConditionInput]
+  image: ModelStringInput
+  name: ModelStringInput
+  not: ModelCandidateConditionInput
+  or: [ModelCandidateConditionInput]
+  pollCandidatesId: ModelIDInput
+  upvotes: ModelIntInput
+}
+
+input ModelCandidateFilterInput {
+  and: [ModelCandidateFilterInput]
+  id: ModelIDInput
+  image: ModelStringInput
+  name: ModelStringInput
+  not: ModelCandidateFilterInput
+  or: [ModelCandidateFilterInput]
+  pollCandidatesId: ModelIDInput
+  upvotes: ModelIntInput
+}
+
+input ModelFloatInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input ModelIDInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelMessageConditionInput {
+  and: [ModelMessageConditionInput]
+  author: ModelStringInput
+  body: ModelStringInput
+  channelID: ModelIDInput
+  createdAt: ModelStringInput
+  not: ModelMessageConditionInput
+  or: [ModelMessageConditionInput]
+  updatedAt: ModelStringInput
+  user: ModelStringInput
+}
+
+input ModelMessageFilterInput {
+  and: [ModelMessageFilterInput]
+  author: ModelStringInput
+  body: ModelStringInput
+  channelID: ModelIDInput
+  createdAt: ModelStringInput
+  id: ModelIDInput
+  not: ModelMessageFilterInput
+  or: [ModelMessageFilterInput]
+  updatedAt: ModelStringInput
+  user: ModelStringInput
+}
+
+input ModelPollConditionInput {
+  and: [ModelPollConditionInput]
+  createdAt: ModelStringInput
+  itemType: ModelStringInput
+  name: ModelStringInput
+  not: ModelPollConditionInput
+  or: [ModelPollConditionInput]
+  type: ModelPollTypeInput
+}
+
+input ModelPollFilterInput {
+  and: [ModelPollFilterInput]
+  createdAt: ModelStringInput
+  id: ModelIDInput
+  itemType: ModelStringInput
+  name: ModelStringInput
+  not: ModelPollFilterInput
+  or: [ModelPollFilterInput]
+  type: ModelPollTypeInput
+}
+
+input ModelPollTypeInput {
+  eq: PollType
+  ne: PollType
+}
+
+input ModelSizeInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelStringInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  size: ModelSizeInput
+}
+
+input ModelStringKeyConditionInput {
+  beginsWith: String
+  between: [String]
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+}
+
+input UpdateCandidateInput {
+  id: ID!
+  image: String
+  name: String
+  pollCandidatesId: ID
+  upvotes: Int
+}
+
+input UpdateMessageInput {
+  author: String
+  body: String
+  channelID: ID
+  createdAt: AWSDateTime
+  id: ID!
+  updatedAt: AWSDateTime
+  user: String
+}
+
+input UpdatePollInput {
+  createdAt: String
+  id: ID!
+  itemType: String
+  name: String
+  type: PollType
+}
