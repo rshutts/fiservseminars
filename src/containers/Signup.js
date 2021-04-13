@@ -68,7 +68,7 @@ export default function Signup() {
       });
       setIsLoading(false);
       setNewUser(newUser);
-      history.push("/profile");
+      history.push("/signup/confirmation");
     } catch (e) {
       onError(e);
       setIsLoading(false);
