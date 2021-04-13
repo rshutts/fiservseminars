@@ -40,7 +40,9 @@ export default function SignupConfirmation() {
 
   return (
     <div className="main-content-login">
-      <h1>Thanks for signing up.</h1>
+      <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Spring Executive Knowledge Exchange!</h1>
+      <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready.<br />
+      Please login below to proceed.</h3><br />
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>
@@ -68,7 +70,7 @@ export default function SignupConfirmation() {
         >
           Login
         </LoaderButton>
-        <Link to="/login/reset">Forgot password?</Link>
+        {/* <Link to="/login/reset">Forgot password?</Link> */}
       </Form>
     </div>
   );

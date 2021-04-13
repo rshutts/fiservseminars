@@ -67,7 +67,7 @@ export default function Login() {
         >
           Login
         </LoaderButton>
-        <Link to="/login/reset">Forgot password?</Link>
+        {/* <Link to="/login/reset">Forgot password?</Link> */}
       </Form>
     </div>
   );
