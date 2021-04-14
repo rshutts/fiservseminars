@@ -68,7 +68,7 @@ export default function Signup() {
       });
       setIsLoading(false);
       setNewUser(newUser);
-      history.push("/profile");
+      history.push("/signup/confirmation");
     } catch (e) {
       onError(e);
       setIsLoading(false);
@@ -243,7 +243,7 @@ export default function Signup() {
                 as="select"
               >
                 <option></option>
-                <option>April 20-22</option>
+                {/* <option>April 20-22</option> */}
                 <option>May 18-20</option>
               </Form.Control>
               <Form.Control

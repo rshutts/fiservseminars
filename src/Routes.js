@@ -14,6 +14,7 @@ import ResetPassword from "./containers/ResetPassword";
 import ChangePassword from "./containers/Profile/ChangePassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Signup";
+import SignupConfirmation from "./containers/SignupConfirmation";
 import Sidenav from "./containers/SideNav";
 import Popout from "./containers/Chat/Popout";
 
@@ -49,6 +50,9 @@ const Routes = () => (
           </UnauthenticatedRoute>
           <UnauthenticatedRoute exact path="/signup">
             <Signup />
+          </UnauthenticatedRoute>
+          <UnauthenticatedRoute exact path="/signup/confirmation">
+            <SignupConfirmation />
           </UnauthenticatedRoute>
           <UnauthenticatedRoute exact path="/login/reset">
             <ResetPassword />

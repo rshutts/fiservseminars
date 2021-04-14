@@ -8,9 +8,9 @@ import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./Login.css";
 
-import ResetPassword from "../containers/ResetPassword";
+import ResetPassword from "./ResetPassword";
 
-export default function Login() {
+export default function SignupConfirmation() {
   const history = useHistory();
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +40,9 @@ export default function Login() {
 
   return (
     <div className="main-content-login">
+      <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Spring Executive Knowledge Exchange!</h1>
+      <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready.<br />
+      Please login below to proceed.</h3><br />
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>
