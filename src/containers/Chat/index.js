@@ -7,11 +7,11 @@ import { Connect } from "aws-amplify-react";
 import Amplify, { Auth, Storage } from 'aws-amplify';
 
 import VideoPlayer from '../VideoPlayer';
-import ProfileImage from './profileImage';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
+import ChatProfileImage from './profileImage'
 
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
@@ -174,25 +174,7 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    {image 
-                      ? 
-                        <Avatar 
-                          src={image}
-                          alt='Profile'
-                          className='nav-user-profile rounded-circle'
-                          size="50" 
-                          round
-                        />
-                        
-                      : 
-                        <Avatar 
-                          name={profile.name} 
-                          alt='Profile'
-                          className='nav-user-profile rounded-circle'
-                          size="50"
-                          round
-                        /> 
-                      }
+                    <ChatProfileImage/>
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}

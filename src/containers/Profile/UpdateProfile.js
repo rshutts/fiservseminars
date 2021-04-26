@@ -53,21 +53,25 @@ export default function UpdateProfile() {
     onLoad();
     }, []);
     
-    const onSubmit = async data => {
-      const user = await Auth.currentAuthenticatedUser();
-      
-      await Auth.updateUserAttributes(user, { 
-        email: profile.email,
-        name: profile.name,
-        given_name: profile.given_name,
-        nickname: profile.nickname,
-        locale: profile.locale,
-        address: profile.address
-      });console.log(user)
-    };
-    const onClickHandler = (e) => {
-      history.push('/profile')
+    async function onSubmit(event) {
+      event.preventDefault();
+
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        await Auth.updateUserAttributes(user, { 
+          email: profile.email,
+          name: profile.name,
+          given_name: profile.given_name,
+          nickname: profile.nickname,
+          locale: profile.locale,
+          address: profile.address
+        });
+        history.push('/profile')
+      } catch (error) {
+        onError(error);
+      }
     }
+
 return (
   <div className="main-content-update">
     <form onSubmit={onSubmit}>
@@ -155,7 +159,7 @@ return (
         type="submit"
         bsSize="large"
         isLoading={isSendingCode}
-        onClick={onClickHandler}
+        /* onClick={onClickHandler} */
         /* disabled={!validateEmailForm()} */
       >
         Update Profile

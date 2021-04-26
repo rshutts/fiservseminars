@@ -19,7 +19,9 @@ import Sidenav from "./containers/SideNav";
 import Popout from "./containers/Chat/Popout";
 
 /*Polls*/
+/* import CreatePoll from './containers/Polls/CreatePoll';
 import Polls from './containers/Polls/Polls';
+import Poll from './containers/Polls/Poll'; */
 /* import GetPolls from './containers/GetPolls'; */
 /* import Audience from './containers/Polls/components/Audience'; */
 /* import Board from './containers/Polls/components/Board'; */
@@ -78,9 +80,15 @@ const Routes = () => (
           {/* <AuthenticatedRoute exact path="/meetings/board">
             <Board/>
           </AuthenticatedRoute> */}
-          <AuthenticatedRoute exact path="/profile/polls/create">
+          {/* <AuthenticatedRoute exact path="/profile/polls/create">
+            <CreatePoll/>
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/polls">
             <Polls/>
-          </AuthenticatedRoute> 
+          </AuthenticatedRoute>  
+          <AuthenticatedRoute exact path="/profile/poll/:id">
+            <Poll/>
+          </AuthenticatedRoute>  */}
           {/* <AuthenticatedRoute exact path="/profile/polls">
             <GetPolls/>
           </AuthenticatedRoute>  */}
@@ -94,9 +102,9 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/notes/:id">
             <Notes />
           </AuthenticatedRoute> */}
-          <AuthenticatedRoute exact path="/profile/password">
-            <ChangePassword />
-          </AuthenticatedRoute>
+          <UnauthenticatedRoute exact path="/password/reset">
+            <ResetPassword />
+          </UnauthenticatedRoute>
           {/* <AuthenticatedRoute exact path="/profile/email">
             <UpdateEmail />
           </AuthenticatedRoute> */}

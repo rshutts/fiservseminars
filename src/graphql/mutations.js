@@ -1,31 +1,71 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createMessage = /* GraphQL */ `
-  mutation CreateMessage(
-    $input: CreateMessageInput!
-    $condition: ModelMessageConditionInput
+export const createCandidate = /* GraphQL */ `
+  mutation CreateCandidate(
+    $condition: ModelCandidateConditionInput
+    $input: CreateCandidateInput!
   ) {
-    createMessage(input: $input, condition: $condition) {
+    createCandidate(condition: $condition, input: $input) {
       id
-      channelID
-      author
-      body
+      pollCandidatesId
+      name
+      upvotes
       createdAt
       updatedAt
     }
   }
 `;
-export const updateMessage = /* GraphQL */ `
-  mutation UpdateMessage(
-    $input: UpdateMessageInput!
+export const createMessage = /* GraphQL */ `
+  mutation CreateMessage(
     $condition: ModelMessageConditionInput
+    $input: CreateMessageInput!
   ) {
-    updateMessage(input: $input, condition: $condition) {
-      id
-      channelID
+    createMessage(condition: $condition, input: $input) {
       author
       body
+      channelID
+      createdAt
+      id
+      updatedAt
+    }
+  }
+`;
+export const createPoll = /* GraphQL */ `
+  mutation CreatePoll(
+    $condition: ModelPollConditionInput
+    $input: CreatePollInput!
+  ) {
+    createPoll(condition: $condition, input: $input) {
+      id
+      name
+      type
+      candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      itemType
+      createdAt
+    }
+  }
+`;
+export const deleteCandidate = /* GraphQL */ `
+  mutation DeleteCandidate(
+    $condition: ModelCandidateConditionInput
+    $input: DeleteCandidateInput!
+  ) {
+    deleteCandidate(condition: $condition, input: $input) {
+      id
+      pollCandidatesId
+      name
+      upvotes
       createdAt
       updatedAt
     }
@@ -33,102 +73,58 @@ export const updateMessage = /* GraphQL */ `
 `;
 export const deleteMessage = /* GraphQL */ `
   mutation DeleteMessage(
-    $input: DeleteMessageInput!
     $condition: ModelMessageConditionInput
+    $input: DeleteMessageInput!
   ) {
-    deleteMessage(input: $input, condition: $condition) {
-      id
-      channelID
+    deleteMessage(condition: $condition, input: $input) {
       author
       body
+      channelID
       createdAt
-      updatedAt
-    }
-  }
-`;
-export const upVote = /* GraphQL */ `
-  mutation UpVote($id: ID, $clientId: ID) {
-    upVote(id: $id, clientId: $clientId) {
       id
-      clientId
-    }
-  }
-`;
-export const createPoll = /* GraphQL */ `
-  mutation CreatePoll(
-    $input: CreatePollInput!
-    $condition: ModelPollConditionInput
-  ) {
-    createPoll(input: $input, condition: $condition) {
-      id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updatePoll = /* GraphQL */ `
-  mutation UpdatePoll(
-    $input: UpdatePollInput!
-    $condition: ModelPollConditionInput
-  ) {
-    updatePoll(input: $input, condition: $condition) {
-      id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
-      createdAt
       updatedAt
     }
   }
 `;
 export const deletePoll = /* GraphQL */ `
   mutation DeletePoll(
-    $input: DeletePollInput!
     $condition: ModelPollConditionInput
+    $input: DeletePollInput!
   ) {
-    deletePoll(input: $input, condition: $condition) {
+    deletePoll(condition: $condition, input: $input) {
       id
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
-export const createCandidate = /* GraphQL */ `
-  mutation CreateCandidate(
-    $input: CreateCandidateInput!
-    $condition: ModelCandidateConditionInput
-  ) {
-    createCandidate(input: $input, condition: $condition) {
+export const upVote = /* GraphQL */ `
+  mutation UpVote($clientId: ID, $id: ID) {
+    upVote(clientId: $clientId, id: $id) {
+      clientId
       id
-      pollCandidatesId
-      name
-      upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
 export const updateCandidate = /* GraphQL */ `
   mutation UpdateCandidate(
-    $input: UpdateCandidateInput!
     $condition: ModelCandidateConditionInput
+    $input: UpdateCandidateInput!
   ) {
-    updateCandidate(input: $input, condition: $condition) {
+    updateCandidate(condition: $condition, input: $input) {
       id
       pollCandidatesId
       name
@@ -138,18 +134,43 @@ export const updateCandidate = /* GraphQL */ `
     }
   }
 `;
-export const deleteCandidate = /* GraphQL */ `
-  mutation DeleteCandidate(
-    $input: DeleteCandidateInput!
-    $condition: ModelCandidateConditionInput
+export const updateMessage = /* GraphQL */ `
+  mutation UpdateMessage(
+    $condition: ModelMessageConditionInput
+    $input: UpdateMessageInput!
   ) {
-    deleteCandidate(input: $input, condition: $condition) {
-      id
-      pollCandidatesId
-      name
-      upvotes
+    updateMessage(condition: $condition, input: $input) {
+      author
+      body
+      channelID
       createdAt
+      id
       updatedAt
+    }
+  }
+`;
+export const updatePoll = /* GraphQL */ `
+  mutation UpdatePoll(
+    $condition: ModelPollConditionInput
+    $input: UpdatePollInput!
+  ) {
+    updatePoll(condition: $condition, input: $input) {
+      id
+      name
+      type
+      candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      itemType
+      createdAt
     }
   }
 `;

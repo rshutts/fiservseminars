@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Auth, Storage } from 'aws-amplify';
-import Avatar from 'react-avatar';
 
 /*Bootstrap*/
 import {
@@ -31,12 +30,13 @@ import Footer from './containers/Footer'
 import ScrollingTicker from './components/Ticker'
 import ErrorBoundary from "./components/ErrorBoundary";
 import Sidenav from "./containers/SideNav";
+import ProfileImage from "./containers/Profile/components/profileImage"
 
 /*CSS*/
 import "./App.css";
 
 /*fontawesome*/
-import { FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaUser, FaSignOutAlt, FaCaretDown } from 'react-icons/fa';
 
 function App() {
   const history = useHistory();
@@ -103,15 +103,6 @@ function App() {
       })
       .catch(err => console.log(err));    
   };
-
-  if (localStorage.jwttoken) {
-    setToken(localStorage.jwttoken)
-    try {
-        store.dispatch(setCurrentUser(decode(localStorage.jwttoken)))
-    } catch (error) {
-        store.dispatch(setCurrentUser({}));
-    }
-}
   
   return (
     !isAuthenticating && (
@@ -131,12 +122,8 @@ function App() {
                     <>
                       <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret id='profileDropDown'>
-                        <img
-                          src={image}
-                          alt='Profile'
-                          className='nav-user-profile rounded-circle'
-                          width='75'
-                        />
+                        <ProfileImage/>
+                        <FaCaretDown/>
                       </DropdownToggle>
                       <DropdownMenu>
                         <DropdownItem header>{profile.username}</DropdownItem>
@@ -187,18 +174,10 @@ function App() {
         </Navbar>
         </div>
         <ErrorBoundary>
-<<<<<<< HEAD
-          <Provider store={store}>
-            <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-              <div className="next-steps my-5 content-wrapper">
-                <Routes />
-              </div>
-=======
           <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
             <div className="next-steps my-5 content-wrapper">
               <Routes />
             </div>
->>>>>>> precision-signup
               <Footer />
           </AppContext.Provider>
         </ErrorBoundary>

@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
-import {
-  FormGroup,
-  FormControl,
-  FormLabel,
-} from "react-bootstrap";
-import LoaderButton from "../components/LoaderButton";
-import { useFormFields } from "../libs/hooksLib";
-import { onError } from "../libs/errorLib";
+import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
+import LoaderButton from "../../components/LoaderButton";
+import { useFormFields } from "../../libs/hooksLib";
+import { onError } from "../../libs/errorLib";
 
 export default function ResetPassword() {
   const [fields, handleFieldChange] = useFormFields({
+    username: "",
     code: "",
+    email: "",
     password: "",
     confirmPassword: "",
-    username: "",
   });
   const [codeSent, setCodeSent] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
@@ -40,9 +38,8 @@ export default function ResetPassword() {
     setIsSendingCode(true);
 
     try {
-      const result = await Auth.forgotPassword(fields.username);
+      await Auth.forgotPassword(fields.username);
       setCodeSent(true);
-      console.log(result);
     } catch (error) {
       onError(error);
       setIsSendingCode(false);
@@ -70,15 +67,14 @@ export default function ResetPassword() {
   function renderRequestCodeForm() {
     return (
       <form onSubmit={handleSendCodeClick}>
-        <FormGroup bsSize="large" controlId="username">
-          <FormLabel>Username</FormLabel>
-          <FormControl
+        <Form.Group bsSize="large" controlId="username">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
             autoFocus
-            type="username"
             value={fields.username}
             onChange={handleFieldChange}
           />
-        </FormGroup>
+        </Form.Group>
         <LoaderButton
           block
           type="submit"
@@ -95,32 +91,35 @@ export default function ResetPassword() {
   function renderConfirmationForm() {
     return (
       <form onSubmit={handleConfirmClick}>
-        <FormGroup bsSize="large" controlId="code">
-          <FormLabel>Confirmation Code</FormLabel>
-          <FormControl
+        <Form.Group bsSize="large" controlId="code">
+          <Form.Label>Confirmation Code</Form.Label>
+          <Form.Control
             autoFocus
             type="tel"
             value={fields.code}
             onChange={handleFieldChange}
           />
-        </FormGroup>
+          <Alert>
+            Please check your email ({fields.username}) for the confirmation code.
+          </Alert>
+        </Form.Group>
         <hr />
-        <FormGroup bsSize="large" controlId="password">
-          <FormLabel>New Password</FormLabel>
-          <FormControl
+        <Form.Group bsSize="large" controlId="password">
+          <Form.Label>New Password</Form.Label>
+          <Form.Control
             type="password"
             value={fields.password}
             onChange={handleFieldChange}
           />
-        </FormGroup>
-        <FormGroup bsSize="large" controlId="confirmPassword">
-          <FormLabel>Confirm Password</FormLabel>
-          <FormControl
+        </Form.Group>
+        <Form.Group bsSize="large" controlId="confirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
             type="password"
             value={fields.confirmPassword}
             onChange={handleFieldChange}
           />
-        </FormGroup>
+        </Form.Group>
         <LoaderButton
           block
           type="submit"

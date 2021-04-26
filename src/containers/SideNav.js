@@ -93,14 +93,14 @@ function Sidenav() {
                       FAQ
                   </MenuItem>
                 </Link>
-                {/* <Link
+                <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
                   </MenuItem> 
-                </Link> */}
+                </Link>
                 {/* <SubMenu title="Resource Center" icon={<FaCogs/>}
                 >
                   <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>

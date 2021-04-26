@@ -88,14 +88,14 @@ function ProfileCards(props) {
             </Button>
           </Card.Body>
         </Card>
-        <Button
+        {/* <Button
           id='signupBtn'
           color='primary'
           className='btn-margin'
           onClick={onClickPoll}
         >
           Create Poll
-        </Button>
+        </Button> */}
       </div>
     )
   }

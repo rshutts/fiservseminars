@@ -62,12 +62,12 @@ const PhotoUpload = () => {
         onChange={(evt) => handleChange(evt)}
       />}
       <div>
-        {imageUrl ? <img style={{ width: "30rem" }} src={imageUrl} /> : <span />}
+        {imageUrl ? <img style={{ width: "8rem" }} src={imageUrl} /> : <span />}
       </div>
-      <div>
+      {/* <div>
         <h2>Download URL?</h2>
         <button onClick={() => downloadUrl()}>Click Here!</button>
-      </div>
+      </div> */}
     </div>
   );
 }

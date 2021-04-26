@@ -141,6 +141,22 @@ a {
   text-align: center;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+.dropdown-toggle::after {
+  display:none;
+}
+a#profileDropDown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+a#profileDropDown svg {
+  position: absolute;
+  right: 15px;
+  fill: #ffffff;
+}
+.main-content-profile .nav-user-profile.sb-avatar__text {
+  margin-top: 5px;
+}
 .danger {
   color: #fff;
   background-color: #dc3545;
@@ -1098,6 +1114,7 @@ i.fa.fa-fw.fa-external-link-alt {
   font-weight: normal;
   width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 .card-description {
   padding:5px;

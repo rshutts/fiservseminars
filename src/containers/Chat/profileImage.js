@@ -2,24 +2,34 @@ import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
+import Avatar from 'react-avatar';
 
 import config from '../../aws-config';
 
 Storage.configure({ track: true, level: "protected" });
 
-export default function ProfileImage() {
+export default function ChatProfileImage() {
   const [image, setImage] = useState([]);
-  const [username, setUsername] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [profile, setProfile] = useState({
+    name: ""
+  });
   let fileInput = React.createRef();
 
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
+  const onLoad = async () => {
+    try {
+      const user = await Auth.currentUserInfo();
+      setProfile({
+        name: user.attributes.name,
+      });
+    } catch(e) {
+ 
     }
-    getUsername();
- }, [])
+    
+  }
+  useEffect(()=>{
+    onLoad();
+    }, []);
 
   useEffect(() => {
     onPageRendered();
@@ -45,7 +55,19 @@ export default function ProfileImage() {
 
   return (
     <div className="App">
-        <img src={image ? image : 'https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/favicon.ico'} height="50px"/>
+      {imageUrl
+        ?
+        <img style={{ width: "30rem" }} src={imageUrl} />
+        : 
+        <Avatar 
+          name={profile.name} 
+          alt='Profile'
+          className='nav-user-profile'
+          size="30"
+          round="15px"
+          color={Avatar.getRandomColor('sitebase', ['#ff6600', '#666666', '#333333'])}
+        /> 
+      }
     </div>
   )
 }

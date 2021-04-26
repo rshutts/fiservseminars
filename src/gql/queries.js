@@ -10,7 +10,6 @@ export const getPoll = /* GraphQL */ `
       candidates {
         items {
           id
-          image
           name
           upvotes
         }
@@ -36,7 +35,6 @@ export const listPolls = /* GraphQL */ `
         candidates {
           items {
             pollCandidatesId
-            image
             name
             upvotes
           }
@@ -51,7 +49,6 @@ export const getCandidate = /* GraphQL */ `
     getCandidate(id: $id) {
       id
       pollCandidatesId
-      image
       name
       upvotes
     }
@@ -67,7 +64,6 @@ export const listCandidates = /* GraphQL */ `
       items {
         id
         pollCandidatesId
-        image
         name
         upvotes
       }
@@ -102,7 +98,6 @@ export const itemsByType = /* GraphQL */ `
           items {
             id
             pollCandidatesId
-            image
             name
             upvotes
           }

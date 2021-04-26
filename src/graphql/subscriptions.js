@@ -1,47 +1,27 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateCandidate = /* GraphQL */ `
+  subscription OnCreateCandidate {
+    onCreateCandidate {
+      id
+      pollCandidatesId
+      name
+      upvotes
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateMessage = /* GraphQL */ `
   subscription OnCreateMessage {
     onCreateMessage {
-      id
-      channelID
       author
       body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateMessage = /* GraphQL */ `
-  subscription OnUpdateMessage {
-    onUpdateMessage {
-      id
       channelID
-      author
-      body
       createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteMessage = /* GraphQL */ `
-  subscription OnDeleteMessage {
-    onDeleteMessage {
       id
-      channelID
-      author
-      body
-      createdAt
       updatedAt
-    }
-  }
-`;
-export const onUpdateByID = /* GraphQL */ `
-  subscription OnUpdateByID($id: ID!) {
-    onUpdateByID(id: $id) {
-      id
-      clientId
     }
   }
 `;
@@ -52,25 +32,41 @@ export const onCreatePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
+      createdAt
+    }
+  }
+`;
+export const onDeleteCandidate = /* GraphQL */ `
+  subscription OnDeleteCandidate {
+    onDeleteCandidate {
+      id
+      pollCandidatesId
+      name
+      upvotes
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdatePoll = /* GraphQL */ `
-  subscription OnUpdatePoll {
-    onUpdatePoll {
-      id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
+export const onDeleteMessage = /* GraphQL */ `
+  subscription OnDeleteMessage {
+    onDeleteMessage {
+      author
+      body
+      channelID
       createdAt
+      id
       updatedAt
     }
   }
@@ -82,23 +78,26 @@ export const onDeletePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
-export const onCreateCandidate = /* GraphQL */ `
-  subscription OnCreateCandidate {
-    onCreateCandidate {
+export const onUpdateByID = /* GraphQL */ `
+  subscription OnUpdateByID($id: ID!) {
+    onUpdateByID(id: $id) {
+      clientId
       id
-      pollCandidatesId
-      name
-      upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -114,15 +113,37 @@ export const onUpdateCandidate = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCandidate = /* GraphQL */ `
-  subscription OnDeleteCandidate {
-    onDeleteCandidate {
-      id
-      pollCandidatesId
-      name
-      upvotes
+export const onUpdateMessage = /* GraphQL */ `
+  subscription OnUpdateMessage {
+    onUpdateMessage {
+      author
+      body
+      channelID
       createdAt
+      id
       updatedAt
+    }
+  }
+`;
+export const onUpdatePoll = /* GraphQL */ `
+  subscription OnUpdatePoll {
+    onUpdatePoll {
+      id
+      name
+      type
+      candidates {
+        items {
+          id
+          pollCandidatesId
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      itemType
+      createdAt
     }
   }
 `;

@@ -5,6 +5,7 @@ import { Auth } from "aws-amplify";
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
+import Iframe from 'react-iframe'
 
 import config from '../aws-config';
 
@@ -20,6 +21,14 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
+              <Iframe url="http://localhost:3001/"
+                width="100%"
+                height="450px"
+                id="myId"
+                className="myClassname"
+                display="initial"
+                position="relative"
+              />
             </div>
           </section>
           <section className="right meetings">
