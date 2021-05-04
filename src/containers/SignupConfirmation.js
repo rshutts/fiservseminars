@@ -5,10 +5,10 @@ import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
-import { onError } from "../libs/errorLib";
+import Error from "../components/Error";
 import "./Login.css";
 
-import ResetPassword from "./ResetPassword";
+import ResetPassword from "./Profile/ResetPassword";
 
 export default function SignupConfirmation() {
   const history = useHistory();
@@ -33,7 +33,7 @@ export default function SignupConfirmation() {
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {
-      onError(e);
+      Error(e);
       setIsLoading(false);
     }
   }

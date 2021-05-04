@@ -14,10 +14,10 @@ import Avatar from 'react-avatar';
 import ChatProfileImage from './profileImage'
 
 import { useFormFields } from "../../libs/hooksLib";
-import { onError } from "../../libs/errorLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
 import { messagesByChannelID } from '../../graphql/queries';
+import Error from "../../components/Error";
 
 import './Chat.css';
 
@@ -53,7 +53,7 @@ const Chat = props => {
     }
     catch(e) {
       if (e !== 'No current user') {
-        onError(e);
+        Error(e);
       }
     }
   }

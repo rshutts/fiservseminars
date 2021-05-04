@@ -6,9 +6,9 @@ import {
   FormControl,
   FormLabel,
 } from "react-bootstrap";
-import LoaderButton from "../components/LoaderButton";
-import { useFormFields } from "../libs/hooksLib";
-import { onError } from "../libs/errorLib";
+import LoaderButton from "../../components/LoaderButton";
+import { useFormFields } from "../../libs/hooksLib";
+import Error from "../../components/Error";
 
 export default function ResetPassword() {
   const [fields, handleFieldChange] = useFormFields({
@@ -44,7 +44,7 @@ export default function ResetPassword() {
       setCodeSent(true);
       console.log(result);
     } catch (error) {
-      onError(error);
+      Error(error);
       setIsSendingCode(false);
     }
   }
@@ -62,7 +62,7 @@ export default function ResetPassword() {
       );
       setConfirmed(true);
     } catch (error) {
-      onError(error);
+      Error(error);
       setIsConfirming(false);
     }
   }
@@ -71,7 +71,7 @@ export default function ResetPassword() {
     return (
       <form onSubmit={handleSendCodeClick}>
         <FormGroup bsSize="large" controlId="username">
-          <FormLabel>Username</FormLabel>
+          <FormLabel>Email</FormLabel>
           <FormControl
             autoFocus
             type="username"
@@ -148,7 +148,7 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="ResetPassword">
+    <div>
       {!codeSent
         ? renderRequestCodeForm()
         : !confirmed

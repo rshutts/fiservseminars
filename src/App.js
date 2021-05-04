@@ -22,7 +22,7 @@ import {
 
 /*Libs*/
 import { AppContext } from "./libs/contextLib";
-import { onError } from "./libs/errorLib";
+import Error from "./components/Error";
 
 /*Component Items*/
 import Routes from "./Routes";
@@ -65,7 +65,7 @@ function App() {
     }
     catch(e) {
       if (e !== 'No current user') {
-        onError(e);
+        Error(e);
       }
     }
     setIsAuthenticating(false);
@@ -77,7 +77,7 @@ function App() {
       userHasAuthenticated(false);
       history.push("/login");
     } catch (e) {
-      onError(e);
+      Error(e);
     }
   }
 

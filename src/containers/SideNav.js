@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Auth } from "aws-amplify";
 import { useHistory, Link } from "react-router-dom";
-import { onError } from "../libs/errorLib";
+import Error from "../components/Error";
 import {
   ProSidebar,
   Menu,
@@ -11,7 +11,7 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle, FaUser } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle, FaUser, FaRegAddressBook } from 'react-icons/fa';
 /* import 'react-pro-sidebar/dist/css/styles.css'; */
 
 
@@ -58,7 +58,7 @@ function Sidenav() {
     }
     catch(e) {
       if (e !== 'No current user') {
-        onError(e);
+        Error(e);
       }
     }
     setIsAuthenticating(false);
@@ -91,6 +91,11 @@ function Sidenav() {
                 <Link className="sidebar-nav-link" to="/faq">
                   <MenuItem icon={<FaQuestionCircle/>}>
                       FAQ
+                  </MenuItem>
+                </Link>
+                <Link className="sidebar-nav-link" to="/speaker-bios">
+                  <MenuItem icon={<FaRegAddressBook/>}>
+                      Speaker Bios
                   </MenuItem>
                 </Link>
                 <Link

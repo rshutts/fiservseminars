@@ -55,8 +55,8 @@ export default function ProfileImage() {
           name={profile.name} 
           alt='Profile'
           className='nav-user-profile'
-          size="70"
-          round="15px"
+          size="55"
+          round="30px"
           color={Avatar.getRandomColor('sitebase', ['#ff6600', '#666666', '#333333'])}
         /> 
       }

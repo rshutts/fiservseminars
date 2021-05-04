@@ -21,12 +21,12 @@ export function logError(error, errorInfo = null) {
   });
 }
 
-export function onError(error) {
+ /* export function onError(error) {
   let errorInfo = {};
   let message = error.toString();
 
   // Auth errors
-  if (!(error instanceof Error) && error.message) {
+ if (!(error instanceof Error) && error.message) {
     errorInfo = error;
     message = error.message;
     error = new Error(message);
@@ -37,5 +37,5 @@ export function onError(error) {
 
   logError(error, errorInfo);
 
-  alert(message);
-}
+  alert(message); 
+}*/

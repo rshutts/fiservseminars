@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Component } from 'react';
 import { withRouter, useHistory } from "react-router-dom";
-import { Icon, Image, Header, Checkbox } from 'semantic-ui-react';
 import { Auth } from "aws-amplify";
 import { onError } from "../../libs/errorLib";
 import Card from "react-bootstrap/Card";

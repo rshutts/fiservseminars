@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
-import { onError } from "../../libs/errorLib";
+import Error from "../../components/Error";
 
 export default function ChangePassword() {
   const history = useHistory();
@@ -39,7 +39,7 @@ export default function ChangePassword() {
 
       history.push("/profile");
     } catch (error) {
-      onError(error);
+      Error(error);
       setIsChanging(false);
     }
   }

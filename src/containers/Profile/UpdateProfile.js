@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
-import { onError } from "../../libs/errorLib";
+import Error from "../../components/Error";
 
 import config from '../../aws-config';
 
@@ -68,7 +68,7 @@ export default function UpdateProfile() {
         });
         history.push('/profile')
       } catch (error) {
-        onError(error);
+        Error(error);
       }
     }
 

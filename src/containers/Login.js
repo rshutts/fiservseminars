@@ -5,10 +5,10 @@ import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
-import { onError } from "../libs/errorLib";
+import Error from "../components/Error";
 import "./Login.css";
 
-import ResetPassword from "../containers/ResetPassword";
+import ResetPassword from "./Profile/ResetPassword";
 
 export default function Login() {
   const history = useHistory();
@@ -18,6 +18,7 @@ export default function Login() {
     username: "",
     password: ""
   });
+  const [error, setError] = useState('');
 
   function validateForm() {
     return fields.username.length > 0 && fields.password.length > 0;
@@ -33,13 +34,15 @@ export default function Login() {
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {
-      onError(e);
+      setError(e.message)
+      console.log('error...: ', e)
       setIsLoading(false);
     }
   }
 
   return (
     <div className="main-content-login">
+      {error && <Error errorMessage={error}/>}
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>

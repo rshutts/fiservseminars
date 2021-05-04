@@ -85,6 +85,19 @@ body {
 a {
   text-decoration:none;
 }
+/*Errors*/
+.main-content-login pre {
+  background: #fbeae9;
+  border-color: #f7d6d3;
+  color: #ad3123;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 12px 1em 12px 1em;
+  margin: 0 0 18px;
+  font-family:Helvetica,Arial, sans-serif;
+  font-size:14px;
+}
 .btn-primary {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
@@ -151,7 +164,7 @@ a#profileDropDown {
 }
 a#profileDropDown svg {
   position: absolute;
-  right: 15px;
+  right: 10px;
   fill: #ffffff;
 }
 .main-content-profile .nav-user-profile.sb-avatar__text {
@@ -587,17 +600,23 @@ select#seminarDate, select#address {
   border-color:rgb(102,153,204);
   color:#fff;
 }
-.faq-container {
+.faq-container, .bio-container, .pwreset-container {
   background: hsla(0,0%,100%,.6);
   width: 90%;
 }
-.faq-sections {
+.faq-sections, .bio-sections {
   background: #fff;
   width: 90%;
   height: 100%;
   padding: 1% 2%;
-  margin: 3% 2% 0;
-  display: inline-block;
+  margin: 3% auto;
+}
+.pwreset-section {
+  width: 50%;
+  margin: 0 auto;
+  background: #fff;
+  height: 100%;
+  padding: 1% 2%;
 }
 .faq-accordion .faq-title {
   color: rgba(0,0,0,.95) !important;
@@ -631,6 +650,22 @@ select#seminarDate, select#address {
 .content.active.faq-content p {
   margin-bottom:0;
   padding:10px;
+}
+.speaker-bio-container.card {
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  flex-direction: row;
+}
+.card-deck {
+  padding:10px 20px;
+  width:50%;
+}
+.card-body {
+  width: 100%;
+}
+.card-deck:last-child {
+  margin: 0 auto;
 }
 .custom-sidenav div[role*="menu"] {
   background: #666;

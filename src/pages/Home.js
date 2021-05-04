@@ -8,7 +8,7 @@ import { useAppContext } from "../libs/contextLib";
 import { onError } from "../libs/errorLib";
 
 
-import Left from "../containers/Left";
+import Left from "../containers/Profile/Left";
 import Right from "../containers/Right";
 
 export default function Home() {

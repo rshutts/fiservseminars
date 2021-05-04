@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
-import { onError } from "../libs/errorLib";
+import Error from "../components/Error";
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
@@ -70,7 +70,7 @@ export default function Signup() {
       setNewUser(newUser);
       history.push("/signup/confirmation");
     } catch (e) {
-      onError(e);
+      Error(e);
       setIsLoading(false);
     }
   }

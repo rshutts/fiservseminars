@@ -7,10 +7,12 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Meetings from "./pages/Meetings";
 import FAQ from './pages/FAQ';
+import Bios from './pages/Bios';
+import PasswordRest from './pages/ResetPassword'
 
 /*Containers*/
 import Login from "./containers/Login";
-import ResetPassword from "./containers/ResetPassword";
+import ResetPassword from "./containers/Profile/ResetPassword";
 import ChangePassword from "./containers/Profile/ChangePassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Signup";
@@ -47,6 +49,12 @@ const Routes = () => (
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/faq">
+            <FAQ />
+          </Route>
+          <Route exact path="/speaker-bios">
+            <Bios />
+          </Route>
           <UnauthenticatedRoute exact path="/login">
             <Login />
           </UnauthenticatedRoute>
@@ -59,6 +67,12 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/login/reset">
             <ResetPassword />
           </UnauthenticatedRoute>
+          <UnauthenticatedRoute exact path="/login/reset">
+            <ResetPassword />
+          </UnauthenticatedRoute>
+          <UnauthenticatedRoute exact path="/password/reset">
+            <PasswordRest />
+          </UnauthenticatedRoute>
           <AuthenticatedRoute exact path="/meetings">
             <Meetings />
           </AuthenticatedRoute>
@@ -68,50 +82,9 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/profile/update">
             <UpdateProfile />
           </AuthenticatedRoute>
-          <Route exact path="/faq">
-            <FAQ />
-          </Route>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
-         {/*  <AuthenticatedRoute exact path="/meetings/speaker">
-            <Speaker />
-          </AuthenticatedRoute> */}
-          {/* <AuthenticatedRoute exact path="/meetings/board">
-            <Board/>
-          </AuthenticatedRoute> */}
-          {/* <AuthenticatedRoute exact path="/profile/polls/create">
-            <CreatePoll/>
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/polls">
-            <Polls/>
-          </AuthenticatedRoute>  
-          <AuthenticatedRoute exact path="/profile/poll/:id">
-            <Poll/>
-          </AuthenticatedRoute>  */}
-          {/* <AuthenticatedRoute exact path="/profile/polls">
-            <GetPolls/>
-          </AuthenticatedRoute>  */}
-          {/* <AuthenticatedRoute exact path="/meetings/speaker">
-            <Speaker/>
-          </AuthenticatedRoute>  */}
-            
-          {/* <AuthenticatedRoute exact path="/notes/new">
-            <NewNote />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/notes/:id">
-            <Notes />
-          </AuthenticatedRoute> */}
-          <UnauthenticatedRoute exact path="/password/reset">
-            <ResetPassword />
-          </UnauthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/profile/email">
-            <UpdateEmail />
-          </AuthenticatedRoute> */}
-          {/* Finally, catch all unmatched routes */}
-          {/* <Route>
-            <NotFound />
-          </Route> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>
