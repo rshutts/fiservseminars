@@ -9,10 +9,8 @@ import Iframe from 'react-iframe'
 
 import config from '../aws-config';
 
-
-
 const Meetings = () => {
-  document.getElementById("myId").contentDocument.location.reload(true);
+ 
   return (
     <div className="main-content">
       <div className="meetings-container">
@@ -23,7 +21,7 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-              <Iframe url="http://localhost:3001/"
+              <Iframe url="https://master.d2wuoedcks4rry.amplifyapp.com/"
                 width="100%"
                 height="500px"
                 id="myId"
