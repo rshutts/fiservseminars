@@ -31,7 +31,7 @@ export default function SignupConfirmation() {
     try {
       await Auth.signIn(fields.username, fields.password);
       userHasAuthenticated(true);
-      history.push("/");
+      history.go("/");
     } catch (e) {
       Error(e);
       setIsLoading(false);

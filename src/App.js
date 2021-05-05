@@ -75,7 +75,7 @@ function App() {
     try {
       await Auth.signOut();
       userHasAuthenticated(false);
-      history.push("/login");
+      history.go("/login");
     } catch (e) {
       Error(e);
     }

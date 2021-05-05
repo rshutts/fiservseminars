@@ -49,6 +49,9 @@ function ProfileCards(props) {
     const onClickHandler = (e) => {
       history.push('/profile/update')
     }
+    const updatePassword = (e) => {
+      history.push('/profile/password/reset')
+    }
 
     const onClickPoll = (e) => {
       history.push('/profile/polls/create')
@@ -78,12 +81,20 @@ function ProfileCards(props) {
               <h2>State: {profile.state}</h2>
             </Card.Text>
             <Button
-              id='signupBtn'
+              id='loginBtn'
               color='primary'
               className='btn-margin'
               onClick={onClickHandler}
             >
               Update Profile
+            </Button>
+            <Button
+              id='signupBtn'
+              color='primary'
+              className='btn-margin'
+              onClick={updatePassword}
+            >
+              Update Password
             </Button>
           </Card.Body>
         </Card>

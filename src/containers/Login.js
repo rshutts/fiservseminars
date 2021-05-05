@@ -26,13 +26,11 @@ export default function Login() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
     setIsLoading(true);
-
     try {
       await Auth.signIn(fields.username, fields.password);
       userHasAuthenticated(true);
-      history.push("/");
+      history.go("/")
     } catch (e) {
       setError(e.message)
       console.log('error...: ', e)
@@ -70,7 +68,7 @@ export default function Login() {
         >
           Login
         </LoaderButton>
-        {/* <Link to="/login/reset">Forgot password?</Link> */}
+        <Link to="/password/forgot">Forgot password?</Link>
       </Form>
     </div>
   );

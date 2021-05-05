@@ -68,22 +68,23 @@ html, body {
   overflow: auto;
 }
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-image:url('https://seminar-media.s3.amazonaws.com/Spring/2021/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
   padding:0;
   margin:0;
-  color:#000;
+  color:#2D2D2D;
   font-size:14px;
 }
 /* li {
   list-style-type: none;
 } */
 /*Fonts*/
-a {
+a, .btn.btn-link {
   text-decoration:none;
+  color:#2E8BC9;
 }
 /*Errors*/
 .main-content-login pre {
@@ -110,13 +111,13 @@ a {
   color:#000;
 }
 .btn-primary.disabled, .btn-primary:disabled {
-  background-color: #aaa;
+  background-color: #E0E0E0;
   border:none;
 }
 .btn-success.disabled, .btn-success:disabled {
   color:#000;
-  background-color: #d0d0d0;
-  border-color:#d0d0d0;
+  background-color: #E0E0E0;
+  border-color:#E0E0E0;
 }
 #loginBtn, .LoaderButton {
   background:#ff6600;
@@ -603,6 +604,7 @@ select#seminarDate, select#address {
 .faq-container, .bio-container, .pwreset-container {
   background: hsla(0,0%,100%,.6);
   width: 90%;
+  padding-bottom:30px;
 }
 .faq-sections, .bio-sections {
   background: #fff;
@@ -612,7 +614,7 @@ select#seminarDate, select#address {
   margin: 3% auto;
 }
 .pwreset-section {
-  width: 50%;
+  width: 35%;
   margin: 0 auto;
   background: #fff;
   height: 100%;
@@ -736,6 +738,10 @@ select#seminarDate, select#address {
   height: 100%;
   padding: 1% 2%;
   margin: 3% 2% 0;
+}
+.pollsFrame {
+  border:none;
+  border-color:transparent;
 }
 .left {
     background: #fff;
@@ -1008,6 +1014,34 @@ i.fa.fa-fw.fa-external-link-alt {
   padding: 10px;
   margin-bottom:0px;
   text-align: left;
+ }
+ .alert--success {
+   background:#dff0d8;
+   padding:20px;
+   border-color:#d6e9c6;
+    color:#3a703c;
+    margin-top:30px;
+ }
+ h1.text--success { 
+  color:#2D2D2D;
+ }
+ h1.text--success:after {
+  content:'';
+  display: block;
+  position: relative;
+  width:477px;
+  height:1px;
+  background-color: rgba(89,89,89,.5);
+  top:15px;
+ }
+ h1.text--success svg, .alert--success svg {
+  margin-right: 10px
+ }
+ .alert--success-login {
+   margin-top:20px;
+ }
+ .pwreset-section p {
+   text-align: center;
  }
  .gif-wrapper .es_componentWrapper__pRs7D {
    width:100% !important;

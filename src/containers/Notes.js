@@ -84,7 +84,7 @@ export default function Notes() {
         content,
         attachment: attachment || note.attachment
       });
-      history.push("/");
+      history.go("/");
     } catch (e) {
       onError(e);
       setIsLoading(false);
@@ -110,7 +110,7 @@ export default function Notes() {
 
     try {
       await deleteNote();
-      history.push("/");
+      history.go("/");
     } catch (e) {
       onError(e);
       setIsDeleting(false);

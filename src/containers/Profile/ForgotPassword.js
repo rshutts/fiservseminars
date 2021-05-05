@@ -5,9 +5,9 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
-import { onError } from "../../libs/errorLib";
+import Error from "../../components/Error";
 
-export default function ResetPassword() {
+export default function ForgotPassword() {
   const [fields, handleFieldChange] = useFormFields({
     username: "",
     code: "",
@@ -41,7 +41,7 @@ export default function ResetPassword() {
       await Auth.forgotPassword(fields.username);
       setCodeSent(true);
     } catch (error) {
-      onError(error);
+      Error(error);
       setIsSendingCode(false);
     }
   }
@@ -59,7 +59,7 @@ export default function ResetPassword() {
       );
       setConfirmed(true);
     } catch (error) {
-      onError(error);
+      Error(error);
       setIsConfirming(false);
     }
   }

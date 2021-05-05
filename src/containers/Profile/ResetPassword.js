@@ -6,6 +6,8 @@ import {
   FormControl,
   FormLabel,
 } from "react-bootstrap";
+import { FaRegCheckCircle, FaRegThumbsUp } from 'react-icons/fa';
+
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
@@ -71,7 +73,7 @@ export default function ResetPassword() {
     return (
       <form onSubmit={handleSendCodeClick}>
         <FormGroup bsSize="large" controlId="username">
-          <FormLabel>Email</FormLabel>
+          <FormLabel className="h5">Username</FormLabel>
           <FormControl
             autoFocus
             type="username"
@@ -136,11 +138,20 @@ export default function ResetPassword() {
 
   function renderSuccessMessage() {
     return (
-      <div className="success">
-        <p>Your password has been reset.</p>
+      <div>
+        <h1 className="text--success">
+          <FaRegCheckCircle/>
+        Password reset successful</h1>
+        <div className="alert--success">
+          <FaRegThumbsUp/>
+          Awesome! You have successfully updated your password.
+        </div>
+        <div className="alert--success-login">
+          Now that you've updated your password, please click the link below to login with your new credentials. 
+        </div>
         <p>
           <Link to="/login">
-            Click here to login with your new credentials.
+            Click here to login.
           </Link>
         </p>
       </div>

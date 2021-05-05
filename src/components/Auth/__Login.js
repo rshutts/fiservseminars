@@ -22,7 +22,7 @@ export default () => {
     authenticate(username, password)
         .then(data => {
             setIsLoading(true);
-            history.push("/");
+            history.go("/");
             console.log('Logged in!', data);
         })
         .catch(err => {

@@ -9,8 +9,10 @@ import Iframe from 'react-iframe'
 
 import config from '../aws-config';
 
-const Meetings = () => {
 
+
+const Meetings = () => {
+  document.getElementById("myId").contentDocument.location.reload(true);
   return (
     <div className="main-content">
       <div className="meetings-container">
@@ -23,11 +25,12 @@ const Meetings = () => {
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
               <Iframe url="http://localhost:3001/"
                 width="100%"
-                height="450px"
+                height="500px"
                 id="myId"
-                className="myClassname"
+                className="pollsFrame"
                 display="initial"
                 position="relative"
+                loading
               />
             </div>
           </section>

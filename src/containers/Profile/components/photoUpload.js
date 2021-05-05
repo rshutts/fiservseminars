@@ -42,11 +42,11 @@ const PhotoUpload = () => {
       setLoading(true);
       // Upload the file to s3 with private access level. 
       await Storage.put(`${profile.username}/profile.png`, file, {
-        level: 'protected',
+        level: 'public',
         contentType: 'image/png'
       });
       // Retrieve the uploaded file to display
-      const url = await Storage.get(`${profile.username}/profile.png`, { level: 'protected' })
+      const url = await Storage.get(`${profile.username}/profile.png`, { level: 'public' })
       setImageUrl(url);
       setLoading(false);
     } catch (err) {

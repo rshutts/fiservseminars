@@ -37,7 +37,7 @@ export default function ProfileImage() {
     const file = e.target.files[0];
     try {
       // Retrieve the uploaded file to display
-      const url = await Storage.get(`${profile.username}/profile.png`, { level: 'protected' })
+      const url = await Storage.get(`${profile.username}/profile.png`, { level: 'public' })
       setImageUrl(url);
       setLoading(false);
     } catch (err) {

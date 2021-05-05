@@ -8,12 +8,12 @@ import Profile from "./pages/Profile";
 import Meetings from "./pages/Meetings";
 import FAQ from './pages/FAQ';
 import Bios from './pages/Bios';
-import PasswordRest from './pages/ResetPassword'
+import PasswordReset from './pages/ResetPassword';
+import PasswordForgot from './pages/ForgotPassword'
 
 /*Containers*/
 import Login from "./containers/Login";
 import ResetPassword from "./containers/Profile/ResetPassword";
-import ChangePassword from "./containers/Profile/ChangePassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Signup";
 import SignupConfirmation from "./containers/SignupConfirmation";
@@ -55,6 +55,9 @@ const Routes = () => (
           <Route exact path="/speaker-bios">
             <Bios />
           </Route>
+          <UnauthenticatedRoute exact path="/password/forgot">
+            <PasswordForgot />
+          </UnauthenticatedRoute>
           <UnauthenticatedRoute exact path="/login">
             <Login />
           </UnauthenticatedRoute>
@@ -64,15 +67,9 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          <UnauthenticatedRoute exact path="/login/reset">
-            <ResetPassword />
-          </UnauthenticatedRoute>
-          <UnauthenticatedRoute exact path="/login/reset">
-            <ResetPassword />
-          </UnauthenticatedRoute>
-          <UnauthenticatedRoute exact path="/password/reset">
-            <PasswordRest />
-          </UnauthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/password/reset">
+            <PasswordReset />
+          </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/meetings">
             <Meetings />
           </AuthenticatedRoute>
