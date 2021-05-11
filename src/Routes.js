@@ -9,7 +9,8 @@ import Meetings from "./pages/Meetings";
 import FAQ from './pages/FAQ';
 import Bios from './pages/Bios';
 import PasswordReset from './pages/ResetPassword';
-import PasswordForgot from './pages/ForgotPassword'
+import PasswordForgot from './pages/ForgotPassword';
+import Articles from './pages/Articles'
 
 /*Containers*/
 import Login from "./containers/Login";
@@ -21,13 +22,6 @@ import Sidenav from "./containers/SideNav";
 import Popout from "./containers/Chat/Popout";
 
 /*Polls*/
-/* import CreatePoll from './containers/Polls/CreatePoll';
-import Polls from './containers/Polls/Polls';
-import Poll from './containers/Polls/Poll'; */
-/* import GetPolls from './containers/GetPolls'; */
-/* import Audience from './containers/Polls/components/Audience'; */
-/* import Board from './containers/Polls/components/Board'; */
-/* import Speaker from './containers/Polls/Speaker'; */
 /* import NewNote from "./containers/NewNote"; */
 /* import UpdateProfile from "./containers/Profile/UpdateProfile"; */
 /* import Notes from "./containers/Notes"; */
@@ -67,8 +61,8 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/password/reset">
-            <PasswordReset />
+          <AuthenticatedRoute exact path="/resource-center/articles">
+            <Articles />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/meetings">
             <Meetings />
@@ -78,6 +72,9 @@ const Routes = () => (
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile/update">
             <UpdateProfile />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/password/reset">
+            <PasswordReset />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />

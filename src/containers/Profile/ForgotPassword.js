@@ -3,9 +3,13 @@ import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
+
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
+
+import { FaInfoCircle } from "react-icons/fa"
+import "./PasswordReset.css";
 
 export default function ForgotPassword() {
   const [fields, handleFieldChange] = useFormFields({
@@ -19,6 +23,7 @@ export default function ForgotPassword() {
   const [confirmed, setConfirmed] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
   const [isSendingCode, setIsSendingCode] = useState(false);
+  const [error, setError] = useState('');
 
   function validateCodeForm() {
     return fields.username.length > 0;
@@ -66,7 +71,7 @@ export default function ForgotPassword() {
 
   function renderRequestCodeForm() {
     return (
-      <form onSubmit={handleSendCodeClick}>
+      <Form onSubmit={handleSendCodeClick}>
         <Form.Group bsSize="large" controlId="username">
           <Form.Label>Username</Form.Label>
           <Form.Control
@@ -84,7 +89,7 @@ export default function ForgotPassword() {
         >
           Send Confirmation
         </LoaderButton>
-      </form>
+      </Form>
     );
   }
 
@@ -148,6 +153,11 @@ export default function ForgotPassword() {
 
   return (
     <div className="ResetPassword">
+      <h1 style={{ textAlign: 'center'}}>
+        <FaInfoCircle/> <br />
+        Forgot Password
+      </h1>
+      {error && <Error errorMessage={error}/>}
       {!codeSent
         ? renderRequestCodeForm()
         : !confirmed

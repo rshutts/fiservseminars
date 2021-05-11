@@ -11,6 +11,7 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
+
 import { FaHome, FaCalendarAlt, FaUsers, FaCogs, FaNewspaper, FaVideo, FaQuestionCircle, FaUser, FaRegAddressBook } from 'react-icons/fa';
 /* import 'react-pro-sidebar/dist/css/styles.css'; */
 
@@ -98,19 +99,24 @@ function Sidenav() {
                       Speaker Bios
                   </MenuItem>
                 </Link>
-                {/* <Link
+                <Link
                     className='sidebar-nav-link'
                     to={'/meetings?room=Fiserv'}
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
                   </MenuItem> 
-                </Link> */}
-                {/* <SubMenu title="Resource Center" icon={<FaCogs/>}
-                >
-                  <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
+                </Link>
+                <SubMenu title="Resource Center" icon={<FaCogs/>}
+                >{/* <span class="pro-arrow-wrapper"><span class="pro-arrow"></span></span> */}
+                  <Link
+                    className='sidebar-nav-link'
+                    to="/resource-center/articles"
+                  >
+                    <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
+                  </Link>
                   <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
-                </SubMenu> */}
+                </SubMenu>
                 <Link className="sidebar-nav-link" to="/profile">
                   <MenuItem icon={<FaUser/>}>
                       Profile

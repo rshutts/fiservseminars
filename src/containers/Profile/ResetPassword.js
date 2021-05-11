@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
-import {
-  FormGroup,
-  FormControl,
-  FormLabel,
-} from "react-bootstrap";
-import { FaRegCheckCircle, FaRegThumbsUp } from 'react-icons/fa';
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 import LoaderButton from "../../components/LoaderButton";
 import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
+
+import { FaRegCheckCircle, FaRegThumbsUp, FaUnlockAlt, FaUser } from 'react-icons/fa';
 
 export default function ResetPassword() {
   const [fields, handleFieldChange] = useFormFields({
@@ -23,6 +21,7 @@ export default function ResetPassword() {
   const [confirmed, setConfirmed] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
   const [isSendingCode, setIsSendingCode] = useState(false);
+  const [error, setError] = useState('');
 
   function validateCodeForm() {
     return fields.username.length > 0;
@@ -71,16 +70,21 @@ export default function ResetPassword() {
 
   function renderRequestCodeForm() {
     return (
-      <form onSubmit={handleSendCodeClick}>
-        <FormGroup bsSize="large" controlId="username">
-          <FormLabel className="h5">Username</FormLabel>
-          <FormControl
-            autoFocus
-            type="username"
-            value={fields.username}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
+      <Form onSubmit={handleSendCodeClick} className="pwreset-form">
+        <Form.Group bsSize="large" controlId="username">
+          <Form.Label>Username</Form.Label>
+          <InputGroup>
+            <InputGroup.Prepend>
+              <InputGroup.Text id="inputGroupPrepend"><FaUser/></InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Control
+              autoFocus
+              type="username"
+              value={fields.username}
+              onChange={handleFieldChange}
+            />
+          </InputGroup>
+        </Form.Group>
         <LoaderButton
           block
           type="submit"
@@ -90,39 +94,39 @@ export default function ResetPassword() {
         >
           Send Confirmation
         </LoaderButton>
-      </form>
+      </Form>
     );
   }
 
   function renderConfirmationForm() {
     return (
       <form onSubmit={handleConfirmClick}>
-        <FormGroup bsSize="large" controlId="code">
-          <FormLabel>Confirmation Code</FormLabel>
-          <FormControl
+        <Form.Group bsSize="large" controlId="code">
+          <Form.Label>Confirmation Code</Form.Label>
+          <Form.Control
             autoFocus
             type="tel"
             value={fields.code}
             onChange={handleFieldChange}
           />
-        </FormGroup>
+        </Form.Group>
         <hr />
-        <FormGroup bsSize="large" controlId="password">
-          <FormLabel>New Password</FormLabel>
-          <FormControl
+        <Form.Group bsSize="large" controlId="password">
+          <Form.Label>New Password</Form.Label>
+          <Form.Control
             type="password"
             value={fields.password}
             onChange={handleFieldChange}
           />
-        </FormGroup>
-        <FormGroup bsSize="large" controlId="confirmPassword">
-          <FormLabel>Confirm Password</FormLabel>
-          <FormControl
+        </Form.Group>
+        <Form.Group bsSize="large" controlId="confirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
             type="password"
             value={fields.confirmPassword}
             onChange={handleFieldChange}
           />
-        </FormGroup>
+        </Form.Group>
         <LoaderButton
           block
           type="submit"
@@ -159,7 +163,12 @@ export default function ResetPassword() {
   }
 
   return (
-    <div>
+    <div className="ResetPassword">
+      <h1 style={{ textAlign: 'center'}}>
+        <FaUnlockAlt/> <br />
+        Reset Password
+      </h1>
+      {error && <Error errorMessage={error}/>}
       {!codeSent
         ? renderRequestCodeForm()
         : !confirmed
