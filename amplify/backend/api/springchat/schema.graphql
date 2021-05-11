@@ -1,0 +1,11 @@
+type Message
+  @model
+  @key(name: "byChannelID", fields: ["channelID", "createdAt"], queryField: "messagesByChannelId") {
+  id: ID!
+  channelID: ID!
+  author: String!
+  authorEmail: String!
+  body: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}

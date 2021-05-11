@@ -18,7 +18,15 @@ const Meetings = () => {
           <i className='fa fa-fw fa-users' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Learning Sessions
         </Header>
         <div className="meetings-sections">
-          <section className='left meetings'>
+          <div style={{ textAlign: 'center', width:"75%", margin:"auto", padding:"20px" }}>
+            <h3 style={{ fontSize:"18px", paddingBottom:"20px" }}>
+              The Learning Sessions will be available starting May 18. Until then, you may explore the agenda for the conference as well a bit more information about our speakers in the Speaker Bios page.
+            </h3>
+            <h3 style={{ fontSize:"18px" }}>
+              We look forward to seeing you all at the Spring Executive Knowledge Exchange.
+            </h3>
+          </div>
+          {/* <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
               <Iframe url="https://master.d2wuoedcks4rry.amplifyapp.com/"
@@ -31,12 +39,12 @@ const Meetings = () => {
                 loading
               />
             </div>
-          </section>
-          <section className="right meetings">
+          </section> */}
+          {/* <section className="right meetings">
             <div className='chat'>
               <Chat/>   
             </div>
-          </section>
+          </section> */}
         </div>       
       </div> 
     </div>

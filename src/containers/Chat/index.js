@@ -113,7 +113,7 @@ const Chat = props => {
     }
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     const options = {
         minUptime: 50000,
         connectionTimeout: 40000,
@@ -158,7 +158,7 @@ const Chat = props => {
         });
       })
       .catch(err => console.log(err));    
-  };
+  }; */
   
 return (
   <div className='main full-width full-height'>
@@ -174,7 +174,7 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    <ChatProfileImage/>
+                    {/* <ChatProfileImage/> */}
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
@@ -213,7 +213,7 @@ return (
                   <div
                     key={message.id}
                     className={message.author === username ? 'message me' : 'message'}>
-                      <img src={image} height="50px"/>  
+                      {/* <img src={image} height="50px"/>   */}
                       <div>
                         <h3>{message.author}</h3>
                         {message.body}
