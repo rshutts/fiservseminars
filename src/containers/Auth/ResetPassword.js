@@ -163,7 +163,7 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="ResetPassword">
+    <div className="profile-section card">
       <h1 style={{ textAlign: 'center'}}>
         <FaUnlockAlt/> <br />
         Reset Password

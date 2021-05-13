@@ -9,7 +9,7 @@ import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
 
 import { FaInfoCircle } from "react-icons/fa"
-import "./PasswordReset.css";
+import "./Auth.css";
 
 export default function ForgotPassword() {
   const [fields, handleFieldChange] = useFormFields({

@@ -26,10 +26,10 @@ import Error from "./components/Error";
 
 /*Component Items*/
 import Routes from "./Routes";
-import Footer from './containers/Footer'
+import Footer from './components/Footer'
 import ScrollingTicker from './components/Ticker'
 import ErrorBoundary from "./components/ErrorBoundary";
-import Sidenav from "./containers/SideNav";
+import Sidenav from "./components/SideNav";
 import ProfileImage from "./containers/Profile/components/profileImage"
 
 /*CSS*/

@@ -13,12 +13,12 @@ import PasswordForgot from './pages/ForgotPassword';
 import Articles from './pages/Articles'
 
 /*Containers*/
-import Login from "./containers/Login";
-import ResetPassword from "./containers/Profile/ResetPassword";
+import Login from "./containers/Auth/Login";
+import ResetPassword from "./containers/Auth/ResetPassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
-import Signup from "./containers/Signup";
-import SignupConfirmation from "./containers/SignupConfirmation";
-import Sidenav from "./containers/SideNav";
+import Signup from "./containers/Auth/Signup";
+import SignupConfirmation from "./containers/Auth/SignupConfirmation";
+import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
 
 /*Polls*/
@@ -49,6 +49,9 @@ const Routes = () => (
           <Route exact path="/speaker-bios">
             <Bios />
           </Route>
+          <Route exact path="/resource-center/articles">
+            <Articles />
+          </Route>
           <UnauthenticatedRoute exact path="/password/forgot">
             <PasswordForgot />
           </UnauthenticatedRoute>
@@ -61,10 +64,7 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          <UnauthenticatedRoute exact path="/resource-center/articles">
-            <Articles />
-          </UnauthenticatedRoute>
-          <AuthenticatedRoute exact path="/meetings">
+          <AuthenticatedRoute exact path="/session">
             <Meetings />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile">

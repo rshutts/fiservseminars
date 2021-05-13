@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Sidenav from "../containers/SideNav";
+import Sidenav from "../components/SideNav";
 import SpeakerBios from "../containers/Speakers/SpeakerBios";
 import { Header  } from 'semantic-ui-react'
 

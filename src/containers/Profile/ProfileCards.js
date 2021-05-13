@@ -11,7 +11,9 @@ import {
   Button,
 } from "react-bootstrap";
 
-import ProfileImage from "../Profile/components/profileImage"
+import ProfileImage from "../Profile/components/profileImage";
+
+import "./Profile.css";
 
 function ProfileCards(props) {
   const history = useHistory();
@@ -59,10 +61,7 @@ function ProfileCards(props) {
 
     return (
       <div>
-        <header>
-          <h1>User Profile</h1>
-        </header>
-        <Card style={{ width: "50%" }}>
+        <Card className="profile-section">
           <ProfileImage/>
           <Card.Header>
             <h1>

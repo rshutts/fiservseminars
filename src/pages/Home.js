@@ -9,7 +9,7 @@ import { onError } from "../libs/errorLib";
 
 
 import Left from "../containers/Profile/Left";
-import Right from "../containers/Right";
+import Right from "../components/Right";
 
 export default function Home() {
     return (

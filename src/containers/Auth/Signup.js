@@ -3,10 +3,10 @@ import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import { Header  } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom";
-import LoaderButton from "../components/LoaderButton";
-import { useAppContext } from "../libs/contextLib";
-import { useFormFields } from "../libs/hooksLib";
-import Error from "../components/Error";
+import LoaderButton from "../../components/LoaderButton";
+import { useAppContext } from "../../libs/contextLib";
+import { useFormFields } from "../../libs/hooksLib";
+import Error from "../../components/Error";
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({

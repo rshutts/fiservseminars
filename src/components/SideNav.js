@@ -21,9 +21,7 @@ import Dropdown, { MenuItem } from '@trendmicro/react-dropdown';
 import { useAuth0 } from '@auth0/auth0-react';
 import '@trendmicro/react-buttons/dist/react-buttons.css';
 import '@trendmicro/react-dropdown/dist/react-dropdown.css';
-
 import { Link } from 'react-router-dom';
-
 import Amplify, { Auth } from "aws-amplify";
 import config from "../aws-config";
 Amplify.configure(config); */
@@ -101,7 +99,7 @@ function Sidenav() {
                 </Link>
                 <Link
                     className='sidebar-nav-link'
-                    to={'/meetings?room=Fiserv'}
+                    to={'/session?room=Fiserv'}
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions
@@ -115,7 +113,6 @@ function Sidenav() {
                   >
                     <MenuItem icon={<FaNewspaper/>}>Session Collateral</MenuItem>
                   </Link>
-                  <MenuItem icon={<FaVideo/>}>OnDemand</MenuItem>
                 </SubMenu>
                 <Link className="sidebar-nav-link" to="/profile">
                   <MenuItem icon={<FaUser/>}>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Accordion, Icon } from 'semantic-ui-react'
+import "./FAQs.css";
 
 export default class FAQS extends Component {
     state = { activeIndex: 0 }
