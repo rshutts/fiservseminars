@@ -27,11 +27,11 @@ export default function Signup() {
   const [validated, setValidated] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [checked, setChecked] = useState(false);
+  const [error, setError] = useState('');
 
   function validateForm() {
     return (
       fields.email.length > 0 &&
-      fields.username.length > 0 &&
       fields.password.length > 0 &&
       fields.name.length > 0 &&
       fields.given_name.length > 0 &&
@@ -54,7 +54,7 @@ export default function Signup() {
     setIsLoading(true);
     try {
       const newUser = await Auth.signUp({
-        username: fields.username,
+        username: fields.email,
         password: fields.password,
         attributes: {
           email: fields.email,
@@ -70,7 +70,7 @@ export default function Signup() {
       setNewUser(newUser);
       history.push("/signup/confirmation");
     } catch (e) {
-      Error(e);
+      setError(e.message);
       setIsLoading(false);
     }
   }
@@ -80,6 +80,7 @@ export default function Signup() {
     return (
       <div className="Signup">
         <h2 className="header page-title">Signup</h2>
+        {error && <Error errorMessage={error}/>}
         <Form.Text id="passwordHelpBlock" muted>
           Your password must be at least 8 characters long, contain letters and numbers, and
           must contain a special characters.
@@ -96,13 +97,21 @@ export default function Signup() {
               />
             </Form.Group>
             <Form.Group className="required" controlId="username" size="lg">
+              <Form.Control
+                type="username"
+                onChange={handleFieldChange}
+                value={fields.email}
+                style={{ display: 'none'}}
+              />
+            </Form.Group>
+            {/* <Form.Group className="required" controlId="username" size="lg">
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="username"
                 value={fields.username}
                 onChange={handleFieldChange}
               />
-            </Form.Group>
+            </Form.Group> */}
           </Form.Row>
           <Form.Row>
             <Form.Group className="required" controlId="password" size="lg">

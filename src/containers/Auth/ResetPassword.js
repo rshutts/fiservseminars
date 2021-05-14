@@ -62,8 +62,8 @@ export default function ResetPassword() {
         fields.password
       );
       setConfirmed(true);
-    } catch (error) {
-      Error(error);
+    } catch (e) {
+      setError(e.message);
       setIsConfirming(false);
     }
   }

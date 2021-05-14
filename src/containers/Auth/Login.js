@@ -35,8 +35,9 @@ export default function Login() {
       await Auth.signIn(fields.username, fields.password);
       userHasAuthenticated(true);
       history.go("/")
-    } catch (error) {
-      Error(error);
+    } catch (e) {
+      console.log(error)
+      setError(e.message);
       setIsLoading(false);
     }
   }

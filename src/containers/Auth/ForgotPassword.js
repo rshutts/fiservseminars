@@ -63,8 +63,8 @@ export default function ForgotPassword() {
         fields.password
       );
       setConfirmed(true);
-    } catch (error) {
-      Error(error);
+    } catch (e) {
+      setError(e.message);
       setIsConfirming(false);
     }
   }

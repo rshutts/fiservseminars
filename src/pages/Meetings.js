@@ -14,6 +14,11 @@ import config from '../aws-config';
 
 const Meetings = () => {
   const history = useHistory();
+  /* var src = "https://master.d2wuoedcks4rry.amplifyapp.com/" ;
+  var frameRefreshInterval = setInterval(function() {
+    document.getElementById("myId").src = document.getElementById("myId").src
+}, 2000); */
+
   return (
     <div className="main-content">
       <div className="meetings-container">
@@ -21,7 +26,7 @@ const Meetings = () => {
           <i className='fa fa-fw fa-users' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Learning Sessions
         </Header>
         <div className="meetings-sections">
-          <div style={{ textAlign: 'center', width:"75%", margin:"auto", padding:"20px" }}>
+          {/* <div style={{ textAlign: 'center', width:"75%", margin:"auto", padding:"20px" }}>
             <h3 style={{ fontSize:"18px", paddingBottom:"20px" }}>
               The Learning Sessions will be available starting May 18. Until then, you may explore the agenda for the conference as well a bit more information about our speakers in the Speaker Bios page.
             </h3>
@@ -31,14 +36,12 @@ const Meetings = () => {
             <h3 style={{ fontSize:"18px" }}>
               Please feel free to download the materials prior to the start of the event next week. Those materials can be found <Link to="/resource-center/articles">here</Link> or by clicking the Resource Center on the left.
             </h3>
-          </div>
-          {/* <section className='left meetings'>
+          </div> */}
+          <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-
-              <Frame>
-              </Frame>
-              <Iframe url="https://master.d2wuoedcks4rry.amplifyapp.com/"
+              <iframe 
+                src="http://localhost:3000/"
                 width="100%"
                 height="500px"
                 id="myId"
@@ -53,7 +56,7 @@ const Meetings = () => {
             <div className='chat'>
               <Chat/>   
             </div>
-          </section> */}
+          </section>
         </div>       
       </div> 
     </div>
