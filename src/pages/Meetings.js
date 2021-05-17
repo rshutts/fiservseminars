@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-import React, { Fragment, useState } from 'react';
-import Sidenav from "../components/SideNav";
-import Archived from '../pages/Archived';
-import { withAuthenticationRequired } from "@auth0/auth0-react";
-import Loading from "../components/Loading";
-import Notes from '../components/Notes'
-=======
 import React, { Fragment, useState, useEffect } from 'react';
 import Chat from "../containers/Chat";
 import { Auth } from "aws-amplify";
 import { useHistory, Link } from "react-router-dom";
 /* import Loading from "../components/Loading"; */
 /* import Notes from '../components/Notes' */
->>>>>>> test
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
 import Iframe from 'react-iframe'

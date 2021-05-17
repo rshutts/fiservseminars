@@ -66,11 +66,6 @@ html, body {
   height:100%;
   min-height:100%;
   overflow: auto;
-  display: flex;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  justify-content: center;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -1080,6 +1075,47 @@ i.fa.fa-fw.fa-external-link-alt {
   margin-left:0;
   margin-right:0;
   justify-content: space-around;
+  padding-top:10px;
+}
+.ui.padded.four.column.grid {
+  background: rgba(255,255,255,.6);
+  width: 90%;
+}
+.ui.padded.four.column.grid .row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ui.padded.two.column.grid .row .column {
+  padding:10px;
+}
+.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL {
+  color:#fff !important;
+  font-size:14px;
+  font-family:Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown---dropdown-menu---1fkH0 > .dropdown---menu-item-wrapper---3uAM0 > .dropdown---menu-item---1LjoL:hover {
+  color:#fff;
+  opacity:0.7;
+  background:none;
+}
+.buttons---dropdown-toggle---vMtjL.buttons---btn---2jZHN {
+  padding-right:11px;
+}
+
+.ui.card {
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items:center;
+  border:none;
+  height:fit-content;
+}
+.ui.card .content {
+  width:100%;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-self: center;
   align-items: flex-start;
@@ -1106,20 +1142,54 @@ i.fa.fa-fw.fa-external-link-alt {
 .card-description {
   padding:5px;
 }
-/*Fonts*/
-a {
-  text-decoration:none;
+.next-steps h2 {
+  margin-bottom:0;
 }
-.btn-secondary {
-  background-color: #ff6600;
-  border:none;
-  width:20%;
-  border-radius:10px;
-  margin:0 auto;
+.video-description {
+  width: 100%;
+  max-width: 450px;
   padding:10px;
 }
-.btn-secondary:hover {
+.video-description .header {
+  padding:5px 10px;
+}
+.video-cards {
+  border-radius:0;
+}
+.resource-flyout {
+  display:inline;
+}
+.resource-flyout-toggle {
+  background:none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  border:none;
+  font-size:14px;
+  font-family:Helvetica, Arial, sans-serif;
+  transition: ease-in-out;
+}
+.resource-flyout-toggle:hover {
+  background:none;
+  opacity: .7;
+  color:#fff;
   text-decoration: none;
+
+}
+.resource-flyout button{
+  background:none !important;
+  box-shadow: none !important;
+  border:none;
+  color:#fff !important;
+}
+.fa-cogs {
+  color:#fff !important;
+}
+span.dropdown---caret---3CkEt {
+  display: none;
 }
 .resource-flyout-menu {
   color:#fff;
