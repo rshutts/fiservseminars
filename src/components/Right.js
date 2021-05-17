@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Accordion, Icon } from 'semantic-ui-react'
-import { Button } from 'reactstrap'
+import Button from "react-bootstrap/Button";
 // import Notes from '../components/notes'
 
 class Right extends Component{
@@ -23,7 +23,7 @@ class Right extends Component{
         <h1>
             Agenda
         </h1>
-        <h2 className="agenda-subheader">All times are CST</h2>
+        <h2 className="agenda-subheader">*** Please note all times listed are CST</h2>
     
       <Accordion fluid styled>
         <Accordion.Title
@@ -32,39 +32,31 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 1 <Icon name='dropdown' />
+            Day 1: Efficiency, Customer Reporting<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Deposit Parameters Review
+                Systems Features and Functionality – Making It Easy
             </h3>
             <p>
-                @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                User Defined Options: Tips and Tricks
+                Gaining Customer Clarity Through Better Reporting (Session I)
             </h3>
             <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Online Posting Features
+                Gaining Customer Clarity Through Better Reporting (Session II)
             </h3>
             <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
-            </p>
-        </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
-            <h3 className="meetingTitle">
-                Precision 2020.1 and 2020.2 Deposits & Other
-            </h3>
-            <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
+                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -73,81 +65,64 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-          Day 2 <Icon name='dropdown' />
+            Day 2:  Revenue, Tracking, &amp; Analysis <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loan Parameters
-                                            </h3>
-                                            <p>
-                @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
+            <h3 className="meetingTitle">
+                Maximizing Revenue
+            </h3>
+            <p>
+                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loan Credit
-                                            </h3>
-                                            <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+            <h3 className="meetingTitle">
+                Tracking, Measuring, &amp; Analyzing Revenue
+            </h3>
+            <p>
+                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Loans: Did You Know
-                                            </h3>
-                                            <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
+            <h3 className="meetingTitle">
+                Customer Profitability
+            </h3>
+            <p>
+                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
-        <h3 className="meetingTitle">
-                                                Precision 2020.2 and 2020.3 Loans
-                                            </h3>
-                                            <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
-            </p>
-        </Accordion.Content>
-
         <Accordion.Title
           active={activeIndex === 2}
           index={2}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 3 <Icon name='dropdown' />
+            Day 3:  Regulatory Tracking, Commercial Accounts <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Employ I-32 Forms Design to Set Your Institution Apart
+                Tools for Effective Regulatory Reporting &amp; Tracking
             </h3>
             <p>
-                @ 8:15 - 9:00 a.m. &<br/> 1:15 - 2:00 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Increase CDD/BSA Compliance With BPM
+                Commercial Accounts – Building Relationships &amp; Revenue
             </h3>
             <p>
-                @ 9:15 - 10:00 a.m. &<br/> 2:15 - 3:00 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-            Precision Roadmap
+                Executive Networking Session
             </h3>
             <p>
-                @ 10:15 - 11:00 a.m. &<br/> 3:15 - 4:00 p.m.
-            </p>
-        </Accordion.Content>
-        <Accordion.Content active={activeIndex === 2}>
-            <h3 className="meetingTitle">
-            Networking/Happy Hour
-            </h3>
-            <p>
-                @ 11:15 - 12:00 p.m. &<br/> 4:15 - 5:00 p.m.
+                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
       </Accordion>

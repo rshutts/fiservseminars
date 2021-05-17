@@ -1,18 +1,22 @@
-import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
-import Left from "../components/Left";
+import React, { useState, useEffect } from "react";
+import { API } from "aws-amplify";
+import { Link } from "react-router-dom";
+import { BsPencilSquare } from "react-icons/bs";
+import ListGroup from "react-bootstrap/ListGroup";
+import { LinkContainer } from "react-router-bootstrap";
+import { useAppContext } from "../libs/contextLib";
+import { onError } from "../libs/errorLib";
+
+
+import Left from "../containers/Profile/Left";
 import Right from "../components/Right";
 
-const Home = () => (
-  <Fragment>
-    <div className="next-steps my-5 content-wrapper">
-      <Sidenav />
-      <div className="main-content">
-        <Left />
-        <Right />
-      </div>
-    </div>
-  </Fragment>
-);
-
-export default Home;
+export default function Home() {
+    return (
+        <div className="main-content">
+            <Left />
+            <Right />
+            {/* <RightMobile /> */}
+        </div>
+    );
+}

@@ -1,0 +1,48 @@
+
+.ui.padded.two.column.grid.article {
+    background: rgba(255,255,255,.6);
+    width: 50%;
+}
+.articles-container{
+    background: hsla(0,0%,100%,.6);
+    width: 90%;
+    padding-bottom:30px;
+}
+.articles-section {
+    background: #fff;
+    width: 90%;
+    height: 100%;
+    padding: 1% 2%;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.article-block {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width:90%;
+}
+.article-block .ui.card {
+    padding: 10px;
+    margin: 10px;
+}
+.article .card-header {
+    width:400px;
+    min-width:400px;
+}
+.article .card-header svg {
+    fill:rgba(255,0,0,0.75);
+    stroke:none;
+    height:16px;
+    width:16px;
+}
+.article-block .ui.card img {
+    width:400px;
+    min-width:400px;
+}
+.article-link:hover {
+    text-decoration: underline;
+    color:#2E8BC9;
+}

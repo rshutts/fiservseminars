@@ -1,9 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -11,25 +9,24 @@
 # production
 /build
 
+# old files
+/old_files
+
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+.env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-auth_config.json
-
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
+amplify/logs
 amplify/mock-data
 amplify/backend/amplify-meta.json
 amplify/backend/awscloudformation
+amplify/backend/.temp
 build/
 dist/
 node_modules/
@@ -39,4 +36,4 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
-yarn-error.log*
+.secret-*
