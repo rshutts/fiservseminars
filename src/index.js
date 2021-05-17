@@ -15,7 +15,6 @@ Amplify.configure({
   "aws_appsync_graphqlEndpoint": "https://rc7nh3xygffwldl63daurh2hpi.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-  "aws_appsync_apiKey": "da2-ppun6mvb6bhqnjyl5kyzauicrq",
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,

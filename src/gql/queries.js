@@ -1,87 +1,52 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getPoll = /* GraphQL */ `
-  query GetPoll($id: ID!) {
-    getPoll(id: $id) {
+export const getMessage = /* GraphQL */ `
+  query GetMessage($id: ID!) {
+    getMessage(id: $id) {
       id
-      name
-      type
-      candidates {
-        items {
-          id
-          name
-          upvotes
-        }
-      }
-      itemType
+      channelID
+      author
+      group
+      user
+      body
       createdAt
+      updatedAt
     }
   }
 `;
-export const listPolls = /* GraphQL */ `
-  query ListPolls(
-    $filter: ModelPollFilterInput
+export const listMessages = /* GraphQL */ `
+  query ListMessages(
+    $filter: ModelMessageFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPolls(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        type
-        itemType
+        channelID
+        author
+        group
+        user
+        body
         createdAt
-        candidates {
-          items {
-            pollCandidatesId
-            name
-            upvotes
-          }
-        }
+        updatedAt
       }
       nextToken
     }
   }
 `;
-export const getCandidate = /* GraphQL */ `
-  query GetCandidate($id: ID!) {
-    getCandidate(id: $id) {
-      id
-      pollCandidatesId
-      name
-      upvotes
-    }
-  }
-`;
-export const listCandidates = /* GraphQL */ `
-  query ListCandidates(
-    $filter: ModelCandidateFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCandidates(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        pollCandidatesId
-        name
-        upvotes
-      }
-      nextToken
-    }
-  }
-`;
-export const itemsByType = /* GraphQL */ `
-  query ItemsByType(
-    $itemType: String
+export const messagesByChannelID = /* GraphQL */ `
+  query MessagesByChannelID(
+    $channelID: ID
     $createdAt: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
-    $filter: ModelPollFilterInput
+    $filter: ModelMessageFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    itemsByType(
-      itemType: $itemType
+    messagesByChannelID(
+      channelID: $channelID
       createdAt: $createdAt
       sortDirection: $sortDirection
       filter: $filter
@@ -90,18 +55,13 @@ export const itemsByType = /* GraphQL */ `
     ) {
       items {
         id
-        name
-        type
-        itemType
+        channelID
+        author
+        group
+        user
+        body
         createdAt
-        candidates {
-          items {
-            id
-            pollCandidatesId
-            name
-            upvotes
-          }
-        }
+        updatedAt
       }
       nextToken
     }

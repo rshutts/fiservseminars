@@ -33,7 +33,29 @@
                 "name": "Seminars",
                 "region": "us-east-1"
             },
-            "lastPushTimeStamp": "2021-04-19T20:37:14.214Z"
+            "lastPushTimeStamp": "2021-05-17T19:25:10.595Z"
+        },
+        "simplechat-dev": {
+            "service": "AppSync",
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS"
+                    },
+                    "additionalAuthenticationProviders": null,
+                    "userPoolConfig": {
+                        "userPoolId": "us-east-1_ZoafPXhwk",
+                        "awsRegion": "us-east-1",
+                        "defaultAction": "ALLOW",
+                        "appIdClientRegex": null
+                    }
+                },
+                "GraphQLAPIIdOutput": "46or2spdunhohmn2kiytze6bki",
+                "GraphQLAPIEndpointOutput": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
+                "name": "simplechat-dev",
+                "region": "us-east-1"
+            },
+            "lastPushTimeStamp": "2021-05-17T19:20:49.597Z"
         }
     },
     "hosting": {

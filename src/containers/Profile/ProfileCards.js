@@ -14,6 +14,7 @@ import {
 import ProfileImage from "../Profile/components/profileImage";
 
 import "./Profile.css";
+import { setUser } from '@sentry/minimal';
 
 function ProfileCards(props) {
   const history = useHistory();
@@ -26,18 +27,26 @@ function ProfileCards(props) {
     city: "",
     state:  ""
   });
+  const [userGroup, setUserGroup] = useState({
+    group: "",
+  });
 
   const onLoad = async () => {
     try {
       const user = await Auth.currentUserInfo();
+      const group = await Auth.currentSession();
       console.log(user)
       setProfile({
+        username: user.username,
         email: user.attributes.email,
         name: user.attributes.name,
         bank: user.attributes.given_name,
         title: user.attributes.nickname,
         city: user.attributes.locale,
         state: user.attributes.address
+      });
+      setUserGroup({
+        group: group.accessToken.payload['cognito:groups'],
       });
     } catch(e) {
  
@@ -69,15 +78,23 @@ function ProfileCards(props) {
             </h1>
           </Card.Header>
           <Card.Body>
-            <Card.Title>
-              Email:  {profile.email}
-            </Card.Title>
+            {userGroup.group.includes('Fiserv') 
+            ?
+              <Card.Title>
+                Email:  {profile.username}*
+              </Card.Title>
+            :
+              <Card.Title>
+                Email:  {profile.email}
+              </Card.Title>
+            }
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>
               <h2>Bank Name:  {profile.bank}</h2>
               <h2>Title:  {profile.title}</h2>
               <h2>City: {profile.city}</h2>
               <h2>State: {profile.state}</h2>
+              <h2>Group: {userGroup.group}</h2>
             </Card.Text>
             <Button
               id='loginBtn'

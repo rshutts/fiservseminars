@@ -25,12 +25,14 @@ import config from '../../aws-config';
 
 const Chat = props => {
   const [username, setState] = useState(null);
+  const [userGroup, setUserGroup] = useState(null);
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
   const [profile, setProfile] = useState({
     id: "",
     name: "",
+    group: ""
   });
   const [isOpen, setOpen] = useState(false)
 
@@ -42,14 +44,39 @@ const Chat = props => {
     getUsername();
   }, [])
 
+  useEffect(() => {
+    async function getUserGroup() {
+      const { userGroup } = await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentUserInfo();
+      const group = user.attributes['custom:group']
+      console.log(group)
+      {!group ?
+        setUserGroup('User')
+      :
+        setUserGroup(group)
+      };
+    }
+    getUserGroup();
+  }, [])
+
   const onLoad = async () => {
     try {
       await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo()  
-      setProfile({
-        id: user.id,
-        name: user.attributes.name,
-      });
+      console.log(user)
+      {!user.attributes.group ?
+        setProfile({
+          id: user.id,
+          name: user.attributes.name,
+          group: 'User'
+        })
+      :
+        setProfile({
+          id: user.id,
+          name: user.attributes.name,
+          group: user.attributes.group
+        })
+      };
     }
     catch(e) {
       if (e !== 'No current user') {
@@ -102,6 +129,7 @@ const Chat = props => {
     const input = {
       channelID: '1',
       author: (username),
+      group: (userGroup),
       body: messageBody.trim()
     };
 
@@ -174,11 +202,18 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    {/* <ChatProfileImage/> */}
+                    {message.group === 'Fiserv' ?
+                      <div>
+                        {console.log(message.group)}
+                        <h3>{message.author}*</h3>
+                        {message.body}
+                      </div>
+                    :
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
                     </div>
+                  }
                 </div>
               ))}
               <div className="chat-bar composer">

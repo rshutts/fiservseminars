@@ -1,86 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onUpdateByID = /* GraphQL */ `
-  subscription OnUpdateById($id: ID!) {
-    onUpdateByID(id: $id) {
+export const onCreateMessage = /* GraphQL */ `
+  subscription OnCreateMessage {
+    onCreateMessage {
       id
-      clientId
-    }
-  }
-`;
-export const onCreatePoll = /* GraphQL */ `
-  subscription OnCreatePoll {
-    onCreatePoll {
-      id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
+      channelID
+      author
+      group
+      user
+      body
       createdAt
+      updatedAt
     }
   }
 `;
-export const onUpdatePoll = /* GraphQL */ `
-  subscription OnUpdatePoll {
-    onUpdatePoll {
+export const onUpdateMessage = /* GraphQL */ `
+  subscription OnUpdateMessage {
+    onUpdateMessage {
       id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
+      channelID
+      author
+      group
+      user
+      body
       createdAt
+      updatedAt
     }
   }
 `;
-export const onDeletePoll = /* GraphQL */ `
-  subscription OnDeletePoll {
-    onDeletePoll {
+export const onDeleteMessage = /* GraphQL */ `
+  subscription OnDeleteMessage {
+    onDeleteMessage {
       id
-      name
-      type
-      candidates {
-        nextToken
-      }
-      itemType
+      channelID
+      author
+      group
+      user
+      body
       createdAt
-    }
-  }
-`;
-export const onCreateCandidate = /* GraphQL */ `
-  subscription OnCreateCandidate {
-    onCreateCandidate {
-      id
-      pollCandidatesId
-      image
-      name
-      upvotes
-    }
-  }
-`;
-export const onUpdateCandidate = /* GraphQL */ `
-  subscription OnUpdateCandidate {
-    onUpdateCandidate {
-      id
-      pollCandidatesId
-      image
-      name
-      upvotes
-    }
-  }
-`;
-export const onDeleteCandidate = /* GraphQL */ `
-  subscription OnDeleteCandidate {
-    onDeleteCandidate {
-      id
-      pollCandidatesId
-      image
-      name
-      upvotes
+      updatedAt
     }
   }
 `;

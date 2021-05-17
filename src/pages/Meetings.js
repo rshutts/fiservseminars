@@ -6,6 +6,7 @@ import { useHistory, Link } from "react-router-dom";
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
+import Notes from '../components/Notes'
 import Iframe from 'react-iframe'
 
 import Frame, { FrameContextConsumer } from 'react-frame-component'
@@ -41,7 +42,7 @@ const Meetings = () => {
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
               <iframe 
-                src="https://master.d2wuoedcks4rry.amplifyapp.com/"
+                src="https://master.d1rju3uyvi5mba.amplifyapp.com/"
                 width="100%"
                 height="500px"
                 id="myId"
@@ -55,6 +56,9 @@ const Meetings = () => {
           <section className="right meetings">
             <div className='chat'>
               <Chat/>   
+            </div>
+            <div className='chat'>
+              <Notes/>   
             </div>
           </section> */}
         </div>       

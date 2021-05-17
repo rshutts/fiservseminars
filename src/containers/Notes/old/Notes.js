@@ -3,9 +3,8 @@ import Form from "react-bootstrap/Form";
 import { API, Storage } from "aws-amplify";
 import { useParams, useHistory } from "react-router-dom";
 import LoaderButton from "../../components/LoaderButton";
-import { onError } from "../../libs/errorLib";
-import { s3Upload } from "../../libs/awsLib";
-import config from "../config";
+import Error from "../../components/Error";
+/* import config from "../config"; */
 import "./Notes.css";
 
 export default function Notes() {
@@ -25,16 +24,11 @@ export default function Notes() {
     async function onLoad() {
       try {
         const note = await loadNote();
-        const { content, attachment } = note;
-
-        if (attachment) {
-          note.attachmentURL = await Storage.vault.get(attachment);
-        }
-
+        const { content } = note;
         setContent(content);
         setNote(note);
-      } catch (e) {
-        onError(e);
+      } catch (error) {
+        Error(error);
       }
     }
 
@@ -43,10 +37,6 @@ export default function Notes() {
 
   function validateForm() {
     return content.length > 0;
-  }
-
-  function formatFilename(str) {
-    return str.replace(/^\w+-/, "");
   }
 
   function handleFileChange(event) {
@@ -60,33 +50,17 @@ export default function Notes() {
   }
 
   async function handleSubmit(event) {
-    let attachment;
 
     event.preventDefault();
 
-    if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-      alert(
-        `Please pick a file smaller than ${
-          config.MAX_ATTACHMENT_SIZE / 1000000
-        } MB.`
-      );
-      return;
-    }
-
-    setIsLoading(true);
-
     try {
-      if (file.current) {
-        attachment = await s3Upload(file.current);
-      }
 
       await saveNote({
-        content,
-        attachment: attachment || note.attachment
+        content
       });
       history.go("/");
-    } catch (e) {
-      onError(e);
+    } catch (error) {
+      Error(error);
       setIsLoading(false);
     }
   }
@@ -111,8 +85,8 @@ export default function Notes() {
     try {
       await deleteNote();
       history.go("/");
-    } catch (e) {
-      onError(e);
+    } catch (error) {
+      Error(error);
       setIsDeleting(false);
     }
   }
@@ -127,21 +101,6 @@ export default function Notes() {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
-          </Form.Group>
-          <Form.Group controlId="file">
-            <Form.Label>Attachment</Form.Label>
-            {note.attachment && (
-              <p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={note.attachmentURL}
-                >
-                  {formatFilename(note.attachment)}
-                </a>
-              </p>
-            )}
-            <Form.Control onChange={handleFileChange} type="file" />
           </Form.Group>
           <LoaderButton
             block

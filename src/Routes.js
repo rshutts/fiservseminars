@@ -22,9 +22,6 @@ import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
 
 /*Polls*/
-/* import NewNote from "./containers/NewNote"; */
-/* import UpdateProfile from "./containers/Profile/UpdateProfile"; */
-/* import Notes from "./containers/Notes"; */
 
 /*Components*/
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
