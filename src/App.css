@@ -529,7 +529,7 @@ select#seminarDate, select#address {
 }
 .archived-container {
   background: hsla(0,0%,100%,.6);
-  width: 90%;
+  width: 96%;
   padding-bottom: 10px;
 }
 .archive-section {
@@ -612,14 +612,14 @@ select#seminarDate, select#address {
 }
 .faq-container, .bio-container {
   background: hsla(0,0%,100%,.6);
-  width: 90%;
+  width: 96%;
   padding-bottom:30px;
 }
 .faq-sections, .bio-sections {
   background: #fff;
   width: 90%;
   height: 100%;
-  padding: 1% 2%;
+  padding: 1% 0%;
   margin: 3% auto;
 }
 .faq-accordion .faq-title {
@@ -731,7 +731,7 @@ select#seminarDate, select#address {
 }
 .meetings-container {
   background: rgba(255,255,255,.6);
-  width: 90%;
+  width: 96%;
   padding-bottom: 10px;
 }
 .meetings-sections {
@@ -740,18 +740,19 @@ select#seminarDate, select#address {
   background: #fff;
   width: 95%;
   height: 100%;
-  padding: 1% 2%;
+  padding: 1% 0%;
   margin: 3% 2% 0;
 }
 .pollsFrame {
   border:none;
   border-color:transparent;
+  margin-top:20px;
 }
 .left {
     background: #fff;
     width: 100%;
     height: 100%;
-    padding: 1% 2%;
+    padding: 1%;
     margin: 10px 2%;
     display: inline-block;
 }

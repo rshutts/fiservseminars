@@ -25,7 +25,9 @@ import config from '../../aws-config';
 
 const Chat = props => {
   const [username, setState] = useState(null);
-  const [userGroup, setUserGroup] = useState(null);
+  const [userGroup, setUserGroup] = useState({
+    group: "",
+  });
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
@@ -48,12 +50,12 @@ const Chat = props => {
     async function getUserGroup() {
       const { userGroup } = await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo();
-      const group = user.attributes['custom:group']
+      const group = await Auth.currentSession();
       console.log(group)
       {!group ?
         setUserGroup('User')
       :
-        setUserGroup(group)
+        setUserGroup({group: group.accessToken.payload['cognito:groups'],});
       };
     }
     getUserGroup();

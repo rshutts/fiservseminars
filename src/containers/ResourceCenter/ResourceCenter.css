@@ -5,14 +5,14 @@
 }
 .articles-container{
     background: hsla(0,0%,100%,.6);
-    width: 90%;
+    width: 96%;
     padding-bottom:30px;
 }
 .articles-section {
     background: #fff;
     width: 90%;
     height: 100%;
-    padding: 1% 2%;
+    padding: 1% 0%;
     margin: 3% auto;
     display: flex;
     flex-direction: row;
