@@ -66,4 +66,51 @@
     border: 1px solid #f19e38;
   }
 
+  .ui.dimmer {
+    display: none;
+    position: absolute;
+    top: 0!important;
+    left: 0!important;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1em;
+    background-color: rgba(0,0,0,.85);
+    opacity: 0;
+    line-height: 1;
+    animation-fill-mode: both;
+    animation-duration: .5s;
+    transition: background-color .5s linear;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    user-select: none;
+    will-change: opacity;
+    z-index: 1000;
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+  }
+  .dimmed.dimmable>.ui.animating.dimmer, .dimmed.dimmable>.ui.visible.dimmer, .ui.active.dimmer, .show {
+    opacity:1;
+  }
+  .ui.active.dimmer.noshow {
+    opacity:0;
+  }
+
+  .openPopup {
+    background:#ff6600;
+    border-color:#ff6600;
+    color:#fff;
+    font-size:1rem;
+    font-weight:400;
+    margin-top:10px;
+    line-height: 1.5;
+    text-align: center;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
   

@@ -6,6 +6,8 @@ import '@aws-amplify/pubsub';
 import { Connect } from "aws-amplify-react";
 import Amplify, { Auth, Storage } from 'aws-amplify';
 
+import { Button, Dimmer, Segment } from 'semantic-ui-react'
+
 import VideoPlayer from '../VideoPlayer';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import Popout from 'react-popout-v2';
@@ -37,6 +39,8 @@ const Chat = props => {
     group: ""
   });
   const [isOpen, setOpen] = useState(false)
+
+  const [show, setShow] = useState();
 
   useEffect(() => {
     async function getUsername() {
@@ -143,53 +147,6 @@ const Chat = props => {
     }
   };
 
-  /* useEffect(() => {
-    const options = {
-        minUptime: 50000,
-        connectionTimeout: 40000,
-        maxRetries: Infinity,
-        maxEnqueuedMessages: Infinity,
-    };
-    const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
-    connection.onopen = (event) => {
-      console.log('WebSocket is now open.');
-    };
-
-    connection.onclose = (event) => {
-      console.log('WebSocket is now closed.');
-    };
-
-    connection.onerror = (event) => {
-      console.error('WebSocket error observed:', event);
-    };
-  })
-
-  const [image, setImage] = useState([]);
-
-  let fileInput = React.createRef();
-
-  useEffect(() => {
-    onPageRendered();
-  }, []);
-
-  const onPageRendered = async () => {
-    getProfilePicture();
-  };
-  
-  const getProfilePicture = () => {
-    Storage.get(`profile.png`, {level: 'protected'})
-      .then(url => {
-        var myRequest = new Request(url);
-        fetch(myRequest).then(function(response) {
-          if (response.status === 200) {
-            setImage(url);
-          }
-          console.log(url)
-        });
-      })
-      .catch(err => console.log(err));    
-  }; */
-  
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -200,6 +157,12 @@ return (
           <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
           <ScrollToBottom>
           <div className="messages-scroller messages">
+          {/* <Button
+            onClick={() => setShow(!show)}
+            className='dimmerShow'
+          >Show Chat</Button> */}
+          {/* <Segment>
+          <Dimmer active className={`${show ? "show" : "noshow"}`} /> */}
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -227,11 +190,11 @@ return (
                   onChange={handleChange}
                   value={messageBody} />
               </form>
-            </div>
+            </div>{/* </Segment> */}
           </div>
         </ScrollToBottom>
         <>
-          {!isOpen && <button onClick={() => setOpen(true)}>Open Popout</button>}
+          {!isOpen && <button className='openPopup' onClick={() => setOpen(true)}>Open Popout</button>}
           {isOpen && (
           <Popout
             id={'ex2'}
