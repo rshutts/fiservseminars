@@ -27,15 +27,15 @@ class Right extends Component{
     
       <Accordion fluid styled>
         <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
+          active={activeIndex === 1}
+          index={1}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
             Day 1: Efficiency, Customer Reporting<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Systems Features and Functionality – Making It Easy
             </h3>
@@ -43,7 +43,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Gaining Customer Clarity Through Better Reporting (Session I)
             </h3>
@@ -51,7 +51,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Gaining Customer Clarity Through Better Reporting (Session II)
             </h3>
@@ -60,7 +60,7 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 1}
+          active={activeIndex === 0}
           index={1}
           onClick={this.handleClick}
         >
@@ -68,7 +68,7 @@ class Right extends Component{
             Day 2:  Revenue, Tracking, &amp; Analysis <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Maximizing Revenue
             </h3>
@@ -76,7 +76,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Tracking, Measuring, &amp; Analyzing Revenue
             </h3>
@@ -84,7 +84,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Customer Profitability
             </h3>
