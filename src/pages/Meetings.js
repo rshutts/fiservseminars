@@ -42,9 +42,9 @@ const Meetings = () => {
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
               <iframe 
-                src="https://master.d1rju3uyvi5mba.amplifyapp.com/"
+                src="https://main.d8joca129bu9k.amplifyapp.com/"
                 width="100%"
-                height="550px"
+                height="700px"
                 id="myId"
                 className="pollsFrame"
                 display="initial"
