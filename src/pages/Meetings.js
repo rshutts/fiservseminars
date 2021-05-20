@@ -44,7 +44,7 @@ const Meetings = () => {
               <iframe 
                 src="https://main.d8joca129bu9k.amplifyapp.com/"
                 width="100%"
-                height="fit-content"
+                height="700px"
                 id="myId"
                 className="pollsFrame"
                 display="initial"
