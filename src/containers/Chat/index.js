@@ -142,6 +142,25 @@ const Chat = props => {
     }
   };
 
+  useEffect(() => {
+    const options = {
+        minUptime: 50000,
+        connectionTimeout: 40000,
+        maxRetries: Infinity,
+        maxEnqueuedMessages: Infinity,
+    };
+    const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
+    connection.onopen = (event) => {
+      console.log('WebSocket is now open.');
+    };
+    connection.onclose = (event) => {
+      console.log('WebSocket is now closed.');
+    };
+    connection.onerror = (event) => {
+      console.error('WebSocket error observed:', event);
+    };
+  })
+
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -163,9 +182,8 @@ return (
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
                     {console.log(message.group)}
-                    {message.group === '{group=[Fiserv]}' ?
+                    {message.group === '{group=[Fiserv]}' || '[Fiserv]' ?
                       <div>
-                        
                         <h3>{message.author}<FaStar className="fiserv-user"/></h3>
                         {message.body}
                       </div>
