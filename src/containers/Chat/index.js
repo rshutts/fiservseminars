@@ -22,14 +22,13 @@ import { messagesByChannelID } from '../../graphql/queries';
 import Error from "../../components/Error";
 
 import './Chat.css';
+import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
 import config from '../../aws-config';
 
 const Chat = props => {
   const [username, setState] = useState(null);
-  const [userGroup, setUserGroup] = useState({
-    group: "",
-  });
+  const [userGroup, setUserGroup] = useState(null);
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
@@ -52,15 +51,11 @@ const Chat = props => {
 
   useEffect(() => {
     async function getUserGroup() {
-      const { userGroup } = await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo();
       const group = await Auth.currentSession();
-      console.log(group)
-      {!group ?
-        setUserGroup('User')
-      :
-        setUserGroup({group: group.accessToken.payload['cognito:groups'],});
-      };
+      const userGroup = group.accessToken.payload['cognito:groups'];
+      setUserGroup(userGroup);
+      console.log(userGroup)
     }
     getUserGroup();
   }, [])
@@ -167,10 +162,11 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    {message.group === 'Fiserv' ?
+                    {console.log(message.group)}
+                    {message.group === '{group=[Fiserv]}' ?
                       <div>
-                        {console.log(message.group)}
-                        <h3>{message.author}*</h3>
+                        
+                        <h3>{message.author}<FaStar className="fiserv-user"/></h3>
                         {message.body}
                       </div>
                     :
@@ -189,12 +185,12 @@ return (
                   placeholder="Type your message here..."
                   onChange={handleChange}
                   value={messageBody} />
+                  {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
             </div>{/* </Segment> */}
           </div>
         </ScrollToBottom>
         <>
-          {!isOpen && <button className='openPopup' onClick={() => setOpen(true)}>Open Popout</button>}
           {isOpen && (
           <Popout
             id={'ex2'}
