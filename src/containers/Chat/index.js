@@ -149,6 +149,7 @@ const Chat = props => {
         maxRetries: Infinity,
         maxEnqueuedMessages: Infinity,
     };
+    
     const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
     connection.onopen = (event) => {
       console.log('WebSocket is now open.');
@@ -182,7 +183,7 @@ return (
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
                     {console.log(message.group)}
-                    {message.group === '{group=[Fiserv]}' || '[Fiserv]' ?
+                    {message.group === '{group=[Fiserv]}' || message.group === '[Fiserv]' ?
                       <div>
                         <h3>{message.author}<FaStar className="fiserv-user"/></h3>
                         {message.body}
@@ -197,12 +198,14 @@ return (
               ))}
               <div className="chat-bar composer">
                 <form onSubmit={handleSubmit}>
+                
                 <input
                   type="text"
                   name="message"
                   placeholder="Type your message here..."
                   onChange={handleChange}
                   value={messageBody} />
+                  <FaStar className="fiserv-employee"/>Fiserv employee
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
             </div>{/* </Segment> */}
