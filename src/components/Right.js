@@ -60,7 +60,7 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 0}
+          active={activeIndex === 2}
           index={1}
           onClick={this.handleClick}
         >
@@ -68,7 +68,7 @@ class Right extends Component{
             Day 2:  Revenue, Tracking, &amp; Analysis <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
                 Maximizing Revenue
             </h3>
@@ -76,7 +76,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
                 Tracking, Measuring, &amp; Analyzing Revenue
             </h3>
@@ -84,7 +84,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
                 Customer Profitability
             </h3>
@@ -93,7 +93,7 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 2}
+          active={activeIndex === 0}
           index={2}
           onClick={this.handleClick}
         >
@@ -101,7 +101,7 @@ class Right extends Component{
             Day 3:  Regulatory Tracking, Commercial Accounts <Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 2}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Tools for Effective Regulatory Reporting &amp; Tracking
             </h3>
@@ -109,7 +109,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 2}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Commercial Accounts – Building Relationships &amp; Revenue
             </h3>
@@ -117,7 +117,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 2}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Executive Networking Session
             </h3>
