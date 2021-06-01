@@ -12,10 +12,7 @@ const config = {
     "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
     "aws_appsync_apiKey": "da2-ppun6mvb6bhqnjyl5kyzauicrq",
     "aws_s3_bucket": "seminar-profile-photos",
-    "aws_s3_bucket_region": "us-east-1",
-    "PLAYBACK_URL" : "https://ca351d1575ab.us-east-1.playback.live-video.net/api/video/v1/us-east-1.076005434014.channel.bQ1l9LwPytZA.m3u8",
-    "CHAT_WEBSOCKET" : "wss://9t6v92tx81.execute-api.us-east-1.amazonaws.com/prod"
-    /* "aws_appsync_apiKey": "da2-iqwe4wuf7jhezprwwtrc7b4zua" */
+    "aws_s3_bucket_region": "us-east-1"
 };
 
 

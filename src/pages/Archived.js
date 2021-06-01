@@ -1,18 +1,16 @@
 import React, { Fragment, Component } from "react";
 import { Card, Accordion, Icon, Segment, Header, Tab, Container } from 'semantic-ui-react'
-import { Button } from 'reactstrap'
-import SideNav from '../components/SideNav'
-import DepositParams from '../components/Videos/Sessions/DepositParams'
-import UserDefinedOptions from '../components/Videos/Sessions/UserDefinedOptions'
-import OnlinePosting from '../components/Videos/Sessions/OnlinePosting'
-import DepositsOther from '../components/Videos/Sessions/DepositsOther'
-import LoanParams from '../components/Videos/Sessions/LoanParams'
-import LoanCredit from '../components/Videos/Sessions/LoanCredit'
-import LoansDidYouKnow from '../components/Videos/Sessions/LoansDidYouKnow'
-import Loans from '../components/Videos/Sessions/Loans'
-import Forms from '../components/Videos/Sessions/I-32Forms'
-import CDD from '../components/Videos/Sessions/CDD'
-import PrecisionRoadmap from "../components/Videos/Sessions/PrecisionRoadmap";
+import Button from "react-bootstrap/Button";
+import FeaturesFunctionality from '../components/Videos/Sessions/FeaturesFunctionality'
+import BetterReporting1 from '../components/Videos/Sessions/BetterReporting1'
+import BetterReporting2 from '../components/Videos/Sessions/BetterReporting2'
+import MaximizingRevenue from '../components/Videos/Sessions/MaximizingRevenue'
+import AnalyzingRevenue from '../components/Videos/Sessions/AnalyzingRevenue'
+import CustomerProfitability from '../components/Videos/Sessions/CustomerProfitability'
+import RegulatoryReporting from '../components/Videos/Sessions/RegulatoryReporting'
+import CommercialAccounts from '../components/Videos/Sessions/CommercialAccounts'
+
+import '../containers/VideoPlayer/VideoPlayer.css';
 
 class Archived extends Component{
     state = { activeIndex: 0 };
@@ -30,36 +28,28 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <DepositParams/>
+                                <FeaturesFunctionality/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Deposit Parameters Review</Card.Header>
+                                        <Card.Header className="card-header">System Features and Functionality - Making It Easy</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <UserDefinedOptions/>
+                                <BetterReporting1/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">User Defined Options: Tips and Tricks</Card.Header>
+                                        <Card.Header className="card-header">Gaining Customer Clarity Through Better Reporting - Session 1</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
                         </Card.Group>
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards">
-                                <OnlinePosting/>
+                                <BetterReporting2/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Online Posting Features</Card.Header>
-                                    </div>
-                                </Card.Content>
-                            </Card>
-                            <Card className="video-cards">
-                                <DepositsOther/>
-                                <Card.Content className="video-content">
-                                    <div className="video-description">
-                                        <Card.Header className="card-header">Precision 2020.1 and 2020.2 Deposits & Other</Card.Header>
+                                        <Card.Header className="card-header">Gaining Customer Clarity Through Better Reporting - Session 2</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
@@ -75,36 +65,28 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <LoanParams/>
+                                <MaximizingRevenue/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Loan Parameters</Card.Header>
+                                        <Card.Header className="card-header">Maximizing Revenue</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <LoanCredit/>
+                                <AnalyzingRevenue/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Loan Credit</Card.Header>
+                                        <Card.Header className="card-header">Tracking, Measuring, and Analyzing Revenue</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
                         </Card.Group>
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards">
-                                <LoansDidYouKnow/>
+                                <CustomerProfitability/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Loans: Did You Know</Card.Header>
-                                    </div>
-                                </Card.Content>
-                            </Card>
-                            <Card className="video-cards">
-                                <Loans/>
-                                <Card.Content className="video-content">
-                                    <div className="video-description">
-                                        <Card.Header className="card-header">Precision 2020.2 and 2020.3 Loans</Card.Header>
+                                        <Card.Header className="card-header">Customer Profitability</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
@@ -120,31 +102,21 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <Forms/>
+                                <RegulatoryReporting/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Employ I-32 Forms Design to Set Your Institution Apart</Card.Header>
+                                        <Card.Header className="card-header">Tools for Effective Regulatory Reporting and Tracking</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <CDD/>
+                                <CommercialAccounts/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Increase CDD/BSA Compliance With BPM</Card.Header>
+                                        <Card.Header className="card-header">Commercial Accounts: Building Relationships and Revenue</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
-                        </Card.Group>
-                        <Card.Group itemsPerRow={2}>
-                            <Card className="video-cards">
-                                <PrecisionRoadmap/>
-                                <Card.Content className="video-content">
-                                    <div className="video-description">
-                                        <Card.Header className="card-header">Precision Roadmap</Card.Header>
-                                    </div>
-                                </Card.Content>
-                            </Card>
                         </Card.Group>
                     </Segment>
                 </Tab.Pane>
@@ -152,24 +124,19 @@ class Archived extends Component{
             }
           ];
         return (
-            <Fragment>
-                <div className="next-steps my-5 content-wrapper">
-                    <SideNav />
-                    <div className="main-content archived">
-                        <div className="archived-container">
-                            <Header as='h2' className="header page-title">
-                                <i className='fa fa-fw fa-file-archive' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Archived: Learning Sessions
-                            </Header>
-                            <Tab
-                                panes={panes}
-                                activeIndex={activeIndex}
-                                onTabChange={this.handleTabChange}
-                                className="archive-section"
-                            />
-                        </div>
-                    </div>
+            <div className="main-content archived">
+                <div className="archived-container">
+                    <Header as='h2' className="header page-title">
+                        <i className='fa fa-fw fa-file-archive' style={{ fontSize: '1.5em', margin: '5px 10px 5px 5px' }}/>Archived: Learning Sessions
+                    </Header>
+                    <Tab
+                        panes={panes}
+                        activeIndex={activeIndex}
+                        onTabChange={this.handleTabChange}
+                        className="archive-section"
+                    />
                 </div>
-            </Fragment>
+            </div>
         );
     }
   }

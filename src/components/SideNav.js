@@ -99,7 +99,8 @@ function Sidenav() {
                 </Link>
                 <Link
                     className='sidebar-nav-link'
-                    to={'/session?room=Fiserv'}
+                    /* to={'/session?room=Fiserv'} */
+                    to={'/archived-sessions'}
                   >
                   <MenuItem icon={<FaUsers/>}>
                     Learning Sessions

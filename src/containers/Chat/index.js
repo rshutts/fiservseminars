@@ -37,6 +37,9 @@ const Chat = props => {
     name: "",
     group: ""
   });
+
+  const [connection, setConnection] = useState(null);
+
   const [isOpen, setOpen] = useState(false)
 
   const [show, setShow] = useState();
@@ -55,7 +58,6 @@ const Chat = props => {
       const group = await Auth.currentSession();
       const userGroup = group.accessToken.payload['cognito:groups'];
       setUserGroup(userGroup);
-      console.log(userGroup)
     }
     getUserGroup();
   }, [])
@@ -64,7 +66,6 @@ const Chat = props => {
     try {
       await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo()  
-      console.log(user)
       {!user.attributes.group ?
         setProfile({
           id: user.id,
@@ -149,14 +150,15 @@ const Chat = props => {
         maxRetries: Infinity,
         maxEnqueuedMessages: Infinity,
     };
-    
     const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
     connection.onopen = (event) => {
       console.log('WebSocket is now open.');
     };
+
     connection.onclose = (event) => {
       console.log('WebSocket is now closed.');
     };
+
     connection.onerror = (event) => {
       console.error('WebSocket error observed:', event);
     };
@@ -182,7 +184,6 @@ return (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    {console.log(message.group)}
                     {message.group === '{group=[Fiserv]}' || message.group === '[Fiserv]' ?
                       <div>
                         <h3>{message.author}<FaStar className="fiserv-user"/></h3>

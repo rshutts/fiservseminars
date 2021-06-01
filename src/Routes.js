@@ -6,6 +6,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Meetings from "./pages/Meetings";
+import Archived from "./pages/Archived";
 import FAQ from './pages/FAQ';
 import Bios from './pages/Bios';
 import PasswordReset from './pages/ResetPassword';
@@ -63,6 +64,9 @@ const Routes = () => (
           </UnauthenticatedRoute>
           <AuthenticatedRoute exact path="/session">
             <Meetings />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/archived-sessions">
+            <Archived />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile">
             <Profile />
