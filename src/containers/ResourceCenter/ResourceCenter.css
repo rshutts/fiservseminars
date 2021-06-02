@@ -46,3 +46,12 @@
     text-decoration: underline;
     color:#2E8BC9;
 }
+
+@media (max-width: 767px) {
+    .articles-section {
+        flex-direction: column;
+    } 
+    .ui.padded.two.column.grid.article {
+        width:100%;
+    }
+}

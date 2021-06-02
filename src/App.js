@@ -19,6 +19,7 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import { useMediaQuery } from 'react-responsive'
 
 /*Libs*/
 import { AppContext } from "./libs/contextLib";
@@ -36,7 +37,7 @@ import ProfileImage from "./containers/Profile/components/profileImage"
 import "./App.css";
 
 /*fontawesome*/
-import { FaUser, FaSignOutAlt, FaCaretDown } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaUser, FaUsers, FaNewspaper, FaQuestionCircle, FaRegAddressBook, FaSignOutAlt, FaCaretDown } from 'react-icons/fa';
 
 function App() {
   const history = useHistory();
@@ -48,6 +49,7 @@ function App() {
   const [profile, setProfile] = useState({
     username: ""
   });
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
   useEffect(() => {
@@ -127,6 +129,57 @@ function App() {
                       </DropdownToggle>
                       <DropdownMenu>
                         <DropdownItem header>{profile.username}</DropdownItem>
+                        {isMobile && (
+                            <>
+                              <DropdownItem
+                                href='/'
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaHome/>&nbsp;
+                                Home
+                              </DropdownItem>
+                              <DropdownItem
+                                href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Precision-Overview-and-Agenda.pdf'
+                                target='_blank'
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaCalendarAlt/>&nbsp;
+                                Agenda
+                              </DropdownItem>
+                              <DropdownItem
+                                href='/faq'
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaQuestionCircle/>&nbsp;
+                                FAQ
+                              </DropdownItem>
+                              <DropdownItem
+                                href='/speaker-bios'
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaRegAddressBook/>&nbsp;
+                                Speaker Bios
+                              </DropdownItem>
+                              <DropdownItem
+                                /* to={'/session?room=Fiserv'} */
+                                href='/archived-sessions'
+
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaUsers/>&nbsp;
+                                Learning Sessions
+                              </DropdownItem>
+                              <DropdownItem
+                                /* to={'/session?room=Fiserv'} */
+                                href='/resource-center/articles'
+                                className='dropdown-profile'
+                                activeClassName='router-link-exact-active'
+                              ><FaNewspaper/>&nbsp;
+                                Session Collateral
+                              </DropdownItem>
+                            </>
+                          )
+                        }
                         <DropdownItem
                           href='/profile'
                           className='dropdown-profile'

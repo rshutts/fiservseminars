@@ -12,7 +12,7 @@ export default function SpeakerBios() {
 
   return (
     <div className="App">
-      <div className="row">
+      <div className="speaker-bios row">
         {speakerData &&
           speakerData.map(p => {
             return (    

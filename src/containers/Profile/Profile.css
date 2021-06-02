@@ -55,3 +55,11 @@
     height: 100%;
     padding: 1% 0%;
 }
+
+@media (max-width: 767px) {
+    .profile-section.card {
+        width:90%;
+        padding: 1% 2%;
+        margin: 3% 2% 0;
+    }
+}
