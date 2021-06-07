@@ -46,8 +46,10 @@ const Chat = props => {
 
   useEffect(() => {
     async function getUsername() {
-      const { username } = await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentAuthenticatedUser();
+      const username = user.attributes.name;
       setState(username);
+      console.log(username)
     }
     getUsername();
   }, [])
@@ -66,6 +68,7 @@ const Chat = props => {
     try {
       await Auth.currentAuthenticatedUser();
       const user = await Auth.currentUserInfo()  
+      
       {!user.attributes.group ?
         setProfile({
           id: user.id,
