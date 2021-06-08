@@ -200,7 +200,7 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <NavItem>
+                    {/* <NavItem>
                     <NavLink
                         href="/signup" 
                         id='signupBtn'
@@ -209,7 +209,7 @@ function App() {
                       >
                         Signup
                       </NavLink>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem>
                       <NavLink
                         href="/login" 

@@ -79,7 +79,9 @@ export default function Signup() {
   }
     return (
       <div className="Signup">
-        <h2 className="header page-title">Signup</h2>
+        <h1 style={{ textAlign: 'center' }}>Signup for this event has closed.</h1><br />
+        <h3 style={{ textAlign: 'center', fontSize:"15px" }}>If you have already signed up, please use the Login button above to login and view content.</h3>
+        {/* <h2 className="header page-title">Signup</h2>
         {error && <Error errorMessage={error}/>}
         <Form.Text id="passwordHelpBlock" muted>
           Your password must be at least 8 characters long, contain letters and numbers, and
@@ -104,14 +106,6 @@ export default function Signup() {
                 style={{ display: 'none'}}
               />
             </Form.Group>
-            {/* <Form.Group className="required" controlId="username" size="lg">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="username"
-                value={fields.username}
-                onChange={handleFieldChange}
-              />
-            </Form.Group> */}
           </Form.Row>
           <Form.Row>
             <Form.Group className="required" controlId="password" size="lg">
@@ -252,7 +246,6 @@ export default function Signup() {
                 as="select"
               >
                 <option></option>
-                {/* <option>April 20-22</option> */}
                 <option>May 18-20</option>
               </Form.Control>
               <Form.Control
@@ -275,7 +268,6 @@ export default function Signup() {
               feedback="You must agree before submitting."
               className="terms-and-conditons"
               onClick={onClickCheck}
-              /* disabled={disabled} */
             />
             <div className="privacy-policy">
               I agree to the Fiserv <a href='https://www.fiserv.com/en/about-fiserv/privacy-notice.html' target='_blank'>privacy policy</a>
@@ -296,7 +288,7 @@ export default function Signup() {
         >
           Signup
         </LoaderButton>
-      </Form>
+      </Form> */}
       </div>
       
     );
