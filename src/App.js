@@ -170,8 +170,8 @@ function App() {
                                 Learning Sessions
                               </DropdownItem>
                               <DropdownItem
-                                /* to={'/session?room=Fiserv'} */
-                                href='/resource-center/articles'
+                                to={'/session?room=Fiserv'}
+                                /* href='/resource-center/articles' */
                                 className='dropdown-profile'
                                 activeClassName='router-link-exact-active'
                               ><FaNewspaper/>&nbsp;
@@ -200,7 +200,7 @@ function App() {
                   </>
                 ) : (
                   <>
-                    {/* <NavItem>
+                    <NavItem>
                     <NavLink
                         href="/signup" 
                         id='signupBtn'
@@ -209,7 +209,7 @@ function App() {
                       >
                         Signup
                       </NavLink>
-                    </NavItem> */}
+                    </NavItem>
                     <NavItem>
                       <NavLink
                         href="/login" 
