@@ -72,7 +72,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 3} className="faq-content">
                     <p>
-                        The Networking Session will be a live Webex meeting. Login information will be sent the day before as well as displayed in the Learning Sessions tab. You will be able to talk and chat live with a Fiserv expert. 
+                        The Networking Session will be a Teams meeting. Login information will be sent the day before as well as displayed in the Learning Sessions tab. You will be able to talk and chat live with a Fiserv expert. We encourage the use of web cams. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -82,11 +82,11 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    Will these sessions be recorded to watch at a later date?
+                        Will these sessions be recorded to watch at a later date?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 4} className="faq-content">
                     <p>
-                        Yes, you will have access to this site until July 31<sup>st</sup>. 
+                        Yes, you will have access to this site until December 31<sup>st</sup>, 2021. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -96,11 +96,11 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                        How does my institution get unlimited connections?
+                        What does one connection mean? 
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 5} className="faq-content">
                     <p>
-                        Please have each user register individually. 
+                        One connection always you to be signed in at one place at one time. If you would like additional connections please have each user register individually. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -110,9 +110,23 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    I have additional questions. Who should I reach out to?
+                        How does my institution get unlimited connections?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 6} className="faq-content">
+                    <p>
+                        Please have each user register individually. 
+                    </p>
+                    </Accordion.Content>
+                    <Accordion.Title
+                    active={activeIndex === 7}
+                    index={7}
+                    onClick={this.handleClick}
+                    className="faq-title"
+                    >
+                    <Icon name='dropdown' />
+                    I have additional questions. Who should I reach out to?
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === 7} className="faq-content">
                     <p>
                         Please reach out to <a href="mailto:educationseminars@fiserv.com">educationseminars@fiserv.com</a> 
                     </p>

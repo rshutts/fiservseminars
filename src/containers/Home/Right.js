@@ -37,7 +37,7 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Account Cleanup
+                Database Clean-Up
             </h3>
             <p>
                 @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
@@ -53,7 +53,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Clean Up Quick Bites
+                Clean-Up Quick Bites
             </h3>
             <p>
                 @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
@@ -61,7 +61,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Networking Session
+                Networking
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
@@ -78,7 +78,7 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Hidden Gems Session 1- Automation
+                Hidden Gems for Loans - Session 1
             </h3>
             <p>
                 @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
@@ -86,7 +86,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Hidden Gems  Session 2- Efficiencies
+                Hidden Gems for Loans - Session 2
             </h3>
             <p>
                 @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
@@ -94,7 +94,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Essentials for Participations
+                Essentials for Participation Loans
             </h3>
             <p>
                 @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
@@ -102,7 +102,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Networking Session
+                Networking
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
@@ -143,7 +143,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Networking Session
+                Networking
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.

@@ -413,7 +413,7 @@ ul.navbar-buttons {
   left: 0;
   z-index: 1006;
   min-width: 64px;
-  min-height: 745px;
+  min-height: fit-content;
 }
 .custom-sidenav div.sidebar.menu {
   position: sticky;

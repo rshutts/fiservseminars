@@ -40,9 +40,9 @@ export default function SignupConfirmation() {
 
   return (
     <div className="main-content-login">
-      <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Fall Knowledge Exchange!</h1>
-      <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready.<br />
-      Please login below to proceed.</h3><br />
+      <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Fall Education Seminar!</h1>
+      <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready. Please login below to proceed.</h3>
+      <h3 style={{ textAlign: 'center', fontSize:"13px", color:"#DD3435" }}>You will be receiving a calendar invite for your session of choice within a week of signing up.</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Email or Username</Form.Label>
