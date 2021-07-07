@@ -8,8 +8,8 @@ import { useAppContext } from "../libs/contextLib";
 import { onError } from "../libs/errorLib";
 
 
-import Left from "../containers/Profile/Left";
-import Right from "../components/Right";
+import Left from "../containers/Home/Left";
+import Right from "../containers/Home/Right";
 
 export default function Home() {
     return (

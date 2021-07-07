@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 // import Notes from '../components/notes'
 
 class Right extends Component{
-    state = { activeIndex: -1 }
+    state = { activeIndex: 0 }
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps
@@ -32,31 +32,39 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 1: Efficiency, Customer Reporting<Icon name='dropdown' />
+            Day 1<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Systems Features and Functionality – Making It Easy
+                Account Cleanup
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Gaining Customer Clarity Through Better Reporting (Session I)
+                Handling Dormant &amp; Inactive Accounts 
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Gaining Customer Clarity Through Better Reporting (Session II)
+                Clean Up Quick Bites
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 0}>
+            <h3 className="meetingTitle">
+                Networking Session
+            </h3>
+            <p>
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -65,31 +73,39 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 2:  Revenue, Tracking, &amp; Analysis <Icon name='dropdown' />
+            Day 2<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Maximizing Revenue
+                Hidden Gems Session 1- Automation
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Tracking, Measuring, &amp; Analyzing Revenue
+                Hidden Gems  Session 2- Efficiencies
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Customer Profitability
+                Essentials for Participations
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 1}>
+            <h3 className="meetingTitle">
+                Networking Session
+            </h3>
+            <p>
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -98,31 +114,39 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 3:  Regulatory Tracking, Commercial Accounts <Icon name='dropdown' />
+            Day 3<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Tools for Effective Regulatory Reporting &amp; Tracking
+                Precision Releases
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Commercial Accounts – Building Relationships &amp; Revenue
+                Precision Roadmap
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Executive Networking Session
+                Precision UI
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 2}>
+            <h3 className="meetingTitle">
+                Networking Session
+            </h3>
+            <p>
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
       </Accordion>

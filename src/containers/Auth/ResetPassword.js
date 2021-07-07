@@ -72,7 +72,7 @@ export default function ResetPassword() {
     return (
       <Form onSubmit={handleSendCodeClick} className="pwreset-form">
         <Form.Group bsSize="large" controlId="username">
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Email or Username</Form.Label>
           <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroupPrepend"><FaUser/></InputGroup.Text>

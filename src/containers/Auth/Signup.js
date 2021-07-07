@@ -13,11 +13,11 @@ export default function Signup() {
     email: "",
     username: "",
     password: "",
-    name: "",
-    given_name: "",
-    nickname: "",
-    locale: "",
-    address: "",
+    fullName: "",
+    bankName: "",
+    title: "",
+    city: "",
+    state: "",
     seminarDate: "",
   });
   const history = useHistory();
@@ -32,12 +32,13 @@ export default function Signup() {
   function validateForm() {
     return (
       fields.email.length > 0 &&
+      fields.username.length > 0 &&
       fields.password.length > 0 &&
-      fields.name.length > 0 &&
-      fields.given_name.length > 0 &&
-      fields.nickname.length > 0 &&
-      fields.locale.length > 0 &&
-      fields.address.length > 0 &&
+      fields.fullName.length > 0 &&
+      fields.bankName.length > 0 &&
+      fields.title.length > 0 &&
+      fields.city.length > 0 &&
+      fields.state.length > 0 &&
       fields.seminarDate.length > 0
     );
   }
@@ -54,15 +55,15 @@ export default function Signup() {
     setIsLoading(true);
     try {
       const newUser = await Auth.signUp({
-        username: fields.email,
+        username: fields.username,
         password: fields.password,
         attributes: {
           email: fields.email,
-          name: fields.name,
-          given_name: fields.given_name,
-          nickname: fields.nickname,
-          locale: fields.locale,
-          address: fields.address,
+          'custom:fullName': fields.fullName,
+          'custom:bankName': fields.bankName,
+          'custom:title': fields.title,
+          'custom:city': fields.city,
+          'custom:state': fields.state,
           'custom:seminarDate': fields.seminarDate
         },    
       });
@@ -79,9 +80,9 @@ export default function Signup() {
   }
     return (
       <div className="Signup">
-        <h1 style={{ textAlign: 'center' }}>Signup for this event has closed.</h1><br />
-        <h3 style={{ textAlign: 'center', fontSize:"15px" }}>If you have already signed up, please use the Login button above to login and view content.</h3>
-        {/* <h2 className="header page-title">Signup</h2>
+        {/* <h1 style={{ textAlign: 'center' }}>Signup for this event has closed.</h1><br />
+        <h3 style={{ textAlign: 'center', fontSize:"15px" }}>If you have already signed up, please use the Login button above to login and view content.</h3> */}
+        <h2 className="header page-title">Signup</h2>
         {error && <Error errorMessage={error}/>}
         <Form.Text id="passwordHelpBlock" muted>
           Your password must be at least 8 characters long, contain letters and numbers, and
@@ -99,11 +100,12 @@ export default function Signup() {
               />
             </Form.Group>
             <Form.Group className="required" controlId="username" size="lg">
+              <Form.Label>Username</Form.Label>
               <Form.Control
                 type="username"
                 onChange={handleFieldChange}
-                value={fields.email}
-                style={{ display: 'none'}}
+                value={fields.username}
+                /* style={{ display: 'none'}} */
               />
             </Form.Group>
           </Form.Row>
@@ -135,48 +137,48 @@ export default function Signup() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group className="required" controlId="name" size="lg">
+            <Form.Group className="required" controlId="fullName" size="lg">
               <Form.Label>Full Name</Form.Label>
               <Form.Control
-                type="name"
+                type="fullName"
                 onChange={handleFieldChange}
-                value={fields.name}
+                value={fields.fullName}
               />
             </Form.Group>
-            <Form.Group className="required" controlId="given_name" size="lg">
+            <Form.Group className="required" controlId="bankName" size="lg">
               <Form.Label>Bank Name</Form.Label>
               <Form.Control
-                type="given_name"
+                type="bankName"
                 onChange={handleFieldChange}
-                value={fields.given_name}
+                value={fields.bankName}
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group className="required" controlId="nickname" size="lg">
+            <Form.Group className="required" controlId="title" size="lg">
               <Form.Label>Title</Form.Label>
               <Form.Control
-                type="nickname"
+                type="title"
                 onChange={handleFieldChange}
-                value={fields.nickname}
+                value={fields.title}
               />
             </Form.Group>
-            <Form.Group className="required" controlId="locale" size="lg">
+            <Form.Group className="required" controlId="city" size="lg">
               <Form.Label>City</Form.Label>
               <Form.Control
-                type="locale"
+                type="city"
                 onChange={handleFieldChange}
-                value={fields.locale}
+                value={fields.city}
               />
             </Form.Group>
           </Form.Row>
           <Form.Row> 
-            <Form.Group className="required" controlId="address" size="lg">
+            <Form.Group className="required" controlId="state" size="lg">
               <Form.Label>State</Form.Label>
               <Form.Control
-                type="address"
+                type="state"
                 onChange={handleFieldChange}
-                value={fields.address}
+                value={fields.state}
                 as="select"
               >
                 <option></option>
@@ -232,9 +234,9 @@ export default function Signup() {
                 <option>Wyoming</option>
               </Form.Control>
               <Form.Control
-                type="address"
+                type="state"
                 onChange={handleFieldChange}
-                value={fields.address}
+                value={fields.state}
                 style={{ display: 'none'}}
               />
             </Form.Group>
@@ -246,7 +248,7 @@ export default function Signup() {
                 as="select"
               >
                 <option></option>
-                <option>May 18-20</option>
+                <option>August 20</option>
               </Form.Control>
               <Form.Control
                 type="birthdate"
@@ -288,7 +290,7 @@ export default function Signup() {
         >
           Signup
         </LoaderButton>
-      </Form> */}
+      </Form>
       </div>
       
     );

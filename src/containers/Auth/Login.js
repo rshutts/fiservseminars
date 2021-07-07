@@ -51,7 +51,7 @@ export default function Login() {
       {error && <Error errorMessage={error}/>}
       <Form onSubmit={handleSubmit} className="login-form">
         <Form.Group size="lg" controlId="username">
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Email or Username</Form.Label>
           <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroupPrepend"><FaUser/></InputGroup.Text>

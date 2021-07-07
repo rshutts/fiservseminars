@@ -33,20 +33,19 @@ function ProfileCards(props) {
 
   const onLoad = async () => {
     try {
-      const user = await Auth.currentUserInfo();
-      const group = await Auth.currentSession();
+      const user = await Auth.currentAuthenticatedUser();
       console.log(user)
       setProfile({
         username: user.username,
         email: user.attributes.email,
-        name: user.attributes.name,
-        bank: user.attributes.given_name,
-        title: user.attributes.nickname,
-        city: user.attributes.locale,
-        state: user.attributes.address
+        name: user.attributes['custom:fullName'],
+        bank: user.attributes['custom:bankName'],
+        title: user.attributes['custom:title'],
+        city: user.attributes['custom:city'],
+        state: user.attributes['custom:state']
       });
       setUserGroup({
-        group: group.accessToken.payload['cognito:groups'],
+        group: user.signInUserSession.accessToken.payload["cognito:groups"],
       });
     } catch(e) {
  
@@ -78,23 +77,23 @@ function ProfileCards(props) {
             </h1>
           </Card.Header>
           <Card.Body>
-            {userGroup.group.includes('Fiserv') 
+            {userGroup.group === 'Fiserv'
             ?
               <Card.Title>
                 Email:  {profile.username}*
               </Card.Title>
             :
               <Card.Title>
-                Email:  {profile.email}
+                Email:  {profile.email} <br />
+                Username:  {profile.username}
               </Card.Title>
             }
-            <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">&nbsp;</Card.Subtitle>
             <Card.Text>
               <h2>Bank Name:  {profile.bank}</h2>
               <h2>Title:  {profile.title}</h2>
               <h2>City: {profile.city}</h2>
               <h2>State: {profile.state}</h2>
-              <h2>Group: {userGroup.group}</h2>
             </Card.Text>
             <Button
               id='loginBtn'

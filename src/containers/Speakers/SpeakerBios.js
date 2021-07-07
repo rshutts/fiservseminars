@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { speakerData } from './SpeakerData'
+import { speakerData } from '../../components/Data/SpeakerData'
 import { Button } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
 import Card from "react-bootstrap/Card";

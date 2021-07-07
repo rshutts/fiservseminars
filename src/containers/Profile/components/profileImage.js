@@ -20,7 +20,7 @@ export default function ProfileImage() {
       const user = await Auth.currentUserInfo();
       console.log(user)
       setProfile({
-        name: user.attributes.name,
+        name: user.attributes['custom:fullName'],
       });
     } catch(e) {
  
