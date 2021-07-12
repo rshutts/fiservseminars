@@ -7,12 +7,15 @@ import LoaderButton from "../../components/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
 import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
+import { useForm } from 'react-hook-form';
+import { FaExclamationCircle } from 'react-icons/fa'
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
     email: "",
     username: "",
     password: "",
+    confirmPassword:"",
     fullName: "",
     bankName: "",
     title: "",
@@ -20,6 +23,7 @@ export default function Signup() {
     state: "",
     seminarDate: "",
   });
+  const { register, getValues, errors } = useForm({ mode: 'all' });
   const history = useHistory();
   const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
@@ -34,6 +38,7 @@ export default function Signup() {
       fields.email.length > 0 &&
       fields.username.length > 0 &&
       fields.password.length > 0 &&
+      fields.confirmPassword == fields.password &&
       fields.fullName.length > 0 &&
       fields.bankName.length > 0 &&
       fields.title.length > 0 &&
@@ -113,11 +118,17 @@ export default function Signup() {
             <Form.Group className="required" controlId="password" size="lg">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="password"
-                value={fields.password}
-                onChange={handleFieldChange}
-                pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9\s])([^\s]){8,16}$"
-              />
+              type="password"
+              name="password"
+              value={fields.password}
+              onChange={handleFieldChange}
+              pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9\s])([^\s]){8,16}$"
+              ref={register({
+                /* required: 'Password required', */
+                minLength: { value: 8, message: 'Password is too short' }
+              })}
+            />
+            {errors.password && <p style={{ color: '#DD3435'}}><FaExclamationCircle/> {errors.password.message}</p>}
               <Form.Control.Feedback type="invalid">
                 <ul>
                   <li>Require numbers</li>
@@ -130,10 +141,23 @@ export default function Signup() {
             <Form.Group className="required" controlId="confirmPassword" size="lg">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
-                type="password"
-                onChange={handleFieldChange}
-                value={fields.confirmPassword}
-              />
+              type="password"
+              name="confirm"
+              value={fields.confirmPassword}
+              onChange={handleFieldChange}
+              ref={register({
+                validate: value =>{
+                                    // value is from confirm and watch will return value from password
+
+                  if (value === getValues('password')) {return true} else {return <span>Password fields don't match</span>}
+                },
+                 
+                /* required: 'Password required', */
+                minLength: { value: 8, message: 'Password is too short' }
+              })}
+            />
+
+            {errors.confirm && <p style={{ color: '#DD3435'}}><FaExclamationCircle/> {errors.confirm.message}</p>}   
             </Form.Group>
           </Form.Row>
           <Form.Row>

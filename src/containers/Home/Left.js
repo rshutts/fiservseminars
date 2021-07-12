@@ -40,25 +40,25 @@ class Left extends Component {
             <h3>Early Bird - August 20<sup>th</sup>:</h3>
               <ul>
                 <li>
-                  1 Connection- $450
+                  1 Connection - $450
                 </li>
                 <li>
-                  2 Connection- $750
+                  2 Connections - $750
                 </li>
                 <li>
-                  3+ Connection- $1,500
+                  3+ Connections - $1,500
                 </li>
               </ul>
             <h3>Standard:</h3>
               <ul>
                 <li>
-                  1 Connection- $500
+                  1 Connection - $500
                 </li>
                 <li>
-                  2 Connection- $800
+                  2 Connections - $800
                 </li>
                 <li>
-                  3+ Connection- $1,750
+                  3+ Connections - $1,750
                 </li>
               </ul>
               <strong>*Note: *Please register each user individually; your bank will be invoiced following the conclusion of the seminars.</strong>

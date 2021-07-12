@@ -25,14 +25,13 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    What browser should I use for optimal seminar experience?
+                        What browser should I use for optimal seminar experience?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 0} className="faq-content">
                     <p>
                         Google Chrome is the preferred browser. Firefox and Microsoft Edge are ideal.
                     </p>
                     </Accordion.Content>
-
                     <Accordion.Title
                     active={activeIndex === 1}
                     index={1}
@@ -40,7 +39,7 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    I am not seeing any video, what should I do?
+                        I am not seeing any video, what should I do?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 1} className="faq-content">
                     <p>
@@ -54,7 +53,7 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    How do I ask a question?
+                        How do I ask a question?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 2} className="faq-content">
                     <p>
@@ -68,7 +67,7 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    How do I take part in the Network Session on day 3?
+                        How do I take part in the Networking Sessions?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 3} className="faq-content">
                     <p>
@@ -124,7 +123,7 @@ export default class FAQS extends Component {
                     className="faq-title"
                     >
                     <Icon name='dropdown' />
-                    I have additional questions. Who should I reach out to?
+                        I have additional questions. Who should I reach out to?
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 7} className="faq-content">
                     <p>

@@ -481,6 +481,7 @@ label.custom-file-label:after {
 }
 .Signup form .form-group {
   margin:10px;
+  min-width: 221px;
 } 
 #passwordHelpBlock {
   text-align:center;
@@ -1525,6 +1526,13 @@ span.dropdown---caret---3CkEt {
   }
   .speaker-bios.row .card-deck {
     width:100%;
+  }
+  .Signup form .form-group {
+    margin:10px;
+    min-width: auto;
+  } 
+  select#seminarDate, select#address {
+    min-width: auto;
   }
 /*   .article-block {
     flex-direction: column;

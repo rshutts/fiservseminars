@@ -8,7 +8,7 @@ export default class ScrollingTicker extends Component {
       <Marquee
         pauseOnHover="true"
         gradient="false"
-        /* speed="10" */
+        speed="30"
         gradientWidth="0"
         style={{ color: '#ffffff' }}
       >
