@@ -71,7 +71,9 @@ export default function UpdateProfile() {
         Error(error);
       }
     }
-
+const returnTo = () => {
+  history.push('/profile')
+};
 return (
   <div className="main-content-update">
     <form onSubmit={onSubmit}>
@@ -154,6 +156,11 @@ return (
         />
       </FormGroup>
       </Row>
+      <Button
+        onClick={returnTo}
+      >
+        Back
+      </Button>
       <LoaderButton
         block
         type="submit"

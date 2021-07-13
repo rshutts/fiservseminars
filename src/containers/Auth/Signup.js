@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from 'react-hook-form';
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import { Header  } from 'semantic-ui-react'
@@ -7,8 +8,8 @@ import LoaderButton from "../../components/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
 import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
-import { useForm } from 'react-hook-form';
-import { FaExclamationCircle } from 'react-icons/fa'
+
+import { FaExclamationCircle, FaEye } from 'react-icons/fa'
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
@@ -24,7 +25,9 @@ export default function Signup() {
     seminarDate: "",
   });
   const { register, getValues, errors } = useForm({ mode: 'all' });
+  
   const history = useHistory();
+
   const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +35,8 @@ export default function Signup() {
   const [disabled, setDisabled] = useState(true);
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
 
   function validateForm() {
     return (
@@ -76,13 +81,23 @@ export default function Signup() {
       setNewUser(newUser);
       history.push("/signup/confirmation");
     } catch (e) {
+      console.log(error)
       setError(e.message);
       setIsLoading(false);
     }
   }
+
   const onClickCheck = (e) => {
     setChecked(!checked)
   }
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  
+  const toggleConfirmPasswordVisiblity = () => {
+    setConfirmPasswordShown(confirmPasswordShown ? false : true);
+  };
     return (
       <div className="Signup">
         {/* <h1 style={{ textAlign: 'center' }}>Signup for this event has closed.</h1><br />
@@ -110,7 +125,6 @@ export default function Signup() {
                 type="username"
                 onChange={handleFieldChange}
                 value={fields.username}
-                /* style={{ display: 'none'}} */
               />
             </Form.Group>
           </Form.Row>
@@ -118,16 +132,16 @@ export default function Signup() {
             <Form.Group className="required" controlId="password" size="lg">
               <Form.Label>Password</Form.Label>
               <Form.Control
-              type="password"
+              type={passwordShown ? "text" : "password"}
               name="password"
               value={fields.password}
               onChange={handleFieldChange}
               pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9\s])([^\s]){8,16}$"
               ref={register({
-                /* required: 'Password required', */
                 minLength: { value: 8, message: 'Password is too short' }
               })}
             />
+            <i className="pw-show-hide" onClick={togglePasswordVisiblity}><FaEye title="Show/Hide"/></i>{" "}
             {errors.password && <p style={{ color: '#DD3435'}}><FaExclamationCircle/> {errors.password.message}</p>}
               <Form.Control.Feedback type="invalid">
                 <ul>
@@ -141,22 +155,18 @@ export default function Signup() {
             <Form.Group className="required" controlId="confirmPassword" size="lg">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
-              type="password"
+              type={confirmPasswordShown ? "text" : "password"}
               name="confirm"
               value={fields.confirmPassword}
               onChange={handleFieldChange}
               ref={register({
                 validate: value =>{
-                                    // value is from confirm and watch will return value from password
-
                   if (value === getValues('password')) {return true} else {return <span>Password fields don't match</span>}
                 },
-                 
-                /* required: 'Password required', */
                 minLength: { value: 8, message: 'Password is too short' }
               })}
             />
-
+            <i className="pw-show-hide" onClick={toggleConfirmPasswordVisiblity}><FaEye title="Show/Hide"/></i>{" "}
             {errors.confirm && <p style={{ color: '#DD3435'}}><FaExclamationCircle/> {errors.confirm.message}</p>}   
             </Form.Group>
           </Form.Row>

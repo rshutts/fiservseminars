@@ -73,7 +73,7 @@ export default function ForgotPassword() {
     return (
       <Form onSubmit={handleSendCodeClick}>
         <Form.Group bsSize="large" controlId="username">
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Email or Username</Form.Label>
           <Form.Control
             autoFocus
             value={fields.username}
@@ -152,7 +152,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="ResetPassword">
+    <div className="reset-password">
       <h1 style={{ textAlign: 'center'}}>
         <FaInfoCircle/> <br />
         Forgot Password

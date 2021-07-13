@@ -54,7 +54,21 @@
 .result-block-container .result-block {
   opacity: 1;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
 input[type="text"], input[type="password"], textarea, select { 
   outline: none;
 }
@@ -483,6 +497,30 @@ label.custom-file-label:after {
   margin:10px;
   min-width: 221px;
 } 
+.pw-show-hide {
+  float: right;
+  margin-top: -30px;
+  margin-right: 10px;
+  position: relative;
+  width: fit-content;
+}
+.pw-show-hide svg {
+  height:1.5em;
+  width:1.5em;
+  fill:#d1d1d1;
+  transition: fill .15s ease-in-out,
+}
+.pw-show-hide svg:hover,.pw-show-hide svg:active {
+  fill: #FF6600;
+  cursor: pointer;
+}
+.login.pw-show-hide {
+  float: right;
+  margin-top: -30px;
+  margin-right: 10px;
+  position: relative;
+  width: fit-content;
+}
 #passwordHelpBlock {
   text-align:center;
   font-size:100%;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { useForm } from 'react-hook-form';
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -11,7 +12,7 @@ import LoaderButton from "../../components/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
 import { useFormFields } from "../../libs/hooksLib";
 
-import { FaSignInAlt, FaUser, FaLock } from "react-icons/fa"
+import { FaSignInAlt, FaUser, FaLock, FaEye } from "react-icons/fa"
 import "./Auth.css";
 
 export default function Login() {
@@ -23,6 +24,7 @@ export default function Login() {
     password: ""
   });
   const [error, setError] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
 
   function validateForm() {
     return fields.username.length > 0 && fields.password.length > 0;
@@ -41,6 +43,10 @@ export default function Login() {
       setIsLoading(false);
     }
   }
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   return (
     <div className="main-content-login">
@@ -72,12 +78,13 @@ export default function Login() {
               <InputGroup.Text id="inputGroupPrepend"><FaLock/></InputGroup.Text>
             </InputGroup.Prepend>
           <Form.Control
-            type="password"
+            type={passwordShown ? "text" : "password"}
             placeholder="Password"
             value={fields.password}
             onChange={handleFieldChange}
           />
           </InputGroup>
+          <i className="login pw-show-hide" onClick={togglePasswordVisiblity}><FaEye title="Show/Hide"/></i>{" "}
         </Form.Group>
         <Link to="/password/forgot">Forgot password?</Link>
         <LoaderButton
