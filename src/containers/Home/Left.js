@@ -20,7 +20,7 @@ class Left extends Component {
               Now is the ideal time to focus on professional development and optimization of your organization’s performance. Collaborate with Fiserv experts and industry peers for this year’s Fall Education Seminars. This year’s event will provide participants with valuable software and procedural insights throughout the comprehensive three-day seminar. Fiserv experts facilitate interactive presentations and discussions designed to inform, educate, and empower. Attendees will leverage a dynamic, virtual venue while learning about Precision software and best practices all while building a diverse network of professional relationships.
             </p>
             <p>
-              The 2021 Precision Fall Education Seminar is the affordable and convenient training solution your organization deserves. Concerned about documenting all of the amazing information the seminars have to offer? This year’s participant’s will gain access to unlimited recordings for three months after the event concludes. Fiserv is also offering unlimited connections for one, low price. Register Now and begin your institution’s journey towards efficiency!
+              The 2021 Precision Fall Education Seminar is the affordable and convenient training solution your organization deserves. Are you concerned about documenting all of the amazing information the seminars have to offer? This year’s participant’s will gain access to unlimited recordings for three months after the event concludes. Fiserv is also offering unlimited connections for one, low price. Register Now and begin your institution’s journey towards efficiency!
             </p>
             <h2>
               Seminar Dates:
