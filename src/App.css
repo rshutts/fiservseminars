@@ -190,11 +190,6 @@ a#profileDropDown svg {
   background-color: #dc3545;
   border-color: #dc3545;
 }
-.success {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
 h1, h2, h3, h4, h5, h6 {
   font-family:Helvetica, Arial, sans-serif
 }
@@ -241,7 +236,9 @@ h6 {
   background:#ff6600;
   color:#fff;
 }
-
+[role="alert"] {
+  color:#DD3435;
+}
 .logo {
   background: url('https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/logo.png');
   background-size:contain;
@@ -877,147 +874,6 @@ select#seminarDate, select#address {
 }
  /*Chat*/
 
- .chat {
-   margin-top:10px;
- }
- .chat-row {
-  justify-content: flex-start;
-}
- .nav-item.dropdown .dropdown-menu {
-   right:0;
-   left:unset;
- }
- .col-wrapper {
-  width: 400px;
-  max-height:588px;
-  flex-shrink: 0;
-  align-self: stretch;
-  position: relative;
- }
- .scrolling-chat {
-  border-radius: 0 0 2px 2px;
-  border: 2px solid #d3d3d3;
-  padding:10px;
- }
-.scrolling-chat div[class*="react-scroll-to-bottom"] {
-    max-height: 550px;
-}
-.react-scroll-to-bottom--css-jftgz-1n7m0yu {
-  height: 100%;
-  overflow-y: auto;
-  width: 100%;
-}
- .chat-wrapper .meetings {
-   max-height:500px;
-   padding:10px;
- }
- .chat-signon {
-  background: #ff6600;
-  border:none;
- }
- .chat-signon:hover {
-   background: rgba(255,102,0,.8);
-   color:#fff;
-   border:none;
- }
- .join-chat {
-  background: rgb(102,153,204);
-  color:#fff;
-  padding: 5px 10px;
-  margin-left: 5px;
-  margin-bottom: 4px;
-  border: none;
- }
- .join-chat:hover {
-  background: rgb(102,153,204, .8);
-  color:#fff;
-  padding: 5px 10px;
-  margin-left: 5px;
-  margin-bottom: 4px;
-  border: none;
- }
- .username {
-  margin-bottom: 0;
-  color: #333;
-  font-weight: bold;
-  font-size: .9rem;
- }
- .username-fiserv {
-  color:#ff6600;
-  margin-bottom: 0;
-  font-weight: bold;
-  font-size: .9rem;
- }
- .chat-line {
-   margin-bottom:10px;
- }
-.enter-message {
-  width:100%;
-}
-.chat-message-input {
-  width: 100%;
-  display: flex;
-}
-.chat-message-input input {
-  width: 100%;
-  border-radius: 5px;
-  min-height: 42px;
-  background: #f1f2f3;
-  padding: 10px;
-  border: 1px solid #dee2e6;
-}
-#chat-popout-window {
-  position: absolute;
-  height:100%;
-  width: 100%;
-  top:0;
-  background:#fff;
-  z-index: 3;
-  flex-shrink: 0;
-  align-self: stretch;
-}
-.popout-chat-message-container {
-  border-radius: 0 0 2px 2px;
-  border: 2px solid #d3d3d3;
-  padding: 10px;
-  background:#fff;
-}
-#chat-popout-window input {
-  width: 100%;
-  border-radius: 5px;
-  min-height: 42px;
-  background: #f1f2f3;
-  padding: 10px;
-  border: 1px solid #dee2e6;
-}
-i.fa.fa-fw.fa-external-link-alt {
-  color:#6c757d;
-  pointer-events:pointer;
-  cursor: pointer;
-  padding-right: 10px;
-}
-.popout-icon {
-  display: flex;
-  align-items: center;
-  padding-left: 5px;
-}
- .messages {
-  padding:10px;
-  padding: 10px;
-  height: 100%;
-  width: 100%;
-  /* overflow-y: auto; */
- }
- .message-bubble {
-  background: #f1f1f1;
-  border-radius: 5px;
-  color: #000;
-  width: fit-content;
-  min-width: 20%;
-  padding: 10px;
-  margin-bottom:0px;
-  text-align: left;
- }
  .alert--success {
    background:#dff0d8;
    padding:20px;
@@ -1072,21 +928,7 @@ i.fa.fa-fw.fa-external-link-alt {
     width: 65%;
     padding: 0 10px;
 }
-.chat-container {
-  border-radius: 0 0 2px 2px;
-  border: 2px solid #d3d3d3;
-  padding:10px;
-}
-.composer {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  align-items: center;
-  width: 100%;
-}
-.composer form p {
-  margin-bottom:0;
-}
+
 .welcome {
   font-weight: bold;
 }
