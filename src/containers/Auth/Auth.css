@@ -21,6 +21,10 @@
   text-align: right;
   padding-bottom:10px;
 }
+.success {
+  background-color:transparent;
+  text-align: center;
+}
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
