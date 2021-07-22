@@ -1,8 +1,6 @@
-import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
+import React from "react";
 import SpeakerBios from "../containers/Speakers/SpeakerBios";
 import { Header  } from 'semantic-ui-react'
-
 
 const Bios = () => (
   <div className="main-content bio-content">

@@ -1,23 +1,15 @@
 {
-    "test": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-springseminars-test-125412-authRole",
-            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-springseminars-test-125412-deployment",
-            "UnauthRoleName": "amplify-springseminars-test-125412-unauthRole",
-            "StackName": "amplify-springseminars-test-125412",
-            "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-springseminars-test-125412/6ecd12c0-9893-11eb-9fc7-0a23b021aa67",
-            "AmplifyAppId": "droh7ig6g4uy1"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "droh7ig6g4uy1",
-                    "type": "manual"
-                }
-            }
-        }
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-precisionfallchat-prod-91430-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-precisionfallchat-prod-91430-deployment",
+      "UnauthRoleName": "amplify-precisionfallchat-prod-91430-unauthRole",
+      "StackName": "amplify-precisionfallchat-prod-91430",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-precisionfallchat-prod-91430/fa58d740-e576-11eb-851c-0e6c28966f7b",
+      "AmplifyAppId": "d26dmw88j3kfn6"
     }
+  }
 }

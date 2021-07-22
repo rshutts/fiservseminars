@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-// Import Amplify and Storage
 import Amplify, { Auth, Storage } from 'aws-amplify';
-// withAuthenticator is a higher order component that wraps the application with a login page
-// Import the project config files and configure them with Amplify
-
 import config from '../../../aws-config';
 
 const PhotoUpload = () => {
@@ -62,7 +57,7 @@ const PhotoUpload = () => {
         onChange={(evt) => handleChange(evt)}
       />}
       <div>
-        {imageUrl ? <img style={{ width: "8rem" }} src={imageUrl} /> : <span />}
+        {imageUrl ? <img style={{ width: "8rem" }} src={imageUrl} alt='Profile'/> : <span />}
       </div>
       {/* <div>
         <h2>Download URL?</h2>

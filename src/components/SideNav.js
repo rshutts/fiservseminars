@@ -95,13 +95,13 @@ function Sidenav() {
                 <FaNewspaper/>
                   Session Collateral
               </Menu.Item>
-            </Link>
+            </Link> */}
             <Link className="sidebar-nav-link" to="/profile">
               <Menu.Item>
                 <FaUser/>
                   Profile
               </Menu.Item>
-            </Link> */}
+            </Link>
           </Sidebar>
         ) : (
           <Sidebar

@@ -8,17 +8,20 @@ import Amplify, { Auth, Storage } from 'aws-amplify';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
-import VideoPlayer from '../VideoPlayer';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
 import ChatProfileImage from './profileImage'
+import { Picker } from 'emoji-mart'
+import 'emoji-mart/css/emoji-mart.css'
 
 import { useFormFields } from "../../libs/hooksLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
 import { messagesByChannelID } from '../../graphql/queries';
+/* import { listMessages } from '../../graphql/queries'; */
+
 import Error from "../../components/Error";
 
 import './Chat.css';
@@ -37,6 +40,7 @@ const Chat = props => {
     name: "",
     group: ""
   });
+  const [emojiPickerState, SetEmojiPicker] = useState(false);
 
   const [connection, setConnection] = useState(null);
 
@@ -44,12 +48,23 @@ const Chat = props => {
 
   const [show, setShow] = useState();
 
+  let emojiPicker;
+  if (emojiPickerState) {
+    emojiPicker = (
+      <Picker
+        title="Pick your emoji…"
+        emoji="point_up"
+        onSelect={emoji => setMessageBody(messageBody + emoji.native)}
+      />
+    );
+  }
+
   useEffect(() => {
     async function getUsername() {
-      const user = await Auth.currentAuthenticatedUser();
-      const username = user.attributes.name;
+      const user = await Auth.currentUserInfo();
+      console.log(user);
+      const username = user.username
       setState(username);
-      console.log(username)
     }
     getUsername();
   }, [])
@@ -60,6 +75,7 @@ const Chat = props => {
       const group = await Auth.currentSession();
       const userGroup = group.accessToken.payload['cognito:groups'];
       setUserGroup(userGroup);
+      console.log(userGroup)
     }
     getUserGroup();
   }, [])
@@ -122,8 +138,8 @@ const Chat = props => {
       subscription.unsubscribe();
     }
   }, [messages]);
-
-  const handleChange = (event) => {
+  
+  const handleChange = (event) => { 
     setMessageBody(event.target.value);
   };
 
@@ -145,28 +161,11 @@ const Chat = props => {
       console.warn(error);
     }
   };
-
-  useEffect(() => {
-    const options = {
-        minUptime: 50000,
-        connectionTimeout: 40000,
-        maxRetries: Infinity,
-        maxEnqueuedMessages: Infinity,
-    };
-    const connection = new ReconnectingWebSocket(config.CHAT_WEBSOCKET, [], options);
-    connection.onopen = (event) => {
-      console.log('WebSocket is now open.');
-    };
-
-    connection.onclose = (event) => {
-      console.log('WebSocket is now closed.');
-    };
-
-    connection.onerror = (event) => {
-      console.error('WebSocket error observed:', event);
-    };
-  })
-
+  
+  function triggerPicker(event) {
+    event.preventDefault();
+    SetEmojiPicker(!emojiPickerState);
+  }
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -175,20 +174,15 @@ return (
           <h1>Chat</h1>
         </header>
           <div className="chat-wrapper pos-absolute pd-t-1 top-0 bottom-0">
-          <ScrollToBottom>
+          <ScrollToBottom className="react-scroll-to-bottom--scroll">
           <div className="messages-scroller messages">
-          {/* <Button
-            onClick={() => setShow(!show)}
-            className='dimmerShow'
-          >Show Chat</Button> */}
-          {/* <Segment>
-          <Dimmer active className={`${show ? "show" : "noshow"}`} /> */}
               {messages.map((message) => (
                 <div
                   key={message.id}
                   className={message.author === username ? 'message me' : 'message'}>
-                    {message.group === '{group=[Fiserv]}' || message.group === '[Fiserv]' ?
+                    {message.group === '[Fiserv]' ?
                       <div>
+                        
                         <h3>{message.author}<FaStar className="fiserv-user"/></h3>
                         {message.body}
                       </div>
@@ -196,24 +190,35 @@ return (
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
+                      {console.log(message.group)}
                     </div>
                   }
                 </div>
               ))}
               <div className="chat-bar composer">
                 <form onSubmit={handleSubmit}>
-                
                 <input
                   type="text"
                   name="message"
                   placeholder="Type your message here..."
                   onChange={handleChange}
                   value={messageBody} />
-                  <FaStar className="fiserv-employee"/>Fiserv employee
+                  <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-            </div>{/* </Segment> */}
+              {/* {emojiPicker}
+              <button
+            class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+            onClick={triggerPicker}
+          >
+            Add an Emoji!
+            <span role="img" aria-label="">
+              😁
+            </span>
+          </button> */}
+            </div>
           </div>
+          
         </ScrollToBottom>
         <>
           {isOpen && (
@@ -234,7 +239,6 @@ return (
                   <div
                     key={message.id}
                     className={message.author === username ? 'message me' : 'message'}>
-                      {/* <img src={image} height="50px"/>   */}
                       <div>
                         <h3>{message.author}</h3>
                         {message.body}

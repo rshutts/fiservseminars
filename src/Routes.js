@@ -17,8 +17,9 @@ import Articles from './pages/Articles'
 import Login from "./containers/Auth/Login";
 import ResetPassword from "./containers/Auth/ResetPassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
-import Signup from "./containers/Auth/Signup";
-import SignupConfirmation from "./containers/Auth/SignupConfirmation";
+import Signup from "./containers/Auth/Signup/Signup";
+/* import FormSignup from "./containers/Auth/Signup/Signup2"; */
+import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
 
@@ -44,12 +45,12 @@ const Routes = () => (
           <Route exact path="/faq">
             <FAQ />
           </Route>
-          <Route exact path="/speaker-bios">
+          {/* <Route exact path="/speaker-bios">
             <Bios />
           </Route>
           <Route exact path="/resource-center/articles">
             <Articles />
-          </Route>
+          </Route> */}
           <UnauthenticatedRoute exact path="/password/forgot">
             <PasswordForgot />
           </UnauthenticatedRoute>
@@ -57,17 +58,18 @@ const Routes = () => (
             <Login />
           </UnauthenticatedRoute>
           <UnauthenticatedRoute exact path="/signup">
-            <Signup />
+            <Signup /> 
+            {/* <FormSignup /> */}
           </UnauthenticatedRoute>
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          <AuthenticatedRoute exact path="/session">
+          {/* <AuthenticatedRoute exact path="/session">
             <Meetings />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/archived-sessions">
             <Archived />
-          </AuthenticatedRoute>
+          </AuthenticatedRoute> */}
           <AuthenticatedRoute exact path="/profile">
             <Profile />
           </AuthenticatedRoute>

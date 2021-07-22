@@ -1,6 +1,5 @@
-import React, { Fragment, Component } from "react";
-import { Card, Accordion, Icon, Segment, Header, Tab, Container } from 'semantic-ui-react'
-import Button from "react-bootstrap/Button";
+import React, { Component } from "react";
+import { Card, Segment, Header, Tab } from 'semantic-ui-react'
 import FeaturesFunctionality from '../components/Videos/Sessions/FeaturesFunctionality'
 import BetterReporting1 from '../components/Videos/Sessions/BetterReporting1'
 import BetterReporting2 from '../components/Videos/Sessions/BetterReporting2'

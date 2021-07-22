@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
-import { useFormFields } from "../../../libs/hooksLib";
-import { onError } from "../../../libs/errorLib";
 import Avatar from 'react-avatar';
 
 import config from '../../../aws-config';
@@ -49,7 +47,7 @@ export default function ProfileImage() {
     <div>
       {imageUrl
         ?
-        <img style={{ width: "30rem" }} src={imageUrl} />
+        <img style={{ width: "30rem" }} src={imageUrl} alt='Profile'/>
         : 
         <Avatar 
           name={profile.name} 

@@ -1,8 +1,6 @@
-import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
+import React from "react";
 import FAQs from "../containers/FAQs/FAQs";
 import { Header  } from 'semantic-ui-react'
-
 
 const FAQ = () => (
   <div className="main-content faq-content">

@@ -3,7 +3,6 @@ import Amplify, { Auth, Storage } from "aws-amplify";
 import PhotoUpload from "./components/photoUpload"
 import { useHistory } from "react-router-dom";
 import {
-  HelpBlock,
   FormGroup,
   FormControl,
   FormLabel,
@@ -11,7 +10,6 @@ import {
   Button
 } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
-import { useFormFields } from "../../libs/hooksLib";
 import Error from "../../components/Error";
 
 import config from '../../aws-config';
@@ -19,7 +17,6 @@ import config from '../../aws-config';
 
 export default function UpdateProfile() {
   const history = useHistory();
-  const [codeSent, setCodeSent] = useState(false);
   const [profile, setProfile] = useState({
     email: "",
     name: "",
@@ -28,8 +25,7 @@ export default function UpdateProfile() {
     locale: "",
     address: "",
   });
-
-  const [isConfirming, setIsConfirming] = useState(false);
+  
   const [isSendingCode, setIsSendingCode] = useState(false);
 
   const onLoad = async () => {
