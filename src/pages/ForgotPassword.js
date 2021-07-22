@@ -1,8 +1,5 @@
-import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
+import React from "react";
 import ForgotPassword from "../containers/Auth/ForgotPassword";
-import { Header  } from 'semantic-ui-react'
-
 
 const PasswordForgot = () => (
   <div className="main-content">

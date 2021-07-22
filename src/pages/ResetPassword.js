@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import Sidenav from "../components/SideNav";
+import React from "react";
 import ResetPassword from "../containers/Auth/ResetPassword";
 import { Header  } from 'semantic-ui-react'
 

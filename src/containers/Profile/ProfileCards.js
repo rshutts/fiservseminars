@@ -1,15 +1,8 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from "react-router-dom";
 import { Auth } from "aws-amplify";
-import { onError } from "../../libs/errorLib";
 import Card from "react-bootstrap/Card";
-import {
-  HelpBlock,
-  FormGroup,
-  FormControl,
-  FormLabel,
-  Button,
-} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 
 import ProfileImage from "../Profile/components/profileImage";
 

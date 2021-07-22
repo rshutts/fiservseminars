@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { speakerData } from '../../components/Data/SpeakerData'
 import { Button } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
@@ -6,9 +6,6 @@ import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 
 export default function SpeakerBios() {
-
-  const [selectedVal, selectionChange] = useState("");
-  const [selectedChild, selectionChild] = useState("");
 
   return (
     <div className="App">

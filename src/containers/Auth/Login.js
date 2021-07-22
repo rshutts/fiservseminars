@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useForm } from 'react-hook-form';
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -12,7 +11,7 @@ import LoaderButton from "../../components/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
 import { useFormFields } from "../../libs/hooksLib";
 
-import { FaSignInAlt, FaUser, FaLock, FaEye } from "react-icons/fa"
+import { FaSignInAlt, FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"
 import "./Auth.css";
 
 export default function Login() {
@@ -25,6 +24,9 @@ export default function Login() {
   });
   const [error, setError] = useState('');
   const [passwordShown, setPasswordShown] = useState(false);
+  const [values, setValues] = useState({
+    showPassword: false,
+  });
 
   function validateForm() {
     return fields.username.length > 0 && fields.password.length > 0;
@@ -44,8 +46,14 @@ export default function Login() {
     }
   }
 
-  const togglePasswordVisiblity = () => {
-    setPasswordShown(passwordShown ? false : true);
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  const handlePasswordChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
   };
 
   return (
@@ -78,14 +86,22 @@ export default function Login() {
               <InputGroup.Text id="inputGroupPrepend"><FaLock/></InputGroup.Text>
             </InputGroup.Prepend>
           <Form.Control
-            type={passwordShown ? "text" : "password"}
+            type={values.showPassword ? "text" : "password"}
             placeholder="Password"
             value={fields.password}
             onChange={handleFieldChange}
+            className="login-pw-input"
           />
           </InputGroup>
-          <i className="login pw-show-hide" onClick={togglePasswordVisiblity}><FaEye title="Show/Hide"/></i>{" "}
+          
         </Form.Group>
+          <i 
+            className="login pw-show-hide" 
+            onClick={handleClickShowPassword}
+            onMouseDown={handleMouseDownPassword}
+            >
+              {values.showPassword ? <FaEye /> : <FaEyeSlash />}
+          </i>
         <Link to="/password/forgot">Forgot password?</Link>
         <LoaderButton
           block

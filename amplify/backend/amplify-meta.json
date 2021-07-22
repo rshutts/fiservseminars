@@ -1,75 +1,42 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-springseminars-test-125412-authRole",
-            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-springseminars-test-125412-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-springseminars-test-125412-deployment",
-            "UnauthRoleName": "amplify-springseminars-test-125412-unauthRole",
-            "StackName": "amplify-springseminars-test-125412",
-            "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-springseminars-test-125412/6ecd12c0-9893-11eb-9fc7-0a23b021aa67",
-            "AmplifyAppId": "droh7ig6g4uy1"
-        }
-    },
-    "api": {
-        "Seminars": {
-            "service": "AppSync",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "AMAZON_COGNITO_USER_POOLS"
-                    },
-                    "additionalAuthenticationProviders": null,
-                    "userPoolConfig": {
-                        "userPoolId": "us-east-1_ZoafPXhwk",
-                        "awsRegion": "us-east-1",
-                        "defaultAction": "ALLOW",
-                        "appIdClientRegex": null
-                    }
-                },
-                "GraphQLAPIIdOutput": "sj4iws5xyrfhlpt6hdo5ncbhwm",
-                "GraphQLAPIEndpointOutput": "https://rc7nh3xygffwldl63daurh2hpi.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "Seminars",
-                "region": "us-east-1"
-            },
-            "lastPushTimeStamp": "2021-05-17T19:25:10.595Z"
-        },
-        "simplechat-dev": {
-            "service": "AppSync",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "AMAZON_COGNITO_USER_POOLS"
-                    },
-                    "additionalAuthenticationProviders": null,
-                    "userPoolConfig": {
-                        "userPoolId": "us-east-1_ZoafPXhwk",
-                        "awsRegion": "us-east-1",
-                        "defaultAction": "ALLOW",
-                        "appIdClientRegex": null
-                    }
-                },
-                "GraphQLAPIIdOutput": "46or2spdunhohmn2kiytze6bki",
-                "GraphQLAPIEndpointOutput": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "simplechat-dev",
-                "region": "us-east-1"
-            },
-            "lastPushTimeStamp": "2021-05-17T19:20:49.597Z"
-        }
-    },
-    "hosting": {
-        "amplifyhosting": {
-            "service": "amplifyhosting",
-            "providerPlugin": "awscloudformation",
-            "type": "manual",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-springseminars-test-125412-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
-                "logicalId": "hostingamplifyhosting"
-            },
-            "lastPushTimeStamp": "2021-04-08T18:25:09.681Z",
-            "output": {},
-            "lastPushDirHash": "/+VZ33seFFqAr6wbtptwbINUfSA="
-        }
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-precisionfallchat-prod-91430-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-precisionfallchat-prod-91430-deployment",
+      "UnauthRoleName": "amplify-precisionfallchat-prod-91430-unauthRole",
+      "StackName": "amplify-precisionfallchat-prod-91430",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-precisionfallchat-prod-91430/fa58d740-e576-11eb-851c-0e6c28966f7b",
+      "AmplifyAppId": "d26dmw88j3kfn6"
     }
+  },
+  "api": {
+    "PrecisionFallChat": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "Precision Fall Chat"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "w7iahmaam5hjlbasphgtjggi4a",
+        "GraphQLAPIEndpointOutput": "https://yjnbs2lluzcwbj3qvgynl3wo4q.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ombyytfyjbepzcx6i4qgr56mji"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-precisionfallchat-prod-91430-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiPrecisionFallChat"
+      },
+      "lastPushTimeStamp": "2021-07-15T14:41:22.940Z",
+      "lastPushDirHash": "a2m0um2klIXYTxt1nQ3vgHwvE4I="
+    }
+  }
 }

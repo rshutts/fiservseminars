@@ -3,10 +3,20 @@
 
 const config = {
     "aws_project_region": "us-east-1",
+
+    /*Cognito*/
     "aws_cognito_identity_pool_id": "us-east-1:a9395a50-e5a8-4c1f-a3e6-90920949180b",
     "aws_cognito_region": "us-east-1",
     "aws_user_pools_id": "us-east-1_DP1sgZ1FC",
     "aws_user_pools_client_id": "2h9vuffn6urim68lujmtsqfv1f",
+
+    /*Chat API*/
+    "aws_appsync_graphqlEndpoint": "https://yjnbs2lluzcwbj3qvgynl3wo4q.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_region": "us-east-1",
+    "aws_appsync_authenticationType": "API_KEY",
+    'aws_appsync_apiKey': 'da2-ombyytfyjbepzcx6i4qgr56mji',
+
+    /*S3*/
     "aws_s3_bucket": "seminar-profile-photos",
     "aws_s3_bucket_region": "us-east-1"
 };

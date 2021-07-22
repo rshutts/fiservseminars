@@ -68,14 +68,18 @@
         }
       }
     },
-    "hostingamplifyhosting": {
+    "apiPrecisionFallChat": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-springseminars-test-125412-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-precisionfallchat-prod-91430-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "appId": "droh7ig6g4uy1",
-          "type": "manual",
-          "env": "test"
+          "CreateAPIKey": 1,
+          "AppSyncApiName": "PrecisionFallChat",
+          "DynamoDBBillingMode": "PAY_PER_REQUEST",
+          "DynamoDBEnableServerSideEncryption": false,
+          "S3DeploymentBucket": "amplify-precisionfallchat-prod-91430-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/5eaaf621ca60f4af81672efaebed40a9cd5a780f",
+          "env": "prod"
         }
       }
     }

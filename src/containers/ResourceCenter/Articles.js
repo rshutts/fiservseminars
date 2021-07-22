@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { articleData } from './ArticleData'
-import { Card, Header, Grid, Image } from 'semantic-ui-react';
+import { Card, Grid, Image } from 'semantic-ui-react';
 
 import { FaFilePdf } from "react-icons/fa"
 import "./ResourceCenter.css";

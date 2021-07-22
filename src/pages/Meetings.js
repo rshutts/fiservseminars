@@ -1,15 +1,12 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React from 'react';
 import Chat from "../containers/Chat";
-import { Auth } from "aws-amplify";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 /* import Loading from "../components/Loading"; */
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
 import Notes from '../components/Notes'
 import Iframe from 'react-iframe'
-
-import Frame, { FrameContextConsumer } from 'react-frame-component'
 
 import config from '../aws-config';
 
@@ -42,7 +39,7 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-              <iframe 
+              {/* <iframe 
                 src="https://main.d8joca129bu9k.amplifyapp.com/"
                 width="100%"
                 height="700px"
@@ -51,7 +48,7 @@ const Meetings = () => {
                 display="initial"
                 position="relative"
                 loading
-              />
+              /> */}
             </div>
           </section>
           <section className="right meetings">

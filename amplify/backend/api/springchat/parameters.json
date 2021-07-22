@@ -1,8 +1,0 @@
-{
-  "CreateAPIKey": 1,
-  "AppSyncApiName": "springchat",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "S3DeploymentBucket": "amplify-springchat-prod-104225-deployment",
-  "S3DeploymentRootKey": "amplify-appsync-files/056ecfc54427eda7f51aa6fdfc184c0e98e95ac2"
-}
