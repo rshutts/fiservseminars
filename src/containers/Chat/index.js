@@ -55,6 +55,7 @@ const Chat = props => {
         title="Pick your emoji…"
         emoji="point_up"
         onSelect={emoji => setMessageBody(messageBody + emoji.native)}
+        onClick={closePicker}
       />
     );
   }
@@ -166,6 +167,11 @@ const Chat = props => {
     event.preventDefault();
     SetEmojiPicker(!emojiPickerState);
   }
+
+  function closePicker(event) {
+    /* event.preventDefault(); */
+    SetEmojiPicker(emojiPickerState);
+  }
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -206,7 +212,7 @@ return (
                   <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-              {/* {emojiPicker}
+              {emojiPicker}
               <button
             class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
             onClick={triggerPicker}
@@ -215,7 +221,7 @@ return (
             <span role="img" aria-label="">
               😁
             </span>
-          </button> */}
+          </button>
             </div>
           </div>
           
