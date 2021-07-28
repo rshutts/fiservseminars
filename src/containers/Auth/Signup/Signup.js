@@ -304,8 +304,8 @@ export default function Signup() {
                 as="select"
               >
                 <option></option>
-                <option>September 21 - 23</option>
-                <option>October 19 - 21</option>
+                <option>October 12 - 14</option>
+                <option>November 2 - 4</option>
               </Form.Control>
               <Form.Control
                 type="birthdate"
