@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Amplify, { Auth, Storage } from "aws-amplify";
-import Sidenav from "../../containers/SideNav";
 import PhotoUpload from "./components/photoUpload"
 import { useHistory } from "react-router-dom";
 import {
-  HelpBlock,
   FormGroup,
   FormControl,
   FormLabel,
@@ -12,32 +10,13 @@ import {
   Button
 } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
-import { useFormFields } from "../../libs/hooksLib";
-import { onError } from "../../libs/errorLib";
+import Error from "../../components/Error";
 
 import config from '../../aws-config';
-
-/* Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-  "aws_appsync_region": "us-east-1",
-  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-}); */
 
 
 export default function UpdateProfile() {
   const history = useHistory();
-  const [codeSent, setCodeSent] = useState(false);
   const [profile, setProfile] = useState({
     email: "",
     name: "",
@@ -46,8 +25,7 @@ export default function UpdateProfile() {
     locale: "",
     address: "",
   });
-
-  const [isConfirming, setIsConfirming] = useState(false);
+  
   const [isSendingCode, setIsSendingCode] = useState(false);
 
   const onLoad = async () => {
@@ -71,24 +49,28 @@ export default function UpdateProfile() {
     onLoad();
     }, []);
     
-    const onSubmit = async data => {
-      const user = await Auth.currentAuthenticatedUser();
-      
-      await Auth.updateUserAttributes(user, { 
-        email: profile.email,
-        name: profile.name,
-        given_name: profile.given_name,
-        nickname: profile.nickname,
-        locale: profile.locale,
-        address: profile.address
-      });console.log(user)
-    };
-    const onClickHandler = (e) => {
-      history.push('/profile')
+    async function onSubmit(event) {
+      event.preventDefault();
+
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        await Auth.updateUserAttributes(user, { 
+          email: profile.email,
+          name: profile.name,
+          given_name: profile.given_name,
+          nickname: profile.nickname,
+          locale: profile.locale,
+          address: profile.address
+        });
+        history.push('/profile')
+      } catch (error) {
+        Error(error);
+      }
     }
+const returnTo = () => {
+  history.push('/profile')
+};
 return (
-  <div className="next-steps my-5 content-wrapper">
-    <Sidenav />
   <div className="main-content-update">
     <form onSubmit={onSubmit}>
       <PhotoUpload/>
@@ -170,6 +152,11 @@ return (
         />
       </FormGroup>
       </Row>
+      <Button
+        onClick={returnTo}
+      >
+        Back
+      </Button>
       <LoaderButton
         block
         type="submit"
@@ -180,9 +167,7 @@ return (
       >
         Update Profile
       </LoaderButton>
-    </form>
-  </div>
-    
+    </form>  
   </div>     
   );
 };

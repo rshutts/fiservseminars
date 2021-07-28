@@ -1,18 +1,13 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from "react-router-dom";
-import { Icon, Image, Header, Checkbox } from 'semantic-ui-react';
 import { Auth } from "aws-amplify";
-import { onError } from "../../libs/errorLib";
 import Card from "react-bootstrap/Card";
-import {
-  HelpBlock,
-  FormGroup,
-  FormControl,
-  FormLabel,
-  Button,
-} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 
-import ProfileImage from "../Profile/components/profileImage"
+import ProfileImage from "../Profile/components/profileImage";
+
+import "./Profile.css";
+import { setUser } from '@sentry/minimal';
 
 function ProfileCards(props) {
   const history = useHistory();
@@ -25,18 +20,25 @@ function ProfileCards(props) {
     city: "",
     state:  ""
   });
+  const [userGroup, setUserGroup] = useState({
+    group: "",
+  });
 
   const onLoad = async () => {
     try {
-      const user = await Auth.currentUserInfo();
+      const user = await Auth.currentAuthenticatedUser();
       console.log(user)
       setProfile({
+        username: user.username,
         email: user.attributes.email,
-        name: user.attributes.name,
-        bank: user.attributes.given_name,
-        title: user.attributes.nickname,
-        city: user.attributes.locale,
-        state: user.attributes.address
+        name: user.attributes['custom:fullName'],
+        bank: user.attributes['custom:bankName'],
+        title: user.attributes['custom:title'],
+        city: user.attributes['custom:city'],
+        state: user.attributes['custom:state']
+      });
+      setUserGroup({
+        group: user.signInUserSession.accessToken.payload["cognito:groups"],
       });
     } catch(e) {
  
@@ -50,13 +52,17 @@ function ProfileCards(props) {
     const onClickHandler = (e) => {
       history.push('/profile/update')
     }
+    const updatePassword = (e) => {
+      history.push('/profile/password/reset')
+    }
+
+    const onClickPoll = (e) => {
+      history.push('/profile/polls/create')
+    }
 
     return (
       <div>
-        <header>
-          <h1>User Profile</h1>
-        </header>
-        <Card style={{ width: "50%" }}>
+        <Card className="profile-section">
           <ProfileImage/>
           <Card.Header>
             <h1>
@@ -64,10 +70,18 @@ function ProfileCards(props) {
             </h1>
           </Card.Header>
           <Card.Body>
-            <Card.Title>
-              Email:  {profile.email}
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+            {userGroup.group === 'Fiserv'
+            ?
+              <Card.Title>
+                Email:  {profile.username}*
+              </Card.Title>
+            :
+              <Card.Title>
+                Email:  {profile.email} <br />
+                Username:  {profile.username}
+              </Card.Title>
+            }
+            <Card.Subtitle className="mb-2 text-muted">&nbsp;</Card.Subtitle>
             <Card.Text>
               <h2>Bank Name:  {profile.bank}</h2>
               <h2>Title:  {profile.title}</h2>
@@ -75,15 +89,31 @@ function ProfileCards(props) {
               <h2>State: {profile.state}</h2>
             </Card.Text>
             <Button
-              id='signupBtn'
+              id='loginBtn'
               color='primary'
               className='btn-margin'
               onClick={onClickHandler}
             >
               Update Profile
             </Button>
+            <Button
+              id='signupBtn'
+              color='primary'
+              className='btn-margin'
+              onClick={updatePassword}
+            >
+              Update Password
+            </Button>
           </Card.Body>
         </Card>
+        {/* <Button
+          id='signupBtn'
+          color='primary'
+          className='btn-margin'
+          onClick={onClickPoll}
+        >
+          Create Poll
+        </Button> */}
       </div>
     )
   }

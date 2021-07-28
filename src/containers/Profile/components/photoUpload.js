@@ -1,96 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
-import { useFormFields } from "../../../libs/hooksLib";
-import { onError } from "../../../libs/errorLib";
-
 import config from '../../../aws-config';
 
-Storage.configure({ track: true, level: "private" });
+const PhotoUpload = () => {
+  const [imageUrl, setImageUrl] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [profile, setProfile] = useState({
+    username: ""
+  });
 
-export default function PhotoUpload() {
-  const [uploaded, setUploaded] = useState(false);
-  const [image, setImage] = useState([]);
-  const [username, setUsername] = useState(null);
-  const [removeImage, setRemoveImage] = useState([]);
-
-  let fileInput = React.createRef();
-
-
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
-    }
-    getUsername();
- }, [])
-
-  const onOpenFileDialog = () => {
-    fileInput.current.click();
-  };
-
-  const onProcessFile = e => {
-    e.preventDefault();
-    let reader = new FileReader();
-    let file = e.target.files[0];
+  const onLoad = async () => {
     try {
-      reader.readAsDataURL(file);
+      const user = await Auth.currentUserInfo();
+      console.log(user)
+      setProfile({
+        username: user.username,
+      });
+    } catch(e) {
+ 
+    }
+    
+  }
+  useEffect(()=>{
+    onLoad();
+    }, []);
+
+  const downloadUrl = async () => {
+    // Creates download url that expires in 5 minutes/ 300 seconds
+    const downloadUrl = await Storage.get(`${profile.username}/profile.png`, { expires: 300 });
+    window.location.href = downloadUrl
+  }
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    try {
+      setLoading(true);
+      // Upload the file to s3 with private access level. 
+      await Storage.put(`${profile.username}/profile.png`, file, {
+        level: 'public',
+        contentType: 'image/png'
+      });
+      // Retrieve the uploaded file to display
+      const url = await Storage.get(`${profile.username}/profile.png`, { level: 'public' })
+      setImageUrl(url);
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
-    Storage.put(`profile.png`, file, {
-      level: "private",
-      contentType: "image/png"
-    })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
-  };
-  useEffect(() => {
-    onPageRendered();
-  }, []);
-
-  const onPageRendered = async () => {
-    getProfilePicture();
-  };
-  
-  const getProfilePicture = () => {
-    Storage.get(`profile.png`)
-      .then(url => {
-        var myRequest = new Request(url);
-        fetch(myRequest).then(function(response) {
-          if (response.status === 200) {
-            setImage(url);
-          }
-        });
-      })
-      .catch(err => console.log(err));
-      
-  };
-
-  const onRemoveFile = e => {
-    Storage.remove('profile.png', {level: 'private'})
-    .then(
-      result => console.log(result),
-      removeImage()
-    )
-    .catch(err => console.log(err));
-      
-  };
+  }
 
   return (
     <div className="App">
-      <a href="#">
-        <input
-            type="file"
-            onChange={onProcessFile}
-            ref={fileInput}
-        />
-      </a>
-      {/* <button onClick={onRemoveFile}>Remove Photo</button> */}
-      <img src={image} height="200px" style={{display: removeImage ? 'block' : 'none' }}/>
+      <h1> Upload an Image </h1>
+      {loading ? <h3>Uploading...</h3> : <input
+        type="file" accept='image/png'
+        onChange={(evt) => handleChange(evt)}
+      />}
+      <div>
+        {imageUrl ? <img style={{ width: "8rem" }} src={imageUrl} alt='Profile'/> : <span />}
+      </div>
+      {/* <div>
+        <h2>Download URL?</h2>
+        <button onClick={() => downloadUrl()}>Click Here!</button>
+      </div> */}
     </div>
-  )
+  );
 }
+
+export default PhotoUpload;

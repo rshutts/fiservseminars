@@ -1,19 +1,19 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-simplechat-dev-143413-authRole",
-      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-simplechat-dev-143413-authRole",
+      "AuthRoleName": "amplify-precisionfallchat-prod-91430-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-simplechat-dev-143413-deployment",
-      "UnauthRoleName": "amplify-simplechat-dev-143413-unauthRole",
-      "StackName": "amplify-simplechat-dev-143413",
-      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-simplechat-dev-143413/dda31cc0-5b5e-11eb-b8f1-1263ebc1f863",
-      "AmplifyAppId": "d1rilx1c9oq3sj"
+      "DeploymentBucketName": "amplify-precisionfallchat-prod-91430-deployment",
+      "UnauthRoleName": "amplify-precisionfallchat-prod-91430-unauthRole",
+      "StackName": "amplify-precisionfallchat-prod-91430",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-precisionfallchat-prod-91430/fa58d740-e576-11eb-851c-0e6c28966f7b",
+      "AmplifyAppId": "d26dmw88j3kfn6"
     }
   },
   "api": {
-    "simplechat": {
+    "PrecisionFallChat": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -22,21 +22,21 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
-              "description": "simplechat"
+              "description": "Precision Fall Chat"
             }
           },
           "additionalAuthenticationProviders": []
         },
-        "GraphQLAPIIdOutput": "46or2spdunhohmn2kiytze6bki",
-        "GraphQLAPIEndpointOutput": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-iqwe4wuf7jhezprwwtrc7b4zua"
+        "GraphQLAPIIdOutput": "w7iahmaam5hjlbasphgtjggi4a",
+        "GraphQLAPIEndpointOutput": "https://yjnbs2lluzcwbj3qvgynl3wo4q.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ombyytfyjbepzcx6i4qgr56mji"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-simplechat-dev-143413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apisimplechat"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-precisionfallchat-prod-91430-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiPrecisionFallChat"
       },
-      "lastPushTimeStamp": "2021-01-20T20:57:10.057Z",
-      "lastPushDirHash": "ItdjsOEpqUXbsMY9j3kBhWHsoIY="
+      "lastPushTimeStamp": "2021-07-15T14:41:22.940Z",
+      "lastPushDirHash": "a2m0um2klIXYTxt1nQ3vgHwvE4I="
     }
   }
 }

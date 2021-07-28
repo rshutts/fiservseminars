@@ -1,12 +1,16 @@
 {
   "api": {
-    "simplechat": {
+    "PrecisionFallChat": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS"
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "Precision Fall Chat"
+            }
           },
           "additionalAuthenticationProviders": []
         }

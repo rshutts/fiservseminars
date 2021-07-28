@@ -1,5 +1,18 @@
 /* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. */
 /* SPDX-License-Identifier: MIT-0 */
+.main-video-player {
+  width: 100%;
+  min-height: 480px;
+  height:auto;
+}
+
+.player-wrapper, .react-player {
+  width:100%;
+  min-width:728px;
+  min-height:400px;
+  padding:0 10px;
+}
+
 
 :root {
     --video-width: 88.4rem;

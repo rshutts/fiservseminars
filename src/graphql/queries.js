@@ -7,6 +7,7 @@ export const getMessage = /* GraphQL */ `
       id
       channelID
       author
+      group
       body
       createdAt
       updatedAt
@@ -24,6 +25,7 @@ export const listMessages = /* GraphQL */ `
         id
         channelID
         author
+        group
         body
         createdAt
         updatedAt
@@ -32,8 +34,8 @@ export const listMessages = /* GraphQL */ `
     }
   }
 `;
-export const messagesByChannelId = /* GraphQL */ `
-  query MessagesByChannelId(
+export const messagesByChannelID = /* GraphQL */ `
+  query MessagesByChannelID(
     $channelID: ID
     $createdAt: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
@@ -53,6 +55,7 @@ export const messagesByChannelId = /* GraphQL */ `
         id
         channelID
         author
+        group
         body
         createdAt
         updatedAt

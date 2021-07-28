@@ -1,0 +1,144 @@
+.Signup {
+  background: #fff;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  padding: 1% 2%;
+  margin: 10px auto;
+  justify-content: center;
+}
+.Signup form {
+  display: flex;
+  width:70%;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+}
+.Signup form .form-row {
+  justify-content: space-between;
+}
+.Signup form .form-group {
+  margin:10px;
+  min-width: 221px;
+} 
+.pw-show-hide {
+  float: right;
+  margin-top: -30px;
+  margin-right: 10px;
+  position: relative;
+  width: fit-content;
+}
+.pw-show-hide svg {
+  height:1.5em;
+  width:1.5em;
+  fill:#d1d1d1;
+  transition: fill .15s ease-in-out,
+}
+.pw-show-hide svg:hover {
+  fill: #FF6600;
+  cursor: pointer;
+}
+#login-password {
+  border-top-right-radius:.25rem; 
+  border-bottom-right-radius:.25rem;
+}
+input.login-pw-input {
+  position: relative;
+  z-index:0;
+  padding-right:40px;
+}
+.login.pw-show-hide {
+  text-align: right;
+  z-index: 1000;
+  display: flex;
+  align-self: flex-end;
+  width: fit-content;
+  position: relative;
+  top: -15px;
+}
+#passwordHelpBlock {
+  text-align:center;
+  font-size:100%;
+  margin-top:20px;
+}
+.required label:after, span.reg-require:after {
+  color: #e32;
+  content: ' *';
+  display: inline;
+  font-weight:bold;
+}
+select#seminarDate, select#address {
+  min-width: 203.37px;
+}
+.requirements {
+  font-size:.75rem;
+}
+.requirements .invalid .checklist-icon path {
+  fill:#DD3435;
+}
+.requirements .valid .checklist-icon path {
+  fill:#54B34A;
+}
+.terms-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom:10px !important;
+  margin-top:20px !important;
+}
+.terms-check a {
+  color:#ff6600;
+}
+.main-content-login, .reset-password {
+  background: #fff;
+  height: 100%;
+  width:30%;
+  padding: 1% 2%;
+  margin: 10px auto;
+}
+.main-content-login h1 svg {
+  height:2em;
+  width:2em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form button {
+  width: 50%;
+  margin: auto;
+}
+.login-form a {
+  text-align: right;
+  padding-bottom:10px;
+}
+.success {
+  background-color:transparent;
+  text-align: center;
+}
+/* input[type="password"] + .pw-show-hide:after, .login.pw-show-hide:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f070';
+  position: relative;
+  color: rgba(0, 0, 0, .4);
+  font-size:1.2em;
+}
+input[type="text"] + .pw-show-hide:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f06e';
+  position: relative;
+  color: #ff6600;
+  font-size:1.2em;
+} */
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

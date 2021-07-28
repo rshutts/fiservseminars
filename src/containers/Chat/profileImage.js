@@ -2,39 +2,34 @@ import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
+import Avatar from 'react-avatar';
 
 import config from '../../aws-config';
 
-Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://qssh4niq5bgujocnsbpv2zg7am.appsync-api.us-east-1.amazonaws.com/graphql",
-  "aws_appsync_region": "us-east-1",
-  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket,
-    region: config.aws_s3_bucket_region,
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-});
+Storage.configure({ track: true, level: "protected" });
 
-export default function ProfileImage() {
+export default function ChatProfileImage() {
   const [image, setImage] = useState([]);
-  const [username, setUsername] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [profile, setProfile] = useState({
+    name: ""
+  });
   let fileInput = React.createRef();
 
-  useEffect(() => {
-    async function getUsername() {
-        const user = await Auth.currentUserInfo();
-        const username = user.username
-        setUsername(username);
+  const onLoad = async () => {
+    try {
+      const user = await Auth.currentUserInfo();
+      setProfile({
+        name: user.attributes.name,
+      });
+    } catch(e) {
+ 
     }
-    getUsername();
- }, [])
+    
+  }
+  useEffect(()=>{
+    onLoad();
+    }, []);
 
   useEffect(() => {
     onPageRendered();
@@ -45,7 +40,7 @@ export default function ProfileImage() {
   };
   
   const getProfilePicture = () => {
-    Storage.get(`${username}/profile.png`, {level: 'private'})
+    Storage.get(`profile.png`, {level: 'protected'})
       .then(url => {
         var myRequest = new Request(url);
         fetch(myRequest).then(function(response) {
@@ -60,7 +55,19 @@ export default function ProfileImage() {
 
   return (
     <div className="App">
-        <img src={image} height="50px"/>
+      {imageUrl
+        ?
+        <img style={{ width: "30rem" }} src={imageUrl} />
+        : 
+        <Avatar 
+          name={profile.name} 
+          alt='Profile'
+          className='nav-user-profile'
+          size="30"
+          round="15px"
+          color={Avatar.getRandomColor('sitebase', ['#ff6600', '#666666', '#333333'])}
+        /> 
+      }
     </div>
   )
 }

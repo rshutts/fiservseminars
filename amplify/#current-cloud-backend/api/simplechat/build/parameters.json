@@ -1,8 +1,0 @@
-{
-    "CreateAPIKey": 1,
-    "AppSyncApiName": "simplechat",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": false,
-    "S3DeploymentBucket": "amplify-simplechat-dev-143413-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/b0bbba9e8ea4b56c9825eea0875849e129b37a6f"
-}
