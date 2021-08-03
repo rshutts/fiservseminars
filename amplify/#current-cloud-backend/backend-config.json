@@ -1,6 +1,6 @@
 {
   "api": {
-    "PrecisionFallChat": {
+    "PremierFallChat": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -8,8 +8,8 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "Precision Fall Chat"
+              "apiKeyExpirationDays": 365,
+              "description": "Premier Chat"
             }
           },
           "additionalAuthenticationProviders": []

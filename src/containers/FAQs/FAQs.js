@@ -99,7 +99,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 5} className="faq-content">
                     <p>
-                        One connection always you to be signed in at one place at one time. If you would like additional connections please have each user register individually. 
+                        One connection allows you to be signed in at one place at one time. If you would like additional connections please have each user register individually. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title

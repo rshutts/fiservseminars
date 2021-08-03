@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
 import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import { Header  } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom";
 import LoaderButton from "../../../components/LoaderButton";
@@ -39,6 +41,10 @@ export default function Signup() {
   const [values, setValues] = useState({
     showPassword: false,
   });
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function validateForm() {
     return (
@@ -81,7 +87,6 @@ export default function Signup() {
       });
       setIsLoading(false);
       setNewUser(newUser);
-      history.push("/signup/confirmation");
     } catch (e) {
       console.log(error)
       setError(e.message);
@@ -89,6 +94,9 @@ export default function Signup() {
     }
   }
 
+  const onClickLogin = (e) => {
+    history.push("/login");
+  }
   const onClickCheck = (e) => {
     setChecked(!checked)
   }
@@ -339,6 +347,7 @@ export default function Signup() {
           variant="success"
           isLoading={isLoading}
           disabled={!validateForm()}
+          onClick={handleShow}
           style=
             {!checked
               ? {display:'none'}
@@ -347,6 +356,40 @@ export default function Signup() {
         >
           Signup
         </LoaderButton>
+        <>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Fall Education Seminar!</h1>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready. Please login to proceed.</h3>
+            <h3 style={{ textAlign: 'center', fontSize:"13px", color:"#DD3435" }}>You will be receiving a calendar invite for your session of choice within a week of signing up.</h3>
+          </Modal.Body>
+          <Modal.Footer>
+            {/* <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button> */}
+            <Button 
+              variant="primary" 
+              onClick={onClickLogin}
+              id='loginBtn'
+              color='primary'
+              className='btn-margin'>
+            Login
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       </Form>
       </div>
       
