@@ -63,7 +63,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
+              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021-Education-Seminar-Precision-Overview-and-Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >
@@ -120,7 +120,11 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
+<<<<<<< HEAD
               href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
+=======
+              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021-Education-Seminar-Precision-Overview-and-Agenda.pdf'
+>>>>>>> precision-signup
               target='_blank'
               rel="noopener noreferrer"
             >
