@@ -42,19 +42,7 @@ export default function SignupConfirmation() {
       setIsLoading(false);
     }
   }
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Simple tooltip
-    </Tooltip>
-  );
   return (
-    <OverlayTrigger
-      placement="right"
-      delay={{ show: 250, hide: 400 }}
-      overlay={renderTooltip}
-    >
-      <Button variant="success">Hover me to see</Button>
-    </OverlayTrigger>,
     <div className="main-content-login">
       <h1 style={{ textAlign: 'center' }}>Thank you for registering for the Fall Education Seminar!</h1>
       <h3 style={{ textAlign: 'center', fontSize:"15px" }}>We have received your registration details and your account is ready. Please login below to proceed.</h3>
