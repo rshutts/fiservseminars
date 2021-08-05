@@ -215,7 +215,8 @@ h2.section-header {
 h2.agenda-subheader {
   font-size:14px;
   font-weight:bold;
-  padding: 0px 20px;
+  padding: 0px 30px;
+  text-align:center;
 }
 .seminar-container h2 {
   margin-bottom:1em;

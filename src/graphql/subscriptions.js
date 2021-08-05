@@ -7,7 +7,6 @@ export const onCreateMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
       createdAt
       updatedAt
@@ -20,7 +19,6 @@ export const onUpdateMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
       createdAt
       updatedAt
@@ -33,7 +31,6 @@ export const onDeleteMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
       createdAt
       updatedAt

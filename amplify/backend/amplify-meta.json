@@ -1,19 +1,19 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-precisionfallchat-prod-91430-authRole",
-      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-precisionfallchat-prod-91430-authRole",
+      "AuthRoleName": "amplify-premierfallseminar21-prod-144046-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-precisionfallchat-prod-91430-deployment",
-      "UnauthRoleName": "amplify-precisionfallchat-prod-91430-unauthRole",
-      "StackName": "amplify-precisionfallchat-prod-91430",
-      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-precisionfallchat-prod-91430/fa58d740-e576-11eb-851c-0e6c28966f7b",
-      "AmplifyAppId": "d26dmw88j3kfn6"
+      "DeploymentBucketName": "amplify-premierfallseminar21-prod-144046-deployment",
+      "UnauthRoleName": "amplify-premierfallseminar21-prod-144046-unauthRole",
+      "StackName": "amplify-premierfallseminar21-prod-144046",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallseminar21-prod-144046/b62338d0-efdb-11eb-a0b7-12ee986ec865",
+      "AmplifyAppId": "d1cfg5ebh68bps"
     }
   },
   "api": {
-    "PrecisionFallChat": {
+    "PremierFallChat": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -21,22 +21,22 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "Precision Fall Chat"
+              "apiKeyExpirationDays": 365,
+              "description": "Premier Chat"
             }
           },
           "additionalAuthenticationProviders": []
         },
-        "GraphQLAPIIdOutput": "w7iahmaam5hjlbasphgtjggi4a",
-        "GraphQLAPIEndpointOutput": "https://yjnbs2lluzcwbj3qvgynl3wo4q.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-ombyytfyjbepzcx6i4qgr56mji"
+        "GraphQLAPIIdOutput": "ncwvpxsqwrdghbzz4xcyfykhpm",
+        "GraphQLAPIEndpointOutput": "https://wf37w2vwrzh6fej5h2o2chwmyy.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-6l6ne6igyngqtfykj62i33t5hq"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-precisionfallchat-prod-91430-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apiPrecisionFallChat"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-premierfallseminar21-prod-144046-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiPremierFallChat"
       },
-      "lastPushTimeStamp": "2021-07-15T14:41:22.940Z",
-      "lastPushDirHash": "a2m0um2klIXYTxt1nQ3vgHwvE4I="
+      "lastPushTimeStamp": "2021-07-28T19:48:41.093Z",
+      "lastPushDirHash": "OGKJZBn08BzhFR2hFYe8CiDDYTw="
     }
   }
 }

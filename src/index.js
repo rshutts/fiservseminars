@@ -11,10 +11,10 @@ import reportWebVitals from './reportWebVitals';
 initSentry();
 
 Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://yjnbs2lluzcwbj3qvgynl3wo4q.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://wf37w2vwrzh6fej5h2o2chwmyy.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "API_KEY",
-  'aws_appsync_apiKey': 'da2-ombyytfyjbepzcx6i4qgr56mji',
+  'aws_appsync_apiKey': 'da2-6l6ne6igyngqtfykj62i33t5hq',
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,

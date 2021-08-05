@@ -118,6 +118,13 @@ select#seminarDate, select#address {
   background-color:transparent;
   text-align: center;
 }
+
+.modal-footer #loginBtn {
+  margin:0 auto;
+}
+.modal-content button.close {
+  display: none;
+}
 /* input[type="password"] + .pw-show-hide:after, .login.pw-show-hide:after {
   font-family: "Font Awesome 5 Free";
   content: '\f070';

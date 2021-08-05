@@ -23,9 +23,9 @@ class Right extends Component{
         <h1>
             Agenda
         </h1>
-        <h2 className="agenda-subheader">*** Please note all times listed are CST</h2>
+        <h2 className="agenda-subheader">*** NOTE: All agenda and topics are listed in CST and subject to change.</h2>
     
-      <Accordion fluid styled>
+        <Accordion fluid styled>
         <Accordion.Title
           active={activeIndex === 0}
           index={0}
