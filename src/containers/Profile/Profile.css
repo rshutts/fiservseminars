@@ -55,7 +55,21 @@
     height: 100%;
     padding: 1% 0%;
 }
-
+.update-profile-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+.update-profile-buttons button {
+    width:16%;
+    margin-right: 10px;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.main-content-update form .row input, .main-content-update form .row select {
+    min-width: 221px;
+}
 @media (max-width: 767px) {
     .profile-section.card {
         width:90%;

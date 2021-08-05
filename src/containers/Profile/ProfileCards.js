@@ -14,8 +14,8 @@ function ProfileCards(props) {
   const [error, setError] = useState();
   const [profile, setProfile] = useState({
     email: "",
-    name: "",
-    bank: "",
+    fullName: "",
+    bankName: "",
     title: "",
     city: "",
     state:  ""
@@ -31,8 +31,8 @@ function ProfileCards(props) {
       setProfile({
         username: user.username,
         email: user.attributes.email,
-        name: user.attributes['custom:fullName'],
-        bank: user.attributes['custom:bankName'],
+        fullName: user.attributes['custom:fullName'],
+        bankName: user.attributes['custom:bankName'],
         title: user.attributes['custom:title'],
         city: user.attributes['custom:city'],
         state: user.attributes['custom:state']
@@ -66,14 +66,14 @@ function ProfileCards(props) {
           <ProfileImage/>
           <Card.Header>
             <h1>
-              {profile.name}
+              {profile.fullName}
             </h1>
           </Card.Header>
           <Card.Body>
             {userGroup.group === 'Fiserv'
             ?
               <Card.Title>
-                Email:  {profile.username}*
+                Email:  {profile.email}*
               </Card.Title>
             :
               <Card.Title>
@@ -83,7 +83,7 @@ function ProfileCards(props) {
             }
             <Card.Subtitle className="mb-2 text-muted">&nbsp;</Card.Subtitle>
             <Card.Text>
-              <h2>Bank Name:  {profile.bank}</h2>
+              <h2>Bank Name:  {profile.bankName}</h2>
               <h2>Title:  {profile.title}</h2>
               <h2>City: {profile.city}</h2>
               <h2>State: {profile.state}</h2>
