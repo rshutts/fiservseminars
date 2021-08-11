@@ -146,6 +146,11 @@ export default function Signup() {
                 value={fields.username}
               />
             </Form.Group>
+             <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
+              <h3 style={{fontWeight: "bold"}}>
+                **Username CANNOT an email.**
+              </h3>
+             </div>
           </Form.Row>
           <Form.Row>
             <Form.Group className="required" controlId="password" size="lg">
