@@ -145,12 +145,12 @@ export default function Signup() {
                 onChange={handleFieldChange}
                 value={fields.username}
               />
+              <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
+                <h3 style={{fontWeight: "bold", fontSize: "12px"}}>
+                  **Username CANNOT be an email.**
+                </h3>
+              </div>
             </Form.Group>
-            <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
-              <h3 style={{fontWeight: "bold"}}>
-                **Username CANNOT an email.**
-              </h3>
-             </div>
           </Form.Row>
           <Form.Row>
             <Form.Group className="required" controlId="password" size="lg">
