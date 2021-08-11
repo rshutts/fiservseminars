@@ -147,7 +147,7 @@ export default function Signup() {
               />
               <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
                 <h3 style={{fontWeight: "bold", fontSize: "12px"}}>
-                  **Username CANNOT an email.**
+                  **Username CANNOT be an email.**
                 </h3>
               </div>
             </Form.Group>
