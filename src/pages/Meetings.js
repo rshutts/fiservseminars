@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
-import Notes from '../components/Notes'
+import QuizApp from '../containers/Quiz/index';
 import Iframe from 'react-iframe'
 
 import config from '../aws-config';
@@ -39,24 +39,14 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-              {/* <iframe 
-                src="https://main.d8joca129bu9k.amplifyapp.com/"
-                width="100%"
-                height="700px"
-                id="myId"
-                className="pollsFrame"
-                display="initial"
-                position="relative"
-                loading
-              /> */}
+            </div>
+            <div className='chat'>
+              <QuizApp/>   
             </div>
           </section>
           <section className="right meetings">
             <div className='chat'>
               <Chat/>   
-            </div>
-            <div className='chat'>
-              <Notes/>   
             </div>
           </section>
         </div>       

@@ -25,7 +25,7 @@ class Right extends Component{
         </h1>
         <h2 className="agenda-subheader">*** NOTE: All agenda and topics are listed in CST and subject to change.</h2>
     
-      <Accordion fluid styled>
+        <Accordion fluid styled>
         <Accordion.Title
           active={activeIndex === 0}
           index={0}
@@ -37,34 +37,34 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Safe Deposit Box Specifications &amp; Best Practices
+                Database Clean-Up
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Account Closing Procedures
+                Handling Dormant &amp; Inactive Accounts 
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Did You Know: Forgotten Gems
+                Clean-Up Quick Bites
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Empathy: An Overlooked Best Practice
+                Networking
             </h3>
             <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -78,34 +78,34 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Loan Payoffs
+                Hidden Gems for Loans - Session 1
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Loan Escrow Analysis
+                Hidden Gems for Loans - Session 2
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Loan Enhancements
+                Essentials for Participation Loans
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Feedback that Matters
+                Networking
             </h3>
             <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -119,18 +119,26 @@ class Right extends Component{
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Premier UI
+                Precision Releases
             </h3>
             <p>
-                @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
+                @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                BPM Tips &amp; Tricks for Administrators
+                Precision Roadmap
             </h3>
             <p>
-                @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+                @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 2}>
+            <h3 className="meetingTitle">
+                Precision UI
+            </h3>
+            <p>
+                @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
@@ -138,15 +146,7 @@ class Right extends Component{
                 Networking
             </h3>
             <p>
-                @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
-            </p>
-        </Accordion.Content>
-        <Accordion.Content active={activeIndex === 2}>
-            <h3 className="meetingTitle">
-                Training Best Practices: Making it Stick
-            </h3>
-            <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 11:00 – 11:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
       </Accordion>

@@ -78,7 +78,7 @@ function Sidenav() {
                   FAQ 
               </Menu.Item>
             </Link>
-            {/* <Link className="sidebar-nav-link" to="/speaker-bios">
+            <Link className="sidebar-nav-link" to="/speaker-bios">
               <Menu.Item>
                 <FaRegAddressBook/>
                   Speaker Bios 
@@ -95,7 +95,7 @@ function Sidenav() {
                 <FaNewspaper/>
                   Session Collateral
               </Menu.Item>
-            </Link> */}
+            </Link>
             <Link className="sidebar-nav-link" to="/profile">
               <Menu.Item>
                 <FaUser/>
@@ -120,11 +120,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-<<<<<<< HEAD
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
-=======
               href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021-Education-Seminar-Precision-Overview-and-Agenda.pdf'
->>>>>>> precision-signup
               target='_blank'
               rel="noopener noreferrer"
             >

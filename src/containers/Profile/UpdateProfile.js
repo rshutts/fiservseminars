@@ -19,11 +19,11 @@ export default function UpdateProfile() {
   const history = useHistory();
   const [profile, setProfile] = useState({
     email: "",
-    name: "",
-    given_name: "",
-    nickname: "",
-    locale: "",
-    address: "",
+    fullName: "",
+    bankName: "",
+    title: "",
+    city: "",
+    state: "",
   });
   
   const [isSendingCode, setIsSendingCode] = useState(false);
@@ -34,11 +34,11 @@ export default function UpdateProfile() {
       console.log(user)
       setProfile({
         email: user.attributes.email,
-        name: user.attributes.name,
-        given_name: user.attributes.given_name,
-        nickname:user.attributes.nickname,
-        locale:user.attributes.locale,
-        address:user.attributes.address
+        fullName: user.attributes['custom:fullName'],
+        bankName: user.attributes['custom:bankName'],
+        title: user.attributes['custom:title'],
+        city: user.attributes['custom:city'],
+        state: user.attributes['custom:state']
       });
     } catch(e) {
 
@@ -56,11 +56,11 @@ export default function UpdateProfile() {
         const user = await Auth.currentAuthenticatedUser();
         await Auth.updateUserAttributes(user, { 
           email: profile.email,
-          name: profile.name,
-          given_name: profile.given_name,
-          nickname: profile.nickname,
-          locale: profile.locale,
-          address: profile.address
+          'custom:fullName': profile.fullName,
+          'custom:bankName': profile.bankName,
+          'custom:title': profile.title,
+          'custom:city': profile.city,
+          'custom:state': profile.state
         });
         history.push('/profile')
       } catch (error) {
@@ -72,8 +72,11 @@ const returnTo = () => {
 };
 return (
   <div className="main-content-update">
+    <h1>
+      Update Profile
+    </h1>
     <form onSubmit={onSubmit}>
-      <PhotoUpload/>
+      {/* <PhotoUpload/> */}
       <Row>
         <FormGroup bsSize="large" controlId="email">
         <FormLabel>Email</FormLabel>
@@ -87,86 +90,143 @@ return (
           }}
         />
       </FormGroup>
-      <FormGroup bsSize="large" controlId="name">
+      <FormGroup bsSize="large" controlId="fullName">
         <FormLabel>Name</FormLabel>
         <FormControl
           autoFocus
-          value={profile.name}
-          name="name"
+          value={profile.fullName}
+          name="fullName"
           type="text"
           onChange={e => {
-            setProfile({ ...profile, name: e.target.value });
+            setProfile({ ...profile, fullName: e.target.value });
           }}
         />
       </FormGroup>
       </Row>
       <Row>
-        <FormGroup bsSize="large" controlId="profile.given_name">
+        <FormGroup bsSize="large" controlId="bankName">
         <FormLabel>Bank Name</FormLabel>
         <FormControl
           autoFocus
-          value={profile.given_name}
-          name="bank"
+          value={profile.bankName}
+          name="bankName"
           type="text"
           onChange={e => {
-            setProfile({ ...profile, given_name: e.target.value });
+            setProfile({ ...profile, bankName: e.target.value });
           }}
         />
       </FormGroup>
-      <FormGroup bsSize="large" controlId="nickname">
+      <FormGroup bsSize="large" controlId="title">
         <FormLabel>Title</FormLabel>
         <FormControl
           autoFocus
-          value={profile.nickname}
+          value={profile.title}
           name="title"
           type="text"
           onChange={e => {
-            setProfile({ ...profile, nickname: e.target.value });
+            setProfile({ ...profile, title: e.target.value });
           }}
         />
       </FormGroup>
       </Row>
       <Row>
-        <FormGroup bsSize="large" controlId="profile.locale">
+        <FormGroup bsSize="large" controlId="city">
         <FormLabel>City</FormLabel>
         <FormControl
           autoFocus
-          value={profile.locale}
+          value={profile.city}
           name="city"
           type="text"
           onChange={e => {
-            setProfile({ ...profile, locale: e.target.value });
+            setProfile({ ...profile, city: e.target.value });
           }}
         />
       </FormGroup>
-      <FormGroup bsSize="large" controlId="profile.address">
+      <FormGroup bsSize="large" controlId="state">
         <FormLabel>State</FormLabel>
         <FormControl
-          autoFocus
-          value={profile.address}
-          name="state"
-          type="text"
+          type="state"
           onChange={e => {
-            setProfile({ ...profile, address: e.target.value });
+            setProfile({ ...profile, state: e.target.value });
           }}
+          value={profile.state}
+          as="select"
+        >
+          <option>Alabama</option>
+          <option>Alaska</option>
+          <option>Arizona</option>
+          <option>Arkansas</option>
+          <option>California</option>
+          <option>Colorado</option>
+          <option>Connecticut</option>
+          <option>Delaware</option>
+          <option>Florida</option>
+          <option>Georgia</option>
+          <option>Hawaii</option>
+          <option>Idaho</option>
+          <option>Illinois</option>
+          <option>Indiana</option>
+          <option>Iowa</option>
+          <option>Kansas</option>
+          <option>Kentucky</option>
+          <option>Louisiana</option>
+          <option>Maine</option>
+          <option>Maryland</option>
+          <option>Massachusetts</option>
+          <option>Michigan</option>
+          <option>Minnesota</option>
+          <option>Mississippi</option>
+          <option>Missouri</option>
+          <option>Montana</option>
+          <option>Nebraska</option>
+          <option>Nevada</option>
+          <option>New Hampshire</option>
+          <option>New Jersey</option>
+          <option>New Mexico</option>
+          <option>New York</option>
+          <option>North Carolina</option>
+          <option>North Dakota</option>
+          <option>Ohio</option>
+          <option>Oklahoma</option>
+          <option>Oregon</option>
+          <option>Pennsylvania</option>
+          <option>Rhode Island</option>
+          <option>South Carolina</option>
+          <option>South Dakota</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Utah</option>
+          <option>Vermont</option>
+          <option>Virginia</option>
+          <option>Washington</option>
+          <option>West Virginia</option>
+          <option>Wisconsin</option>
+          <option>Wyoming</option>
+        </FormControl>
+        <FormControl
+          required
+          type="state"
+          onChange={e => {
+            setProfile({ ...profile, state: e.target.value });
+          }}
+          value={profile.state}
+          style={{ display: 'none'}}
         />
       </FormGroup>
       </Row>
-      <Button
-        onClick={returnTo}
-      >
-        Back
-      </Button>
-      <LoaderButton
-        block
-        type="submit"
-        bsSize="large"
-        isLoading={isSendingCode}
-        /* onClick={onClickHandler} */
-        /* disabled={!validateEmailForm()} */
-      >
-        Update Profile
-      </LoaderButton>
+      <div className="update-profile-buttons">
+        <Button
+          onClick={returnTo}
+        >
+          Back
+        </Button>
+        <LoaderButton
+          type="submit"
+          isLoading={isSendingCode}
+        >
+          Update Profile
+        </LoaderButton>
+      </div>
     </form>  
   </div>     
   );

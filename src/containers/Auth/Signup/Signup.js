@@ -26,6 +26,7 @@ export default function Signup() {
     city: "",
     state: "",
     seminarDate: "",
+    userScore: "0"
   });
   const { register, getValues, errors } = useForm({ mode: 'all' });
   
@@ -57,7 +58,8 @@ export default function Signup() {
       fields.title.length > 0 &&
       fields.city.length > 0 &&
       fields.state.length > 0 &&
-      fields.seminarDate.length > 0
+      fields.seminarDate.length > 0 &&
+      fields.userScore.length > 0
     );
   }
 
@@ -82,7 +84,8 @@ export default function Signup() {
           'custom:title': fields.title,
           'custom:city': fields.city,
           'custom:state': fields.state,
-          'custom:seminarDate': fields.seminarDate
+          'custom:seminarDate': fields.seminarDate,
+          'custom:userScore': fields.userScore
         },    
       });
       setIsLoading(false);
@@ -312,8 +315,8 @@ export default function Signup() {
                 as="select"
               >
                 <option></option>
-                <option>October 12 - 14</option>
-                <option>November 2 - 4</option>
+                <option>September 21 - 23</option>
+                <option>October 19 - 21</option>
               </Form.Control>
               <Form.Control
                 type="birthdate"
@@ -321,11 +324,26 @@ export default function Signup() {
                 value={fields.seminarDate}
                 style={{ display: 'none'}}
               />
+              <Form.Control
+                type="score"
+                onChange={handleFieldChange}
+                value={fields.userScore}
+                style={{ display: 'none'}}
+              />
+            </Form.Group>
+            <Form.Group className="required" controlId="userScore" size="lg">
+              <Form.Control
+                type="userScore"
+                /* onChange={handleFieldChange} */
+                value={fields.userScore}
+                style={{ display: 'none'}}
+              />
             </Form.Group>
           </Form.Row>
           <div>
             <span className="reg-require"></span> Indicates required fields
           </div>
+          {console.log(fields.userScore)}
           <Form.Text id="passwordHelpBlock">
             Please fill out all fields above and the privacy policy below before completing signup.
           </Form.Text>

@@ -12,6 +12,7 @@ import Bios from './pages/Bios';
 import PasswordReset from './pages/ResetPassword';
 import PasswordForgot from './pages/ForgotPassword';
 import Articles from './pages/Articles'
+import QuizCreate from './pages/Quiz'
 
 /*Containers*/
 import Login from "./containers/Auth/Login";
@@ -22,6 +23,10 @@ import Signup from "./containers/Auth/Signup/Signup";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
+
+import EditQuiz from "./containers/Quiz/editquiz"
+import EditQuestion from "./containers/Quiz/editquestion"
+import RunQuiz from "./containers/Quiz/runquiz"
 
 /*Polls*/
 
@@ -81,6 +86,18 @@ const Routes = () => (
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/profile/create-quiz">
+            <QuizCreate />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/profile/edit-quiz">
+            <EditQuiz />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/profile/edit-question">
+            <EditQuestion />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/profile/run-quiz">
+            <RunQuiz />
           </AuthenticatedRoute>
         </Switch>
         </CSSTransition>

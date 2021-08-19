@@ -7,14 +7,23 @@ import App from './App';
 import config from './aws-config';
 import { initSentry } from './libs/errorLib';
 import reportWebVitals from './reportWebVitals';
+import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
+import * as serviceWorker from './serviceWorker';
+import 'react-toastify/dist/ReactToastify.css';
+
+const LOCAL_KEY = localStorage.getItem(BASE_KEY);
+
+if (!LOCAL_KEY) {
+  localStorage.setItem(BASE_KEY, CLIENT_ID);
+}
 
 initSentry();
 
 Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://wf37w2vwrzh6fej5h2o2chwmyy.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "API_KEY",
-  'aws_appsync_apiKey': 'da2-6l6ne6igyngqtfykj62i33t5hq',
+  'aws_appsync_apiKey': 'da2-tsgw77xldbafbno255j6iwb4ei',
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,
@@ -41,3 +50,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+serviceWorker.unregister();
