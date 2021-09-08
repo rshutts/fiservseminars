@@ -1,3 +1,12 @@
 {
-  "api": {}
+  "api": {
+
+  },
+  "predictions": {
+    "interpretText9f7d7880": {
+      "providerPlugin": "awscloudformation",
+      "service": "Comprehend",
+      "interpretType": "interpretText"
+    }
+  }
 }

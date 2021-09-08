@@ -23,7 +23,6 @@ export const createPoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -41,7 +40,6 @@ export const updatePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -59,7 +57,6 @@ export const deletePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -72,11 +69,8 @@ export const createCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -89,11 +83,8 @@ export const updateCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -106,11 +97,8 @@ export const deleteCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;

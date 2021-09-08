@@ -72,7 +72,7 @@ export const Card = ({
       <h5>{title}</h5>
       <Link
         to={{
-          pathname: "/edit-question",
+          pathname: "/profile/trivia/edit-quiz/edit-question",
           state: { questionId: id, status: "edit" }
         }}
         className="editQuestion"

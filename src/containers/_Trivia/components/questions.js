@@ -1,12 +1,16 @@
 import React from "react";
 import { DataStore } from 'aws-amplify';
-import { Questions, Quiz, Subscribers, Responses } from "../../containers/Quiz/models";
+import { Questions, Quiz, Subscribers, Responses } from "../../../models/";
 import { Button, Image } from "react-bootstrap";
-import Score from "./score";
+import Score from "../components/score";
+import Video from "../components/video";
+import Failure from "../images/failure.gif";
+import Right from "../images/right.gif";
+import Winner from "../images/winner.gif";
 import { S3Image } from "aws-amplify-react";
-import config from "../../aws-config";
+import config from "../../../aws-config";
 
-export default class QuestionsApp extends React.Component {
+export default class QuestionApp extends React.Component {
   constructor(props) {
     super(props);
 
@@ -207,6 +211,12 @@ export default class QuestionsApp extends React.Component {
             {question.answerFour}
           </Button>
         </div>
+
+        {question.youtube !== null && (
+          <div className="videoQuestion">
+            <Video videoSrcURL={question.youtube} videoTitle="" />
+          </div>
+        )}
         {(question.image !== null || question.image !== "") && (
           <div className="imageQuestionDiv">
             {imageSlice !== "http" ? (
@@ -236,7 +246,7 @@ export default class QuestionsApp extends React.Component {
             <div className="result">
               Yeah! The right answer is: {this.state.rightAnswer}
             </div>
-            {/* <img src={Right} width="300px" alt="right answer" /> */}
+            <img src={Right} width="300px" alt="right answer" />
           </div>
         )}
         {!this.state.answerState && (
@@ -244,7 +254,7 @@ export default class QuestionsApp extends React.Component {
             <div className="resultfalse">
               Failed! The right answer is: {this.state.rightAnswer}
             </div>
-            {/* <img src={Failure} width="300px" alt="wrong answer" /> */}
+            <img src={Failure} width="300px" alt="wrong answer" />
           </div>
         )}
       </div>
@@ -272,7 +282,7 @@ export default class QuestionsApp extends React.Component {
     if (quiz.view === 3) {
       content = (
         <div className="gif">
-          {/* <img src={Winner} width="300px" alt="winner" /> */}
+          <img src={Winner} width="300px" alt="winner" />
           <p className="top">END RESULT</p>
           <Score list={this.state.topList} />
         </div>

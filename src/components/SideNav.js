@@ -84,7 +84,7 @@ function Sidenav() {
                   Speaker Bios 
               </Menu.Item>
             </Link>
-            <Link className='sidebar-nav-link' to={'/session?room=Fiserv'}>
+            <Link className='sidebar-nav-link' to={'/session'}>
               <Menu.Item>
                 <FaUsers/>
                   Learning Sessions

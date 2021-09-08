@@ -112,37 +112,6 @@ export const itemsByType = /* GraphQL */ `
     }
   }
 `;
-export const candidatesByName = /* GraphQL */ `
-  query CandidatesByName(
-    $name: String
-    $candidateType: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelCandidateFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    candidatesByName(
-      name: $name
-      candidateType: $candidateType
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        pollCandidatesId
-        image
-        candidateType
-        name
-        upvotes
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getMessage = /* GraphQL */ `
   query GetMessage($id: ID!) {
     getMessage(id: $id) {

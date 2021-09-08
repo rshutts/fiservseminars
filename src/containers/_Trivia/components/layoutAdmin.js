@@ -6,7 +6,11 @@
  */
 
 import React from "react";
+
+import "./layout.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
+import Logo from "../images/nerd.png";
+import Footer from "./footerAdmin";
 
 const Layout = props => {
   return (
@@ -17,7 +21,10 @@ const Layout = props => {
             <Col>
               {" "}
               <Jumbotron>
-               
+                <span className="quizTitle">
+                  <img src={Logo} width="80px" alt="Kwizz" />
+                </span>
+
                 <span className="quizTitle">Kwizz</span>
 
                 <p className="quizDescription">
@@ -33,6 +40,7 @@ const Layout = props => {
             </Col>
           </Row>
         </Container>
+        {/* <Footer /> */}
       </div>
     </>
   );

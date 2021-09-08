@@ -9,6 +9,7 @@ const config = {
     "aws_cognito_region": "us-east-1",
     "aws_user_pools_id": "us-east-1_DP1sgZ1FC",
     "aws_user_pools_client_id": "2h9vuffn6urim68lujmtsqfv1f",
+    "aws_user_pools_web_client_id": "1pm7jvsngtpsflgsdv1o2an8dk",
 
     /*API*/
     "aws_appsync_graphqlEndpoint": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
@@ -18,7 +19,20 @@ const config = {
 
     /*S3*/
     "aws_s3_bucket": "seminar-profile-photos",
-    "aws_s3_bucket_region": "us-east-1"
+    "aws_s3_bucket_region": "us-east-1",
+
+    /*Predictions*/
+    "predictions": {
+        "interpret": {
+            "interpretText": {
+                "region": "us-east-1",
+                "proxy": false,
+                "defaults": {
+                    "type": "LANGUAGE"
+                }
+            }
+        }
+    }
 };
 
 

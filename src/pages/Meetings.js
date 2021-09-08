@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Chat from "../containers/Chat";
 import { useHistory } from "react-router-dom";
 /* import Loading from "../components/Loading"; */
 /* import Notes from '../components/Notes' */
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
-import QuizApp from '../containers/Quiz/index';
+import Polls from '../containers/Polling/Polls';
+/* import Trivia from '../containers/Trivia/index'; */
 import Iframe from 'react-iframe'
 
 import config from '../aws-config';
 
 const Meetings = () => {
   const history = useHistory();
-  
-  /* var src = "https://master.d2wuoedcks4rry.amplifyapp.com/" ;
-  var frameRefreshInterval = setInterval(function() {
-    document.getElementById("myId").src = document.getElementById("myId").src
-}, 2000); */
+
 
   return (
     <div className="main-content">
@@ -40,14 +37,24 @@ const Meetings = () => {
             <div className='video-player'>
               <VideoPlayer videoStream={config.PLAYBACK_URL}/>
             </div>
-            <div className='chat'>
-              <QuizApp/>   
-            </div>
+           {/*  <Iframe url="http://localhost:3001/"
+              width="100%"
+              height="700px"
+              id="myId"
+              className="pollsFrame"
+              display="initial"
+              position="relative"
+              loading
+            /> */}
+            <Polls/>
           </section>
           <section className="right meetings">
             <div className='chat'>
               <Chat/>   
             </div>
+            {/* <div>
+              <Trivia/>
+            </div> */}
           </section>
         </div>       
       </div> 

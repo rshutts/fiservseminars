@@ -12,7 +12,6 @@ import Bios from './pages/Bios';
 import PasswordReset from './pages/ResetPassword';
 import PasswordForgot from './pages/ForgotPassword';
 import Articles from './pages/Articles'
-import QuizCreate from './pages/Quiz'
 
 /*Containers*/
 import Login from "./containers/Auth/Login";
@@ -23,10 +22,14 @@ import Signup from "./containers/Auth/Signup/Signup";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
+import Polls from "./containers/Polling/Polls";
+import CreatePoll from "./containers/Polling/CreatePoll";
+import Polling from "./containers/Polling/Polling";
 
-import EditQuiz from "./containers/Quiz/editquiz"
-import EditQuestion from "./containers/Quiz/editquestion"
-import RunQuiz from "./containers/Quiz/runquiz"
+/* import Trivia from "./containers/Trivia/components/admin/admin";
+import EditQuiz from "./containers/Trivia/components/admin/editquiz";
+import EditQuestions from "./containers/Trivia/components/admin/editquestion";
+import RunQuiz from "./containers/Trivia/components/admin/runquiz"; */
 
 /*Polls*/
 
@@ -87,18 +90,34 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
-          <AuthenticatedRoute path="/profile/create-quiz">
-            <QuizCreate />
+
+          {/* Polls*/}
+          <AuthenticatedRoute exact path="/profile/polls">
+            <Polls />
           </AuthenticatedRoute>
-          <AuthenticatedRoute path="/profile/edit-quiz">
+          <AuthenticatedRoute exact path="/profile/polls/create">
+            <CreatePoll />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/session/:id">
+            <Polling />
+          </AuthenticatedRoute>
+          {/* <AuthenticatedRoute exact path="/profile/polls/:id">
+            <Poll />
+          </AuthenticatedRoute> */}
+
+          {/* Trivia*/}
+          {/* <AuthenticatedRoute exact path="/profile/trivia">
+            <Trivia />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/trivia/edit-quiz">
             <EditQuiz />
           </AuthenticatedRoute>
-          <AuthenticatedRoute path="/profile/edit-question">
-            <EditQuestion />
+          <AuthenticatedRoute exact path="/profile/trivia/edit-quiz/edit-question">
+            <EditQuestions />
           </AuthenticatedRoute>
-          <AuthenticatedRoute path="/profile/run-quiz">
+          <AuthenticatedRoute exact path="/profile/trivia/run-quiz">
             <RunQuiz />
-          </AuthenticatedRoute>
+          </AuthenticatedRoute> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>

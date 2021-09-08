@@ -1,28 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./layout";
-import { DataStore } from "@aws-amplify/datastore";
-import { Quiz, Subscribers } from "../../containers/Quiz/models";
-import QuestionsApp from "./questions";
+import { DataStore } from 'aws-amplify';
+import { Quiz, Subscribers } from "../../../models/";
+import Questions from "./questions";
 import { Button } from "react-bootstrap";
-import config from "../../aws-config";
-import Amplify from "@aws-amplify/core";
-/* DataStore.configure(awsConfig); */
+import config from "../../../aws-config";
+DataStore.configure(config);
 
-Amplify.configure({
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-});
-
-function Game(props) {
+function Trivia(props) {
   const [subscribers, setSubscribers] = useState([]);
   const [quiz, setQuiz] = useState([]);
   const [seconds, setSeconds] = useState(0);
@@ -116,7 +101,7 @@ function Game(props) {
             </div>
           </header>
           {quiz.started && (
-            <QuestionsApp
+            <Questions
               gamecode={localStorage.getItem("gamecode")}
               subscriber={localStorage.getItem("subscriber")}
             />
@@ -128,4 +113,4 @@ function Game(props) {
   );
 }
 
-export default Game;
+export default Trivia;

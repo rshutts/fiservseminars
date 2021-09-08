@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import Layout from "./layoutAdmin";
-import { DataStore } from "@aws-amplify/datastore";
-import { Questions, Quiz, QuestionsDB } from "../../containers/Quiz/models";
+import Layout from "../layoutAdmin";
+import { DataStore } from 'aws-amplify';
+import { Questions, Quiz, QuestionsDB } from "../../../../models";
 import { Row, Col, Button, Modal } from "react-bootstrap";
 import Storage from "@aws-amplify/storage";
 import arrayMove from "array-move";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import { Link, useHistory } from "react-router-dom";
 import { Card } from "./card";
 
@@ -34,7 +35,7 @@ function EditQuiz({ location }) {
 
   function addQuestion(id) {
     history.push({
-      pathname: "/profile/edit-question",
+      pathname: "/profile/trivia/edit-quiz/edit-question",
       state: {
         questionId: 0,
         status: "add"
@@ -104,6 +105,7 @@ function EditQuiz({ location }) {
     const questionOrder = JSON.parse(quiz.questionOrder);
     setQuestionOrder(questionOrder);
     let questions = [];
+    console.log(questions)
     if (questionOrder !== null || questionOrder !== "[]") {
       for (let i = 0; i < questionOrder.length; i++) {
         const question = await DataStore.query(Questions, questionOrder[i]);
@@ -158,7 +160,7 @@ function EditQuiz({ location }) {
               moveCard={moveCard}
               title={questions[i].question}
               editQuestion={{
-                pathname: "/profile/edit-question",
+                pathname: "/profile/trivia/edit-quiz/edit-question",
                 state: { questionId: questions[i].id, status: "edit" }
               }}
               deleteQuestion={() => handleDeleteModalShow(questions[i].id)}
@@ -171,9 +173,10 @@ function EditQuiz({ location }) {
 
   return (
     <DndProvider backend={HTML5Backend}>
+
         <Layout>
           <div className="App">
-            <Link to="/profile/create-quiz">
+            <Link to="/profile/trivia">
               <Button className="backButton" variant="secondary">
                 Back
               </Button>
@@ -190,16 +193,6 @@ function EditQuiz({ location }) {
               >
                 Add Question
               </Button>
-              or
-              <Link
-                to={{
-                  pathname: "/library"
-                }}
-              >
-                <Button variant="primary" className="addQuestionLibrary">
-                  Find in library
-                </Button>
-              </Link>
             </div>
             {typeof questions === "undefined" ||
             questions.length === 0 ||

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTrail, animated } from "react-spring";
+import "./score.css";
 
 const config = { mass: 5, tension: 1000, friction: 200 };
 

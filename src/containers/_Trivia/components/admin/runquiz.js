@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Layout from "./layoutAdmin";
-import { DataStore } from "@aws-amplify/datastore";
-import { Quiz, Subscribers, Questions, Responses } from "../../containers/Quiz/models";
+import Layout from "../layoutAdmin";
+import { DataStore } from 'aws-amplify';
+import { Quiz, Subscribers, Questions, Responses } from "../../../../models";
 import {
   Breadcrumb,
   Row,
@@ -15,8 +15,9 @@ import {
   Image
 } from "react-bootstrap";
 import { S3Image } from "aws-amplify-react";
-/* import Video from "../video"; */
-import Score from "./score";
+import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import Video from "../video";
+import Score from "../score";
 
 function RunQuiz(props) {
   const {
@@ -384,7 +385,7 @@ function RunQuiz(props) {
               }}
               variant="outline-success"
               className="controlStart"
-            >
+            >{console.log(adminGameCode.substring(0, 8))}
               Start kwizz
             </Button>
           ) : (
@@ -429,7 +430,7 @@ function RunQuiz(props) {
       <Layout>
         <div className="App">
           <Breadcrumb>
-            <Breadcrumb.Item href="/admin">Admin Home</Breadcrumb.Item>
+            <Breadcrumb.Item href="/profile/trivia">Admin Home</Breadcrumb.Item>
             <Breadcrumb.Item active>Run Kwizz</Breadcrumb.Item>
           </Breadcrumb>
 
@@ -464,6 +465,15 @@ function RunQuiz(props) {
                           </div>
                         </Col>
                         <Col>
+                          {currentQuestion.youtube !== null && (
+                            <div className="videoQuestion">
+                              <Video
+                                videoSrcURL={currentQuestion.youtube}
+                                videoTitle=""
+                              />
+                            </div>
+                          )}
+
                           {(currentQuestion.image !== null ||
                             currentQuestion.image !== "" ||
                             typeof currentQuestion.image !== "undefined") && (

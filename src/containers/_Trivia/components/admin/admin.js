@@ -1,33 +1,19 @@
 import React, { useEffect, useState } from "react";
+import Amplify, { Auth } from 'aws-amplify';
 import { Table, Modal, Button } from "react-bootstrap";
-import Amplify, { Hub } from "@aws-amplify/core";
-import Layout from "../containers/Quiz/layoutAdmin";
+import Layout from "../layoutAdmin";
 import { DataStore } from "@aws-amplify/datastore";
-import { Quiz, Subscribers, Questions, Responses } from "../containers/Quiz/models";
+import { Quiz, Subscribers, Questions, Responses } from "../../../../models";
 import { Link } from "react-router-dom";
-
-import config from "../aws-config";
+import { Hub } from "@aws-amplify/core";
+import Footer from "../footerAdmin";
+import config from "../../../../aws-config";
 import Storage from "@aws-amplify/storage";
-/* import { Auth } from "@aws-amplify/auth"; */
-import { Auth } from '@aws-amplify/auth';
 
-Amplify.configure({
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-});
-/* DataStore.configure(awsconfig);
-Auth.configure(awsconfig); */
+Amplify.configure(config);
+DataStore.configure(config);
 
-function QuizCreate(props) {
+function Trivia(props) {
   const [quiz, setQuiz] = useState([]);
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [toBeDeletedId, setToBeDeletedId] = useState(false);
@@ -84,11 +70,15 @@ function QuizCreate(props) {
       .then(async (data) => {
         setUser(data.signInUserSession.idToken.payload.sub);
         const userID = data.signInUserSession.idToken.payload.sub;
-
+        console.log(userID)
+        let filter = {
+          limit: 1
+        };
         const result = await DataStore.query(Quiz, (c) =>
           c.owner("eq", userID)
         );
         setQuiz(result);
+        console.log(result)
       })
       .catch((e) => console.log("error: ", e));
   }
@@ -107,8 +97,8 @@ function QuizCreate(props) {
   }, []);
 
   return (
-    <div className="main-content">
-        <div className="meetings-container">
+    <div className="signin">
+
         <Layout>
           <div className="App">
             <Table>
@@ -131,7 +121,7 @@ function QuizCreate(props) {
                       <td>
                         <Link
                           to={{
-                            pathname: "/profile/run-quiz",
+                            pathname: "/profile/trivia/run-quiz",
                             state: { quizID: quiz[i].id },
                           }}
                         >
@@ -141,7 +131,7 @@ function QuizCreate(props) {
                       <td>
                         <Link
                           to={{
-                            pathname: "/profile/edit-quiz",
+                            pathname: "/profile/trivia/edit-quiz",
                             state: { quizID: quiz[i].id },
                           }}
                         >
@@ -161,17 +151,26 @@ function QuizCreate(props) {
                 })}
               </tbody>
             </Table>
-
-            <Button
-              onClick={() => {
-                onCreate();
-                listQuiz(setQuiz);
-              }}
-              variant="primary"
-            >
-              Add Kwizz
-            </Button>
-
+            
+            {
+              quiz.item >= 1 ?
+              <Button
+                disabled
+                variant="primary"
+              >
+                Add Kwizz
+              </Button>
+              :
+              <Button
+                onClick={() => {
+                  onCreate();
+                  listQuiz(setQuiz);
+                }}
+                variant="primary"
+              >
+                Add Kwizz
+              </Button>
+            }
             <Modal show={deleteModalShow} onHide={handleDeleteModalClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Delete kwizz</Modal.Title>
@@ -188,10 +187,10 @@ function QuizCreate(props) {
             </Modal>
           </div>
         </Layout>
-        </div>
       <div className="clear"></div>
+      <Footer />
     </div>
   );
 }
 
-export default QuizCreate;
+export default Trivia;

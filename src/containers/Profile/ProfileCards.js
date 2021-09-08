@@ -72,10 +72,11 @@ function ProfileCards(props) {
             </h1>
           </Card.Header>
           <Card.Body>
-            {userGroup.group === 'Fiserv'
+            {userGroup.group == 'Fiserv'
             ?
               <Card.Title>
-                Email:  {profile.email}*
+                Email:  {profile.email}*<br />
+                Username:  {profile.username}
               </Card.Title>
             :
               <Card.Title>

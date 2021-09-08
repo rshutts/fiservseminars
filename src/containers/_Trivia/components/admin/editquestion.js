@@ -1,36 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import Layout from "./layoutAdmin";
-import { DataStore } from "@aws-amplify/datastore";
-import { Questions, Quiz, QuestionsDB, Languages } from "../../containers/Quiz/models";
+import Amplify from 'aws-amplify';
+import { Auth } from '@aws-amplify/auth';
+import Layout from "../layoutAdmin";
+import { DataStore } from 'aws-amplify';
+import { Questions, Quiz, QuestionsDB, Languages } from "../../../../models";
 import { Card, Row, Col, Form, Button, Alert, Modal } from "react-bootstrap";
 import Resizer from "react-image-file-resizer";
-import Amplify from "@aws-amplify/core";
+import Video from "../video";
 import Storage from "@aws-amplify/storage";
 import { S3Image } from "aws-amplify-react";
 import Select from "react-select";
-import config from "../../aws-config";
-/* import Predictions, {
+import config from "../../../../aws-config";
+import Predictions, {
   AmazonAIPredictionsProvider,
-} from "@aws-amplify/predictions"; */
+} from "@aws-amplify/predictions";
 
-Amplify.configure({
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-});
+Amplify.register(Predictions);
+Amplify.configure(config);
 
-/* Amplify.register(Predictions);
-
-Predictions.addPluggable(new AmazonAIPredictionsProvider()); */
+Predictions.addPluggable(new AmazonAIPredictionsProvider());
 
 function EditQuestion() {
   let history = useHistory();
@@ -191,15 +180,15 @@ function EditQuestion() {
         publicValue = question.public;
       }
 
-      /* let language = "unknown";
-      const data = await getLanguage(question.question); */
+      let language = "unknown";
+      const data = await getLanguage(question.question);
       // const data = "nl";
 
-     /*  if (typeof data !== "undefined") {
+      if (typeof data !== "undefined") {
         language = data;
-      } */
+      }
 
-     /*  const lang = await DataStore.query(Languages, (c) =>
+      const lang = await DataStore.query(Languages, (c) =>
         c.code("eq", language)
       );
 
@@ -210,7 +199,7 @@ function EditQuestion() {
             code: language,
           })
         );
-      } */
+      }
 
       const questionSaved = await DataStore.save(
         new Questions({
@@ -252,7 +241,7 @@ function EditQuestion() {
                 answerFour: question.answerFour,
                 answerFourCorrect: question.answerFourCorrect,
                 relatedQuestion: questionSaved.id,
-                /* language: language, */
+                language: language,
               })
             );
           })
@@ -270,7 +259,7 @@ function EditQuestion() {
       );
 
       history.push({
-        pathname: "/profile/edit-quiz",
+        pathname: "/profile/trivia/edit-quiz",
         state: {
           quizID: localStorage.getItem("adminGameCode-editquiz"),
         },
@@ -308,7 +297,7 @@ function EditQuestion() {
     }
   }
 
- /*  async function getLanguage(text) {
+  async function getLanguage(text) {
     const data = await Predictions.interpret({
       text: {
         source: {
@@ -323,7 +312,7 @@ function EditQuestion() {
       .catch((err) => console.log(err));
 
     return data;
-  } */
+  }
 
   async function handleEdit() {
     if (!validate()) {
@@ -407,7 +396,7 @@ function EditQuestion() {
 
       // Add Question to Question DB, because public has beed marked during edit phase
       if (question.public && !question.fromLibrary && questionDB.length === 0) {
-        /* const language = await getLanguage(question.question); */
+        const language = await getLanguage(question.question);
 
         //copyImage from private bucket is not support yet, made an issue for that.
         // https://github.com/aws-amplify/amplify-js/issues/5998
@@ -428,14 +417,14 @@ function EditQuestion() {
             answerThreeCorrect: question.answerThreeCorrect,
             answerFour: question.answerFour,
             answerFourCorrect: question.answerFourCorrect,
-            relatedQuestion: localStorage.getItem("questionId")
-            /* language: language, */
+            relatedQuestion: localStorage.getItem("questionId"),
+            language: language,
           })
         );
       }
 
       history.push({
-        pathname: "/edit-quiz",
+        pathname: "/profile/trivia/edit-quiz",
         state: {
           quizID: localStorage.getItem("adminGameCode-editquiz"),
         },
@@ -636,6 +625,13 @@ function EditQuestion() {
               <Modal.Title>{question.question}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              {question.youtube !== null &&
+                typeof question.youtube !== "undefined" &&
+                question.youtube !== "" && (
+                  <div className="videoQuestion">
+                    <Video videoSrcURL={question.youtube} videoTitle="" />
+                  </div>
+                )}
               {image !== null && typeof image !== "undefined" && image !== "" && (
                 <div className="imageQuestion">
                   {localStorage.getItem("editQuestionStatus") === "add" ||
