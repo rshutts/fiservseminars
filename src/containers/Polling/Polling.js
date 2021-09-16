@@ -9,8 +9,6 @@ import Poll from './Poll';
 /* import Trivia from '../containers/Trivia/index'; */
 import Iframe from 'react-iframe'
 
-import config from '../../aws-config';
-
 const Polling = () => {
   const history = useHistory();
 
@@ -35,7 +33,7 @@ const Polling = () => {
           </div> */}
           <section className='left meetings'>
             <div className='video-player'>
-              <VideoPlayer videoStream={config.PLAYBACK_URL}/>
+              <VideoPlayer/>
             </div>
             <Poll/>
           </section>

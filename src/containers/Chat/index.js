@@ -1,10 +1,8 @@
 import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
-import API, { graphqlOperation } from '@aws-amplify/api';
-import '@aws-amplify/pubsub';
 import { Connect } from "aws-amplify-react";
-import Amplify, { Auth, Storage } from 'aws-amplify';
+import Amplify, { API, Auth, Storage, graphqlOperation } from 'aws-amplify';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
@@ -27,7 +25,7 @@ import Error from "../../components/Error";
 import './Chat.css';
 import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
-import config from '../../aws-config';
+import awsconfig from '../../aws-config';
 
 function Chat(props) {
   const [profile, setProfile] = useState({
@@ -47,6 +45,7 @@ function Chat(props) {
 
   const [show, setShow] = useState();
 
+  
   let emojiPicker;
   if (emojiPickerState) {
     emojiPicker = (

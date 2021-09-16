@@ -20,7 +20,7 @@ function Sidenav() {
 
 
   async function onLoad() {
-    const user = await Auth.currentUserInfo()
+    const user = await Auth.currentAuthenticatedUser()
     .then(res => {
       console.log(res)
     })
@@ -29,7 +29,7 @@ function Sidenav() {
     });
     try {
       await Auth.currentSession();
-      const user = await Auth.currentUserInfo()
+      const user = await Auth.currentAuthenticatedUser()
       setProfile({
         username: user.username,
       });

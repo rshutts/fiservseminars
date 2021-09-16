@@ -16,10 +16,28 @@ export const onCreatePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          candidateType
+          name
+          upvotes
+          owner
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         nextToken
+        startedAt
       }
       itemType
       createdAt
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       updatedAt
     }
   }
@@ -31,10 +49,28 @@ export const onUpdatePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          candidateType
+          name
+          upvotes
+          owner
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         nextToken
+        startedAt
       }
       itemType
       createdAt
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       updatedAt
     }
   }
@@ -46,10 +82,28 @@ export const onDeletePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          candidateType
+          name
+          upvotes
+          owner
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         nextToken
+        startedAt
       }
       itemType
       createdAt
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       updatedAt
     }
   }
@@ -59,10 +113,13 @@ export const onCreateCandidate = /* GraphQL */ `
     onCreateCandidate {
       id
       pollCandidatesId
-      image
       candidateType
       name
       upvotes
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -73,10 +130,13 @@ export const onUpdateCandidate = /* GraphQL */ `
     onUpdateCandidate {
       id
       pollCandidatesId
-      image
       candidateType
       name
       upvotes
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -87,10 +147,13 @@ export const onDeleteCandidate = /* GraphQL */ `
     onDeleteCandidate {
       id
       pollCandidatesId
-      image
       candidateType
       name
       upvotes
+      owner
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -102,10 +165,12 @@ export const onCreateMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -115,10 +180,12 @@ export const onUpdateMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -128,8 +195,307 @@ export const onDeleteMessage = /* GraphQL */ `
       id
       channelID
       author
-      group
       body
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreateQuiz = /* GraphQL */ `
+  subscription OnCreateQuiz {
+    onCreateQuiz {
+      id
+      title
+      seconds
+      currentQuestion
+      questionOrder
+      started
+      questionTime
+      view
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateQuiz = /* GraphQL */ `
+  subscription OnUpdateQuiz {
+    onUpdateQuiz {
+      id
+      title
+      seconds
+      currentQuestion
+      questionOrder
+      started
+      questionTime
+      view
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteQuiz = /* GraphQL */ `
+  subscription OnDeleteQuiz {
+    onDeleteQuiz {
+      id
+      title
+      seconds
+      currentQuestion
+      questionOrder
+      started
+      questionTime
+      view
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateQuestions = /* GraphQL */ `
+  subscription OnCreateQuestions {
+    onCreateQuestions {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      quizID
+      order
+      public
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateQuestions = /* GraphQL */ `
+  subscription OnUpdateQuestions {
+    onUpdateQuestions {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      quizID
+      order
+      public
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteQuestions = /* GraphQL */ `
+  subscription OnDeleteQuestions {
+    onDeleteQuestions {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      quizID
+      order
+      public
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateQuestionsDB = /* GraphQL */ `
+  subscription OnCreateQuestionsDB {
+    onCreateQuestionsDB {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      relatedQuestion
+      public
+      category
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateQuestionsDB = /* GraphQL */ `
+  subscription OnUpdateQuestionsDB {
+    onUpdateQuestionsDB {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      relatedQuestion
+      public
+      category
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteQuestionsDB = /* GraphQL */ `
+  subscription OnDeleteQuestionsDB {
+    onDeleteQuestionsDB {
+      id
+      question
+      answerOne
+      answerOneCorrect
+      answerTwo
+      answerTwoCorrect
+      answerThree
+      answerThreeCorrect
+      answerFour
+      answerFourCorrect
+      relatedQuestion
+      public
+      category
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateSubscribers = /* GraphQL */ `
+  subscription OnCreateSubscribers {
+    onCreateSubscribers {
+      id
+      type
+      score
+      quizID
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSubscribers = /* GraphQL */ `
+  subscription OnUpdateSubscribers {
+    onUpdateSubscribers {
+      id
+      type
+      score
+      quizID
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSubscribers = /* GraphQL */ `
+  subscription OnDeleteSubscribers {
+    onDeleteSubscribers {
+      id
+      type
+      score
+      quizID
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateResponses = /* GraphQL */ `
+  subscription OnCreateResponses {
+    onCreateResponses {
+      id
+      quiz
+      subscriber
+      question
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateResponses = /* GraphQL */ `
+  subscription OnUpdateResponses {
+    onUpdateResponses {
+      id
+      quiz
+      subscriber
+      question
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteResponses = /* GraphQL */ `
+  subscription OnDeleteResponses {
+    onDeleteResponses {
+      id
+      quiz
+      subscriber
+      question
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }

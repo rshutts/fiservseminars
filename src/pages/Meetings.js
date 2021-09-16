@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import Chat from "../containers/Chat";
-import { useHistory } from "react-router-dom";
-/* import Loading from "../components/Loading"; */
-/* import Notes from '../components/Notes' */
+import { useLocation, useHistory } from "react-router-dom";
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
 import Polls from '../containers/Polling/Polls';
-/* import Trivia from '../containers/Trivia/index'; */
+import Poll from '../containers/Polling/Poll';
+import Trivia from '../containers/Trivia/index';
+import Game from '../containers/Trivia/game';
 import Iframe from 'react-iframe'
 
-import config from '../aws-config';
+import awsconfig from '../aws-config';
 
 const Meetings = () => {
   const history = useHistory();
-
+  const location = useLocation();
 
   return (
     <div className="main-content">
@@ -35,26 +35,21 @@ const Meetings = () => {
           </div> */}
           <section className='left meetings'>
             <div className='video-player'>
-              <VideoPlayer videoStream={config.PLAYBACK_URL}/>
+              <VideoPlayer/>
             </div>
-           {/*  <Iframe url="http://localhost:3001/"
-              width="100%"
-              height="700px"
-              id="myId"
-              className="pollsFrame"
-              display="initial"
-              position="relative"
-              loading
-            /> */}
-            <Polls/>
+            { location.pathname === "/session/:id" ?
+              <Poll/> :
+              <Polls/>
+            }
           </section>
           <section className="right meetings">
             <div className='chat'>
               <Chat/>   
             </div>
-            {/* <div>
-              <Trivia/>
-            </div> */}
+            <div>
+              <Game/>
+              {/* <Trivia/> */}
+            </div>
           </section>
         </div>       
       </div> 

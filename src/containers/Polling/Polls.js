@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import API from '@aws-amplify/api';
-import Storage from '@aws-amplify/storage';
+import { API, Storage} from 'aws-amplify';
 import { useParams, Link } from 'react-router-dom';
 import { itemsByType } from '../../graphql/queries';
 import { onUpdateByID } from '../../graphql/subscriptions';

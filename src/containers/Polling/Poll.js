@@ -1,17 +1,15 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { useParams, useHistory } from "react-router-dom";
-import API from '@aws-amplify/api';
-import Storage from '@aws-amplify/storage';
 import { CLIENT_ID, setVoteForPoll } from '../../utils/localStorageInfo';
 import { onUpdateByID } from '../../graphql/subscriptions';
 import { getPoll } from '../../graphql/queries';
 import { upVote } from '../../graphql/mutations';
 import Candidates from './Candidates';
 import actionTypes from '../../actionTypes';
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify, { Auth, API, Storage } from 'aws-amplify';
 
 import "./Polling.css";
-import config from '../../aws-config';
+import awsconfig from '../../aws-config';
 
 const initialState = {
   loading: true,
@@ -42,7 +40,7 @@ function reducer(state, action) {
   }
 }
 
-export default function Poll() {
+function Poll() {
   const [profile, setProfile] = useState({
     username: "",
     email: ""
@@ -263,3 +261,5 @@ export default function Poll() {
     </div>
   )
 }
+
+export default React.memo(Poll);

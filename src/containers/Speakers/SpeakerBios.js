@@ -20,6 +20,7 @@ export default function SpeakerBios() {
                             <Card.Title>
                                 {p.name}
                             </Card.Title>
+                            <h3 style={{ color: "#ff6600" }}>{p.title}</h3>
                             {p.questions &&
                                 p.questions.map(c => {
                                 return (

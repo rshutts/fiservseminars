@@ -1,6 +1,7 @@
 export const speakerData = [
   {
     name: "Guyla Hohn",
+    title: "Certified Training Specialist",
     img: "https://seminar-media.s3.amazonaws.com/Spring/2021/Speakers/Guyla.png",
     questions: [
       {
@@ -61,6 +62,7 @@ export const speakerData = [
   },
   {
     name: "Mickey Weldy",
+    title: "Certified Training Specialist",
     img: "https://seminar-media.s3.amazonaws.com/Spring/2021/Speakers/Mickey.jpg",
     questions: [
       {
@@ -121,6 +123,7 @@ export const speakerData = [
   },
   {
     name: "Wanda Folkerts",
+    title: "Certified Training Specialist",
     img: "https://seminar-media.s3.amazonaws.com/Spring/2021/Speakers/Wanda.jpg",
     questions: [
       {
@@ -181,6 +184,7 @@ export const speakerData = [
   },
   {
     name: "Barb Minnick",
+    title: "Training Specialist",
     img: "https://seminar-media.s3.amazonaws.com/Spring/2021/Speakers/Barb.jpg",
     questions: [
       {
@@ -241,6 +245,7 @@ export const speakerData = [
   },
   {
     name: "Lynn Mulhair",
+    title: "Certified Training Specialist",
     img: "https://seminar-media.s3.amazonaws.com/Spring/2021/Speakers/Lynn.jpg",
     questions: [
       {
@@ -294,6 +299,171 @@ export const speakerData = [
         answer: [
           {
             value: "A: Ireland",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: "Kent Mews",
+    title: "Product Manager, SR",
+    img: "",
+    questions: [
+      {
+        key: "0",
+        question: "Q: How long have you been in the Financial Industry?",
+        answer: [
+          {
+            value: "A: 35 Years total",
+          }
+        ]
+      },
+      {
+        key: "1",
+        question: "Q: What is your background with Precision/Premier?",
+        answer: [
+          {
+            value: "A: Implementations, Education/Training & Product Management.",
+          }
+        ]
+      },
+      {
+        key: "2",
+        question: "Q: What is your favorite part of working with banks?",
+        answer: [
+          {
+            value: "A: Getting their ideas on how the new features should function and how they can improve their Financial Institutions processes.",
+          }
+        ]
+      },
+      {
+        key: "3",
+        question: "Q: What do you do outside of work?",
+        answer: [
+          {
+            value: "A: I enjoy doing Sports Photography",
+          }
+        ]
+      },
+      {
+        key: "4",
+        question: "Q: What is your dream vacation?",
+        answer: [
+          {
+            value: "A: Visiting London/UK",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: "Mary Kerr",
+    title: "Technical Writer",
+    img: "",
+    questions: [
+      {
+        key: "0",
+        question: "Q: How long have you been in the Financial Industry?",
+        answer: [
+          {
+            value: "A: 6 years",
+          }
+        ]
+      },
+      {
+        key: "1",
+        question: "Q: What is your background with Precision/Premier?",
+        answer: [
+          {
+            value: "A: I am the technical writer for the new Precision UI documentation and have contributed as the technical writer for the new Premier UI documentation.",
+          }
+        ]
+      },
+      {
+        key: "2",
+        question: "Q: What is your favorite part of working with banks?",
+        answer: [
+          {
+            value: "A: Providing the necessary documentation.",
+          }
+        ]
+      },
+      {
+        key: "3",
+        question: "Q: What do you do outside of work?",
+        answer: [
+          {
+            value: "A: I love being outside. I sail, run, workout, and read.",
+          }
+        ]
+      },
+      {
+        key: "4",
+        question: "Q: What is your dream vacation?",
+        answer: [
+          {
+            value: "A: On a deserted island.",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: "Bill Finn",
+    title: "Director, Content Development; Learning and Client Performance / Account Processing",
+    img: "",
+    questions: [
+      {
+        key: "0",
+        question: "Q: How long have you been in the Financial Industry?",
+        answer: [
+          {
+            value: "A: 2 years",
+          }
+        ]
+      },
+      {
+        key: "1",
+        question: "Q: What is your background with Precision/Premier?",
+        answer: [
+          {
+            value: "A: Observing the product and interactions with clients who use it, and discussing their needs for support.",
+          }
+        ]
+      },
+      {
+        key: "2",
+        question: "Q: What is your favorite part of working with banks?",
+        answer: [
+          {
+            value: "A: Providing the necessary documentation.",
+          }
+        ]
+      },
+      {
+        key: "3",
+        question: "Q: What is your favorite tip/trick?",
+        answer: [
+          {
+            value: "A: Consulting the documentation and providing feedback on what works or doesn't work for you using the 'Was this helpful?' button on each page.",
+          }
+        ]
+      },
+      {
+        key: "4",
+        question: "Q: What do you do outside of work?",
+        answer: [
+          {
+            value: "A: Ride a bicycle year-round, spend time with family, enjoy food and wine, go on adventures.",
+          }
+        ]
+      },
+      {
+        key: "5",
+        question: "Q: What is your dream vacation?",
+        answer: [
+          {
+            value: "A: Riding bicycles with my wife through the Loire Valley, stopping frequently for wine breaks. Then, riding across Europe on EuroVelo Route 6 from West to East.",
           }
         ]
       }

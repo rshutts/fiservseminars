@@ -1,8 +1,27 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
+export enum PollType {
+  IMAGE = "image",
+  TEXT = "text"
+}
 
+export declare class VoteType {
+  readonly id?: string;
+  readonly clientId?: string;
+  constructor(init: ModelInit<VoteType>);
+}
 
+type PollMetaData = {
+  readOnlyFields: 'updatedAt';
+}
 
+type CandidateMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+type MessageMetaData = {
+  readOnlyFields;
+}
 
 type QuizMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
@@ -24,8 +43,41 @@ type ResponsesMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type LanguagesMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
+export declare class Poll {
+  readonly id: string;
+  readonly name: string;
+  readonly type: PollType | keyof typeof PollType;
+  readonly candidates?: (Candidate | null)[];
+  readonly itemType?: string;
+  readonly createdAt?: string;
+  readonly owner?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Poll, PollMetaData>);
+  static copyOf(source: Poll, mutator: (draft: MutableModel<Poll, PollMetaData>) => MutableModel<Poll, PollMetaData> | void): Poll;
+}
+
+export declare class Candidate {
+  readonly id: string;
+  readonly pollCandidatesId?: string;
+  readonly candidateType: string;
+  readonly name: string;
+  readonly upvotes?: number;
+  readonly owner?: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Candidate, CandidateMetaData>);
+  static copyOf(source: Candidate, mutator: (draft: MutableModel<Candidate, CandidateMetaData>) => MutableModel<Candidate, CandidateMetaData> | void): Candidate;
+}
+
+export declare class Message {
+  readonly id: string;
+  readonly channelID: string;
+  readonly author: string;
+  readonly body: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Message>);
+  static copyOf(source: Message, mutator: (draft: MutableModel<Message>) => MutableModel<Message> | void): Message;
 }
 
 export declare class Quiz {
@@ -46,9 +98,6 @@ export declare class Quiz {
 
 export declare class Questions {
   readonly id: string;
-  readonly image?: string;
-  readonly imageFromS3?: boolean;
-  readonly youtube?: string;
   readonly question: string;
   readonly answerOne?: string;
   readonly answerOneCorrect?: boolean;
@@ -61,8 +110,6 @@ export declare class Questions {
   readonly quizID: string;
   readonly order?: number;
   readonly public?: boolean;
-  readonly fromLibrary?: boolean;
-  readonly category?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Questions, QuestionsMetaData>);
@@ -71,9 +118,6 @@ export declare class Questions {
 
 export declare class QuestionsDB {
   readonly id: string;
-  readonly image?: string;
-  readonly imageFromS3?: boolean;
-  readonly youtube?: string;
   readonly question: string;
   readonly answerOne?: string;
   readonly answerOneCorrect?: boolean;
@@ -86,7 +130,6 @@ export declare class QuestionsDB {
   readonly relatedQuestion: string;
   readonly public?: boolean;
   readonly category?: string;
-  readonly language?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<QuestionsDB, QuestionsDBMetaData>);
@@ -114,14 +157,4 @@ export declare class Responses {
   readonly updatedAt?: string;
   constructor(init: ModelInit<Responses, ResponsesMetaData>);
   static copyOf(source: Responses, mutator: (draft: MutableModel<Responses, ResponsesMetaData>) => MutableModel<Responses, ResponsesMetaData> | void): Responses;
-}
-
-export declare class Languages {
-  readonly id: string;
-  readonly type: string;
-  readonly code: string;
-  readonly createdAt?: string;
-  readonly updatedAt?: string;
-  constructor(init: ModelInit<Languages, LanguagesMetaData>);
-  static copyOf(source: Languages, mutator: (draft: MutableModel<Languages, LanguagesMetaData>) => MutableModel<Languages, LanguagesMetaData> | void): Languages;
 }

@@ -67,6 +67,21 @@
           ]
         }
       }
+    },
+    "apiPremierFallCombined": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-premierfallcombined-dev-92320-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "Parameters": {
+          "CreateAPIKey": 1,
+          "AppSyncApiName": "PremierFallCombined",
+          "DynamoDBBillingMode": "PAY_PER_REQUEST",
+          "DynamoDBEnableServerSideEncryption": false,
+          "S3DeploymentBucket": "amplify-premierfallcombined-dev-92320-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/d97dc9d7b4ddda26dd00e4395cd82cc6ea30cf08",
+          "env": "dev"
+        }
+      }
     }
   },
   "Outputs": {

@@ -26,10 +26,11 @@ import Polls from "./containers/Polling/Polls";
 import CreatePoll from "./containers/Polling/CreatePoll";
 import Polling from "./containers/Polling/Polling";
 
-/* import Trivia from "./containers/Trivia/components/admin/admin";
-import EditQuiz from "./containers/Trivia/components/admin/editquiz";
-import EditQuestions from "./containers/Trivia/components/admin/editquestion";
-import RunQuiz from "./containers/Trivia/components/admin/runquiz"; */
+import TriviaAdmin from "./containers/Trivia/admin/admin";
+import EditQuiz from "./containers/Trivia/admin/editquiz";
+import EditQuestions from "./containers/Trivia/admin/editquestion";
+import RunQuiz from "./containers/Trivia/admin/runquiz";
+import Game from "./containers/Trivia/game";
 
 /*Polls*/
 
@@ -46,19 +47,19 @@ const Routes = () => (
         return (
     <TransitionGroup component={null} className="transition-group">
       <CSSTransition timeout={300} classNames="fade">
-      <Switch location={location}>
+      <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/faq">
             <FAQ />
           </Route>
-          {/* <Route exact path="/speaker-bios">
+          <Route exact path="/speaker-bios">
             <Bios />
           </Route>
           <Route exact path="/resource-center/articles">
             <Articles />
-          </Route> */}
+          </Route>
           <UnauthenticatedRoute exact path="/password/forgot">
             <PasswordForgot />
           </UnauthenticatedRoute>
@@ -101,23 +102,23 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/session/:id">
             <Polling />
           </AuthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/profile/polls/:id">
-            <Poll />
-          </AuthenticatedRoute> */}
 
           {/* Trivia*/}
-          {/* <AuthenticatedRoute exact path="/profile/trivia">
-            <Trivia />
+          <AuthenticatedRoute exact path="/profile/trivia-admin">
+            <TriviaAdmin />
           </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia/edit-quiz">
+          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz">
             <EditQuiz />
           </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia/edit-quiz/edit-question">
+          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz/edit-question">
             <EditQuestions />
           </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia/run-quiz">
+          <AuthenticatedRoute exact path="/profile/trivia-admin/run-quiz">
             <RunQuiz />
-          </AuthenticatedRoute> */}
+          </AuthenticatedRoute>
+          <Route exact path="/session/trivia">
+            <Game />
+          </Route>
         </Switch>
         </CSSTransition>
 </TransitionGroup>

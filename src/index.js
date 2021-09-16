@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Amplify } from 'aws-amplify';
+import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify';
+import { DataStore } from "@aws-amplify/datastore";
+
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import config from './aws-config';
 import { initSentry } from './libs/errorLib';
 import reportWebVitals from './reportWebVitals';
 import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
 import * as serviceWorker from './serviceWorker';
 import 'react-toastify/dist/ReactToastify.css';
 
+import awsconfig from './aws-exports';
 const LOCAL_KEY = localStorage.getItem(BASE_KEY);
 
 if (!LOCAL_KEY) {
@@ -19,23 +21,7 @@ if (!LOCAL_KEY) {
 
 initSentry();
 
-Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
-  "aws_appsync_region": "us-east-1",
-  "aws_appsync_authenticationType": "API_KEY",
-  'aws_appsync_apiKey': 'da2-tsgw77xldbafbno255j6iwb4ei',
-  Auth: {
-    region: config.aws_cognito_region,
-    userPoolId: config.aws_user_pools_id,
-    identityPoolId: config.aws_cognito_identity_pool_id,
-    userPoolWebClientId: config.aws_user_pools_client_id
-  },    
-  Storage: {
-    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: config.aws_cognito_identity_pool_id
-  }
-});
+Amplify.configure({awsconfig})
 
 ReactDOM.render(
   <React.StrictMode>

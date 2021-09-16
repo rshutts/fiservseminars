@@ -1,15 +1,31 @@
 {
-  "prod": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-premierfallseminar21-prod-144046-authRole",
-      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-authRole",
+      "AuthRoleName": "amplify-premierfallcombined-dev-92320-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-premierfallseminar21-prod-144046-deployment",
-      "UnauthRoleName": "amplify-premierfallseminar21-prod-144046-unauthRole",
-      "StackName": "amplify-premierfallseminar21-prod-144046",
-      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallseminar21-prod-144046/b62338d0-efdb-11eb-a0b7-12ee986ec865",
-      "AmplifyAppId": "d1cfg5ebh68bps"
+      "DeploymentBucketName": "amplify-premierfallcombined-dev-92320-deployment",
+      "UnauthRoleName": "amplify-premierfallcombined-dev-92320-unauthRole",
+      "StackName": "amplify-premierfallcombined-dev-92320",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallcombined-dev-92320/7cb068e0-1630-11ec-9e78-0a0bb2880c01"
+    },
+    "categories": {
+      "auth": {
+        "premierfallcombinedb86edaa2": {
+          "userPoolId": "us-east-1_DP1sgZ1FC",
+          "userPoolName": "FallConferences",
+          "webClientId": "2h9vuffn6urim68lujmtsqfv1f",
+          "nativeClientId": "2h9vuffn6urim68lujmtsqfv1f",
+          "identityPoolId": "us-east-1:a9395a50-e5a8-4c1f-a3e6-90920949180b",
+          "identityPoolName": "PrecisionFallSeminar2021",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::076005434014:role/Cognito_FallConferencesAuth_Role",
+          "authRoleName": "Cognito_FallConferencesAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::076005434014:role/Cognito_FallConferencesUnauth_Role",
+          "unauthRoleName": "Cognito_FallConferencesUnauth_Role"
+        }
+      }
     }
   }
 }

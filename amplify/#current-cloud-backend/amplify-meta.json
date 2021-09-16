@@ -1,34 +1,59 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-premierfallseminar21-prod-144046-authRole",
-            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminar21-prod-144046-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-premierfallseminar21-prod-144046-deployment",
-            "UnauthRoleName": "amplify-premierfallseminar21-prod-144046-unauthRole",
-            "StackName": "amplify-premierfallseminar21-prod-144046",
-            "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallseminar21-prod-144046/b62338d0-efdb-11eb-a0b7-12ee986ec865",
-            "AmplifyAppId": "d1cfg5ebh68bps"
-        }
-    },
-    "api": {
-        "PrecisionFallCombined": {
-            "service": "AppSync",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY"
-                    },
-                    "additionalAuthenticationProviders": null
-                },
-                "GraphQLAPIIdOutput": "qyz5ucvtcjexlged2hmnxvarqe",
-                "GraphQLAPIEndpointOutput": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "PrecisionFallCombined",
-                "region": "us-east-1",
-                "GraphQLAPIKeyOutput": "da2-tsgw77xldbafbno255j6iwb4ei"
-            },
-            "lastPushTimeStamp": "2021-08-20T20:25:14.881Z"
-        }
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-premierfallcombined-dev-92320-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-premierfallcombined-dev-92320-deployment",
+      "UnauthRoleName": "amplify-premierfallcombined-dev-92320-unauthRole",
+      "StackName": "amplify-premierfallcombined-dev-92320",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallcombined-dev-92320/7cb068e0-1630-11ec-9e78-0a0bb2880c01"
     }
+  },
+  "api": {
+    "PremierFallCombined": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "Main API"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "ahtybosvibepzilgpzw4t3mthm",
+        "GraphQLAPIEndpointOutput": "https://4wecuaawlfdjjnvqxl6xu6nrwy.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-nisxlo3r6ffudoj7xbb5lnlyji"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-premierfallcombined-dev-92320-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiPremierFallCombined"
+      },
+      "lastPushTimeStamp": "2021-09-16T19:59:18.574Z",
+      "lastPushDirHash": "ncZbPGr+4ha1C1GKJq+uWDUP3Fc="
+    }
+  },
+  "auth": {
+    "premierfallcombinedb86edaa2": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "us-east-1_DP1sgZ1FC",
+        "UserPoolName": "FallConferences",
+        "AppClientID": "2h9vuffn6urim68lujmtsqfv1f",
+        "AppClientIDWeb": "2h9vuffn6urim68lujmtsqfv1f",
+        "IdentityPoolId": "us-east-1:a9395a50-e5a8-4c1f-a3e6-90920949180b",
+        "IdentityPoolName": "PrecisionFallSeminar2021"
+      },
+      "lastPushTimeStamp": "2021-09-15T20:25:07.615Z"
+    }
+  }
 }

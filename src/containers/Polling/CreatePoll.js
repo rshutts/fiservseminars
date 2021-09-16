@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import API from '@aws-amplify/api';
-import Storage from '@aws-amplify/storage';
+import { API, Storage} from 'aws-amplify';
 import { createPoll as createPollMutation, createCandidate as createCandidateMutation } from '../../graphql/mutations';
 import { getPoll as getPollQuery } from '../../graphql/queries';
 import slugify from '../../utils/slugify';
