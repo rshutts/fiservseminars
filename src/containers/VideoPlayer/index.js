@@ -84,7 +84,7 @@ class VideoPlayer extends Component {
           <h1>Video</h1>
         </header>
         <div className="aspect-169 pos-relative full-width full-height">
-          <video id="video-player" className="video-elem pos-absolute full-width" poster="https://diypbx.com/wp-content/uploads/2016/02/video-placeholder.jpg" playsInline controls></video>
+          <video id="video-player" className="video-elem pos-absolute full-width" playsInline controls></video>
         </div>
         <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
           <h3 style={{fontWeight: "normal"}}>
