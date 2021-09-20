@@ -2,63 +2,127 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
 import Amplify, { API, Auth, AuthModeStrategyType, Hub, graphqlOperation, Storage } from 'aws-amplify';
-import { DataStore } from "@aws-amplify/datastore";
+import { DataStore, syncExpression } from "@aws-amplify/datastore";
 import { listQuizzes } from "../../graphql/queries";
-import { Quiz, Subscribers } from "../../models/";
+import { Quiz,
+  Questions,
+  QuestionsDB,
+  Subscribers,
+  Responses, } from "../../models/";
 
 import Layout from "./layout";
-import Questions from "./questions";
+import Question from "./questions";
 
 import awsconfig from "../../aws-exports";
 
-Amplify.configure({awsconfig})
+Amplify.configure(awsconfig)
 
 function Game(props) {
   const [subscribers, setSubscribers] = useState([]);
   const [quiz, setQuiz] = useState([]);
   const [gamecode, setGamecode] = useState();
+  const [gameData, setGameData] = useState();
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
-  const [profile, setProfile] = useState({
-    username: "",
-  });
+  const [name, setName] = useState();
   const [user, setUser] = useState();
-
-  async function listSubscribers() {
-    const result = await DataStore.query(Subscribers, c =>
-      c.quizID("eq", localStorage.getItem("gamecode"))
-    );
-      console.log(result)
-    setSubscribers(result);
-  }
 
   const onLoad = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();
-      console.log(user)
-      setProfile({
-        username: user.username,
-      });
-    } catch(e) {
+        setName({
+          name: user.username,
+        });
+        DataStore.save(
+          new Subscribers({
+            name: name,
+            score: 0,
+            type: "set",
+            version: 0,
+            quizID: localStorage.getItem("gamecode"),
+            timestamp: 0
+          })
+        )
+        .then((data) => {
+          const subscriber = data.id;
+          localStorage.setItem("subscriber", subscriber);
+        })
+        const listGamecode = async () => {
+          await API.graphql({
+            query: listQuizzes,
+          }).then(gamecode => {
+            setGamecode({
+              gamecode: gamecode.data.listQuizzes.items[0].id,
+            });
+            localStorage.setItem("gamecode", gamecode.data.listQuizzes.items[0].id.substring(0, 8));
+            console.log(gamecode)
+          })
+        }
+    
+        listGamecode();
+        /* DataStore.configure({
+          syncExpressions: [
+            syncExpression(Quiz, () => {
+              return (c) => c.id("beginsWith", localStorage.getItem("gamecode"));
+            }),
+            syncExpression(Questions, () => {
+              return (c) => c.quizID("beginsWith", localStorage.getItem("gamecode"));
+            }),
+            syncExpression(QuestionsDB, () => {
+              return (c) => c.id("eq", null);
+            }),
+            syncExpression(Subscribers, () => {
+              return (c) => c.quizID("beginsWith", localStorage.getItem("gamecode"));
+            }),
+            syncExpression(Responses, () => {
+              return (c) => c.quiz("beginsWith", localStorage.getItem("gamecode"));
+            }),
+          ],
+        }); */
+      
+        DataStore.start();
+        
+      } catch(e) {
  
+      }
+      
     }
-  }
   useEffect(()=>{
     onLoad();
-  }, []);
-  
-  async function listQuiz() {
+    }, []);
+
+  /* async function listGameData() {
+    const quizData = await API.graphql({
+      query: listQuizzes,
+    });
+    const gamecode = quizData.data.listQuizzes.items[0].id.substring(0, 8)
+    localStorage.setItem("gamecode", gamecode);
+    setGameData(gamecode)
+    console.log(gamecode)
+  } */
+  /* async function listSubscribers() {
     const quiz = await API.graphql({
       query: listQuizzes,
-      /* variables: { filter: filter }, */
     });
     const gamecode = quiz.data.listQuizzes.items[0].id.substring(0, 8)
     setGamecode(gamecode);
     localStorage.setItem("gamecode", quiz.data.listQuizzes.items[0].id.substring(0, 8));
     console.log(gamecode)
-
+    const result = await DataStore.query(Subscribers, c =>
+      c.quizID("eq", localStorage.getItem("subscriber"))
+    );
+    console.log(result)
+    console.log(gamecode)
+    setSubscribers(result);
+  } */
+  
+  async function listQuiz() {
+    const quiz = await DataStore.query(Quiz, c =>
+      console.log(name, "name")
+    );
     const quizdata = quiz[0];
-    console.log(quiz);
+    console.log(quiz[0]);
+    
     if (
       typeof quizdata === "undefined" ||
       typeof quizdata.view === "undefined"
@@ -72,8 +136,6 @@ function Game(props) {
         setIsActive(false);
       }
       setQuiz(quizdata);
-      localStorage.setItem("gamecode", "");
-      localStorage.setItem("user", "");
     }
   }
 
@@ -87,18 +149,18 @@ function Game(props) {
 
   useEffect(() => {
     listQuiz();
-    listSubscribers();
 
     const gameQuiz = DataStore.observe(
       Quiz,
       localStorage.getItem("gamecode")
     ).subscribe(() => {
       console.log("quizUpdated");
+      console.log(gamecode)
       listQuiz();
     });
-    const subscription = DataStore.observe(Subscribers).subscribe(() => {
+    /* const subscription = DataStore.observe(Subscribers).subscribe(() => {
       listSubscribers();
-    });
+    }); */
 
     let interval = null;
     if (isActive) {
@@ -110,7 +172,7 @@ function Game(props) {
     }
 
     return () => {
-      subscription.unsubscribe();
+      /* subscription.unsubscribe(); */
       gameQuiz.unsubscribe();
       clearInterval(interval);
     };
@@ -120,6 +182,7 @@ function Game(props) {
     <div>
       <Button onClick={props.signout}>Signout</Button>
       <Layout quizTitle={quiz}>
+      
         {/* <div>
           {quiz.map((item, i) => {
             return (
@@ -143,7 +206,7 @@ function Game(props) {
             </div>
           </header>
           {quiz.started && (
-            <Questions
+            <Question
               gamecode={localStorage.getItem("gamecode")}
               subscriber={localStorage.getItem("subscriber")}
             />

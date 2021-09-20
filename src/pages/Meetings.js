@@ -8,6 +8,7 @@ import Poll from '../containers/Polling/Poll';
 import Trivia from '../containers/Trivia/index';
 import Game from '../containers/Trivia/game';
 import Iframe from 'react-iframe'
+import Quiz from '../containers/Quiz/index';
 
 import awsconfig from '../aws-config';
 
@@ -47,6 +48,7 @@ const Meetings = () => {
               <Chat/>   
             </div>
             <div>
+              {/* <Quiz/> */}
               <Game/>
               {/* <Trivia/> */}
             </div>
