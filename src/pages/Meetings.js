@@ -47,11 +47,11 @@ const Meetings = () => {
             <div className='chat'>
               <Chat/>   
             </div>
-            <div>
-              {/* <Quiz/> */}
+            {/* <div>
+              <Quiz/>
               <Game/>
-              {/* <Trivia/> */}
-            </div>
+              <Trivia/>
+            </div> */}
           </section>
         </div>       
       </div> 

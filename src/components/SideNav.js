@@ -84,12 +84,12 @@ function Sidenav() {
                   Speaker Bios 
               </Menu.Item>
             </Link>
-            <Link className='sidebar-nav-link' to={'/session'}>
+            {/* <Link className='sidebar-nav-link' to={'/session'}>
               <Menu.Item>
                 <FaUsers/>
                   Learning Sessions
               </Menu.Item>
-            </Link>
+            </Link> */}
             <Link className='sidebar-nav-link' to="/resource-center/articles">
               <Menu.Item>
                 <FaNewspaper/>

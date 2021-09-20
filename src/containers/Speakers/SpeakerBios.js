@@ -15,7 +15,7 @@ export default function SpeakerBios() {
             return (    
                 <CardDeck>
                     <Card>
-                    <Card.Img variant="top" style={{ width: '150px'}} src={p.img} />
+                    <Card.Img variant="top" style={{ height: '150px', width: "auto"}} src={p.img} />
                         <Card.Body>
                             <Card.Title>
                                 {p.name}
