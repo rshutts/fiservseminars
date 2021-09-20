@@ -78,7 +78,7 @@ function Sidenav() {
                   FAQ 
               </Menu.Item>
             </Link>
-            {/* <Link className="sidebar-nav-link" to="/speaker-bios">
+            <Link className="sidebar-nav-link" to="/speaker-bios">
               <Menu.Item>
                 <FaRegAddressBook/>
                   Speaker Bios 
@@ -95,7 +95,7 @@ function Sidenav() {
                 <FaNewspaper/>
                   Session Collateral
               </Menu.Item>
-            </Link> */}
+            </Link>
             <Link className="sidebar-nav-link" to="/profile">
               <Menu.Item>
                 <FaUser/>

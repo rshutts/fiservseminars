@@ -45,12 +45,12 @@ const Routes = () => (
           <Route exact path="/faq">
             <FAQ />
           </Route>
-          {/* <Route exact path="/speaker-bios">
+          <Route exact path="/speaker-bios">
             <Bios />
           </Route>
           <Route exact path="/resource-center/articles">
             <Articles />
-          </Route> */}
+          </Route>
           <UnauthenticatedRoute exact path="/password/forgot">
             <PasswordForgot />
           </UnauthenticatedRoute>
@@ -67,9 +67,9 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/session">
             <Meetings />
           </AuthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/archived-sessions">
+          <AuthenticatedRoute exact path="/archived-sessions">
             <Archived />
-          </AuthenticatedRoute> */}
+          </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile">
             <Profile />
           </AuthenticatedRoute>
