@@ -40,11 +40,7 @@ function reducer(state, action) {
   }
 }
 
-function Poll() {
-  const [profile, setProfile] = useState({
-    username: "",
-    email: ""
-  });
+export default function Poll() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   let params = useParams();
@@ -58,23 +54,6 @@ function Poll() {
   let subscription7;
   let subscription8;
   let subscription9;
-
-  const onLoad = async () => {
-    try {
-      const user = await Auth.currentAuthenticatedUser();
-      console.log(user)
-      setProfile({
-        username: user.username,
-        email: user.attributes.email,
-      });
-    } catch(e) {
- 
-    }
-    
-  }
-  useEffect(()=>{
-    onLoad();
-    }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -103,6 +82,7 @@ function Poll() {
       subscribe(pollData);
     } catch(err) {
       console.log('error fetching poll: ', err);
+      history.push('/');
     }
   }
 
@@ -249,7 +229,6 @@ function Poll() {
   return (
     <div>
       <h1 className="mb-4 mt-8 leading-tight sm:leading-normal font-light">{state.poll.name}</h1>
-      {console.log(profile.email)}
       <Candidates
         sortDirection='ASC'
         candidates={state.poll.candidates.items}
@@ -261,5 +240,3 @@ function Poll() {
     </div>
   )
 }
-
-export default React.memo(Poll);

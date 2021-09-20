@@ -62,11 +62,11 @@ export default function Polls() {
   }
 
   function subscribe(pollData) {
-    const { items } = pollData.candidates || {}
+    const { items } = pollData.candidates
     const { id: pollId } = pollData
     const id1 = items[0].id
     const id2 = items[1].id
-    console.log(items)
+
     subscriptions[id1] = API.graphql({
       query: onUpdateByID,
       variables: { id: id1 }
@@ -122,10 +122,16 @@ export default function Polls() {
             
             state.polls.map((poll, index) => (  
                 <div className="polls" key={poll.id}>
-                    <Link to={`/session/${poll.id}`}>
+                    <Link to={`/${poll.id}`}>
                       <h2 className="poll-name">{poll.name}</h2>
                     </Link>
                     <button className='reloadButton'onClick={() => window.location.reload(false)}>Reload</button>
+                    {/* <Candidates
+                      key={index}
+                      candidates={poll.candidates.items}
+                      poll={poll}
+                      onUpVote={onUpVote}
+                    /> */}
                   </div> 
             ))
           }
