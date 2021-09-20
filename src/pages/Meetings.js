@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Chat from "../containers/Chat";
 import { useLocation, useHistory } from "react-router-dom";
 import { Header  } from 'semantic-ui-react'
-import VideoPlayer from '../containers/VideoPlayer';
+/* import VideoPlayer from '../containers/VideoPlayer'; */
+import VideoJS from '../containers/VideoPlayer';
 import Polls from '../containers/Polling/Polls';
 import Poll from '../containers/Polling/Poll';
 import Trivia from '../containers/Trivia/index';
@@ -36,7 +37,7 @@ const Meetings = () => {
           </div> */}
           <section className='left meetings'>
             <div className='video-player'>
-              <VideoPlayer/>
+              <VideoJS/>
             </div>
             { location.pathname === "/session/:id" ?
               <Poll/> :

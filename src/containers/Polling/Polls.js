@@ -62,7 +62,7 @@ export default function Polls() {
   }
 
   function subscribe(pollData) {
-    const { items } = pollData.candidates
+    const { items } = pollData.candidates || {}
     const { id: pollId } = pollData
     const id1 = items[0].id
     const id2 = items[1].id
@@ -132,21 +132,3 @@ export default function Polls() {
       </div>
   )
 }
-
-
-/* Code I might need later */
-
-// function simulate() {
-//   state.polls.forEach(poll => {
-//     poll.candidates.items.forEach(candidate => simulateUpvotes(candidate, poll))
-//   })
-// }
-
-// function simulateUpvotes(candidate, poll) {
-//   let i = 0;
-//   setInterval(() => {
-//     i = i + 1
-//     if (i > 2000) return
-//     onUpVote(candidate, poll)
-//   })
-// }

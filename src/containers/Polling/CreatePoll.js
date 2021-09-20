@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import { API, Storage} from 'aws-amplify';
+import API from '@aws-amplify/api';
+import Storage from '@aws-amplify/storage';
 import { createPoll as createPollMutation, createCandidate as createCandidateMutation } from '../../graphql/mutations';
 import { getPoll as getPollQuery } from '../../graphql/queries';
 import slugify from '../../utils/slugify';
@@ -67,71 +68,59 @@ export default function CreatePoll() {
       }
       const pollData = { id: pollId, itemType: "Poll", type: pollType, name: pollName };
 
-      const isImage = pollType === 'image';
-
       const isCandidate = candidateType === "Answer"
 
       const candidate1Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate1 ? "n/a" : candidate1,
-        image: isImage ? candidate1.fileName : null,
-        candidateType: "Answer"
       }
       const candidate2Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate2 ? "n/a" : candidate2,
-        image: isImage ? candidate2.fileName : null,
         candidateType: "Answer"
       }
       const candidate3Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate3 ? "n/a" : candidate3,
-        image: isImage ? candidate3.fileName : null,
         candidateType: "Answer"
       }
       const candidate4Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate4 ? "n/a" : candidate4,
-        image: isImage ? candidate4.fileName : null,
         candidateType: "Answer"
       }
       const candidate5Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate5 ? "n/a" : candidate5,
-        image: isImage ? candidate5.fileName : null,
         candidateType: "Answer"
       }
       const candidate6Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate6 ? "n/a" : candidate6,
-        image: isImage ? candidate5.fileName : null,
         candidateType: "Answer"
       }
       const candidate7Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate7 ? "n/a" : candidate7,
-        image: isImage ? candidate5.fileName : null,
         candidateType: "Answer"
       }
       const candidate8Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate8 ? "n/a" : candidate8,
-        image: isImage ? candidate5.fileName : null,
         candidateType: "Answer"
       }
       const candidate9Data = {
         pollCandidatesId: pollId,
         upvotes: 0,
         name: !candidate9 ? "n/a" : candidate9,
-        image: isImage ? candidate5.fileName : null,
         candidateType: "Answer"
       }
 
@@ -280,15 +269,6 @@ export default function CreatePoll() {
       }
     </div>
   )
-}
-
-const imageStyle = {
-  width: '100%',
-  maxWidth: 500,
-  borderRadius: 5,
-  marginTop: 10,
-  marginBottom: 20,
-  boxShadow: '0px 0px 30px #ff00e4',
 }
 
 const inputFileStyle = {

@@ -51,6 +51,7 @@
     "react-spring": "^8.0.27",
     "react-toastify": "^6.0.4",
     "react-transition-group": "^4.4.1",
+    "react-video-js-player": "^1.1.1",
     "reactstrap": "^8.9.0",
     "reconnecting-websocket": "^4.4.0",
     "semantic-ui-react": "^2.0.1",
