@@ -1,22 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Chat from "../containers/Chat";
-import { useHistory } from "react-router-dom";
-/* import Loading from "../components/Loading"; */
-/* import Notes from '../components/Notes' */
+import { useLocation, useHistory } from "react-router-dom";
 import { Header  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
-import Notes from '../components/Notes'
+import Polls from '../containers/Polling/Polls';
+import Poll from '../containers/Polling/Poll';
+import Trivia from '../containers/Trivia/index';
+import Game from '../containers/Trivia/game';
 import Iframe from 'react-iframe'
+import Quiz from '../containers/Quiz/index';
 
-import config from '../aws-config';
+import awsconfig from '../aws-config';
 
 const Meetings = () => {
   const history = useHistory();
-  
-  /* var src = "https://master.d2wuoedcks4rry.amplifyapp.com/" ;
-  var frameRefreshInterval = setInterval(function() {
-    document.getElementById("myId").src = document.getElementById("myId").src
-}, 2000); */
+  const location = useLocation();
 
   return (
     <div className="main-content">
@@ -38,25 +36,21 @@ const Meetings = () => {
           </div> */}
           <section className='left meetings'>
             <div className='video-player'>
-              <VideoPlayer videoStream={config.PLAYBACK_URL}/>
-              {/* <iframe 
-                src="https://main.d8joca129bu9k.amplifyapp.com/"
-                width="100%"
-                height="700px"
-                id="myId"
-                className="pollsFrame"
-                display="initial"
-                position="relative"
-                loading
-              /> */}
+              <VideoPlayer/>
             </div>
+            { location.pathname === "/session/:id" ?
+              <Poll/> :
+              <Polls/>
+            }
           </section>
           <section className="right meetings">
             <div className='chat'>
               <Chat/>   
             </div>
-            <div className='chat'>
-              <Notes/>   
+            <div>
+              {/* <Quiz/> */}
+              <Game/>
+              {/* <Trivia/> */}
             </div>
           </section>
         </div>       

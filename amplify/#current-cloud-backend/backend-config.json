@@ -1,6 +1,6 @@
 {
   "api": {
-    "PremierFallChat": {
+    "PremierFallCombined": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -9,12 +9,21 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "Premier Chat"
+              "description": "Main API"
             }
           },
           "additionalAuthenticationProviders": []
         }
       }
+    }
+  },
+  "auth": {
+    "premierfallcombinedb86edaa2": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }

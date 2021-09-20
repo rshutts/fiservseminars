@@ -1,10 +1,8 @@
 import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
-import API, { graphqlOperation } from '@aws-amplify/api';
-import '@aws-amplify/pubsub';
 import { Connect } from "aws-amplify-react";
-import Amplify, { Auth, Storage } from 'aws-amplify';
+import Amplify, { API, Auth, Storage, graphqlOperation } from 'aws-amplify';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
@@ -27,18 +25,17 @@ import Error from "../../components/Error";
 import './Chat.css';
 import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
-import config from '../../aws-config';
+import awsconfig from '../../aws-config';
 
-const Chat = props => {
-  const [username, setState] = useState(null);
-  const [userGroup, setUserGroup] = useState(null);
+function Chat(props) {
+  const [profile, setProfile] = useState({
+    username: "",
+  });
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  const [profile, setProfile] = useState({
-    id: "",
-    name: "",
-    group: ""
+  const [userGroup, setUserGroup] = useState({
+    group: "",
   });
   const [emojiPickerState, SetEmojiPicker] = useState(false);
 
@@ -48,6 +45,7 @@ const Chat = props => {
 
   const [show, setShow] = useState();
 
+  
   let emojiPicker;
   if (emojiPickerState) {
     emojiPicker = (
@@ -55,60 +53,30 @@ const Chat = props => {
         title="Pick your emoji…"
         emoji="point_up"
         onSelect={emoji => setMessageBody(messageBody + emoji.native)}
+        onClick={closePicker}
       />
     );
   }
 
-  useEffect(() => {
-    async function getUsername() {
-      const user = await Auth.currentUserInfo();
-      console.log(user);
-      const username = user.username
-      setState(username);
-    }
-    getUsername();
-  }, [])
-
-  useEffect(() => {
-    async function getUserGroup() {
-      const user = await Auth.currentUserInfo();
-      const group = await Auth.currentSession();
-      const userGroup = group.accessToken.payload['cognito:groups'];
-      setUserGroup(userGroup);
-      console.log(userGroup)
-    }
-    getUserGroup();
-  }, [])
-
   const onLoad = async () => {
     try {
-      await Auth.currentAuthenticatedUser();
-      const user = await Auth.currentUserInfo()  
-      
-      {!user.attributes.group ?
-        setProfile({
-          id: user.id,
-          name: user.attributes.name,
-          group: 'User'
-        })
-      :
-        setProfile({
-          id: user.id,
-          name: user.attributes.name,
-          group: user.attributes.group
-        })
-      };
+      const user = await Auth.currentAuthenticatedUser();
+      console.log(user)
+      setProfile({
+        username: user.username
+      });
+      setUserGroup({
+        group: user.signInUserSession.accessToken.payload["cognito:groups"],
+      });
+    } catch(e) {
+ 
     }
-    catch(e) {
-      if (e !== 'No current user') {
-        Error(e);
-      }
-    }
+    
   }
-  
-  useEffect(() => {
+  useEffect(()=>{
     onLoad();
-  }, []);
+    }, []);
+
 
   useEffect(() => {
     API
@@ -149,7 +117,7 @@ const Chat = props => {
     
     const input = {
       channelID: '1',
-      author: (username),
+      author: (profile.username),
       group: (userGroup),
       body: messageBody.trim()
     };
@@ -157,6 +125,7 @@ const Chat = props => {
     try {
       setMessageBody('');
       await API.graphql(graphqlOperation(createMessage, { input }))
+      console.log(userGroup)
     } catch (error) {
       console.warn(error);
     }
@@ -165,6 +134,11 @@ const Chat = props => {
   function triggerPicker(event) {
     event.preventDefault();
     SetEmojiPicker(!emojiPickerState);
+  }
+
+  function closePicker(event) {
+    /* event.preventDefault(); */
+    SetEmojiPicker(emojiPickerState);
   }
 return (
   <div className='main full-width full-height'>
@@ -179,18 +153,16 @@ return (
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={message.author === username ? 'message me' : 'message'}>
-                    {message.group === '[Fiserv]' ?
+                  className={message.author === profile.username ? 'message me' : 'message'}>
+                     {message.group == '{group=[Fiserv]}' || message.group == 'Fiserv' ?
                       <div>
-                        
-                        <h3>{message.author}<FaStar className="fiserv-user"/></h3>
+                        <h3>{message.author}&nbsp;<FaStar className="fiserv-user"/></h3>
                         {message.body}
                       </div>
                     :
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
-                      {console.log(message.group)}
                     </div>
                   }
                 </div>
@@ -206,7 +178,7 @@ return (
                   <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-              {/* {emojiPicker}
+              {emojiPicker}
               <button
             class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
             onClick={triggerPicker}
@@ -215,7 +187,7 @@ return (
             <span role="img" aria-label="">
               😁
             </span>
-          </button> */}
+          </button>
             </div>
           </div>
           
@@ -238,7 +210,7 @@ return (
                 {messages.map((message) => (
                   <div
                     key={message.id}
-                    className={message.author === username ? 'message me' : 'message'}>
+                    className={message.author === profile.username ? 'message me' : 'message'}>
                       <div>
                         <h3>{message.author}</h3>
                         {message.body}

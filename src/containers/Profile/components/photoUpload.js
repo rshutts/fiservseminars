@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
-import config from '../../../aws-config';
+import awsconfig from '../../../aws-config';
 
 const PhotoUpload = () => {
   const [imageUrl, setImageUrl] = useState(null);

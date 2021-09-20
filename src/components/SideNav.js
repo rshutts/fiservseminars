@@ -20,7 +20,7 @@ function Sidenav() {
 
 
   async function onLoad() {
-    const user = await Auth.currentUserInfo()
+    const user = await Auth.currentAuthenticatedUser()
     .then(res => {
       console.log(res)
     })
@@ -29,7 +29,7 @@ function Sidenav() {
     });
     try {
       await Auth.currentSession();
-      const user = await Auth.currentUserInfo()
+      const user = await Auth.currentAuthenticatedUser()
       setProfile({
         username: user.username,
       });
@@ -84,7 +84,7 @@ function Sidenav() {
                   Speaker Bios 
               </Menu.Item>
             </Link>
-            <Link className='sidebar-nav-link' to={'/session?room=Fiserv'}>
+            <Link className='sidebar-nav-link' to={'/session'}>
               <Menu.Item>
                 <FaUsers/>
                   Learning Sessions

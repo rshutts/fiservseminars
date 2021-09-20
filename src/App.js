@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Auth, Storage, API } from 'aws-amplify';
+import Amplify, { Auth, Storage, API } from 'aws-amplify';
 
 /*Bootstrap*/
 import {
