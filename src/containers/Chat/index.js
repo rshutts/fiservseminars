@@ -18,14 +18,14 @@ import { useFormFields } from "../../libs/hooksLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
 import { messagesByChannelID } from '../../graphql/queries';
-/* import { listMessages } from '../../graphql/queries'; */
+import { listMessages } from '../../graphql/queries';
 
 import Error from "../../components/Error";
 
 import './Chat.css';
 import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
-import awsconfig from '../../aws-config';
+import config from '../../aws-config';
 
 function Chat(props) {
   const [profile, setProfile] = useState({
@@ -34,9 +34,9 @@ function Chat(props) {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  const [userGroup, setUserGroup] = useState({
+  /* const [userGroup, setUserGroup] = useState({
     group: "",
-  });
+  }); */
 /*   const [emojiPickerState, SetEmojiPicker] = useState(false); */
 
   const [connection, setConnection] = useState(null);
@@ -65,9 +65,9 @@ function Chat(props) {
       setProfile({
         username: user.username
       });
-      setUserGroup({
+     /*  setUserGroup({
         group: user.signInUserSession.accessToken.payload["cognito:groups"],
-      });
+      }); */
     } catch(e) {
  
     }
@@ -118,14 +118,12 @@ function Chat(props) {
     const input = {
       channelID: '1',
       author: (profile.username),
-      group: (userGroup),
       body: messageBody.trim()
     };
 
     try {
       setMessageBody('');
       await API.graphql(graphqlOperation(createMessage, { input }))
-      console.log(userGroup)
     } catch (error) {
       console.warn(error);
     }

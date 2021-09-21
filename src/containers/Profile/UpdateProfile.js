@@ -12,7 +12,7 @@ import {
 import LoaderButton from "../../components/LoaderButton";
 import Error from "../../components/Error";
 
-import awsconfig from '../../aws-config';
+import config from '../../aws-config';
 
 
 export default function UpdateProfile() {

@@ -4,7 +4,7 @@ import { useFormFields } from "../../libs/hooksLib";
 import { onError } from "../../libs/errorLib";
 import Avatar from 'react-avatar';
 
-import awsconfig from '../../aws-config';
+import config from '../../aws-config';
 
 Storage.configure({ track: true, level: "protected" });
 

@@ -18,10 +18,10 @@ import AdminEditQuestion from "./admin/editquestion";
 import AdminLibrary from "./admin/question-library";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import myAppConfig from "../../aws-config";
+import config from "../../aws-config";
 
-Amplify.configure(myAppConfig);
-DataStore.configure(myAppConfig);
+Amplify.configure(config);
+DataStore.configure(config);
 
 export default class Trivia extends React.Component {
   state = {

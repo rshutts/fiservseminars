@@ -1,0 +1,55 @@
+type Poll @model
+  @key(name: "byItemType", fields: ["itemType", "createdAt"], queryField: "itemsByType")
+  @auth(rules: [
+    { allow: public, operations: [create, read] }
+  ]) {
+  id: ID!
+  name: String!
+  type: PollType!
+  candidates: [Candidate] @connection
+  itemType: String
+  createdAt: String
+  owner: String
+}
+
+type Candidate @model
+  @key(name: "byCandidateName", fields: ["name", "candidateType"], queryField: "candidatesByName")
+  @auth(rules: [
+    { allow: public, operations: [create, read] }
+  ]) {
+  id: ID!
+  pollCandidatesId: ID
+  candidateType: String!
+  name: String!
+  upvotes: Int
+  owner: String
+}
+enum PollType {
+  text
+}
+
+type VoteType {
+	id: ID
+  clientId: ID
+}
+
+type Mutation {
+  upVote(id: ID, clientId: ID): VoteType
+}
+
+type Subscription {
+  onUpdateByID(id: ID!): VoteType
+    @aws_subscribe(mutations: ["upVote"])
+}
+
+type Message
+  @model
+  @key(name: "byChannelID", fields: ["channelID", "createdAt"], queryField: "messagesByChannelID")
+  @auth(rules: [{ allow: public, provider: apiKey }]) {
+  id: ID!
+  channelID: ID!
+  author: String!
+  body: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}

@@ -9,7 +9,7 @@ import actionTypes from '../../actionTypes';
 import Amplify, { Auth, API, Storage } from 'aws-amplify';
 
 import "./Polling.css";
-import awsconfig from '../../aws-config';
+import config from '../../aws-config';
 
 const initialState = {
   loading: true,
