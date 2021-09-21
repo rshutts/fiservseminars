@@ -1,5 +1,15 @@
 export const articleData = [
     {
+        name: "Database Clean-Up",
+        url: "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Database+Clean-Up.pdf",
+        img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/database-cleanup.png",
+    },
+    {
+        name: "Clean-Up Quick Bites",
+        url: "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Clean-Up+Quick+Bites.pdf",
+        img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/clean-up-quick-bites.png",
+    },
+    {
         name: "Essentials for Participation Loans",
         url: "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Essentials+for+Participation+Loans.pdf",
         img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/essentials-for-participation-loans.png",
