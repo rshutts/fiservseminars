@@ -76,6 +76,7 @@ export const getMessage = /* GraphQL */ `
   query GetMessage($id: ID!) {
     getMessage(id: $id) {
       id
+      channelID
       author
       body
       createdAt
@@ -92,6 +93,7 @@ export const listMessages = /* GraphQL */ `
     listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        channelID
         author
         body
         createdAt
@@ -181,6 +183,7 @@ export const messagesByChannelID = /* GraphQL */ `
     ) {
       items {
         id
+        channelID
         author
         body
         createdAt

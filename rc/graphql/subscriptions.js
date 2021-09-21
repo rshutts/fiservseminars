@@ -103,6 +103,7 @@ export const onCreateMessage = /* GraphQL */ `
   subscription OnCreateMessage {
     onCreateMessage {
       id
+      channelID
       author
       body
       createdAt
@@ -114,6 +115,7 @@ export const onUpdateMessage = /* GraphQL */ `
   subscription OnUpdateMessage {
     onUpdateMessage {
       id
+      channelID
       author
       body
       createdAt
@@ -125,6 +127,7 @@ export const onDeleteMessage = /* GraphQL */ `
   subscription OnDeleteMessage {
     onDeleteMessage {
       id
+      channelID
       author
       body
       createdAt
