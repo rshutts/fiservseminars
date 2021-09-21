@@ -28,10 +28,10 @@ const Meetings = () => {
             <div className='video-player'>
               <VideoJS/>
             </div>
-{/*             { location.pathname === "/session/:id" ?
+         { location.pathname === "/session/:id" ?
               <Poll/> :
               <Polls/>
-            } */}
+            }
           </section>
           <section className="right meetings">
             <div className='chat'>
