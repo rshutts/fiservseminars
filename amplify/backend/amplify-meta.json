@@ -53,6 +53,23 @@
                 "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
             },
             "lastPushTimeStamp": "2021-09-21T20:54:24.477Z"
+        },
+        "amplifiedchatapp": {
+            "service": "AppSync",
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY"
+                    },
+                    "additionalAuthenticationProviders": null
+                },
+                "GraphQLAPIIdOutput": "4cggckac25du5o37jh6hqckgfe",
+                "GraphQLAPIEndpointOutput": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
+                "name": "amplifiedchatapp",
+                "region": "us-east-1",
+                "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
+            },
+            "lastPushTimeStamp": "2021-09-22T04:07:56.320Z"
         }
     },
     "auth": {

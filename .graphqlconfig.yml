@@ -1,5 +1,5 @@
 projects:
-  amplifiedchatapp-dev:
+  amplifiedchatapp:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js

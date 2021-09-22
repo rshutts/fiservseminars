@@ -3,8 +3,8 @@ import Chat from "../containers/Chat";
 import { useLocation, useHistory } from "react-router-dom";
 import { Header, Button  } from 'semantic-ui-react'
 import VideoPlayer from '../containers/VideoPlayer';
-/* import Polls from '../containers/Polling/Polls';
-import Poll from '../containers/Polling/Poll'; */
+import Polls from '../containers/Polling/Polls';
+import Poll from '../containers/Polling/Poll'; 
 import Iframe from 'react-iframe'
 
 import { FaRegCalendarAlt } from 'react-icons/fa';
@@ -41,11 +41,22 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer/>
+              <iframe 
+                src="https://fallprecisionpoll.d8joca129bu9k.amplifyapp.com/"
+                width="100%"
+                height="700px"
+                id="myId"
+                className="pollsFrame"
+                display="initial"
+                position="relative"
+                loading
+              />
             </div>
             {/* { location.pathname === "/session/:id" ?
               <Poll/> :
               <Polls/>
             } */}
+            {/* <Polls/> */}
           </section>
           <section className="right meetings">
             <div className='chat'>

@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react';
 import { API, Storage} from 'aws-amplify';
 import { useParams, Link } from 'react-router-dom';
 import { itemsByType } from '../../graphql/queries';
-import { onUpdateByID } from '../../graphql/subscriptions';
+import { onUpdateById } from '../../graphql/subscriptions';
 import { upVote } from '../../graphql/mutations';
 import { setVoteForPoll, CLIENT_ID } from '../../utils/localStorageInfo';
 import Candidates from './Candidates';
@@ -37,7 +37,6 @@ function reducer(state, action) {
       return state
   }
 }
-
 export default function Polls() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -66,26 +65,26 @@ export default function Polls() {
     const { id: pollId } = pollData
     const id1 = items[0].id
     const id2 = items[1].id
-    console.log(items)
+
     subscriptions[id1] = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id1 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData
         if (clientId === CLIENT_ID) return
         dispatch({ type: actionTypes.UPVOTE, pollId, candidateId: id })
       }
     })
 
     subscriptions[id2] = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id2 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData
         if (clientId === CLIENT_ID) return
         dispatch({ type: actionTypes.UPVOTE, pollId, candidateId: id })
       }
