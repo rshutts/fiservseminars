@@ -1,5 +1,5 @@
 projects:
-  PremierFallCombined:
+  amplifiedchatapp-dev:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,6 +10,6 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-extensions:
-  amplify:
-    version: 3
+        region: us-east-1
+        apiId: 4cggckac25du5o37jh6hqckgfe
+        maxDepth: 2

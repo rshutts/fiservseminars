@@ -2,7 +2,8 @@ import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
 import { Connect } from "aws-amplify-react";
-import Amplify, { API, Auth, Storage, graphqlOperation } from 'aws-amplify';
+import Amplify, { API, Auth, PubSub, Storage, graphqlOperation } from 'aws-amplify';
+import '@aws-amplify/pubsub';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
@@ -11,21 +12,20 @@ import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
 import ChatProfileImage from './profileImage'
-import { Picker } from 'emoji-mart'
-import 'emoji-mart/css/emoji-mart.css'
+/* import { Picker } from 'emoji-mart'
+import 'emoji-mart/css/emoji-mart.css' */
 
 import { useFormFields } from "../../libs/hooksLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
 import { messagesByChannelID } from '../../graphql/queries';
-/* import { listMessages } from '../../graphql/queries'; */
 
 import Error from "../../components/Error";
 
 import './Chat.css';
 import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
-import awsconfig from '../../aws-config';
+import config from '../../aws-config';
 
 function Chat(props) {
   const [profile, setProfile] = useState({
@@ -34,10 +34,10 @@ function Chat(props) {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  const [userGroup, setUserGroup] = useState({
+  /* const [userGroup, setUserGroup] = useState({
     group: "",
-  });
-  const [emojiPickerState, SetEmojiPicker] = useState(false);
+  }); */
+/*   const [emojiPickerState, SetEmojiPicker] = useState(false); */
 
   const [connection, setConnection] = useState(null);
 
@@ -46,7 +46,7 @@ function Chat(props) {
   const [show, setShow] = useState();
 
   
-  let emojiPicker;
+  /* let emojiPicker;
   if (emojiPickerState) {
     emojiPicker = (
       <Picker
@@ -56,7 +56,7 @@ function Chat(props) {
         onClick={closePicker}
       />
     );
-  }
+  } */
 
   const onLoad = async () => {
     try {
@@ -65,9 +65,9 @@ function Chat(props) {
       setProfile({
         username: user.username
       });
-      setUserGroup({
+     /*  setUserGroup({
         group: user.signInUserSession.accessToken.payload["cognito:groups"],
-      });
+      }); */
     } catch(e) {
  
     }
@@ -118,28 +118,26 @@ function Chat(props) {
     const input = {
       channelID: '1',
       author: (profile.username),
-      group: (userGroup),
       body: messageBody.trim()
     };
 
     try {
       setMessageBody('');
       await API.graphql(graphqlOperation(createMessage, { input }))
-      console.log(userGroup)
     } catch (error) {
       console.warn(error);
     }
   };
   
-  function triggerPicker(event) {
+  /* function triggerPicker(event) {
     event.preventDefault();
     SetEmojiPicker(!emojiPickerState);
-  }
+  } */
 
-  function closePicker(event) {
-    /* event.preventDefault(); */
+  /* function closePicker(event) {
+    event.preventDefault();
     SetEmojiPicker(emojiPickerState);
-  }
+  } */
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -178,7 +176,7 @@ return (
                   <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-              {emojiPicker}
+              {/* {emojiPicker}
               <button
             class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
             onClick={triggerPicker}
@@ -187,7 +185,7 @@ return (
             <span role="img" aria-label="">
               😁
             </span>
-          </button>
+          </button> */}
             </div>
           </div>
           

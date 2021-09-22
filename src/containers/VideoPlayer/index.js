@@ -40,6 +40,7 @@ class VideoPlayer extends Component {
 
     // Initialize player
     const player = MediaPlayerPackage.create();
+    player.attachHTMLVideoElement(document.getElementById("video-player"));
 
     // Attach event listeners
     player.addEventListener(PlayerState.PLAYING, () => {
@@ -70,6 +71,7 @@ class VideoPlayer extends Component {
         metaData.unshift(`productId: ${productId} (${metadataTime}s)`);
         this.setState({ metaData });
     });
+
     // Setup stream and play
     player.setAutoplay(true);
     player.load(config.PLAYBACK_URL);
@@ -84,7 +86,7 @@ class VideoPlayer extends Component {
           <h1>Video</h1>
         </header>
         <div className="aspect-169 pos-relative full-width full-height">
-          <video id="video-player" className="video-elem pos-absolute full-width" poster="https://diypbx.com/wp-content/uploads/2016/02/video-placeholder.jpg" playsInline controls></video>
+          <video id="video-player" className="video-elem pos-absolute full-width" playsInline controls></video>
         </div>
         <div style={{color: "red", textAlign: "center", fontWeight: "normal"}}>
           <h3 style={{fontWeight: "normal"}}>

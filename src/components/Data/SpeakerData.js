@@ -307,7 +307,7 @@ export const speakerData = [
   {
     name: "Kent Mews",
     title: "Product Manager, SR",
-    img: "",
+    img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/bios/Kent+Mews2019_Kent+Mews.jpg",
     questions: [
       {
         key: "0",
@@ -359,7 +359,7 @@ export const speakerData = [
   {
     name: "Mary Kerr",
     title: "Technical Writer",
-    img: "",
+    img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/bios/Rise+Cover+Image_Mary+Kerr.jpg",
     questions: [
       {
         key: "0",
@@ -411,7 +411,7 @@ export const speakerData = [
   {
     name: "Bill Finn",
     title: "Director, Content Development; Learning and Client Performance / Account Processing",
-    img: "",
+    img: "https://seminar-media.s3.amazonaws.com/Fall/2021/Videos/bios/finn_bio_photo_Bill+Finn.jpg",
     questions: [
       {
         key: "0",
@@ -469,22 +469,4 @@ export const speakerData = [
       }
     ]
   },
-  /* {
-    name: "parent3",
-    url: "url3",
-    child: [
-      {
-        name: "child33",
-        url: "child_url33"
-      },
-      {
-        name: "child44",
-        url: "child_url44"
-      },
-      {
-        name: "child55",
-        url: "child_url55"
-      }
-    ]
-  } */
 ];

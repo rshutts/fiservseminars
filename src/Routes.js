@@ -22,15 +22,9 @@ import Signup from "./containers/Auth/Signup/Signup";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
-import Polls from "./containers/Polling/Polls";
+/* import Polls from "./containers/Polling/Polls";
 import CreatePoll from "./containers/Polling/CreatePoll";
-import Polling from "./containers/Polling/Polling";
-
-import TriviaAdmin from "./containers/Trivia/admin/admin";
-import EditQuiz from "./containers/Trivia/admin/editquiz";
-import EditQuestions from "./containers/Trivia/admin/editquestion";
-import RunQuiz from "./containers/Trivia/admin/runquiz";
-import Game from "./containers/Trivia/game";
+import Polling from "./containers/Polling/Polling"; */
 
 /*Polls*/
 
@@ -93,7 +87,7 @@ const Routes = () => (
           </AuthenticatedRoute>
 
           {/* Polls*/}
-          <AuthenticatedRoute exact path="/profile/polls">
+          {/* <AuthenticatedRoute exact path="/profile/polls">
             <Polls />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile/polls/create">
@@ -101,24 +95,7 @@ const Routes = () => (
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/session/:id">
             <Polling />
-          </AuthenticatedRoute>
-
-          {/* Trivia*/}
-          <AuthenticatedRoute exact path="/profile/trivia-admin">
-            <TriviaAdmin />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz">
-            <EditQuiz />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz/edit-question">
-            <EditQuestions />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/run-quiz">
-            <RunQuiz />
-          </AuthenticatedRoute>
-          <Route exact path="/session/trivia">
-            <Game />
-          </Route>
+          </AuthenticatedRoute> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>
