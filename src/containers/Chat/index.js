@@ -81,7 +81,8 @@ function Chat(props) {
     API
       .graphql(graphqlOperation(messagesByChannelID, {
         channelID: '1',
-        sortDirection: 'ASC'
+        sortDirection: 'ASC',
+        limit: '1000000'
       }))
       .then((response) => {
         const items = response?.data?.messagesByChannelID?.items;

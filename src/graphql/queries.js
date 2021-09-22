@@ -116,6 +116,7 @@ export const getMessage = /* GraphQL */ `
   query GetMessage($id: ID!) {
     getMessage(id: $id) {
       id
+      channelID
       author
       body
       createdAt
@@ -126,11 +127,13 @@ export const getMessage = /* GraphQL */ `
 export const listMessages = /* GraphQL */ `
   query ListMessages(
     $filter: ModelMessageFilterInput
+    $limit: Int
     $nextToken: String
   ) {
-    listMessages(filter: $filter, nextToken: $nextToken) {
+    listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        channelID
         author
         body
         createdAt
@@ -146,6 +149,7 @@ export const messagesByChannelID = /* GraphQL */ `
     $createdAt: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelMessageFilterInput
+    $limit: Int
     $nextToken: String
   ) {
     messagesByChannelID(
@@ -153,10 +157,12 @@ export const messagesByChannelID = /* GraphQL */ `
       createdAt: $createdAt
       sortDirection: $sortDirection
       filter: $filter
+      limit: $limit
       nextToken: $nextToken
     ) {
       items {
         id
+        channelID
         author
         body
         createdAt
