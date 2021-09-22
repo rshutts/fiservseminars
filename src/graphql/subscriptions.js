@@ -16,8 +16,6 @@ export const onCreatePoll = /* GraphQL */ `
       name
       type
       candidates {
-<<<<<<< HEAD
-=======
         items {
           id
           pollCandidatesId
@@ -27,15 +25,10 @@ export const onCreatePoll = /* GraphQL */ `
           createdAt
           updatedAt
         }
->>>>>>> test
         nextToken
       }
       itemType
       createdAt
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       updatedAt
     }
   }
@@ -47,8 +40,6 @@ export const onUpdatePoll = /* GraphQL */ `
       name
       type
       candidates {
-<<<<<<< HEAD
-=======
         items {
           id
           pollCandidatesId
@@ -58,15 +49,10 @@ export const onUpdatePoll = /* GraphQL */ `
           createdAt
           updatedAt
         }
->>>>>>> test
         nextToken
       }
       itemType
       createdAt
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       updatedAt
     }
   }
@@ -78,8 +64,6 @@ export const onDeletePoll = /* GraphQL */ `
       name
       type
       candidates {
-<<<<<<< HEAD
-=======
         items {
           id
           pollCandidatesId
@@ -89,15 +73,10 @@ export const onDeletePoll = /* GraphQL */ `
           createdAt
           updatedAt
         }
->>>>>>> test
         nextToken
       }
       itemType
       createdAt
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       updatedAt
     }
   }
@@ -110,10 +89,6 @@ export const onCreateCandidate = /* GraphQL */ `
       image
       name
       upvotes
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       createdAt
       updatedAt
     }
@@ -127,10 +102,6 @@ export const onUpdateCandidate = /* GraphQL */ `
       image
       name
       upvotes
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       createdAt
       updatedAt
     }
@@ -144,10 +115,6 @@ export const onDeleteCandidate = /* GraphQL */ `
       image
       name
       upvotes
-<<<<<<< HEAD
-      owner
-=======
->>>>>>> test
       createdAt
       updatedAt
     }
