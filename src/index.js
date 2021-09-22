@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Amplify, { Auth } from 'aws-amplify';
-import { DataStore } from "@aws-amplify/datastore";
+import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
@@ -22,10 +21,10 @@ if (!LOCAL_KEY) {
 initSentry();
 
 Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://4wecuaawlfdjjnvqxl6xu6nrwy.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "API_KEY",
-  "aws_appsync_apiKey": "da2-boj3xtrngnb7zcllnohcbu3epy",
+  'aws_appsync_apiKey': 'da2-h7wfmnkudrgmhlfghpj42xaa6y',
   Auth: {
     region: config.aws_cognito_region,
     userPoolId: config.aws_user_pools_id,

@@ -8,11 +8,19 @@ export const getPoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
       createdAt
-      owner
       updatedAt
     }
   }
@@ -28,9 +36,11 @@ export const listPolls = /* GraphQL */ `
         id
         name
         type
+        candidates {
+          nextToken
+        }
         itemType
         createdAt
-        owner
         updatedAt
       }
       nextToken
@@ -42,10 +52,9 @@ export const getCandidate = /* GraphQL */ `
     getCandidate(id: $id) {
       id
       pollCandidatesId
-      candidateType
+      image
       name
       upvotes
-      owner
       createdAt
       updatedAt
     }
@@ -61,10 +70,41 @@ export const listCandidates = /* GraphQL */ `
       items {
         id
         pollCandidatesId
-        candidateType
+        image
         name
         upvotes
-        owner
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const itemsByType = /* GraphQL */ `
+  query ItemsByType(
+    $itemType: String
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPollFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    itemsByType(
+      itemType: $itemType
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        type
+        candidates {
+          nextToken
+        }
+        itemType
         createdAt
         updatedAt
       }
@@ -94,67 +134,6 @@ export const listMessages = /* GraphQL */ `
         id
         author
         body
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const itemsByType = /* GraphQL */ `
-  query ItemsByType(
-    $itemType: String
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelPollFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    itemsByType(
-      itemType: $itemType
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        type
-        itemType
-        createdAt
-        owner
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const candidatesByName = /* GraphQL */ `
-  query CandidatesByName(
-    $name: String
-    $candidateType: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelCandidateFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    candidatesByName(
-      name: $name
-      candidateType: $candidateType
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        pollCandidatesId
-        candidateType
-        name
-        upvotes
-        owner
         createdAt
         updatedAt
       }

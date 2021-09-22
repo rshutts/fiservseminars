@@ -139,68 +139,8 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "getMessage",
-          "description" : null,
-          "args" : [ {
-            "name" : "id",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Message",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "listMessages",
-          "description" : null,
-          "args" : [ {
-            "name" : "filter",
-            "description" : null,
-            "type" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelMessageFilterInput",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "limit",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "nextToken",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "ModelMessageConnection",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
+<<<<<<< HEAD
+=======
           "name" : "itemsByType",
           "description" : null,
           "args" : [ {
@@ -266,10 +206,53 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "candidatesByName",
+>>>>>>> test
+          "name" : "getMessage",
           "description" : null,
           "args" : [ {
-            "name" : "name",
+            "name" : "id",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Message",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "listMessages",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelMessageFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
             "description" : null,
             "type" : {
               "kind" : "SCALAR",
@@ -277,8 +260,39 @@
               "ofType" : null
             },
             "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelMessageConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "itemsByType",
+          "description" : null,
+          "args" : [ {
+            "name" : "itemType",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+=======
+          "name" : "messagesByChannelID",
+          "description" : null,
+          "args" : [ {
+            "name" : "channelID",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+>>>>>>> test
+              "ofType" : null
+            },
+            "defaultValue" : null
           }, {
-            "name" : "candidateType",
+            "name" : "createdAt",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
@@ -287,6 +301,162 @@
             },
             "defaultValue" : null
           }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
+              "name" : "ModelPollFilterInput",
+=======
+              "name" : "ModelMessageFilterInput",
+>>>>>>> test
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+<<<<<<< HEAD
+            "name" : "ModelPollConnection",
+=======
+            "name" : "ModelMessageConnection",
+>>>>>>> test
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "Poll",
+        "description" : null,
+        "fields" : [ {
+          "name" : "id",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "name",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "ENUM",
+              "name" : "PollType",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "candidatesByName",
+          "description" : null,
+          "args" : [ {
+            "name" : "name",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+=======
+          "name" : "candidates",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelCandidateFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+>>>>>>> test
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+<<<<<<< HEAD
+            "name" : "candidateType",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelStringKeyConditionInput",
+=======
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+>>>>>>> test
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+<<<<<<< HEAD
             "name" : "sortDirection",
             "description" : null,
             "type" : {
@@ -488,6 +658,16 @@
               "ofType" : null
             },
             "defaultValue" : null
+=======
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+>>>>>>> test
           } ],
           "type" : {
             "kind" : "OBJECT",
@@ -519,6 +699,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
           "description" : null,
           "args" : [ ],
@@ -530,6 +711,8 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+=======
+>>>>>>> test
           "name" : "updatedAt",
           "description" : null,
           "args" : [ ],
@@ -575,6 +758,14 @@
         "inputFields" : null,
         "interfaces" : null,
         "enumValues" : [ {
+<<<<<<< HEAD
+=======
+          "name" : "image",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+>>>>>>> test
           "name" : "text",
           "description" : null,
           "isDeprecated" : false,
@@ -647,6 +838,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "candidateType",
           "description" : null,
           "args" : [ ],
@@ -658,6 +850,15 @@
               "name" : "String",
               "ofType" : null
             }
+=======
+          "name" : "image",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+>>>>>>> test
           },
           "isDeprecated" : false,
           "deprecationReason" : null
@@ -666,6 +867,7 @@
           "description" : null,
           "args" : [ ],
           "type" : {
+<<<<<<< HEAD
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
@@ -683,17 +885,29 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "Int",
+=======
+            "kind" : "SCALAR",
+            "name" : "String",
+>>>>>>> test
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
+=======
+          "name" : "upvotes",
+>>>>>>> test
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "String",
+=======
+            "name" : "Int",
+>>>>>>> test
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -775,7 +989,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "candidateType",
+=======
+          "name" : "image",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -802,6 +1020,7 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
           "description" : null,
           "type" : {
@@ -811,6 +1030,8 @@
           },
           "defaultValue" : null
         }, {
+=======
+>>>>>>> test
           "name" : "and",
           "description" : null,
           "type" : {
@@ -1452,6 +1673,7 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
           "description" : null,
           "type" : {
@@ -1461,6 +1683,8 @@
           },
           "defaultValue" : null
         }, {
+=======
+>>>>>>> test
           "name" : "and",
           "description" : null,
           "type" : {
@@ -1527,6 +1751,85 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+<<<<<<< HEAD
+=======
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelStringKeyConditionInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "beginsWith",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+>>>>>>> test
         "kind" : "OBJECT",
         "name" : "Message",
         "description" : null,
@@ -1546,6 +1849,24 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
+=======
+          "name" : "channelID",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+>>>>>>> test
           "name" : "author",
           "description" : null,
           "args" : [ ],
@@ -1652,6 +1973,18 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
+=======
+          "name" : "channelID",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+>>>>>>> test
           "name" : "author",
           "description" : null,
           "type" : {
@@ -1727,6 +2060,7 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+<<<<<<< HEAD
         "kind" : "INPUT_OBJECT",
         "name" : "ModelStringKeyConditionInput",
         "description" : null,
@@ -1803,6 +2137,8 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+=======
+>>>>>>> test
         "kind" : "OBJECT",
         "name" : "Mutation",
         "description" : null,
@@ -1870,6 +2206,7 @@
           "deprecationReason" : null
         }, {
           "name" : "updatePoll",
+<<<<<<< HEAD
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1903,6 +2240,8 @@
           "deprecationReason" : null
         }, {
           "name" : "deletePoll",
+=======
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1912,7 +2251,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "DeletePollInput",
+=======
+                "name" : "UpdatePollInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -1935,7 +2278,11 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "createCandidate",
+=======
+          "name" : "deletePoll",
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1945,7 +2292,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "CreateCandidateInput",
+=======
+                "name" : "DeletePollInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -1955,20 +2306,32 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelCandidateConditionInput",
+=======
+              "name" : "ModelPollConditionInput",
+>>>>>>> test
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Candidate",
+=======
+            "name" : "Poll",
+>>>>>>> test
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "updateCandidate",
+=======
+          "name" : "createCandidate",
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1978,7 +2341,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "UpdateCandidateInput",
+=======
+                "name" : "CreateCandidateInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -2001,7 +2368,11 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "deleteCandidate",
+=======
+          "name" : "updateCandidate",
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2011,7 +2382,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "DeleteCandidateInput",
+=======
+                "name" : "UpdateCandidateInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -2034,7 +2409,11 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "createMessage",
+=======
+          "name" : "deleteCandidate",
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2044,7 +2423,60 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "CreateMessageInput",
+=======
+                "name" : "DeleteCandidateInput",
+>>>>>>> test
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
+              "name" : "ModelMessageConditionInput",
+=======
+              "name" : "ModelCandidateConditionInput",
+>>>>>>> test
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+<<<<<<< HEAD
+            "name" : "Message",
+=======
+            "name" : "Candidate",
+>>>>>>> test
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "updateMessage",
+=======
+          "name" : "createMessage",
+>>>>>>> test
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
+                "name" : "UpdateMessageInput",
+=======
+                "name" : "CreateMessageInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -2067,7 +2499,11 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
+          "name" : "deleteMessage",
+=======
           "name" : "updateMessage",
+>>>>>>> test
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2077,7 +2513,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
+                "name" : "DeleteMessageInput",
+=======
                 "name" : "UpdateMessageInput",
+>>>>>>> test
                 "ofType" : null
               }
             },
@@ -2092,6 +2532,8 @@
             },
             "defaultValue" : null
           } ],
+<<<<<<< HEAD
+=======
           "type" : {
             "kind" : "OBJECT",
             "name" : "Message",
@@ -2125,6 +2567,7 @@
             },
             "defaultValue" : null
           } ],
+>>>>>>> test
           "type" : {
             "kind" : "OBJECT",
             "name" : "Message",
@@ -2175,6 +2618,7 @@
         "fields" : null,
         "inputFields" : [ {
           "name" : "id",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2197,6 +2641,47 @@
           "defaultValue" : null
         }, {
           "name" : "type",
+=======
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "name",
+>>>>>>> test
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+<<<<<<< HEAD
+              "kind" : "ENUM",
+              "name" : "PollType",
+=======
+              "kind" : "SCALAR",
+              "name" : "String",
+>>>>>>> test
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "itemType",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "createdAt",
+=======
+          "name" : "type",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -2210,6 +2695,7 @@
           "defaultValue" : null
         }, {
           "name" : "itemType",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2218,16 +2704,11 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "createdAt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
+<<<<<<< HEAD
           "name" : "owner",
+=======
+          "name" : "createdAt",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2273,6 +2754,7 @@
           "defaultValue" : null
         }, {
           "name" : "createdAt",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2282,6 +2764,8 @@
           "defaultValue" : null
         }, {
           "name" : "owner",
+=======
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2348,6 +2832,7 @@
           "defaultValue" : null
         }, {
           "name" : "name",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2366,6 +2851,8 @@
           "defaultValue" : null
         }, {
           "name" : "itemType",
+=======
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2374,7 +2861,20 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "createdAt",
+=======
+          "name" : "type",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "PollType",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "itemType",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2383,7 +2883,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
+=======
+          "name" : "createdAt",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2433,6 +2937,7 @@
           "defaultValue" : null
         }, {
           "name" : "pollCandidatesId",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2455,15 +2960,22 @@
           "defaultValue" : null
         }, {
           "name" : "name",
+=======
           "description" : null,
           "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "image",
+>>>>>>> test
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
           },
           "defaultValue" : null
         }, {
@@ -2471,12 +2983,20 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Int",
+=======
+            "name" : "String",
+>>>>>>> test
             "ofType" : null
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
+=======
+          "name" : "upvotes",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2503,7 +3023,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "candidateType",
+=======
+          "name" : "image",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2522,6 +3046,7 @@
           "defaultValue" : null
         }, {
           "name" : "upvotes",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2531,10 +3056,12 @@
           "defaultValue" : null
         }, {
           "name" : "owner",
+=======
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
+            "name" : "ModelIntInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2597,6 +3124,7 @@
           "defaultValue" : null
         }, {
           "name" : "pollCandidatesId",
+<<<<<<< HEAD
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2610,11 +3138,21 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "String",
+=======
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+>>>>>>> test
             "ofType" : null
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "name",
+=======
+          "name" : "image",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2632,7 +3170,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "owner",
+=======
+          "name" : "upvotes",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2681,20 +3223,28 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "author",
+=======
+          "name" : "channelID",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
-              "name" : "String",
+              "name" : "ID",
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "body",
+=======
+          "name" : "author",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -2707,11 +3257,30 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "createdAt",
+=======
+          "name" : "body",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
             "name" : "AWSDateTime",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "updatedAt",
+=======
+          "name" : "createdAt",
+>>>>>>> test
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDateTime",
+<<<<<<< HEAD
+=======
             "ofType" : null
           },
           "defaultValue" : null
@@ -2721,6 +3290,7 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "AWSDateTime",
+>>>>>>> test
             "ofType" : null
           },
           "defaultValue" : null
@@ -2734,6 +3304,18 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
+<<<<<<< HEAD
+=======
+          "name" : "channelID",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+>>>>>>> test
           "name" : "author",
           "description" : null,
           "type" : {
@@ -2827,16 +3409,24 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "author",
+=======
+          "name" : "channelID",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
-            "name" : "String",
+            "name" : "ID",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "body",
+=======
+          "name" : "author",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2845,11 +3435,30 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "createdAt",
+=======
+          "name" : "body",
+>>>>>>> test
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
             "name" : "AWSDateTime",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "updatedAt",
+=======
+          "name" : "createdAt",
+>>>>>>> test
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDateTime",
+<<<<<<< HEAD
+=======
             "ofType" : null
           },
           "defaultValue" : null
@@ -2859,6 +3468,7 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "AWSDateTime",
+>>>>>>> test
             "ofType" : null
           },
           "defaultValue" : null
@@ -3973,6 +4583,43 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
+        "name" : "aws_api_key",
+        "description" : "Tells the service this field/object has access authorized by an API key.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_cognito_user_pools",
+        "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+=======
+        "name" : "aws_auth",
+        "description" : "Directs the schema to enforce authorization on a field",
+        "locations" : [ "FIELD_DEFINITION" ],
+>>>>>>> test
+        "args" : [ {
+          "name" : "cognito_groups",
+          "description" : "List of cognito user pool groups which have access on this field",
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+<<<<<<< HEAD
+=======
         "name" : "aws_api_key",
         "description" : "Tells the service this field/object has access authorized by an API key.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -4002,6 +4649,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+>>>>>>> test
         "name" : "aws_subscribe",
         "description" : "Tells the service which mutation triggers this subscription.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -4023,6 +4671,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
         "name" : "deprecated",
         "description" : null,
         "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
@@ -4036,14 +4685,12 @@
           },
           "defaultValue" : "\"No longer supported\""
         } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
+=======
         "name" : "aws_oidc",
         "description" : "Tells the service this field/object has access authorized by an OIDC token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ ],
+>>>>>>> test
         "onOperation" : false,
         "onFragment" : false,
         "onField" : false
@@ -4056,6 +4703,17 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
+        "name" : "aws_iam",
+        "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+=======
+>>>>>>> test
         "name" : "aws_publish",
         "description" : "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
         "locations" : [ "FIELD_DEFINITION" ],

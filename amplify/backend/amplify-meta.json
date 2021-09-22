@@ -21,7 +21,11 @@
                         "authenticationType": "API_KEY",
                         "apiKeyConfig": {
                             "apiKeyExpirationDays": 365,
+<<<<<<< HEAD
                             "description": "main"
+=======
+                            "description": "Main API"
+>>>>>>> test
                         }
                     },
                     "additionalAuthenticationProviders": []
@@ -34,10 +38,17 @@
                 "s3TemplateURL": "https://s3.amazonaws.com/amplify-premierfallcombined-dev-92320-deployment/amplify-cfn-templates/api/cloudformation-template.json",
                 "logicalId": "apiPremierFallCombined"
             },
+<<<<<<< HEAD
             "lastPushTimeStamp": "2021-09-21T04:47:28.165Z",
             "lastPushDirHash": "fxfkKPBPPGYCUzjPo9YSB34uyIY="
         },
         "PrecisionFallCombined": {
+=======
+            "lastPushTimeStamp": "2021-09-16T19:59:18.574Z",
+            "lastPushDirHash": "ncZbPGr+4ha1C1GKJq+uWDUP3Fc="
+        },
+        "amplifiedchatapp-dev": {
+>>>>>>> test
             "service": "AppSync",
             "output": {
                 "authConfig": {
@@ -46,6 +57,7 @@
                     },
                     "additionalAuthenticationProviders": null
                 },
+<<<<<<< HEAD
                 "GraphQLAPIIdOutput": "qyz5ucvtcjexlged2hmnxvarqe",
                 "GraphQLAPIEndpointOutput": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
                 "name": "PrecisionFallCombined",
@@ -53,6 +65,32 @@
                 "GraphQLAPIKeyOutput": "da2-tsgw77xldbafbno255j6iwb4ei"
             },
             "lastPushTimeStamp": "2021-09-21T12:08:06.515Z"
+=======
+                "GraphQLAPIIdOutput": "4cggckac25du5o37jh6hqckgfe",
+                "GraphQLAPIEndpointOutput": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
+                "name": "amplifiedchatapp-dev",
+                "region": "us-east-1",
+                "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
+            },
+            "lastPushTimeStamp": "2021-09-21T20:54:24.477Z"
+        },
+        "amplifiedchatapp": {
+            "service": "AppSync",
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY"
+                    },
+                    "additionalAuthenticationProviders": null
+                },
+                "GraphQLAPIIdOutput": "4cggckac25du5o37jh6hqckgfe",
+                "GraphQLAPIEndpointOutput": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
+                "name": "amplifiedchatapp",
+                "region": "us-east-1",
+                "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
+            },
+            "lastPushTimeStamp": "2021-09-22T04:07:56.320Z"
+>>>>>>> test
         }
     },
     "auth": {

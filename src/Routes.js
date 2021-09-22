@@ -26,12 +26,6 @@ import Polls from "./containers/Polling/Polls";
 import CreatePoll from "./containers/Polling/CreatePoll";
 import Polling from "./containers/Polling/Polling";
 
-/* import TriviaAdmin from "./containers/Trivia/admin/admin";
-import EditQuiz from "./containers/Trivia/admin/editquiz";
-import EditQuestions from "./containers/Trivia/admin/editquestion";
-import RunQuiz from "./containers/Trivia/admin/runquiz";
-import Game from "./containers/Trivia/game"; */
-
 /*Polls*/
 
 /*Components*/
@@ -102,23 +96,6 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/session/:id">
             <Polling />
           </AuthenticatedRoute>
-
-          {/* Trivia*/}
-          {/* <AuthenticatedRoute exact path="/profile/trivia-admin">
-            <TriviaAdmin />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz">
-            <EditQuiz />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/edit-quiz/edit-question">
-            <EditQuestions />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/trivia-admin/run-quiz">
-            <RunQuiz />
-          </AuthenticatedRoute>
-          <Route exact path="/session/trivia">
-            <Game />
-          </Route> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>

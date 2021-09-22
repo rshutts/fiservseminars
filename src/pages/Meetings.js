@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import Chat from "../containers/Chat";
 import { useLocation, useHistory } from "react-router-dom";
 import { Header, Button  } from 'semantic-ui-react'
-/* import VideoPlayer from '../containers/VideoPlayer'; */
 import VideoPlayer from '../containers/VideoPlayer';
 import Polls from '../containers/Polling/Polls';
-import Poll from '../containers/Polling/Poll';
-/* import Trivia from '../containers/Trivia/index';
-import Game from '../containers/Trivia/game';
+import Poll from '../containers/Polling/Poll'; 
 import Iframe from 'react-iframe'
-import Quiz from '../containers/Quiz/index'; */
+
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoIosGitNetwork } from 'react-icons/io';
 
@@ -35,7 +32,6 @@ const Meetings = () => {
       "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Networking-+Precision+Fall+Education+Seminar-+Afternoon+Session.ics";
     link.click();
   };
-
   return (
     <div className="main-content">
       <div className="meetings-container">
@@ -46,11 +42,22 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer/>
+              <iframe 
+                src="https://fallprecisionpoll.d8joca129bu9k.amplifyapp.com/"
+                width="100%"
+                height="700px"
+                id="myId"
+                className="pollsFrame"
+                display="initial"
+                position="relative"
+                loading
+              />
             </div>
-         {/* { location.pathname === "/session/:id" ?
+            {/* { location.pathname === "/session/:id" ?
               <Poll/> :
               <Polls/>
             } */}
+            {/* <Polls/> */}
           </section>
           <section className="right meetings">
             <div className='chat'>

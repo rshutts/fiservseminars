@@ -4091,7 +4091,10 @@
       }
     },
     "aws-amplify": {
+<<<<<<< HEAD
       "version": "4.2.10",
+=======
+>>>>>>> test
       "requires": {
         "@aws-amplify/analytics": "5.0.16",
         "@aws-amplify/api": "4.0.16",
@@ -9862,13 +9865,17 @@
     "lodash-es": {
       "version": "4.17.21"
     },
+<<<<<<< HEAD
     "lodash._baseindexof": {},
+=======
+>>>>>>> test
     "lodash._baseuniq": {
       "requires": {
         "lodash._createset": "~4.0.0",
         "lodash._root": "~3.0.0"
       }
     },
+<<<<<<< HEAD
     "lodash._bindcallback": {},
     "lodash._cacheindexof": {},
     "lodash._createcache": {
@@ -9882,6 +9889,11 @@
     "lodash._getnative": {
       "version": "3.9.1"
     },
+=======
+    "lodash._createset": {
+      "version": "4.0.3"
+    },
+>>>>>>> test
     "lodash._reinterpolate": {
       "version": "3.0.0"
     },
@@ -9900,7 +9912,10 @@
     "lodash.merge": {
       "version": "4.6.2"
     },
+<<<<<<< HEAD
     "lodash.restparam": {},
+=======
+>>>>>>> test
     "lodash.template": {
       "version": "4.5.0",
       "requires": {
@@ -16925,7 +16940,10 @@
       }
     },
     "react-video-js-player": {
+<<<<<<< HEAD
       "version": "1.1.1",
+=======
+>>>>>>> test
       "requires": {
         "prop-types": "^15.6.2",
         "react": "^16.6.3",

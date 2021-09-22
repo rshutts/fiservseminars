@@ -12,14 +12,10 @@ const config = {
     "aws_user_pools_web_client_id": "1pm7jvsngtpsflgsdv1o2an8dk",
 
     /*API*/
-    "aws_appsync_graphqlEndpoint": "https://4wecuaawlfdjjnvqxl6xu6nrwy.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    'aws_appsync_apiKey': 'da2-boj3xtrngnb7zcllnohcbu3epy',
-    /* "aws_appsync_graphqlEndpoint": "https://4wecuaawlfdjjnvqxl6xu6nrwy.appsync-api.us-east-1.amazonaws.com/graphql",
-    "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-nisxlo3r6ffudoj7xbb5lnlyji", */
+    'aws_appsync_apiKey': 'da2-h7wfmnkudrgmhlfghpj42xaa6y',
 
     /*S3*/
     "aws_s3_bucket": "seminar-profile-photos",

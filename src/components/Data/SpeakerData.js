@@ -469,22 +469,4 @@ export const speakerData = [
       }
     ]
   },
-  /* {
-    name: "parent3",
-    url: "url3",
-    child: [
-      {
-        name: "child33",
-        url: "child_url33"
-      },
-      {
-        name: "child44",
-        url: "child_url44"
-      },
-      {
-        name: "child55",
-        url: "child_url55"
-      }
-    ]
-  } */
 ];

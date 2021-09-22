@@ -2,9 +2,7 @@ import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
 import { Connect } from "aws-amplify-react";
-import { Auth, Storage } from 'aws-amplify';
-import Amplify from '@aws-amplify/core';
-import API, { graphqlOperation } from '@aws-amplify/api';
+import Amplify, { API, Auth, PubSub, Storage, graphqlOperation } from 'aws-amplify';
 import '@aws-amplify/pubsub';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
@@ -36,9 +34,28 @@ function Chat(props) {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
+  /* const [userGroup, setUserGroup] = useState({
+    group: "",
+  }); */
+/*   const [emojiPickerState, SetEmojiPicker] = useState(false); */
+
   const [connection, setConnection] = useState(null);
   const [isOpen, setOpen] = useState(false)
   const [show, setShow] = useState();
+
+  
+  /* let emojiPicker;
+  if (emojiPickerState) {
+    emojiPicker = (
+      <Picker
+        title="Pick your emoji…"
+        emoji="point_up"
+        onSelect={emoji => setMessageBody(messageBody + emoji.native)}
+        onClick={closePicker}
+      />
+    );
+  } */
+
   const onLoad = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();
@@ -46,6 +63,9 @@ function Chat(props) {
       setProfile({
         username: user.username
       });
+     /*  setUserGroup({
+        group: user.signInUserSession.accessToken.payload["cognito:groups"],
+      }); */
     } catch(e) {
  
     }
@@ -106,7 +126,16 @@ function Chat(props) {
       console.warn(error);
     }
   };
+  
+  /* function triggerPicker(event) {
+    event.preventDefault();
+    SetEmojiPicker(!emojiPickerState);
+  } */
 
+  /* function closePicker(event) {
+    event.preventDefault();
+    SetEmojiPicker(emojiPickerState);
+  } */
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>

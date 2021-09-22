@@ -1,8 +1,8 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onUpdateByID = /* GraphQL */ `
-  subscription OnUpdateByID($id: ID!) {
+export const onUpdateById = /* GraphQL */ `
+  subscription OnUpdateById($id: ID!) {
     onUpdateByID(id: $id) {
       id
       clientId
@@ -16,11 +16,26 @@ export const onCreatePoll = /* GraphQL */ `
       name
       type
       candidates {
+<<<<<<< HEAD
+=======
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+>>>>>>> test
         nextToken
       }
       itemType
       createdAt
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       updatedAt
     }
   }
@@ -32,11 +47,26 @@ export const onUpdatePoll = /* GraphQL */ `
       name
       type
       candidates {
+<<<<<<< HEAD
+=======
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+>>>>>>> test
         nextToken
       }
       itemType
       createdAt
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       updatedAt
     }
   }
@@ -48,11 +78,26 @@ export const onDeletePoll = /* GraphQL */ `
       name
       type
       candidates {
+<<<<<<< HEAD
+=======
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
+>>>>>>> test
         nextToken
       }
       itemType
       createdAt
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       updatedAt
     }
   }
@@ -62,10 +107,13 @@ export const onCreateCandidate = /* GraphQL */ `
     onCreateCandidate {
       id
       pollCandidatesId
-      candidateType
+      image
       name
       upvotes
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       createdAt
       updatedAt
     }
@@ -76,10 +124,13 @@ export const onUpdateCandidate = /* GraphQL */ `
     onUpdateCandidate {
       id
       pollCandidatesId
-      candidateType
+      image
       name
       upvotes
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       createdAt
       updatedAt
     }
@@ -90,10 +141,13 @@ export const onDeleteCandidate = /* GraphQL */ `
     onDeleteCandidate {
       id
       pollCandidatesId
-      candidateType
+      image
       name
       upvotes
+<<<<<<< HEAD
       owner
+=======
+>>>>>>> test
       createdAt
       updatedAt
     }

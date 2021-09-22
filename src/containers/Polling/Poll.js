@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { useParams, useHistory } from "react-router-dom";
 import { CLIENT_ID, setVoteForPoll } from '../../utils/localStorageInfo';
-import { onUpdateByID } from '../../graphql/subscriptions';
+import { onUpdateById } from '../../graphql/subscriptions';
 import { getPoll } from '../../graphql/queries';
 import { upVote } from '../../graphql/mutations';
 import Candidates from './Candidates';
@@ -108,101 +108,101 @@ export default function Poll() {
     const id9 = items[8].id;
 
     subscription1 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id1 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
 
     subscription2 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id2 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription3 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id3 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription4 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id4 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription5 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id5 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription6 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id6 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription7 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id7 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription8 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id8 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
     })
     subscription9 = API.graphql({
-      query: onUpdateByID,
+      query: onUpdateById,
       variables: { id: id9 }
     })
     .subscribe({
       next: apiData => {
-        const { value: { data: { onUpdateByID: { id, clientId }}} } = apiData;
+        const { value: { data: { onUpdateById: { id, clientId }}} } = apiData;
         if (clientId === CLIENT_ID) return;
         dispatch({ type: actionTypes.UPVOTE, id });
       }
