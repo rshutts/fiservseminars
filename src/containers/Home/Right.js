@@ -27,15 +27,15 @@ class Right extends Component{
     
         <Accordion fluid styled>
         <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
+          active={activeIndex === 1}
+          index={1}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
             Day 1<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Database Clean-Up
             </h3>
@@ -43,7 +43,7 @@ class Right extends Component{
                 @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Handling Dormant &amp; Inactive Accounts 
             </h3>
@@ -51,7 +51,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Clean-Up Quick Bites
             </h3>
@@ -59,7 +59,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
                 Networking
             </h3>
@@ -68,15 +68,15 @@ class Right extends Component{
             </p>
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex === 1}
-          index={1}
+          active={activeIndex === 0}
+          index={0}
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
             Day 2<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Hidden Gems for Loans - Session 1
             </h3>
@@ -84,7 +84,7 @@ class Right extends Component{
                 @ 8:00 – 8:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Hidden Gems for Loans - Session 2
             </h3>
@@ -92,7 +92,7 @@ class Right extends Component{
                 @ 9:00 – 9:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Essentials for Participation Loans
             </h3>
@@ -100,7 +100,7 @@ class Right extends Component{
                 @ 10:00 – 10:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
             </p>
         </Accordion.Content>
-        <Accordion.Content active={activeIndex === 1}>
+        <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
                 Networking
             </h3>
