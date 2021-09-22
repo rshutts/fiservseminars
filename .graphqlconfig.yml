@@ -1,9 +1,5 @@
 projects:
-<<<<<<< HEAD
-  PrecisionFallCombined:
-=======
   amplifiedchatapp:
->>>>>>> test
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -15,13 +11,5 @@ projects:
         generatedFileName: ''
         docsFilePath: src/graphql
         region: us-east-1
-<<<<<<< HEAD
-        apiId: qyz5ucvtcjexlged2hmnxvarqe
-        maxDepth: 2
-extensions:
-  amplify:
-    version: 3
-=======
         apiId: 4cggckac25du5o37jh6hqckgfe
         maxDepth: 2
->>>>>>> test

@@ -12,6 +12,7 @@ import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
 import ChatProfileImage from './profileImage'
+import { Editor } from "@tinymce/tinymce-react";
 /* import { Picker } from 'emoji-mart'
 import 'emoji-mart/css/emoji-mart.css' */
 
@@ -158,6 +159,18 @@ return (
               ))}
               <div className="chat-bar composer">
                 <form onSubmit={handleSubmit}>
+                {/* <Editor
+                    apiKey="qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc"
+                    init={{
+                      plugins: "emoticons",
+                      toolbar: "emoticons",
+                      toolbar_location: "bottom",
+                      menubar: false,
+                      statusbar: false,
+                      height: 50
+                    }}
+                    initialValue="<p></p>"
+                  /> */}
                 <input
                   type="text"
                   name="message"
