@@ -18,7 +18,7 @@ import AdminEditQuestion from "./admin/editquestion";
 import AdminLibrary from "./admin/question-library";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import config from "../../aws-config";
+import awsconfig from "../../aws-config";
 
 Amplify.configure(config);
 DataStore.configure(config);

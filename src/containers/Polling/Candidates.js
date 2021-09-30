@@ -322,7 +322,7 @@ function linkStyle(pollView) {
 function candidate1Style(width) {
   return {
     backgroundColor: '#ff6600',
-    width: `${width}%`,
+    width: `fit-content`,
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
     transition: 'all 0.5s ease'
@@ -332,7 +332,7 @@ function candidate1Style(width) {
 function candidate2Style(width) {
   return {
     backgroundColor: '#666666',
-    width: `${width}%`,
+    width: `fit-content`,
     transition: 'all 0.5s ease'
   }
 }

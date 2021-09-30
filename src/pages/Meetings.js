@@ -11,7 +11,7 @@ import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoIosGitNetwork } from 'react-icons/io';
 
 
-import config from '../aws-config';
+import awsconfig from '../aws-config';
 
 const Meetings = () => {
   const history = useHistory();

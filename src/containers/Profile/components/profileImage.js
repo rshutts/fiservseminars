@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import Avatar from 'react-avatar';
 
-import config from '../../../aws-config';
+import awsconfig from '../../../aws-config';
 
 Storage.configure({ track: true, level: "protected" });
 

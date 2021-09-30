@@ -7,14 +7,13 @@ import '@aws-amplify/pubsub';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
-import ReconnectingWebSocket from 'reconnecting-websocket';
+import useWebSocket from 'react-use-websocket';
+
 import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
+/* import InputEmoji from 'react-input-emoji' */
 import ChatProfileImage from './profileImage'
-import { Editor } from "@tinymce/tinymce-react";
-/* import { Picker } from 'emoji-mart'
-import 'emoji-mart/css/emoji-mart.css' */
 
 import { useFormFields } from "../../libs/hooksLib";
 import { createMessage } from '../../graphql/mutations';
@@ -38,24 +37,30 @@ function Chat(props) {
   /* const [userGroup, setUserGroup] = useState({
     group: "",
   }); */
-/*   const [emojiPickerState, SetEmojiPicker] = useState(false); */
 
   const [connection, setConnection] = useState(null);
   const [isOpen, setOpen] = useState(false)
   const [show, setShow] = useState();
-
+  const [ text, setText ] = useState('')
   
-  /* let emojiPicker;
-  if (emojiPickerState) {
-    emojiPicker = (
-      <Picker
-        title="Pick your emoji…"
-        emoji="point_up"
-        onSelect={emoji => setMessageBody(messageBody + emoji.native)}
-        onClick={closePicker}
-      />
-    );
-  } */
+  const socketUrl = 'wss://2cy33jj671.execute-api.us-east-1.amazonaws.com/production';
+
+  const {
+    sendMessage,
+    sendJsonMessage,
+    lastMessage,
+    lastJsonMessage,
+    readyState,
+    getWebSocket
+  } = useWebSocket(socketUrl, {
+    onOpen: () => console.log('opened'),
+    //Will attempt to reconnect on all close events, such as server shutting down
+    shouldReconnect: (closeEvent) => true,
+  });
+  
+  function handleOnEnter (text) {
+    console.log('enter', text)
+  }
 
   const onLoad = async () => {
     try {
@@ -128,16 +133,7 @@ function Chat(props) {
       console.warn(error);
     }
   };
-  
-  /* function triggerPicker(event) {
-    event.preventDefault();
-    SetEmojiPicker(!emojiPickerState);
-  } */
 
-  /* function closePicker(event) {
-    event.preventDefault();
-    SetEmojiPicker(emojiPickerState);
-  } */
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -160,18 +156,13 @@ return (
               ))}
               <div className="chat-bar composer">
                 <form onSubmit={handleSubmit}>
-                {/* <Editor
-                    apiKey="qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc"
-                    init={{
-                      plugins: "emoticons",
-                      toolbar: "emoticons",
-                      toolbar_location: "bottom",
-                      menubar: false,
-                      statusbar: false,
-                      height: 50
-                    }}
-                    initialValue="<p></p>"
-                  /> */}
+                {/* <InputEmoji
+                  value={text}
+                  onChange={setText}
+                  cleanOnEnter
+                  onEnter={handleOnEnter}
+                  placeholder="Type a message"
+                /> */}
                 <input
                   type="text"
                   name="message"
@@ -181,16 +172,6 @@ return (
                   <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-              {/* {emojiPicker}
-              <button
-            class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-            onClick={triggerPicker}
-          >
-            Add an Emoji!
-            <span role="img" aria-label="">
-              😁
-            </span>
-          </button> */}
             </div>
           </div>
           
