@@ -1,0 +1,81 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-seminarpolls-prod-81803-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-seminarpolls-prod-81803-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-seminarpolls-prod-81803-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-seminarpolls-prod-81803-deployment",
+      "UnauthRoleName": "amplify-seminarpolls-prod-81803-unauthRole",
+      "StackName": "amplify-seminarpolls-prod-81803",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-seminarpolls-prod-81803/0d521630-0670-11ec-8649-12909bffa46d",
+      "AmplifyAppId": "d350styi7a5p4"
+    }
+  },
+  "auth": {
+    "thisorthatd21dc504": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-seminarpolls-prod-81803-deployment/amplify-cfn-templates/auth/thisorthatd21dc504-cloudformation-template.yml",
+        "logicalId": "auththisorthatd21dc504"
+      },
+      "lastPushTimeStamp": "2021-08-26T17:25:36.660Z",
+      "output": {
+        "AppClientSecret": "4viprni0a0l49thc3r9rn37qvd9gosi5cdsjin640ci5im8rujc",
+        "UserPoolId": "us-east-1_1BnqYGjQ3",
+        "AppClientIDWeb": "4u0f8rei5m8i7i1rdrvullcl41",
+        "AppClientID": "4ff030f2cpoh828gr1betoshdv",
+        "IdentityPoolId": "us-east-1:886e0118-c38e-4e60-add6-30bf2d68f7e8",
+        "IdentityPoolName": "thisorthatd21dc504_identitypool_d21dc504__prod",
+        "UserPoolName": "thisorthatd21dc504_userpool_d21dc504"
+      },
+      "lastPushDirHash": "/6avdZxx1EyNho9GUIMqEGjbSmI="
+    }
+  },
+  "storage": {
+    "images": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-seminarpolls-prod-81803-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+        "logicalId": "storageimages"
+      },
+      "lastPushTimeStamp": "2021-08-26T17:25:36.666Z",
+      "output": {
+        "BucketName": "thisorthatimagebucket81803-prod",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "fwj/MjmNQJ8SqM1+yKml99IMZVs="
+    }
+  },
+  "api": {
+    "fallPolling": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "description": "public",
+              "apiKeyExpirationDays": "365"
+            }
+          }
+        },
+        "GraphQLAPIIdOutput": "uu7px7ippnhkzerg45gylzb66y",
+        "GraphQLAPIEndpointOutput": "https://dtkqcpecpfabzf3v5somdhqeka.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-5uunrm4syvefvj4n7u3mtyjno4"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-seminarpolls-prod-81803-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apifallPolling"
+      },
+      "lastPushTimeStamp": "2021-08-26T17:25:36.681Z",
+      "lastPushDirHash": "yMRq2IrjBShKkOV2nQ45dZxE7yo="
+    }
+  }
+}

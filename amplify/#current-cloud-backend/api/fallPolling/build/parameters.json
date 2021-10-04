@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "fallpolls",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "S3DeploymentBucket": "amplify-seminarpolls-prod-81803-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/6a4a2150cb436dae305e3489b8a273a7c57052b2"
+}
