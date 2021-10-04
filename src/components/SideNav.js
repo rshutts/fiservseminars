@@ -20,7 +20,7 @@ function Sidenav() {
 
 
   async function onLoad() {
-    const user = await Auth.currentUserInfo()
+    const user = await Auth.currentAuthenticatedUser()
     .then(res => {
       console.log(res)
     })
@@ -29,7 +29,7 @@ function Sidenav() {
     });
     try {
       await Auth.currentSession();
-      const user = await Auth.currentUserInfo()
+      const user = await Auth.currentAuthenticatedUser()
       setProfile({
         username: user.username,
       });
@@ -63,7 +63,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
+              href='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >
@@ -78,13 +78,13 @@ function Sidenav() {
                   FAQ 
               </Menu.Item>
             </Link>
-            {/* <Link className="sidebar-nav-link" to="/speaker-bios">
+            <Link className="sidebar-nav-link" to="/speaker-bios">
               <Menu.Item>
                 <FaRegAddressBook/>
                   Speaker Bios 
               </Menu.Item>
             </Link>
-            <Link className='sidebar-nav-link' to={'/session?room=Fiserv'}>
+            <Link className='sidebar-nav-link' to={'/session'}>
               <Menu.Item>
                 <FaUsers/>
                   Learning Sessions
@@ -95,7 +95,7 @@ function Sidenav() {
                 <FaNewspaper/>
                   Session Collateral
               </Menu.Item>
-            </Link> */}
+            </Link>
             <Link className="sidebar-nav-link" to="/profile">
               <Menu.Item>
                 <FaUser/>
@@ -120,7 +120,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
+              href='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >

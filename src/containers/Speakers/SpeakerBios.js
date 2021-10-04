@@ -1,5 +1,5 @@
 import React from "react";
-import { speakerData } from '../../components/Data/SpeakerData'
+import { speakerData } from './SpeakerData'
 import { Button } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
 import Card from "react-bootstrap/Card";
@@ -15,11 +15,12 @@ export default function SpeakerBios() {
             return (    
                 <CardDeck>
                     <Card>
-                    <Card.Img variant="top" style={{ width: '150px'}} src={p.img} />
+                    <Card.Img variant="top" style={{ height: '150px', width: "auto"}} src={p.img} />
                         <Card.Body>
                             <Card.Title>
                                 {p.name}
                             </Card.Title>
+                            <h3 style={{ color: "#ff6600" }}>{p.title}</h3>
                             {p.questions &&
                                 p.questions.map(c => {
                                 return (

@@ -1,6 +1,6 @@
 {
   "api": {
-    "PremierFallChat": {
+    "premierfallseminars": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -9,12 +9,28 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "Premier Chat"
+              "description": ""
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authpremierfallseminars8bce0c5e"
+              }
+            }
+          ]
         }
       }
+    }
+  },
+  "auth": {
+    "premierfallseminars8bce0c5e": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }

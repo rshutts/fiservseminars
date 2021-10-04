@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from "react-router-dom";
-import { Auth } from "aws-amplify";
+import Amplify, { Auth } from "aws-amplify";
 import Card from "react-bootstrap/Card";
 import { Button} from "react-bootstrap";
 
@@ -18,7 +18,8 @@ function ProfileCards(props) {
     bankName: "",
     title: "",
     city: "",
-    state:  ""
+    state:  "",
+    userScore: ""
   });
   const [userGroup, setUserGroup] = useState({
     group: "",
@@ -35,7 +36,8 @@ function ProfileCards(props) {
         bankName: user.attributes['custom:bankName'],
         title: user.attributes['custom:title'],
         city: user.attributes['custom:city'],
-        state: user.attributes['custom:state']
+        state: user.attributes['custom:state'],
+        userScore: user.attributes['custom:userScore']
       });
       setUserGroup({
         group: user.signInUserSession.accessToken.payload["cognito:groups"],
@@ -70,10 +72,11 @@ function ProfileCards(props) {
             </h1>
           </Card.Header>
           <Card.Body>
-            {userGroup.group === 'Fiserv'
+            {userGroup.group == 'Fiserv'
             ?
               <Card.Title>
-                Email:  {profile.email}*
+                Email:  {profile.email}*<br />
+                Username:  {profile.username}
               </Card.Title>
             :
               <Card.Title>
@@ -87,6 +90,13 @@ function ProfileCards(props) {
               <h2>Title:  {profile.title}</h2>
               <h2>City: {profile.city}</h2>
               <h2>State: {profile.state}</h2>
+              <h2>Score: {profile.userScore}</h2>
+              {/* <h2>User Score: 
+                {!profile.userScore
+                ?
+                  <span>0</span>
+                : <span>{profile.userScore}</span>
+                }</h2> */}
             </Card.Text>
             <Button
               id='loginBtn'

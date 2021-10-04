@@ -1,26 +1,24 @@
 import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
-import API, { graphqlOperation } from '@aws-amplify/api';
-import '@aws-amplify/pubsub';
 import { Connect } from "aws-amplify-react";
-import Amplify, { Auth, Storage } from 'aws-amplify';
+import Amplify, { API, Auth, PubSub, Storage, graphqlOperation } from 'aws-amplify';
+import '@aws-amplify/pubsub';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
-import ReconnectingWebSocket from 'reconnecting-websocket';
+import useWebSocket from 'react-use-websocket';
+
 import Popout from 'react-popout-v2';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import Avatar from 'react-avatar';
+/* import InputEmoji from 'react-input-emoji' */
 import ChatProfileImage from './profileImage'
-import { Picker } from 'emoji-mart'
-import 'emoji-mart/css/emoji-mart.css'
 
 import { useFormFields } from "../../libs/hooksLib";
 import { createMessage } from '../../graphql/mutations';
 import { onCreateMessage } from '../../graphql/subscriptions';
 import { messagesByChannelID } from '../../graphql/queries';
-/* import { listMessages } from '../../graphql/queries'; */
 
 import Error from "../../components/Error";
 
@@ -29,92 +27,50 @@ import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 
 import config from '../../aws-config';
 
-const Chat = props => {
-  const [username, setState] = useState(null);
-  const [userGroup, setUserGroup] = useState(null);
+function Chat(props) {
+  const [profile, setProfile] = useState({
+    username: "",
+  });
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  const [profile, setProfile] = useState({
-    id: "",
-    name: "",
-    group: ""
-  });
-  const [emojiPickerState, SetEmojiPicker] = useState(false);
+  /* const [userGroup, setUserGroup] = useState({
+    group: "",
+  }); */
 
   const [connection, setConnection] = useState(null);
-
   const [isOpen, setOpen] = useState(false)
-
   const [show, setShow] = useState();
-
-  let emojiPicker;
-  if (emojiPickerState) {
-    emojiPicker = (
-      <Picker
-        title="Pick your emoji…"
-        emoji="point_up"
-        onSelect={emoji => setMessageBody(messageBody + emoji.native)}
-      />
-    );
-  }
-
-  useEffect(() => {
-    async function getUsername() {
-      const user = await Auth.currentUserInfo();
-      console.log(user);
-      const username = user.username
-      setState(username);
-    }
-    getUsername();
-  }, [])
-
-  useEffect(() => {
-    async function getUserGroup() {
-      const user = await Auth.currentUserInfo();
-      const group = await Auth.currentSession();
-      const userGroup = group.accessToken.payload['cognito:groups'];
-      setUserGroup(userGroup);
-      console.log(userGroup)
-    }
-    getUserGroup();
-  }, [])
+  const [ text, setText ] = useState('')
+  
+  const socketUrl = 'wss://2cy33jj671.execute-api.us-east-1.amazonaws.com/production';
 
   const onLoad = async () => {
     try {
-      await Auth.currentAuthenticatedUser();
-      const user = await Auth.currentUserInfo()  
-      
-      {!user.attributes.group ?
-        setProfile({
-          id: user.id,
-          name: user.attributes.name,
-          group: 'User'
-        })
-      :
-        setProfile({
-          id: user.id,
-          name: user.attributes.name,
-          group: user.attributes.group
-        })
-      };
+      const user = await Auth.currentAuthenticatedUser();
+      console.log(user)
+      setProfile({
+        username: user.username
+      });
+     /*  setUserGroup({
+        group: user.signInUserSession.accessToken.payload["cognito:groups"],
+      }); */
+    } catch(e) {
+ 
     }
-    catch(e) {
-      if (e !== 'No current user') {
-        Error(e);
-      }
-    }
+    
   }
-  
-  useEffect(() => {
+  useEffect(()=>{
     onLoad();
-  }, []);
+    }, []);
+
 
   useEffect(() => {
     API
       .graphql(graphqlOperation(messagesByChannelID, {
         channelID: '1',
-        sortDirection: 'ASC'
+        sortDirection: 'ASC',
+        limit: '1000000'
       }))
       .then((response) => {
         const items = response?.data?.messagesByChannelID?.items;
@@ -149,8 +105,7 @@ const Chat = props => {
     
     const input = {
       channelID: '1',
-      author: (username),
-      group: (userGroup),
+      author: (profile.username),
       body: messageBody.trim()
     };
 
@@ -161,11 +116,7 @@ const Chat = props => {
       console.warn(error);
     }
   };
-  
-  function triggerPicker(event) {
-    event.preventDefault();
-    SetEmojiPicker(!emojiPickerState);
-  }
+
 return (
   <div className='main full-width full-height'>
     <div className='content-wrapper mg-2'>
@@ -179,24 +130,22 @@ return (
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={message.author === username ? 'message me' : 'message'}>
-                    {message.group === '[Fiserv]' ?
-                      <div>
-                        
-                        <h3>{message.author}<FaStar className="fiserv-user"/></h3>
-                        {message.body}
-                      </div>
-                    :
+                  className={message.author === profile.username ? 'message me' : 'message'}>
                     <div>
                       <h3>{message.author}</h3>
                       {message.body}
-                      {console.log(message.group)}
                     </div>
-                  }
                 </div>
               ))}
               <div className="chat-bar composer">
                 <form onSubmit={handleSubmit}>
+                {/* <InputEmoji
+                  value={text}
+                  onChange={setText}
+                  cleanOnEnter
+                  onEnter={handleOnEnter}
+                  placeholder="Type a message"
+                /> */}
                 <input
                   type="text"
                   name="message"
@@ -206,16 +155,6 @@ return (
                   <FaStar className="fiserv-employee"/>Fiserv
                   {!isOpen && <FaExternalLinkAlt className='openPopup' onClick={() => setOpen(true)}>Open Popout</FaExternalLinkAlt>}
               </form>
-              {/* {emojiPicker}
-              <button
-            class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-            onClick={triggerPicker}
-          >
-            Add an Emoji!
-            <span role="img" aria-label="">
-              😁
-            </span>
-          </button> */}
             </div>
           </div>
           
@@ -238,7 +177,7 @@ return (
                 {messages.map((message) => (
                   <div
                     key={message.id}
-                    className={message.author === username ? 'message me' : 'message'}>
+                    className={message.author === profile.username ? 'message me' : 'message'}>
                       <div>
                         <h3>{message.author}</h3>
                         {message.body}

@@ -9,7 +9,7 @@ class Left extends Component {
             <div className="greetings">
               <img
               class='mb-3 app-logo'
-              src='https://seminar-media.s3.amazonaws.com/Fall/2021/fall-header.png'
+              src='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/fall-header.png'
               alt='2021 Premier Fall Conference'
               width=''
             />
@@ -20,17 +20,17 @@ class Left extends Component {
               Now is the ideal time to focus on professional development and optimization of your organization’s performance. Collaborate with Fiserv experts and industry peers for this year’s Fall Education Seminars. This year’s event will provide participants with valuable software and procedural insights throughout the comprehensive three-day seminar. Fiserv experts facilitate interactive presentations and discussions designed to inform, educate, and empower. Attendees will leverage a dynamic, virtual venue while learning about Premier software and best practices all while building a diverse network of professional relationships.
             </p>
             <p>
-              The 2021 Premier Fall Education Seminar is the affordable and convenient training solution your organization deserves. Are you concerned about documenting all of the amazing information the seminars have to offer? This year’s participants will gain access to unlimited recordings for three months after the event concludes. Fiserv is also offering unlimited connections for one, low price. Register Now and begin your institution’s journey towards efficiency!
+              The 2021 Premier Fall Education Seminar is the affordable and convenient training solution your organization deserves. Are you concerned about documenting all of the amazing information the seminars have to offer? This year’s participant’s will gain access to unlimited recordings for three months after the event concludes. Fiserv is also offering unlimited connections for one, low price. Register Now and begin your institution’s journey towards efficiency!
             </p>
             <h2>
               Seminar Dates:
             </h2>
               <ul>
                 <li>
-                October 12, 13, and 14, 2021
+                  October 12, 13, and 14, 2021
                 </li>
                 <li>
-                November 2, 3, and 4, 2021
+                  November 2, 3, and 4, 2021
                 </li>
               </ul>
             <h2>

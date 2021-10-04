@@ -22,6 +22,9 @@ import Signup from "./containers/Auth/Signup/Signup";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
+/* import Polls from "./containers/Polling/Polls";
+import CreatePoll from "./containers/Polling/CreatePoll";
+import Polling from "./containers/Polling/Polling"; */
 
 /*Polls*/
 
@@ -38,19 +41,19 @@ const Routes = () => (
         return (
     <TransitionGroup component={null} className="transition-group">
       <CSSTransition timeout={300} classNames="fade">
-      <Switch location={location}>
+      <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/faq">
             <FAQ />
           </Route>
-          {/* <Route exact path="/speaker-bios">
+          <Route exact path="/speaker-bios">
             <Bios />
           </Route>
           <Route exact path="/resource-center/articles">
             <Articles />
-          </Route> */}
+          </Route>
           <UnauthenticatedRoute exact path="/password/forgot">
             <PasswordForgot />
           </UnauthenticatedRoute>
@@ -82,6 +85,17 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
+
+          {/* Polls*/}
+          {/* <AuthenticatedRoute exact path="/profile/polls">
+            <Polls />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/polls/create">
+            <CreatePoll />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/session/:id">
+            <Polling />
+          </AuthenticatedRoute> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>

@@ -57,7 +57,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 2} className="faq-content">
                     <p>
-                        In the Learning Sessions tab- Please click on “Enter the Chat Room Now” button and click join. 
+                        In the Learning Sessions tab - Join the conversation within the Chat section on the right side of the video. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title

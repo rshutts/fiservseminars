@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Auth, Storage, API } from 'aws-amplify';
+import Amplify, { Auth, Storage, API } from 'aws-amplify';
 
 /*Bootstrap*/
 import {
@@ -139,7 +139,7 @@ function App() {
                                 Home
                               </DropdownItem>
                               <DropdownItem
-                                href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Precision-Overview-and-Agenda.pdf'
+                                href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Premier-Overview-and-Agenda.pdf'
                                 target='_blank'
                                 className='dropdown-profile'
                                 activeClassName='router-link-exact-active'

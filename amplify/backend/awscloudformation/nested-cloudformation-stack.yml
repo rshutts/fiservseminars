@@ -68,18 +68,19 @@
         }
       }
     },
-    "apiPremierFallChat": {
+    "apipremierfallseminars": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-premierfallseminar21-prod-144046-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-premierfallseminars-dev-131744-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
           "CreateAPIKey": 1,
-          "AppSyncApiName": "PremierFallChat",
+          "AppSyncApiName": "premierfallseminars",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
-          "S3DeploymentBucket": "amplify-premierfallseminar21-prod-144046-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/f261508896896764a21b10d991bcbd69b7a3af3a",
-          "env": "prod"
+          "AuthCognitoUserPoolId": "us-east-1_9NBO8j4CN",
+          "S3DeploymentBucket": "amplify-premierfallseminars-dev-131744-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/617c7158c4369cae8c518ddea3ec67da96e29563",
+          "env": "dev"
         }
       }
     }
