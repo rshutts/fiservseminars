@@ -8,11 +8,15 @@ export const getPoll = /* GraphQL */ `
       name
       type
       candidates {
-        nextToken
+        items {
+          id
+          image
+          name
+          upvotes
+        }
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -29,7 +33,14 @@ export const listPolls = /* GraphQL */ `
         type
         itemType
         createdAt
-        updatedAt
+        candidates {
+          items {
+            pollCandidatesId
+            image
+            name
+            upvotes
+          }
+        }
       }
       nextToken
     }
@@ -41,11 +52,8 @@ export const getCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -60,11 +68,8 @@ export const listCandidates = /* GraphQL */ `
         id
         pollCandidatesId
         image
-        candidateType
         name
         upvotes
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -73,7 +78,6 @@ export const listCandidates = /* GraphQL */ `
 export const itemsByType = /* GraphQL */ `
   query ItemsByType(
     $itemType: String
-    $candidateType: ModelStringKeyConditionInput
     $createdAt: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelPollFilterInput
@@ -82,7 +86,6 @@ export const itemsByType = /* GraphQL */ `
   ) {
     itemsByType(
       itemType: $itemType
-      candidateType: $candidateType
       createdAt: $createdAt
       sortDirection: $sortDirection
       filter: $filter
@@ -93,42 +96,17 @@ export const itemsByType = /* GraphQL */ `
         id
         name
         type
-        pollCandidatesId
-        candidateType
         itemType
         createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const candidatesByName = /* GraphQL */ `
-  query CandidatesByName(
-    $name: String
-    $candidateType: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelCandidateFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    candidatesByName(
-      name: $name
-      candidateType: $candidateType
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        pollCandidatesId
-        image
-        candidateType
-        name
-        upvotes
-        createdAt
-        updatedAt
+        candidates {
+          items {
+            id
+            pollCandidatesId
+            image
+            name
+            upvotes
+          }
+        }
       }
       nextToken
     }

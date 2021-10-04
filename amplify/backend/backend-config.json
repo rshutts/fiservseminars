@@ -1,34 +1,29 @@
 {
-    "auth": {
-        "thisorthatd21dc504": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": [],
-            "customAuth": false
-        }
-    },
-    "storage": {
-        "images": {
-            "service": "S3",
-            "providerPlugin": "awscloudformation"
-        }
-    },
-    "api": {
-        "fallPolling": {
-            "service": "AppSync",
-            "providerPlugin": "awscloudformation",
-            "output": {
-                "authConfig": {
-                    "additionalAuthenticationProviders": [],
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY",
-                        "apiKeyConfig": {
-                            "description": "public",
-                            "apiKeyExpirationDays": "365"
-                        }
-                    }
-                }
+  "api": {
+    "premierfallpolls": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": ""
             }
+          },
+          "additionalAuthenticationProviders": []
         }
+      }
     }
+  },
+  "auth": {
+    "premierfallpolls6c006dad": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
 }

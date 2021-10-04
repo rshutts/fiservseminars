@@ -3,17 +3,23 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:886e0118-c38e-4e60-add6-30bf2d68f7e8",
-    "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_1BnqYGjQ3",
-    "aws_user_pools_web_client_id": "4u0f8rei5m8i7i1rdrvullcl41",
-    "oauth": {},
-    "aws_user_files_s3_bucket": "thisorthatimagebucket81803-prod",
-    "aws_user_files_s3_bucket_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://dtkqcpecpfabzf3v5somdhqeka.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://qejfxzowlvhetfyaof37fs24j4.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-5uunrm4syvefvj4n7u3mtyjno4"
+    "aws_appsync_apiKey": "da2-zy72m7puuzbx5ppyzb5orefb5e",
+    "aws_cognito_region": "us-east-1",
+    "aws_user_pools_id": "us-east-1_9NBO8j4CN",
+    "aws_user_pools_web_client_id": "6cosnrr4cf2ku2gta3b28bkjc",
+    "oauth": {},
+    "aws_cognito_login_mechanisms": [
+        "PREFERRED_USERNAME"
+    ],
+    "aws_cognito_signup_attributes": [],
+    "aws_cognito_mfa_types": [],
+    "aws_cognito_password_protection_settings": {
+        "passwordPolicyCharacters": []
+    },
+    "aws_cognito_verification_mechanisms": []
 };
 
 

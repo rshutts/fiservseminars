@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onUpdateById = /* GraphQL */ `
+export const onUpdateByID = /* GraphQL */ `
   subscription OnUpdateById($id: ID!) {
     onUpdateByID(id: $id) {
       id
@@ -20,7 +20,6 @@ export const onCreatePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -35,7 +34,6 @@ export const onUpdatePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -50,7 +48,6 @@ export const onDeletePoll = /* GraphQL */ `
       }
       itemType
       createdAt
-      updatedAt
     }
   }
 `;
@@ -60,11 +57,8 @@ export const onCreateCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -74,11 +68,8 @@ export const onUpdateCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -88,11 +79,8 @@ export const onDeleteCandidate = /* GraphQL */ `
       id
       pollCandidatesId
       image
-      candidateType
       name
       upvotes
-      createdAt
-      updatedAt
     }
   }
 `;
