@@ -8,6 +8,7 @@
     "@aws-amplify/ui-react": "1.2.15",
     "@sentry/browser": "^5.27.3",
     "@sentry/minimal": "^6.9.0",
+    "amazon-ivs-player": "^1.5.0",
     "array-move": "^2.2.2",
     "aws-amplify": "^4.2.10",
     "aws-amplify-react": "5.0.15",
@@ -54,6 +55,7 @@
     "reconnecting-websocket": "^4.4.0",
     "semantic-ui-react": "^2.0.1",
     "uuid": "^8.3.2",
+    "video.js": "^7.15.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

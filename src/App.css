@@ -653,9 +653,9 @@ label.custom-file-label:after {
 .card-body {
   width: 100%;
 }
-.card-deck:last-child {
+/* .card-deck:last-child {
   margin: 0 auto;
-}
+} */
 .custom-sidenav div[role*="menu"] {
   background: #666;
   height: auto;

@@ -30,13 +30,11 @@ import config from '../../aws-config';
 function Chat(props) {
   const [profile, setProfile] = useState({
     username: "",
+    group: ""
   });
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
-  /* const [userGroup, setUserGroup] = useState({
-    group: "",
-  }); */
 
   const [connection, setConnection] = useState(null);
   const [isOpen, setOpen] = useState(false)
@@ -50,11 +48,9 @@ function Chat(props) {
       const user = await Auth.currentAuthenticatedUser();
       console.log(user)
       setProfile({
-        username: user.username
+        username: user.username,
+        group: user.signInUserSession.accessToken.payload['cognito:groups'][0]
       });
-     /*  setUserGroup({
-        group: user.signInUserSession.accessToken.payload["cognito:groups"],
-      }); */
     } catch(e) {
  
     }
@@ -106,6 +102,7 @@ function Chat(props) {
     const input = {
       channelID: '1',
       author: (profile.username),
+      authorGroup: (profile.group),
       body: messageBody.trim()
     };
 
@@ -131,8 +128,14 @@ return (
                 <div
                   key={message.id}
                   className={message.author === profile.username ? 'message me' : 'message'}>
+                    {console.log(profile.group)}
                     <div>
-                      <h3>{message.author}</h3>
+                      { message.authorGroup === "Fiserv" ?
+                        <h3>{message.author}*</h3>
+                      :
+                        <h3>{message.author}</h3>
+                      }
+                      { console.log(message.author)}
                       {message.body}
                     </div>
                 </div>

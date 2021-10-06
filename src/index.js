@@ -11,7 +11,7 @@ import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
 import * as serviceWorker from './serviceWorker';
 import 'react-toastify/dist/ReactToastify.css';
 
-import awsconfig from './aws-config';
+import config from './aws-config';
 const LOCAL_KEY = localStorage.getItem(BASE_KEY);
 
 if (!LOCAL_KEY) {
@@ -26,15 +26,15 @@ Amplify.configure({
   "aws_appsync_authenticationType": "API_KEY",
   'aws_appsync_apiKey': 'da2-3fhjugoll5ai7fgxbox5dn7wbm',
   Auth: {
-    region: awsconfig.aws_cognito_region,
-    userPoolId: awsconfig.aws_user_pools_id,
-    identityPoolId: awsconfig.aws_cognito_identity_pool_id,
-    userPoolWebClientId: awsconfig.aws_user_pools_client_id
+    region: config.aws_cognito_region,
+    userPoolId: config.aws_user_pools_id,
+    identityPoolId: config.aws_cognito_identity_pool_id,
+    userPoolWebClientId: config.aws_user_pools_client_id
   },    
   Storage: {
-    bucket: awsconfig.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
-    region: awsconfig.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
-    identityPoolId: awsconfig.aws_cognito_identity_pool_id
+    bucket: config.aws_s3_bucket, //REQUIRED -  Amazon S3 bucket
+    region: config.aws_s3_bucket_region, //OPTIONAL -  Amazon service region
+    identityPoolId: config.aws_cognito_identity_pool_id
   }
 });
 

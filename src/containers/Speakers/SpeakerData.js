@@ -417,4 +417,56 @@ export const speakerData = [
       }
     ]
   },
+  {
+    name: "Kaleigh Koehne",
+    title: "Lead Registrar",
+    img: "https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/bios/kk123_Kaleigh+Koehne.jpg",
+    questions: [
+      {
+        key: "0",
+        question: "Q: How long have you been in the Financial Industry?",
+        answer: [
+          {
+            value: "A: I've worked in the Financial Industry for 12 years.",
+          }
+        ]
+      },
+      {
+        key: "1",
+        question: "Q: What is your background with Premier/Premier?",
+        answer: [
+          {
+            value: "A: I have worked with the Premier and Precision cores for all 12 years while here at Fiserv. Most of my work is with scheduling training and assisting with client questions.",
+          }
+        ]
+      },
+      {
+        key: "2",
+        question: "Q: What is your favorite part of working with banks?",
+        answer: [
+          {
+            value: "A: I love being able to connect with our clients! When placing a call, regarding a question or issue that we've received, it's nice to get to know the client one on one. Having that moment for a quick call, helps to better understand the client issue and make sure I'm providing the correct information for a resolution. My goal is always to provide the best client experience possible.",
+          }
+        ]
+      },
+      {
+        key: "3",
+        question: "Q: What do you do outside of work?",
+        answer: [
+          {
+            value: "A: I love spending time with family and friends, vacationing by the water, or simply relaxing at the house. I have 2 beautiful daughters and enjoy watching them participate in their dance and gymnastics classes and on their off days, I join some of my friends and participate in Camp Gladiator workouts. I like to be adventurous, most recently I went parasailing in Florida with my oldest daughter.",
+          }
+        ]
+      },
+      {
+        key: "4",
+        question: "Q: What is your dream vacation?",
+        answer: [
+          {
+            value: "A: My dream vacation would be a trip to Hawaii.",
+          }
+        ]
+      }
+    ]
+  },
 ];
