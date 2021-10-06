@@ -335,7 +335,7 @@ function candidate1Style(width) {
 
 function candidate2Style(width) {
   return {
-    backgroundColor: '#666666',
+    backgroundColor: '#2E8BC9',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -343,7 +343,7 @@ function candidate2Style(width) {
 
 function candidate3Style(width) {
   return {
-    backgroundColor: '#6699CC',
+    backgroundColor: '#333333',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -351,7 +351,7 @@ function candidate3Style(width) {
 
 function candidate4Style(width) {
   return {
-    backgroundColor: '#333333',
+    backgroundColor: '#C65000',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -359,7 +359,7 @@ function candidate4Style(width) {
 
 function candidate5Style(width) {
   return {
-    backgroundColor: '#2E8BC9',
+    backgroundColor: '#666666',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -367,7 +367,7 @@ function candidate5Style(width) {
 
 function candidate6Style(width) {
   return {
-    backgroundColor: '#75717d',
+    backgroundColor: '#0E0E0E',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -375,7 +375,7 @@ function candidate6Style(width) {
 
 function candidate7Style(width) {
   return {
-    backgroundColor: '#6d3e3a',
+    backgroundColor: '#DD3435',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -383,7 +383,7 @@ function candidate7Style(width) {
 
 function candidate8Style(width) {
   return {
-    backgroundColor: '#82735b',
+    backgroundColor: '#F3B823',
     width: `${width}%`,
     transition: 'all 0.5s ease'
   }
@@ -391,7 +391,7 @@ function candidate8Style(width) {
 
 function candidate9Style(width) {
   return {
-    backgroundColor: '#3e332e',
+    backgroundColor: '#54B34A',
     width: `${width}%`,
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
@@ -401,15 +401,15 @@ function candidate9Style(width) {
 
 const voteImageContainerStyle = (index, isDisabled) => ({
   backgroundColor: 
-  index === Number(0) ? "#ff6600" 
-  : index === Number(1) ? "#666666" 
-  : index === Number(2) ? "#6699CC" 
-  : index === Number(3) ? "#333333"
-  : index === Number(4) ? "#2E8BC9" 
-  : index === Number(5) ? "#75717d" 
-  : index === Number(6) ? "#6d3e3a" 
-  : index === Number(7) ? "#82735b" 
-  : "#3e332e",
+  index === Number(0) ? "#FF6600" 
+  : index === Number(1) ? "#2E8BC9" 
+  : index === Number(2) ? "#333333" 
+  : index === Number(3) ? "#C65000"
+  : index === Number(4) ? "#666666" 
+  : index === Number(5) ? "#0E0E0E" 
+  : index === Number(6) ? "#DD3435" 
+  : index === Number(7) ? "#F3B823" 
+  : "#54B34A",
   boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.125rem 0.25rem',
   borderRadius: 9999,
   opacity: isDisabled ? .5 : 1,
@@ -428,14 +428,14 @@ function candidateImageStyle(index) {
 function voteNameStyle(index) {
   const indexzero = index === Number(0)
   return {
-    color: index === Number(0) ? "#ff6600" 
-    : index === Number(1) ? "#666666" 
-    : index === Number(2) ? "#6699CC" 
-    : index === Number(3) ? "#333333"
-    : index === Number(4) ? "#2E8BC9" 
-    : index === Number(5) ? "#75717d" 
-    : index === Number(6) ? "#6d3e3a" 
-    : index === Number(7) ? "#82735b" 
-    : "#3e332e",
+    color: index === Number(0) ? "#FF6600" 
+    : index === Number(1) ? "#2E8BC9" 
+    : index === Number(2) ? "#333333" 
+    : index === Number(3) ? "#C65000"
+    : index === Number(4) ? "#666666" 
+    : index === Number(5) ? "#0E0E0E" 
+    : index === Number(6) ? "#DD3435" 
+    : index === Number(7) ? "#F3B823" 
+    : "#54B34A",
   }
 }
