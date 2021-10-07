@@ -40,22 +40,18 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer/>
-              <iframe 
-                src="https://premier-polling.fiservseminars.com/"
-                width="100%"
-                height="700px"
-                id="myId"
-                className="pollsFrame"
-                display="initial"
-                position="relative"
-                loading
-              />
+              <div className="iframe-embed-wrapper">
+                <iframe 
+                  src="https://premier-polling.fiservseminars.com/"
+                  width="100%"
+                  id="myId"
+                  className="pollsFrame"
+                  display="initial"
+                  position="relative"
+                  loading
+                />
+              </div>
             </div>
-            {/* { location.pathname === "/session/:id" ?
-              <Poll/> :
-              <Polls/>
-            } */}
-            {/* <Polls/> */}
           </section>
           <section className="right meetings">
             <div className='chat'>

@@ -727,6 +727,9 @@ label.custom-file-label:after {
   padding: 1% 0%;
   margin: 3% 2% 0;
 }
+.iframe-embed-wrapper {
+  padding: 0 10px;
+}
 .pollsFrame {
   border:none;
   border-color:transparent;
