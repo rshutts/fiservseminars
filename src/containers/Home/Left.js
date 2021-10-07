@@ -4,55 +4,64 @@ import React, { Component } from 'react';
 class Left extends Component {
   render() {
       return (
-        <section className='left'>
+        <section className='left home'>
           <div>
             <div className="greetings">
               <img
               class='mb-3 app-logo'
-              src='https://seminar-media.s3.amazonaws.com/Spring/2021/home-banner.png'
-              alt='2021 Precision Spring Conference'
+              src='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/fall-header.png'
+              alt='2021 Premier Fall Conference'
               width=''
             />
             </div>
             
             <h1>Introduction</h1>
             <p>
-              Now is the time to join Fiserv experts and industry peers for this year’s Precision Executive Knowledge Exchange. Optimize your organization’s performance and drive home valuable software and procedural insights during this comprehensive three-day seminar. Fiserv experts facilitate interactive presentations and discussions designed to inform, educate, and empower. Leverage this virtual venue to learn more about the software you use every day and share your best practices and software tips all while building a diverse network of executive relationships.
+              Now is the ideal time to focus on professional development and optimization of your organization’s performance. Collaborate with Fiserv experts and industry peers for this year’s Fall Education Seminars. This year’s event will provide participants with valuable software and procedural insights throughout the comprehensive three-day seminar. Fiserv experts facilitate interactive presentations and discussions designed to inform, educate, and empower. Attendees will leverage a dynamic, virtual venue while learning about Premier software and best practices all while building a diverse network of professional relationships.
             </p>
             <p>
-              The 2021 Precision Executive Knowledge Exchange is the affordable and informative training solution your organization deserves. Broaden executive awareness of the features available in Precision so that you can better lead your teams, drive revenue, and improve customer relationships. Register Now and begin your institution’s journey towards efficiency!
+              The 2021 Premier Fall Education Seminar is the affordable and convenient training solution your organization deserves. Are you concerned about documenting all of the amazing information the seminars have to offer? This year’s participant’s will gain access to unlimited recordings for three months after the event concludes. Fiserv is also offering unlimited connections for one, low price. Register Now and begin your institution’s journey towards efficiency!
             </p>
-            {/* <h2><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=HzqHEY1MDUWN--N6LiVX-NLq3J1hqdlHjCimOyYPw2tUNUJQTllLNjNaU1VHSjcyUjVXVVVWNVpNRSQlQCN0PWcu" target="_blank" rel="noopener noreferrer">Premier Education Seminar Survey</a></h2>
-            <p>We are committed to providing educational opportunities that support your success. <span style={{ color: "#ff6600"}}>Please tell us how we can strengthen your learning experience by completing a brief survey at any point during the seminar.</span></p> */}
-           {/*  
-              We are offering each Simulive session twice, once from 8 a.m. - 12 p.m. Central Time and a repeat session from 1 p.m. - 5 p.m. Central Time on the following days:
-              <br/> */}
             <h2>
               Seminar Dates:
             </h2>
               <ul>
                 <li>
-                  April 20, 21, and 22, 2021
+                  October 12, 13, and 14, 2021
                 </li>
                 <li>
-                  May 18, 19, and 20, 2021
+                  November 2, 3, and 4, 2021
                 </li>
               </ul>
             <h2>
-              Standard registration fee:
+              Registration Fee
             </h2>
+            <br />
+            <h3>Early Bird - September 12<sup>th</sup>:</h3>
               <ul>
                 <li>
-                  $1,500 per financial institution
-                </li>
-                {/* <li>
-                  $850 for <strong>2</strong> connections*
+                  1 Connection - $450
                 </li>
                 <li>
-                  $1,750 for <strong>3</strong> or more connections*
-                </li> */}
+                  2 Connections - $750
+                </li>
+                <li>
+                  3+ Connections - $1,500
+                </li>
               </ul>
-              <strong>*Note: The $1,500 per institution cost includes all three days with unlimited connections. Each user will need to register individually.</strong>
+            <h3>Standard:</h3>
+              <ul>
+                <li>
+                  1 Connection - $500
+                </li>
+                <li>
+                  2 Connections - $800
+                </li>
+                <li>
+                  3+ Connections - $1,750
+                </li>
+              </ul>
+              <strong>*Note: *Please register each user individually; your bank will be invoiced following the conclusion of the seminars.</strong>
          </div>
         </section>
       );

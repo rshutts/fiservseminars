@@ -23,7 +23,7 @@ class Right extends Component{
         <h1>
             Agenda
         </h1>
-        <h2 className="agenda-subheader">*** Please note all times listed are CST</h2>
+        <h2 className="agenda-subheader">*** NOTE: All agenda and topics are listed in CST and subject to change.</h2>
     
       <Accordion fluid styled>
         <Accordion.Title
@@ -32,12 +32,12 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 1: Efficiency, Customer Reporting<Icon name='dropdown' />
+            Day 1<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Systems Features and Functionality – Making It Easy
+                Safe Deposit Box Specifications &amp; Best Practices
             </h3>
             <p>
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
@@ -45,7 +45,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Gaining Customer Clarity Through Better Reporting (Session I)
+                Account Closing Procedures
             </h3>
             <p>
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
@@ -53,10 +53,18 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 0}>
             <h3 className="meetingTitle">
-                Gaining Customer Clarity Through Better Reporting (Session II)
+                Did You Know: Forgotten Gems
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 0}>
+            <h3 className="meetingTitle">
+                Empathy: An Overlooked Best Practice
+            </h3>
+            <p>
+                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -65,12 +73,12 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 2:  Revenue, Tracking, &amp; Analysis <Icon name='dropdown' />
+            Day 2<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Maximizing Revenue
+                Loan Payoffs
             </h3>
             <p>
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
@@ -78,7 +86,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Tracking, Measuring, &amp; Analyzing Revenue
+                Loan Escrow Analysis
             </h3>
             <p>
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
@@ -86,10 +94,18 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 1}>
             <h3 className="meetingTitle">
-                Customer Profitability
+                Loan Enhancements
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 1}>
+            <h3 className="meetingTitle">
+                Feedback that Matters
+            </h3>
+            <p>
+                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -98,12 +114,12 @@ class Right extends Component{
           onClick={this.handleClick}
         >
           <Button id="qsLoginBtn" className="toggle-buttons">
-            Day 3:  Regulatory Tracking, Commercial Accounts <Icon name='dropdown' />
+            Day 3<Icon name='dropdown' />
           </Button>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Tools for Effective Regulatory Reporting &amp; Tracking
+                Premier UI
             </h3>
             <p>
                 @ 9:00 – 9:45 a.m. &amp;<br/> 1:00 – 1:45 p.m.
@@ -111,7 +127,7 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Commercial Accounts – Building Relationships &amp; Revenue
+                BPM Tips &amp; Tricks for Administrators
             </h3>
             <p>
                 @ 10:00 – 10:45 a.m. &amp;<br/> 2:00 – 2:45 p.m.
@@ -119,10 +135,18 @@ class Right extends Component{
         </Accordion.Content>
         <Accordion.Content active={activeIndex === 2}>
             <h3 className="meetingTitle">
-                Executive Networking Session
+                Networking
             </h3>
             <p>
                 @ 11:00 – 11:45 a.m. &amp;<br/> 3:00 – 3:45 p.m.
+            </p>
+        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 2}>
+            <h3 className="meetingTitle">
+                Training Best Practices: Making it Stick
+            </h3>
+            <p>
+                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
       </Accordion>
