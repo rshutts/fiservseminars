@@ -19,7 +19,7 @@ const Meetings = () => {
     const link = document.createElement("a");
     link.download = `morning-session.ics`;
     link.href =
-      "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Networking-+Premier+Fall+Education+Seminar-+Morning+Session.ics";
+      "https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/Networking-+Premier+Fall+Education+Seminar-+Morning+Session.ics";
     link.click();
   };
 
@@ -27,7 +27,7 @@ const Meetings = () => {
     const link = document.createElement("a");
     link.download = `afternoon-session.ics`;
     link.href =
-      "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Networking-+Premier+Fall+Education+Seminar-+Afternoon+Session.ics";
+      "https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/Networking-+Premier+Fall+Education+Seminar-+Afternoon+Session.ics";
     link.click();
   };
   return (

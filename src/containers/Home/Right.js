@@ -64,7 +64,7 @@ class Right extends Component{
                 Empathy: An Overlooked Best Practice
             </h3>
             <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 12:00 – 12:45 p.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -105,7 +105,7 @@ class Right extends Component{
                 Feedback that Matters
             </h3>
             <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 12:00 – 12:45 p.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
         <Accordion.Title
@@ -146,7 +146,7 @@ class Right extends Component{
                 Training Best Practices: Making it Stick
             </h3>
             <p>
-                @ 12:00 – 12:45 a.m. &amp;<br/> 4:00 – 4:45 p.m.
+                @ 12:00 – 12:45 p.m. &amp;<br/> 4:00 – 4:45 p.m.
             </p>
         </Accordion.Content>
       </Accordion>

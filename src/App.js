@@ -139,7 +139,7 @@ function App() {
                                 Home
                               </DropdownItem>
                               <DropdownItem
-                                href='https://seminar-media.s3.amazonaws.com/Spring/2021/2021-Knowledge-Exchange-Premier-Overview-and-Agenda.pdf'
+                                href='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
                                 target='_blank'
                                 className='dropdown-profile'
                                 activeClassName='router-link-exact-active'
