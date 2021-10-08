@@ -44,6 +44,7 @@ const Meetings = () => {
                 <iframe 
                   src="https://premier-polling.fiservseminars.com/"
                   width="100%"
+                  height="700px"
                   id="myId"
                   className="pollsFrame"
                   display="initial"
