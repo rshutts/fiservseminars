@@ -198,7 +198,7 @@ export const speakerData = [
       },
       {
         key: "1",
-        question: "Q: What is your background with Premier/Premier?",
+        question: "Q: What is your background with Premier?",
         answer: [
           {
             value: "A: Observing the product and interactions with clients who use it, and discussing their needs for support.",
@@ -381,7 +381,7 @@ export const speakerData = [
       },
       {
         key: "1",
-        question: "Q: What is your background with Premier/Premier?",
+        question: "Q: What is your background with Premier?",
         answer: [
           {
             value: "A: I have worked with Premier for 7 years.  When in Loan Client Support, I supported not only Loans but the Transaction Management System, Business Analytics, Bond Accounting, General Ledger & End of Year.",
