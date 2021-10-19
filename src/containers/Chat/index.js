@@ -2,8 +2,7 @@ import React, { useEffect, useState, Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
 import { Connect } from "aws-amplify-react";
-import Amplify, { API, Auth, PubSub, Storage, graphqlOperation } from 'aws-amplify';
-import '@aws-amplify/pubsub';
+import Amplify, { API, Auth, Storage, graphqlOperation } from 'aws-amplify';
 
 import { Button, Dimmer, Segment } from 'semantic-ui-react'
 
