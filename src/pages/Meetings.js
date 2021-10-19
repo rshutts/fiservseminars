@@ -45,7 +45,7 @@ const Meetings = () => {
               <iframe 
                 src="https://fallprecisionpoll.d8joca129bu9k.amplifyapp.com/"
                 width="100%"
-                height="200px"
+                height="700px"
                 id="myId"
                 className="pollsFrame"
                 display="initial"
