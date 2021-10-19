@@ -53,11 +53,6 @@ const Meetings = () => {
                 loading
               />
             </div>
-            {/* { location.pathname === "/session/:id" ?
-              <Poll/> :
-              <Polls/>
-            } */}
-            {/* <Polls/> */}
           </section>
           <section className="right meetings">
             <div className='chat'>
@@ -84,12 +79,6 @@ const Meetings = () => {
                 <FaRegCalendarAlt/>&nbsp;Afternoon Session
               </Button>
             </div>
-              
-            {/* <div>
-              <Quiz/>
-              <Game/>
-              <Trivia/>
-            </div> */}
           </section>
         </div>       
       </div> 
