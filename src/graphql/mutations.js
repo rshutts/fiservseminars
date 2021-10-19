@@ -19,6 +19,15 @@ export const createPoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
@@ -37,6 +46,15 @@ export const updatePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
@@ -55,6 +73,15 @@ export const deletePoll = /* GraphQL */ `
       name
       type
       candidates {
+        items {
+          id
+          pollCandidatesId
+          image
+          name
+          upvotes
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       itemType
@@ -118,7 +145,9 @@ export const createMessage = /* GraphQL */ `
   ) {
     createMessage(input: $input, condition: $condition) {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
@@ -132,7 +161,9 @@ export const updateMessage = /* GraphQL */ `
   ) {
     updateMessage(input: $input, condition: $condition) {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
@@ -146,7 +177,9 @@ export const deleteMessage = /* GraphQL */ `
   ) {
     deleteMessage(input: $input, condition: $condition) {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt

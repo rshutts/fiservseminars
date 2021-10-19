@@ -22,9 +22,6 @@ import Signup from "./containers/Auth/Signup/Signup";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
-import Polls from "./containers/Polling/Polls";
-import CreatePoll from "./containers/Polling/CreatePoll";
-import Polling from "./containers/Polling/Polling";
 
 /*Polls*/
 
@@ -84,17 +81,6 @@ const Routes = () => (
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
-          </AuthenticatedRoute>
-
-          {/* Polls*/}
-          <AuthenticatedRoute exact path="/profile/polls">
-            <Polls />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/polls/create">
-            <CreatePoll />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/session/:id">
-            <Polling />
           </AuthenticatedRoute>
         </Switch>
         </CSSTransition>

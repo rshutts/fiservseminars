@@ -118,6 +118,7 @@ export const getMessage = /* GraphQL */ `
       id
       channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
@@ -135,6 +136,7 @@ export const listMessages = /* GraphQL */ `
         id
         channelID
         author
+        authorGroup
         body
         createdAt
         updatedAt
@@ -164,6 +166,7 @@ export const messagesByChannelID = /* GraphQL */ `
         id
         channelID
         author
+        authorGroup
         body
         createdAt
         updatedAt

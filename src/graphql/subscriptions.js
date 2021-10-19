@@ -1,8 +1,8 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onUpdateById = /* GraphQL */ `
-  subscription OnUpdateById($id: ID!) {
+export const onUpdateByID = /* GraphQL */ `
+  subscription OnUpdateByID($id: ID!) {
     onUpdateByID(id: $id) {
       id
       clientId
@@ -124,7 +124,9 @@ export const onCreateMessage = /* GraphQL */ `
   subscription OnCreateMessage {
     onCreateMessage {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
@@ -135,7 +137,9 @@ export const onUpdateMessage = /* GraphQL */ `
   subscription OnUpdateMessage {
     onUpdateMessage {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
@@ -146,7 +150,9 @@ export const onDeleteMessage = /* GraphQL */ `
   subscription OnDeleteMessage {
     onDeleteMessage {
       id
+      channelID
       author
+      authorGroup
       body
       createdAt
       updatedAt
