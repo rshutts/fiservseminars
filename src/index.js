@@ -21,10 +21,10 @@ if (!LOCAL_KEY) {
 initSentry();
 
 Amplify.configure({
-  "aws_appsync_graphqlEndpoint": "https://b7b6t7c7kncvdboppzyik23mp4.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "API_KEY",
-  'aws_appsync_apiKey': 'da2-3fhjugoll5ai7fgxbox5dn7wbm',
+  'aws_appsync_apiKey': 'da2-h7wfmnkudrgmhlfghpj42xaa6y',
   Auth: {
     region: awsconfig.aws_cognito_region,
     userPoolId: awsconfig.aws_user_pools_id,
