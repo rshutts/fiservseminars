@@ -92,6 +92,9 @@ class VideoPlayer extends Component {
           <h3 style={{fontWeight: "normal"}}>
             **If the video does not start with sound, please hover over the video and make sure the player is not on mute.**
           </h3>
+          <div>
+            **If you are not seeing chat items or video, please refresh your browser with F5. If that still does not work, please contact us at educationseminars@fiserv.com.**
+          </div>
         </div>
       </div>
     )

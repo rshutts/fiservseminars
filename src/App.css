@@ -1665,6 +1665,7 @@ h2.agenda-subheader {
   font-weight:bold;
   padding: 0px 30px;
   text-align:center;
+  color:#fff;
 }
 .seminar-container h2 {
   margin-bottom:1em;
@@ -2169,7 +2170,7 @@ label.custom-file-label:after {
   text-align:center;
 }
 .right.meetings {
-  padding: 1% 2%;
+  padding: 0% 2%;
   background:#fff;
 }
 /*Footer*/
