@@ -56,6 +56,9 @@ const Meetings = () => {
             <div className='chat'>
               <Chat/>   
             </div>
+            <div>
+              If you are not seeing chat items or video, please refresh your browser with F5. If that still does not work, please contact us at educationseminars@fiserv.com.
+            </div>
             <div className="networking-calendar-buttons">
               <h3 style={{ color: '#ff6600' }}>
                 <IoIosGitNetwork/> Networking Calendar Invites
