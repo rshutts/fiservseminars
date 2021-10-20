@@ -147,7 +147,6 @@ export const createMessage = /* GraphQL */ `
       id
       channelID
       author
-      authorGroup
       body
       createdAt
       updatedAt
@@ -163,7 +162,6 @@ export const updateMessage = /* GraphQL */ `
       id
       channelID
       author
-      authorGroup
       body
       createdAt
       updatedAt
@@ -179,7 +177,6 @@ export const deleteMessage = /* GraphQL */ `
       id
       channelID
       author
-      authorGroup
       body
       createdAt
       updatedAt
