@@ -61,17 +61,9 @@ function Chat(props) {
   const onLoad = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();
-      const userGroup = user.signInUserSession.accessToken.payload['cognito:groups'][0]
-      console.log(user)
-      console.log(userGroup)
-      if (!userGroup) {
-        profile.group = "default";
-      } else {
-        profile.group =  user.signInUserSession.accessToken.payload['cognito:groups'][0];
-      }
       setProfile({
         username: user.username,
-        group: profile.group
+        group: user.signInUserSession.accessToken.payload['cognito:groups'][0]
       });
     } catch(e) {
  
@@ -124,7 +116,6 @@ function Chat(props) {
     const input = {
       channelID: '1',
       author: (profile.username),
-      authorGroup: (profile.group),
       body: messageBody.trim()
     };
 
