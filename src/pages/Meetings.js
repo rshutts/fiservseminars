@@ -43,7 +43,7 @@ const Meetings = () => {
               <iframe 
                 src="https://precision-polling.fiservseminars.com"
                 width="100%"
-                height="700px"
+                height="600px"
                 id="myId"
                 className="pollsFrame"
                 display="initial"
