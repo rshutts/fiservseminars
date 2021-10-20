@@ -41,7 +41,7 @@ const Meetings = () => {
             <div className='video-player'>
               <VideoPlayer/>
               <iframe 
-                src="https://fallprecisionpoll.d8joca129bu9k.amplifyapp.com/"
+                src="https://precision-polling.fiservseminars.com"
                 width="100%"
                 height="700px"
                 id="myId"
