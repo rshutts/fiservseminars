@@ -18,6 +18,7 @@ import Login from "./containers/Auth/Login";
 import ResetPassword from "./containers/Auth/ResetPassword";
 import UpdateProfile from "./containers/Profile/UpdateProfile";
 import Signup from "./containers/Auth/Signup/Signup";
+import AuthAdmin from "./containers/Admin/index";
 /* import FormSignup from "./containers/Auth/Signup/Signup2"; */
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
@@ -64,12 +65,12 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          <AuthenticatedRoute exact path="/session">
+          {/* <AuthenticatedRoute exact path="/session">
             <Meetings />
-          </AuthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/archived-sessions">
-            <Archived />
           </AuthenticatedRoute> */}
+          <AuthenticatedRoute exact path="/archived-sessions">
+            <Archived />
+          </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile">
             <Profile />
           </AuthenticatedRoute>
@@ -81,6 +82,9 @@ const Routes = () => (
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/profile/admin">
+            <AuthAdmin />
           </AuthenticatedRoute>
         </Switch>
         </CSSTransition>

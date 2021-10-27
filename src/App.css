@@ -598,7 +598,7 @@ label.custom-file-label:after {
   width: 96%;
   padding-bottom:30px;
 }
-.faq-sections, .bio-sections {
+.faq-sections, .bio-sections, .archived-sections {
   background: #fff;
   width: 90%;
   height: 100%;
@@ -1362,12 +1362,13 @@ span.dropdown---caret---3CkEt {
     max-width:556px;
     padding:0;
   }
-  .speaker-bios.row {
+  .speaker-bios.row, .archived-videos.row {
     flex-direction: column;
   }
-  .speaker-bios.row .card-deck {
+  .speaker-bios.row .card-deck, .archived-videos.row .card-deck {
     width:100%;
   }
+
   .Signup form .form-group {
     margin:10px;
     min-width: auto;

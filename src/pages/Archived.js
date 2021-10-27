@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import { Card, Segment, Header, Tab } from 'semantic-ui-react'
-import FeaturesFunctionality from '../components/Videos/Sessions/FeaturesFunctionality'
-import BetterReporting1 from '../components/Videos/Sessions/BetterReporting1'
-import BetterReporting2 from '../components/Videos/Sessions/BetterReporting2'
-import MaximizingRevenue from '../components/Videos/Sessions/MaximizingRevenue'
-import AnalyzingRevenue from '../components/Videos/Sessions/AnalyzingRevenue'
-import CustomerProfitability from '../components/Videos/Sessions/CustomerProfitability'
-import RegulatoryReporting from '../components/Videos/Sessions/RegulatoryReporting'
-import CommercialAccounts from '../components/Videos/Sessions/CommercialAccounts'
-
-import '../containers/VideoPlayer/VideoPlayer.css';
+import React, { Fragment, Component } from "react";
+import { Card, Accordion, Icon, Segment, Header, Tab, Container } from 'semantic-ui-react'
+import { Button } from 'reactstrap'
+import SideNav from '../components/SideNav'
+import DatabaseCleanup from '../components/Videos/Sessions/2021/Precision/Fall/DatabaseCleanup'
+import DormantAndInactiveAccounts from '../components/Videos/Sessions/2021/Precision/Fall/DormantAndInactiveAccounts'
+import CleanUpQuickBites from '../components/Videos/Sessions/2021/Precision/Fall/CleanUpQuickBites'
+import HiddenGemsforLoans1 from '../components/Videos/Sessions/2021/Precision/Fall/HiddenGemsforLoans1'
+import HiddenGemsforLoans2 from '../components/Videos/Sessions/2021/Precision/Fall/HiddenGemsforLoans2'
+import EssentialsParticipationLoans from '../components/Videos/Sessions/2021/Precision/Fall/EssentialsParticipationLoans'
+import PrecisionReleases from '../components/Videos/Sessions/2021/Precision/Fall/PrecisionReleases'
+import PrecisionRoadmap from '../components/Videos/Sessions/2021/Precision/Fall/PrecisionRoadmap'
+import PrecisionUI from '../components/Videos/Sessions/2021/Precision/Fall/PrecisionUI'
 
 class Archived extends Component{
     state = { activeIndex: 0 };
@@ -27,28 +28,28 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <FeaturesFunctionality/>
+                                <DatabaseCleanup/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">System Features and Functionality - Making It Easy</Card.Header>
+                                        <Card.Header className="card-header">Database Cleanup</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <BetterReporting1/>
+                                <DormantAndInactiveAccounts/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Gaining Customer Clarity Through Better Reporting - Session 1</Card.Header>
+                                        <Card.Header className="card-header">Handling Dormant &amp; Inactive Accounts</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
                         </Card.Group>
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards">
-                                <BetterReporting2/>
+                                <CleanUpQuickBites/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Gaining Customer Clarity Through Better Reporting - Session 2</Card.Header>
+                                        <Card.Header className="card-header">Clean-Up Quick Bites</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
@@ -64,28 +65,28 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <MaximizingRevenue/>
+                                <HiddenGemsforLoans1/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Maximizing Revenue</Card.Header>
+                                        <Card.Header className="card-header">Hidden Gems for Loans - Session 1</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <AnalyzingRevenue/>
+                                <HiddenGemsforLoans2/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Tracking, Measuring, and Analyzing Revenue</Card.Header>
+                                        <Card.Header className="card-header">Hidden Gems for Loans - Session 2</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
                         </Card.Group>
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards">
-                                <CustomerProfitability/>
+                                <EssentialsParticipationLoans/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Customer Profitability</Card.Header>
+                                        <Card.Header className="card-header">Essentials for Participation Loans</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
@@ -101,28 +102,38 @@ class Archived extends Component{
                   <Segment className="archive-segment">
                         <Card.Group itemsPerRow={2}>
                             <Card className="video-cards"> 
-                                <RegulatoryReporting/>
+                                <PrecisionReleases/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Tools for Effective Regulatory Reporting and Tracking</Card.Header>
+                                        <Card.Header className="card-header">Precision Releases</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card>
                             <Card className="video-cards">
-                                <CommercialAccounts/>
+                                <PrecisionRoadmap/>
                                 <Card.Content className="video-content">
                                     <div className="video-description">
-                                        <Card.Header className="card-header">Commercial Accounts: Building Relationships and Revenue</Card.Header>
+                                        <Card.Header className="card-header">Precision Roadmap</Card.Header>
                                     </div>
                                 </Card.Content>
                             </Card> 
+                        </Card.Group>
+                        <Card.Group itemsPerRow={2}>
+                            <Card className="video-cards">
+                                <PrecisionUI/>
+                                <Card.Content className="video-content">
+                                    <div className="video-description">
+                                        <Card.Header className="card-header">Precision UI</Card.Header>
+                                    </div>
+                                </Card.Content>
+                            </Card>
                         </Card.Group>
                     </Segment>
                 </Tab.Pane>
               )
             }
           ];
-        return (
+          return (
             <div className="main-content archived">
                 <div className="archived-container">
                     <Header as='h2' className="header page-title">

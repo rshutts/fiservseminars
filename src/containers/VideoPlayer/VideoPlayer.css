@@ -12,8 +12,13 @@
   min-height:400px;
   padding:0 10px;
 }
-
-
+.archived-videos.row .player-wrapper .react-player {
+  width:50%;
+}
+.archived-videos.row {
+  display: flex;
+  
+}
 :root {
     --video-width: 88.4rem;
   }
