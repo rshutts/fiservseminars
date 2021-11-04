@@ -63,6 +63,7 @@ h1{
 .mt-8 {
   margin-top:0px;
   font-size: 20px;
+  font-weight: 700;
 }
 h2 {
   font-size: 30px;
@@ -133,6 +134,7 @@ select option {
   padding: 10px;
   text-align: left;
   transition: 0.5s background ease-in-out;
+  text-transform: none;
 }
 .vote-button:hover {
   opacity: .7 !important;
@@ -142,15 +144,26 @@ select option {
   justify-content: center;
   align-self: center;
   align-items: center;
-  width: 50%;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
 }
 .totalVotes h1 {
   color: #000000;
   font-size: 8rem;
   text-align: center;
 }
-
+.back-refresh {
+  display: flex;
+  flex-direction: column;
+  margin:0 50px;
+}
+.reload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 50px 0;
+  align-items: center;
+}
 .backButton {
   background:#ff6600;
   border-color:#ff6600;
@@ -162,22 +175,20 @@ select option {
   float:right;
   text-align: center;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  margin-right:10px;
   margin-bottom:10px;
-  width:50%;
+  min-width:150px;
 }
 .reloadButton {
   background: rgb(102,153,204);
   border-color:rgb(102,153,204);
-  margin-right: 10px;
-  padding: .5rem 1rem;
   color:#fff;
-  margin-right: 10px;
   padding: .5rem 1rem;
   font-size:1rem;
   font-weight:400;
   line-height: 1.5;
+  float:right;
   text-align: center;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  width:50%;
+  margin-bottom:10px;
+  min-width:150px;
 }

@@ -122,9 +122,11 @@ export default function Polls() {
             state.polls.map((poll, index) => (  
                 <div className="polls" key={poll.id}>
                     <Link to={`/${poll.id}`}>
-                    <h2 className="poll-name">{poll.name.replace(/-v-[1-4]/i, "")}</h2>
+                    <h2 className="poll-name">{poll.name.replace(/-v-[1-9]/i, "")}</h2>
                     </Link>
-                    <button className='reloadButton'onClick={() => window.location.reload(false)}>Reload</button>
+                    <div className="reload">
+                      <button className='reloadButton'onClick={() => window.location.reload(false)}>Reload</button>
+                    </div>
                     {/* <Candidates
                       key={index}
                       candidates={poll.candidates.items}
