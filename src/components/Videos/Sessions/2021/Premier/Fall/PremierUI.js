@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import { useMediaQuery } from 'react-responsive'
  
-function CustomerProfitability() {
+function PremierUI() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   return (
@@ -10,10 +10,10 @@ function CustomerProfitability() {
       {isMobile ? (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+2+%233-+Customer+Profitability.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Premier+UI.mp4'
           width='100%'
           height='100%'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/CustomerProfitability.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/premier-ui.png'
           controls={true}
           onPlay
           playing={true}
@@ -21,10 +21,10 @@ function CustomerProfitability() {
       ) : (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+2+%233-+Customer+Profitability.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Premier+UI.mp4'
           width='728px'
           height='400px'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/CustomerProfitability.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/premier-ui.png'
           controls={true}
           onPlay
           playing={true}
@@ -34,4 +34,4 @@ function CustomerProfitability() {
     </div>
   )
 }
-export default CustomerProfitability;
+export default PremierUI;

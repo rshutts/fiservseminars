@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import { useMediaQuery } from 'react-responsive'
  
-function MaximizingRevenue() {
+function SafeDepositBox() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   return (
@@ -10,10 +10,10 @@ function MaximizingRevenue() {
       {isMobile ? (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+2+%231-+Maximizing+Revenue.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Safe+Deposit+Specs+and+Best+Practices.mp4'
           width='100%'
           height='100%'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/MaximizingRevenue.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/safe-deposit.png'
           controls={true}
           onPlay
           playing={true}
@@ -21,10 +21,10 @@ function MaximizingRevenue() {
       ) : (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+2+%231-+Maximizing+Revenue.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Safe+Deposit+Specs+and+Best+Practices.mp4'
           width='728px'
           height='400px'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/MaximizingRevenue.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/safe-deposit.png'
           controls={true}
           onPlay
           playing={true}
@@ -34,4 +34,4 @@ function MaximizingRevenue() {
     </div>
   )
 }
-export default MaximizingRevenue;
+export default SafeDepositBox;

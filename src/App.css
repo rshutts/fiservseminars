@@ -80,14 +80,10 @@ html, body {
   height:100%;
   min-height:100%;
   overflow: auto;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  justify-content: center;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image:url('https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
+  background-image:url('https://seminar-media.s3.amazonaws.com/Spring/2021/background.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%);
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -250,7 +246,6 @@ h2.section-header {
 }
 h2.agenda-subheader {
   font-size:14px;
-  color:#ffffff;
   font-weight:bold;
   padding: 0px 30px;
   text-align:center;
@@ -278,7 +273,7 @@ h6 {
   color:#DD3435;
 }
 .logo {
-  background: url('https://d2vqeoj3f0fgvp.cloudfront.net/logo.png');
+  background: url('https://s3.us-east-2.amazonaws.com/fiservseminars-media.com/logo.png');
   background-size:contain;
   background-position: center;
   width: 167px;
@@ -531,17 +526,66 @@ label.custom-file-label:after {
 .archive-segment {
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
-  align-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tabular.menu {
+  position: relative;
+  top: -21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5rem 0;
+  background: #fff;
+  font-weight: 400;
+  border: 1px solid rgba(34,36,38,.15);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  min-height: 2.85714286em;
+}
+.tabular.menu .active.item {
+  background: #f60;
+  border: none;
+  color: #fff;
+  font-weight: 400;
   text-align: center;
-  padding: 10px 150px 50px 150px;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-/*Fonts*/
-a {
-  text-decoration:none;
+.tabular.menu .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  min-width: 100px;
+  text-decoration: none;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: 0 0;
+  padding: .92857143em 1.14285714em;
+  text-transform: none;
+  color: rgba(0,0,0,.87);
+  font-weight: 400;
+  -webkit-transition: background .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
+  transition: background .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
+  transition: background .1s ease,box-shadow .1s ease,color .1s ease;
+  transition: background .1s ease,box-shadow .1s ease,color .1s ease,-webkit-box-shadow .1s ease;
 }
-.btn-secondary {
-  background-color: #ff6600;
+.tabular.menu .active.item:hover {
+  background: rgba(255,102,0,.8);
+  color:#fff;
   border:none;
 }
 .tabular.menu .item:hover {
@@ -554,7 +598,7 @@ a {
   width: 96%;
   padding-bottom:30px;
 }
-.faq-sections, .bio-sections {
+.faq-sections, .bio-sections, .archived-sections {
   background: #fff;
   width: 90%;
   height: 100%;
@@ -608,9 +652,9 @@ a {
 .card-body {
   width: 100%;
 }
-/* .card-deck:last-child {
+.card-deck:last-child {
   margin: 0 auto;
-} */
+}
 .custom-sidenav div[role*="menu"] {
   background: #666;
   height: auto;
@@ -681,9 +725,6 @@ a {
   height: 100%;
   padding: 1% 0%;
   margin: 3% 2% 0;
-}
-.iframe-embed-wrapper {
-  padding: 0 10px;
 }
 .pollsFrame {
   border:none;
@@ -946,7 +987,7 @@ a {
 }
 .video-description {
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
   padding:10px;
 }
 .video-description .header {
@@ -1321,12 +1362,13 @@ span.dropdown---caret---3CkEt {
     max-width:556px;
     padding:0;
   }
-  .speaker-bios.row {
+  .speaker-bios.row, .archived-videos.row {
     flex-direction: column;
   }
-  .speaker-bios.row .card-deck {
+  .speaker-bios.row .card-deck, .archived-videos.row .card-deck {
     width:100%;
   }
+
   .Signup form .form-group {
     margin:10px;
     min-width: auto;

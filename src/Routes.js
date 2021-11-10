@@ -70,9 +70,9 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/session">
             <Meetings />
           </AuthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/archived-sessions">
+          <AuthenticatedRoute exact path="/archived-sessions">
             <Archived />
-          </AuthenticatedRoute> */}
+          </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/profile">
             <Profile />
           </AuthenticatedRoute>
@@ -85,17 +85,6 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
-
-          {/* Polls*/}
-          {/* <AuthenticatedRoute exact path="/profile/polls">
-            <Polls />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/profile/polls/create">
-            <CreatePoll />
-          </AuthenticatedRoute>
-          <AuthenticatedRoute exact path="/session/:id">
-            <Polling />
-          </AuthenticatedRoute> */}
         </Switch>
         </CSSTransition>
 </TransitionGroup>

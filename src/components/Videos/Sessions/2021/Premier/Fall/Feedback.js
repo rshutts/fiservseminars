@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import { useMediaQuery } from 'react-responsive'
  
-function BetterReporting1() {
+function Feedback() {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   return (
@@ -10,10 +10,10 @@ function BetterReporting1() {
       {isMobile ? (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+1+%232-+Gaining+Customer+Clarity+Through+Better+Reporting+Session+1.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Feedback+that+Matters.mp4'
           width='100%'
           height='100%'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/BetterReporting1.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/feedback-that-matters.png'
           controls={true}
           onPlay
           playing={true}
@@ -21,10 +21,10 @@ function BetterReporting1() {
       ) : (
         <ReactPlayer
           className='react-player'
-          url='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Day+1+%232-+Gaining+Customer+Clarity+Through+Better+Reporting+Session+1.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Feedback+that+Matters.mp4'
           width='728px'
           height='400px'
-          light='https://seminar-media.s3.amazonaws.com/Spring/2021/Videos/Thumbnails/BetterReporting1.png'
+          light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/feedback-that-matters.png'
           controls={true}
           onPlay
           playing={true}
@@ -34,4 +34,4 @@ function BetterReporting1() {
     </div>
   )
 }
-export default BetterReporting1;
+export default Feedback;
