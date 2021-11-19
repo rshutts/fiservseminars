@@ -10,7 +10,7 @@ function AccountClosingProcedures() {
       {isMobile ? (
         <ReactPlayer
           className='react-player'
-          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Training+Best+Practices.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Account+Closing+Procedures.mp4'
           width='100%'
           height='100%'
           light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/closing-deposit-accounts.png'
@@ -21,7 +21,7 @@ function AccountClosingProcedures() {
       ) : (
         <ReactPlayer
           className='react-player'
-          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Training+Best+Practices.mp4'
+          url='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/session-videos/Account+Closing+Procedures.mp4'
           width='728px'
           height='400px'
           light='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/documents/images/closing-deposit-accounts.png'
