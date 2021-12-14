@@ -65,9 +65,9 @@ const Routes = () => (
           <UnauthenticatedRoute exact path="/signup/confirmation">
             <SignupConfirmation />
           </UnauthenticatedRoute>
-          {/* <AuthenticatedRoute exact path="/session">
+          <AuthenticatedRoute exact path="/session">
             <Meetings />
-          </AuthenticatedRoute> */}
+          </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/archived-sessions">
             <Archived />
           </AuthenticatedRoute>
