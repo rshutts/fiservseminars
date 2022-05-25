@@ -17,7 +17,7 @@ body {
     height:100%;
 }
 .sidebar {
-    background:#333333 url('../../assets/2022.png');
+    background:#6C6C6C url('../../assets/2022.png');
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -137,9 +137,9 @@ h1 {
     text-align: left;
 }
 .coming-soon {
-    padding: 0.75rem 1.25rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     margin-bottom: 0;
-    font-size: 50px;
+    font-size: 58px;
     text-transform: uppercase;
     color: #ff6600;
 }
