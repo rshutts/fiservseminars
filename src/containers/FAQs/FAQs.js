@@ -57,7 +57,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 2} className="faq-content">
                     <p>
-                        In the Learning Sessions tab- Please click on “Enter the Chat Room Now” button and click join. 
+                        In the Learning Sessions tab - Join the conversation within the Chat section on the right side of the video. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -85,7 +85,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 4} className="faq-content">
                     <p>
-                        Yes, you will have access to this site until December 31<sup>st</sup>, 2021. 
+                        Yes, you will have access to this site until January 31<sup>st</sup>, 2022. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title
@@ -99,7 +99,7 @@ export default class FAQS extends Component {
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 5} className="faq-content">
                     <p>
-                        One connection always you to be signed in at one place at one time. If you would like additional connections please have each user register individually. 
+                        One connection allows you to be signed in at one place at one time. If you would like additional connections please have each user register individually. 
                     </p>
                     </Accordion.Content>
                     <Accordion.Title

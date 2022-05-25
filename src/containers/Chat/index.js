@@ -34,29 +34,16 @@ function Chat(props) {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
   const messagesEndRef = useRef(null);
+<<<<<<< HEAD
+=======
+
+>>>>>>> premier-seminar
   const [connection, setConnection] = useState(null);
   const [isOpen, setOpen] = useState(false)
   const [show, setShow] = useState();
   const [ text, setText ] = useState('')
   
   const socketUrl = 'wss://2cy33jj671.execute-api.us-east-1.amazonaws.com/production';
-
-  const {
-    sendMessage,
-    sendJsonMessage,
-    lastMessage,
-    lastJsonMessage,
-    readyState,
-    getWebSocket
-  } = useWebSocket(socketUrl, {
-    onOpen: () => console.log('opened'),
-    //Will attempt to reconnect on all close events, such as server shutting down
-    shouldReconnect: (closeEvent) => true,
-  });
-  
-  function handleOnEnter (text) {
-    console.log('enter', text)
-  }
 
   const onLoad = async () => {
     try {
@@ -116,6 +103,7 @@ function Chat(props) {
     const input = {
       channelID: '1',
       author: (profile.username),
+      authorGroup: (profile.group),
       body: messageBody.trim()
     };
 

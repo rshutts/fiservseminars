@@ -19,7 +19,7 @@ const Meetings = () => {
     const link = document.createElement("a");
     link.download = `morning-session.ics`;
     link.href =
-      "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Networking-+Precision+Fall+Education+Seminar-+Morning+Session.ics";
+      "https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/Networking-+Premier+Fall+Education+Seminar-+Morning+Session.ics";
     link.click();
   };
 
@@ -27,7 +27,7 @@ const Meetings = () => {
     const link = document.createElement("a");
     link.download = `afternoon-session.ics`;
     link.href =
-      "https://seminar-media.s3.amazonaws.com/Fall/2021/Documents/Networking-+Precision+Fall+Education+Seminar-+Afternoon+Session.ics";
+      "https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/Premier/Networking-+Premier+Fall+Education+Seminar-+Afternoon+Session.ics";
     link.click();
   };
   return (
@@ -40,6 +40,7 @@ const Meetings = () => {
           <section className='left meetings'>
             <div className='video-player'>
               <VideoPlayer/>
+<<<<<<< HEAD
               <iframe 
                 src="https://precision-polling.fiservseminars.com"
                 width="100%"
@@ -50,6 +51,20 @@ const Meetings = () => {
                 position="relative"
                 loading
               />
+=======
+              <div className="iframe-embed-wrapper">
+                <iframe 
+                  src="https://premier-polling.fiservseminars.com/"
+                  width="100%"
+                  height="700px"
+                  id="myId"
+                  className="pollsFrame"
+                  display="initial"
+                  position="relative"
+                  loading
+                />
+              </div>
+>>>>>>> premier-seminar
             </div>
           </section>
           <section className="right meetings">

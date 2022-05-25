@@ -987,7 +987,7 @@ label.custom-file-label:after {
 }
 .video-description {
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
   padding:10px;
 }
 .video-description .header {
@@ -1368,6 +1368,7 @@ span.dropdown---caret---3CkEt {
   .speaker-bios.row .card-deck, .archived-videos.row .card-deck {
     width:100%;
   }
+<<<<<<< HEAD
 
   .Signup form .form-group {
     margin:10px;
@@ -2786,6 +2787,9 @@ span.dropdown---caret---3CkEt {
   .speaker-bios.row .card-deck {
     width:100%;
   }
+=======
+
+>>>>>>> premier-seminar
   .Signup form .form-group {
     margin:10px;
     min-width: auto;

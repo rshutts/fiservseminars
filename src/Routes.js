@@ -23,6 +23,12 @@ import AuthAdmin from "./containers/Admin/index";
 import SignupConfirmation from "./containers/Auth/Signup/SignupConfirmation";
 import Sidenav from "./components/SideNav";
 import Popout from "./containers/Chat/Popout";
+<<<<<<< HEAD
+=======
+/* import Polls from "./containers/Polling/Polls";
+import CreatePoll from "./containers/Polling/CreatePoll";
+import Polling from "./containers/Polling/Polling"; */
+>>>>>>> premier-seminar
 
 /*Polls*/
 
@@ -83,9 +89,12 @@ const Routes = () => (
           <AuthenticatedRoute exact path="/popout?room=Fiserv">
             <Popout />
           </AuthenticatedRoute>
+<<<<<<< HEAD
           <AuthenticatedRoute exact path="/profile/admin">
             <AuthAdmin />
           </AuthenticatedRoute>
+=======
+>>>>>>> premier-seminar
         </Switch>
         </CSSTransition>
 </TransitionGroup>

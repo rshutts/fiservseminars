@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image:url('../../assets/2022.png'), linear-gradient(to bottom, #1f1f1f 0%, #202020 50%, #232323 100%); */
+    background-size: cover;
+    background-color: #F2F2F2;
+    background-position: center;
+    background-repeat:no-repeat;
+    padding:0;
+    margin:0;
+    color:#2D2D2D;
+    font-size:14px;
+}
+.sidebar {
+    background:#333333 url('../../assets/2022.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width:50%;
+    height:50%;
+    color:#fff;
+    text-transform: none;
+}
+.details {
+    background-color: #6699CC;
+    color:#fff;
+    text-align:left;
+    padding-left:10px;
+}
+.App {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: #F2F2F2;
+    /* background: linear-gradient(
+        0deg,
+        rgba(108, 108, 108, 1) 0%,
+        rgba(108, 108, 108, 1) 50%,
+        rgba(108, 108, 108, 0.6) 100%
+    ); */
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding:0;
+  max-width:100%;
+}
+
+.items {
+    padding: 30px;
+}
+.col-4 {
+  width: 25%;
+  float: left;
+}
+
+ul li {
+    text-align:left;
+}
+
+h1 {
+  font-size: 38px;
+  text-transform: none;
+  line-height: 1;
+  color:#fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+    margin:0 10px;
+}
+.card h1 {
+    color:#ff6600;
+    font-size: 28px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin:0;
+}
+.card h2 {
+    font-size:24px;
+}
+.card-header, .card-title {
+    text-align: left;
+    font-size: 28px;
+    text-transform: none;
+    color:#ff6600;
+}
+.card-title.h5 {
+    padding: 0.75rem 1.25rem;
+}
+.text-muted {
+    text-align: left;
+}

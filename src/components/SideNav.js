@@ -63,7 +63,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021-Education-Seminar-Precision-Overview-and-Agenda.pdf'
+              href='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >
@@ -84,12 +84,15 @@ function Sidenav() {
                   Speaker Bios 
               </Menu.Item>
             </Link>
+<<<<<<< HEAD
             {/* <Link className='sidebar-nav-link' to={'/session'}>
               <Menu.Item>
                 <FaUsers/>
                   Learning Sessions
               </Menu.Item>
             </Link>  */}
+=======
+>>>>>>> premier-seminar
             <Link className='sidebar-nav-link' to={'/archived-sessions'}>
               <Menu.Item>
                 <FaUsers/>
@@ -126,7 +129,7 @@ function Sidenav() {
             </Link>
             <a
               className='sidebar-nav-link'
-              href='https://seminar-media.s3.amazonaws.com/Fall/2021/2021-Education-Seminar-Precision-Overview-and-Agenda.pdf'
+              href='https://d2vqeoj3f0fgvp.cloudfront.net/Fall/2021/2021_Education_Seminar_Premier-Overview_and_Agenda.pdf'
               target='_blank'
               rel="noopener noreferrer"
             >

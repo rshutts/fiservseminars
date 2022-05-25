@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "premierfallseminars",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authpremierfallseminars8bce0c5e",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

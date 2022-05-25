@@ -1543,7 +1543,26 @@
           },
           "isDeprecated" : false,
           "deprecationReason" : null
+<<<<<<< HEAD
         },{
+=======
+        }, {
+          "name" : "authorGroup",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+>>>>>>> premier-seminar
           "name" : "body",
           "description" : null,
           "args" : [ ],
@@ -1652,7 +1671,20 @@
             "ofType" : null
           },
           "defaultValue" : null
+<<<<<<< HEAD
         },{
+=======
+        }, {
+          "name" : "authorGroup",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+>>>>>>> premier-seminar
           "name" : "body",
           "description" : null,
           "type" : {
@@ -2561,6 +2593,19 @@
           },
           "defaultValue" : null
         }, {
+          "name" : "authorGroup",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
           "name" : "body",
           "description" : null,
           "type" : {
@@ -2611,6 +2656,15 @@
           "defaultValue" : null
         }, {
           "name" : "author",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "authorGroup",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2713,6 +2767,15 @@
           "defaultValue" : null
         }, {
           "name" : "author",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "authorGroup",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",

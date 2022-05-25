@@ -1,114 +1,75 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-premierfallcombined-dev-92320-authRole",
-            "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallcombined-dev-92320-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-premierfallcombined-dev-92320-deployment",
-            "UnauthRoleName": "amplify-premierfallcombined-dev-92320-unauthRole",
-            "StackName": "amplify-premierfallcombined-dev-92320",
-            "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallcombined-dev-92320/7cb068e0-1630-11ec-9e78-0a0bb2880c01"
-        }
-    },
-    "api": {
-        "PremierFallCombined": {
-            "service": "AppSync",
-            "providerPlugin": "awscloudformation",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY",
-                        "apiKeyConfig": {
-                            "apiKeyExpirationDays": 365,
-<<<<<<< HEAD
-                            "description": "main"
-=======
-                            "description": "Main API"
->>>>>>> test
-                        }
-                    },
-                    "additionalAuthenticationProviders": []
-                },
-                "GraphQLAPIIdOutput": "ahtybosvibepzilgpzw4t3mthm",
-                "GraphQLAPIEndpointOutput": "https://4wecuaawlfdjjnvqxl6xu6nrwy.appsync-api.us-east-1.amazonaws.com/graphql",
-                "GraphQLAPIKeyOutput": "da2-nisxlo3r6ffudoj7xbb5lnlyji"
-            },
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-premierfallcombined-dev-92320-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-                "logicalId": "apiPremierFallCombined"
-            },
-<<<<<<< HEAD
-            "lastPushTimeStamp": "2021-09-21T04:47:28.165Z",
-            "lastPushDirHash": "fxfkKPBPPGYCUzjPo9YSB34uyIY="
-        },
-        "PrecisionFallCombined": {
-=======
-            "lastPushTimeStamp": "2021-09-16T19:59:18.574Z",
-            "lastPushDirHash": "ncZbPGr+4ha1C1GKJq+uWDUP3Fc="
-        },
-        "amplifiedchatapp-dev": {
->>>>>>> test
-            "service": "AppSync",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY"
-                    },
-                    "additionalAuthenticationProviders": null
-                },
-<<<<<<< HEAD
-                "GraphQLAPIIdOutput": "qyz5ucvtcjexlged2hmnxvarqe",
-                "GraphQLAPIEndpointOutput": "https://k3v5mcn2mjckdkkoxd6xmcxxai.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "PrecisionFallCombined",
-                "region": "us-east-1",
-                "GraphQLAPIKeyOutput": "da2-tsgw77xldbafbno255j6iwb4ei"
-            },
-            "lastPushTimeStamp": "2021-09-21T12:08:06.515Z"
-=======
-                "GraphQLAPIIdOutput": "4cggckac25du5o37jh6hqckgfe",
-                "GraphQLAPIEndpointOutput": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "amplifiedchatapp-dev",
-                "region": "us-east-1",
-                "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
-            },
-            "lastPushTimeStamp": "2021-09-21T20:54:24.477Z"
-        },
-        "amplifiedchatapp": {
-            "service": "AppSync",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY"
-                    },
-                    "additionalAuthenticationProviders": null
-                },
-                "GraphQLAPIIdOutput": "4cggckac25du5o37jh6hqckgfe",
-                "GraphQLAPIEndpointOutput": "https://2eohvqtjd5bjbplh4obmfilije.appsync-api.us-east-1.amazonaws.com/graphql",
-                "name": "amplifiedchatapp",
-                "region": "us-east-1",
-                "GraphQLAPIKeyOutput": "da2-h7wfmnkudrgmhlfghpj42xaa6y"
-            },
-            "lastPushTimeStamp": "2021-09-22T04:07:56.320Z"
->>>>>>> test
-        }
-    },
-    "auth": {
-        "premierfallcombinedb86edaa2": {
-            "service": "Cognito",
-            "serviceType": "imported",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": [],
-            "customAuth": false,
-            "output": {
-                "UserPoolId": "us-east-1_DP1sgZ1FC",
-                "UserPoolName": "FallConferences",
-                "AppClientID": "2h9vuffn6urim68lujmtsqfv1f",
-                "AppClientIDWeb": "2h9vuffn6urim68lujmtsqfv1f",
-                "IdentityPoolId": "us-east-1:a9395a50-e5a8-4c1f-a3e6-90920949180b",
-                "IdentityPoolName": "PrecisionFallSeminar2021"
-            },
-            "lastPushTimeStamp": "2021-09-15T20:25:07.615Z"
-        }
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-premierfallseminars-dev-131744-authRole",
+      "UnauthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminars-dev-131744-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::076005434014:role/amplify-premierfallseminars-dev-131744-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-premierfallseminars-dev-131744-deployment",
+      "UnauthRoleName": "amplify-premierfallseminars-dev-131744-unauthRole",
+      "StackName": "amplify-premierfallseminars-dev-131744",
+      "StackId": "arn:aws:cloudformation:us-east-1:076005434014:stack/amplify-premierfallseminars-dev-131744/b8887f10-221a-11ec-8899-12006d6b8ee3"
     }
+  },
+  "api": {
+    "premierfallseminars": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authpremierfallseminars8bce0c5e"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "zprqbe4gobgtzbccagk5lnfhqe",
+        "GraphQLAPIEndpointOutput": "https://b7b6t7c7kncvdboppzyik23mp4.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-3fhjugoll5ai7fgxbox5dn7wbm"
+      },
+      "lastPushTimeStamp": "2021-09-30T18:59:31.817Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-premierfallseminars-dev-131744-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apipremierfallseminars"
+      },
+      "lastPushDirHash": "F9n+MLOP9mH9EjwnwWmfihP31vY="
+    }
+  },
+  "auth": {
+    "premierfallseminars8bce0c5e": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "us-east-1_9NBO8j4CN",
+        "UserPoolName": "PremierFallConference2021",
+        "AppClientID": "7hvjh3o427hj2ei4gc6aaf6r5b",
+        "AppClientIDWeb": "7hvjh3o427hj2ei4gc6aaf6r5b"
+      },
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "PREFERRED_USERNAME"
+        ],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "mfaTypes": [],
+        "verificationMechanisms": []
+      },
+      "lastPushTimeStamp": "2021-09-30T18:59:31.975Z"
+    }
+  }
 }
