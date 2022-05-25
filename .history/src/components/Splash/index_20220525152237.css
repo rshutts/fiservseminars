@@ -116,7 +116,6 @@ h1 {
     font-weight:bold;
     color:#000000;
     font-style:italic;
-    margin-bottom:0;
     font-family: Arial, Helvetica, sans-serif;
 }
 .card-header, .card-title {
@@ -126,7 +125,7 @@ h1 {
     color:#ff6600;
 }
 .card-title.h5 {
-    padding: 0.75rem 1.25rem 0;
+    padding: 0.75rem 1.25rem;
 }
 .card a {
     color:#2e8bca;

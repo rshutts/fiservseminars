@@ -81,6 +81,19 @@ export default function SplashPage() {
                                     <li><strong>Early Bird= $625</strong></li>
                                     <li><strong>Standard = $725</strong></li>
                                 </ul>
+                            <Card.Title>Pricing For Advanced Specs:</Card.Title>
+                                <ul>
+                                    <li><strong>Advanced Deposit Specification</strong></li>
+                                        <ul>
+                                            <li>Early Bird= $675</li>
+                                            <li>Standard = $775</li>
+                                        </ul>
+                                    <li><strong>Advanced Loan Specification</strong></li>
+                                        <ul>
+                                            <li>Early Bird= $675</li>
+                                            <li>Standard = $775</li>
+                                        </ul>
+                                </ul>
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -88,13 +101,13 @@ export default function SplashPage() {
                 <CardGroup>
                     <Card>
                         <Card.Title>Assistance or Additional Information:</Card.Title>
-                        <Card.Body style={{ padding: "10px" }}>
+                        <Card.Body>
                             <Card.Link href="mailto:educationseminars@fiserv.com">educationseminars@fiserv.com</Card.Link>
                         </Card.Body>
                     </Card>
                     <Card>
                         <Card.Title>To Register:</Card.Title>
-                        <Card.Body style={{ padding: "10px" }}>
+                        <Card.Body>
                             <Card.Text>
                                 <h2>Registration coming soon!</h2>
                             </Card.Text>

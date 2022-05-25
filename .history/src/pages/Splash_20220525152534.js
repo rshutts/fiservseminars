@@ -88,7 +88,7 @@ export default function SplashPage() {
                 <CardGroup>
                     <Card>
                         <Card.Title>Assistance or Additional Information:</Card.Title>
-                        <Card.Body style={{ padding: "10px" }}>
+                        <Card.Body>
                             <Card.Link href="mailto:educationseminars@fiserv.com">educationseminars@fiserv.com</Card.Link>
                         </Card.Body>
                     </Card>
