@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/* import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify' ;*/
+/* import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify' */;
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
@@ -10,11 +10,7 @@ import * as serviceWorker from './serviceWorker';
 
 import SplashPage from './pages/Splash';
 
-/* import App from './App';
-import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
-import { initSentry } from './libs/errorLib';
-import 'react-toastify/dist/ReactToastify.css';
-import config from './aws-config';
+/* import config from './aws-config';
 const LOCAL_KEY = localStorage.getItem(BASE_KEY);
 
 if (!LOCAL_KEY) {

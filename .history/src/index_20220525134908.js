@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/* import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify' ;*/
+/* import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify' */;
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';

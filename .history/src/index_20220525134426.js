@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/* import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify' ;*/
+import Amplify, { Auth, AuthModeStrategyType } from 'aws-amplify';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-
+import App from './App';
+import { initSentry } from './libs/errorLib';
 import reportWebVitals from './reportWebVitals';
+import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
 import * as serviceWorker from './serviceWorker';
+import 'react-toastify/dist/ReactToastify.css';
 
 import SplashPage from './pages/Splash';
 
-/* import App from './App';
-import { CLIENT_ID, BASE_KEY } from './utils/localStorageInfo'
-import { initSentry } from './libs/errorLib';
-import 'react-toastify/dist/ReactToastify.css';
+import 'semantic-ui-css/semantic.min.css'
+
 import config from './aws-config';
 const LOCAL_KEY = localStorage.getItem(BASE_KEY);
 
@@ -21,7 +22,7 @@ if (!LOCAL_KEY) {
   localStorage.setItem(BASE_KEY, CLIENT_ID);
 }
 
-initSentry(); */
+initSentry();
 
 /* Amplify.configure({
   "aws_appsync_graphqlEndpoint": "https://b7b6t7c7kncvdboppzyik23mp4.appsync-api.us-east-1.amazonaws.com/graphql",
